@@ -1,10 +1,10 @@
 /-
   Antigravit2.NCG.AxiomAudit
   ================================
-  [D] — Axiom Audit & Integrity Check
+  [D] -- Axiom Audit & Integrity Check
   
-  Dieses Modul dient der Sicherstellung, dass keine unerwünschten `sorry`-Marker
-  oder gefährliche Axiome (wie unkontrolliertes `Classical.choice` in den
+  Dieses Modul dient der Sicherstellung, dass keine unerwuenschten `sorry`-Marker
+  oder gefaehrliche Axiome (wie unkontrolliertes `Classical.choice` in den
   komputablen Teilen) in die Kern-Lemmata einsickern.
 -/
 
@@ -14,14 +14,13 @@ import Antigravit2.NCG.Bridge
 import Antigravit2.MatrixThermo.BlockPartition
 import Antigravit2.NCG.FiniteAlgebra
 import Antigravit2.NCG.NCGAxioms
-import Antigravit2.NCG.Krajewski
-
+import Antigravit2.NCG.ModuliSpace
 import Antigravit2.Filters.EliminationN6
 
 namespace Antigravit2
 namespace NCG
 
--- Axiom-Fingerprints prüfen.
+-- Axiom-Fingerprints pruefen.
 -- Darf `sorryAx` NICHT enthalten. (Achtung: Dies gibt nur im Editor/Build Logs aus)
 #print axioms reality_JJ
 #print axioms toSignature_totalDim
@@ -38,6 +37,9 @@ namespace NCG
 -- Phase 10b axiom check:
 #print axioms orientabilityCondition
 #print axioms AdmissibleSpectralTriple
+
+-- Phase 11 axiom check:
+#print axioms RNC_Conjecture
 
 end NCG
 end Antigravit2

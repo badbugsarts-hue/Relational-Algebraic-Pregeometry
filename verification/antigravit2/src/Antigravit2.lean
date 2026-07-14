@@ -19,3 +19,5 @@ import Antigravit2.Filters.Enumeration
 import Antigravit2.Filters.EliminationN6
 import Antigravit2.NCG.SorryRegister
 import Antigravit2.NCG.AxiomAudit
+import Antigravit2.NCG.ModuliData
+import Antigravit2.NCG.ModuliSpace
