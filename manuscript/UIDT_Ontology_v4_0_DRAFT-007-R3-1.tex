@@ -3234,11 +3234,15 @@ not pedantry. An early construction produced the calibrated invariant by
 the exact arithmetic decomposition $49/3 + 17/3000 = 16.339$. The
 arithmetic is exact: it closes to arbitrary precision, and an internal
 residual check would report success at any number of digits. Yet the
-decomposition is a museum artifact: the integer $16339$ is prime, which
-proves that the split was \emph{constructed} to land on the target
-rather than \emph{found} by any mechanism, and the construction has no
-physical origin. Perfect internal closure, in this case, certifies only
-that someone did the arithmetic correctly.\catmark{A}
+decomposition is a museum artifact. Over the common denominator, the
+ansatz $a/3 + b/3000 = 16339/1000$ reads $1000a + b = 49017$, so $b$ is
+\emph{determined} by the choice of $a$: no second structure is found,
+and $a = 49$ is singled out only because it minimises $|b|$, which is
+what lets $17/3000 \approx 0.0057$ resemble a perturbative correction
+to a leading term. The split is a one-parameter fit whose residual was
+then read as physics, and the construction has no physical origin.
+Perfect internal closure, in this case, certifies only that someone
+did the arithmetic correctly.\catmark{A}
 
 Two implementation disciplines protect the rule in code. First, the
 working precision, eighty decimal digits, is set \emph{locally}, within
