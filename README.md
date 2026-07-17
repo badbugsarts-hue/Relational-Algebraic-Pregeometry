@@ -13,3 +13,7 @@ This repository provides a leakage-safe pregeometry harness for exploring graph 
 All agents and contributors must adhere to the rules defined in `AI_AUDIT_POLICY.md` and the `AGENTS.md` steering baseline.
 - **Rule:** Do not introduce physical constants, target cosmology values, Standard Model targets, or calibrated UIDT parameters into pregeometry growth rules, null ensembles, dashboards, or diagnostics unless a dedicated reviewed task explicitly requires it.
 - **Rule:** Runtime artifacts must only be generated under `verification/data/pregeometry/`.
+
+## Architecture & Ontology
+The transition from v3.9 continuous primitives to v4.0 discrete structures is governed by the Phase 9 specifications. 
+Please refer to the **[Phase 9 Architecture Handout](docs/architecture/phase-9-kernel-and-moduli.md)** for details on the Matrix-Thermodynamics kernel, the NCG-Filters, and the strict GLBC (Gap Localization before Construction) discipline.

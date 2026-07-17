@@ -15,3 +15,7 @@ This document establishes the conceptual links between the formal equations in t
 | Matrix Partitioning | `MatrixThermo/BlockPartition.lean` | `BlockPartition` |
 | NCG Filters / Partition Admissibility | `Filters/EliminationN6.lean` | `phase9Admissible`, `unique_321_N6` |
 | Moduli Space & RNC | `NCG/ModuliStub.lean` | `ModuliDatum`, `rnc_conjecture` |
+
+## Related Architecture Documents
+
+- **[Phase 9 Architecture Handout](phase-9-kernel-and-moduli.md)**: Details the formal falsification strategy, D19 constraints, and GLBC discipline regarding the Matrix-Thermodynamics kernel and G1-G4 moduli program.
