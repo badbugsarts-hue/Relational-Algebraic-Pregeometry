@@ -1,0 +1,89 @@
+name: Scientific Integrity Gates
+
+on:
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  evidence-tags:
+    name: Check Evidence Tags
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run evidence-tag check
+        run: python verification/scripts/check_evidence_tags.py
+
+  gamma-targeting:
+    name: Check No Gamma Targeting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run gamma-targeting check
+        run: python verification/scripts/check_no_gamma_targeting.py
+
+  merge-requirements:
+    name: Check Merge Requirements
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run merge-requirements check
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: python verification/scripts/check_merge_requirements.py
+
+  protected-paths:
+    name: Check Protected Paths
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run protected-paths check
+        run: python verification/scripts/check_protected_paths.py
+
+  integrity-tests:
+    name: Run Integrity Gate Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run tests
+        run: pytest verification/tests/test_integrity_gates.py -v
