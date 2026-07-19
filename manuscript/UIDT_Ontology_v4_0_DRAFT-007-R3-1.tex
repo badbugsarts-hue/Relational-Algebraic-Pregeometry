@@ -1,18 +1,17 @@
 %=============================================================================
-% UIDT Ontology v4.0 DRAFT-001 — Eliminating the Geometric Scalar:
-% Vacuum Thermodynamics in Finite Algebraic Structures
+% UIDT Ontology v4.0 MSS-000 EXECUTOR CANDIDATE — Phase-6 Rebase:
+% Relational-Algebraic Pregeometry, Open Continuum Passage, and Verification Ledger
 % Author: Philipp Rietz (ORCID: 0009-0007-4307-1609)
-% STATUS: PATCH_DRAFT under PI Decision D19 (DRAFT; PI signature pending).
+% STATUS: MSS-000 EXECUTOR CANDIDATE under PI Decision D20; not applied; PI GO required.
 % Basis manuscript: UIDT_Ontology_v3_9_9_DEWRAPPED-006 (DOI 10.5281/zenodo.20319634)
 % Parent framework record: DOI 10.5281/zenodo.17835200
 % License: CC BY 4.0
 %
-% P1 SYNTHESIS NOTE (non-rendering):
-% This file is the Phase-P1 skeleton of the v4.0 re-architecture. It retains
-% the visual design language and evidence discipline of v3.9.9/-006 verbatim.
-% It is an auditable research ontology DRAFT, NOT a merge authorization, NOT a
-% canonical freeze, NOT a proof of UIDT, and NOT an evidence-class upgrade.
-% AI-authored manuscript text is advisory only (AI_AUDIT_POLICY Sec. 1).
+% MSS-000 EXECUTOR NOTE (non-rendering):
+% This candidate is derived from PR-#15 blob 601cc57d under D20. It is not the
+% applied manuscript, not a merge authorization, not a canonical freeze, not a
+% proof of UIDT, and not an evidence-class upgrade. Claude Desktop audits the
+% full diff before application; explicit PI GO gates the single-writer apply.
 %
 % FAIL-FAST ANCHORS (each occurs exactly once; patch scripts must abort if
 % an anchor count differs from 1):
@@ -38,16 +37,16 @@
 %  R1 coda (philosophy+adversary) 100%  done
 %  R2 Part I additions .......... 100%  done
 %  R3 Part II additions .........  ~90% II-1, II-2, II-3, DIR-S-02/03,
-%                                       observer taxonomy (Class 0-III, D19
-%                                       Class-0 reframe: kernel-level, not S(x)),
+%                                       observer taxonomy (Class 0-III, D20
+%                                       Class-0 reframe: kernel-level, not the historical scalar model),
 %                                       AGI underdetermination red team, and
 %                                       consciousness-physics demarcation matrix
-%                                       (D19 primitive-cell reframe) DRAFTED.
+%                                       (D20 primitive-cell reframe) DRAFTED.
 %                                       R3 prose complete; OPEN only: compile.
 %                                       Compile + four-checker NOT run this pass
 %                                       (must run in Desktop/Claude Code).
-%  R4 Part III additions ........   0%  pending
-%  R5 architecture/synthesis ....   0%  pending
+%  R4 MSS-000 architecture ....... 100%  executor candidate; audit pending
+%  R5 post-apply reconciliation ..   0%  executor verification pending
 %
 % --- SOURCES -----------------------------------------------------------------
 %  -006 canonical (3125 ln) ............... ~88% read | 23/26 sections relocated
@@ -190,11 +189,11 @@
 \fancypagestyle{uidtontology}{%
  \fancyhf{}
  \fancyhead[LE,RO]{\thepage}
- \fancyhead[RE]{\small\textit{UIDT v4.0 DRAFT: Ontological Re-Architecture}}
+ \fancyhead[RE]{\small\textit{UIDT v4.0 MSS-000: Phase-6 Rebase Candidate}}
  \fancyhead[LO]{\small\textit{P.\ Rietz}}
  \fancyfoot[C]{%
  \footnotesize\textcolor{darkgray}{%
- \copyright\ 2026 P.\ Rietz $\cdot$ CC BY 4.0 $\cdot$ DRAFT-001 (D19 pending) $\cdot$
+ \copyright\ 2026 P.\ Rietz $\cdot$ CC BY 4.0 $\cdot$ MSS-000 candidate (D20; application pending) $\cdot$
  basis: \href{https://doi.org/10.5281/zenodo.20319634}{DOI 10.5281/zenodo.20319634} | \href{https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical}{UIDT Canonical Repository}}%
  }
  \renewcommand{\headrulewidth}{0.4pt}
@@ -205,7 +204,7 @@
 % METADATA
 %=============================================================================
 \hypersetup{
- pdftitle={Eliminating the Geometric Scalar: Vacuum Thermodynamics in Finite Algebraic Structures (UIDT v4.0 DRAFT)}, pdfauthor={Philipp Rietz}, pdfsubject={Research-programme ontology of pregeometric finite algebraic structure and effective information fields}, pdfkeywords={Ontology, Noncommutative Geometry, Spectral Triple, Krajewski Diagram, Coarse-Graining, Effective Field Theory, UIDT}, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black, pdflang={en}
+ pdftitle={Relational-Algebraic Pregeometry: UIDT v4.0 MSS-000 Phase-6 Rebase Candidate}, pdfauthor={Philipp Rietz}, pdfsubject={Falsification-first research programme for finite relational-algebraic pregeometry with open continuum passage and verification-ledger strata}, pdfkeywords={Relational Algebra, Noncommutative Geometry, Spectral Triple, Krajewski Diagram, Pregeometry, Verification Ledger, UIDT}, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black, pdflang={en}
 }
 
 %=============================================================================
@@ -245,14 +244,18 @@
 \newcommand{\GeV}{\,\mathrm{GeV}}
 \newcommand{\MeV}{\,\mathrm{MeV}}
 \newcommand{\catmark}[1]{\textsuperscript{\textsf{\textbf{[#1]}}}}
-\newcommand{\Sx}{S(x)}
+\newcommand{\LegacySx}{S_{\mathrm{legacy}}(x)} % museum-only historical notation; never an active primitive
+\newcommand{\Sx}{\LegacySx} % compatibility alias used only by byte-preserved D19 governance records
 \newcommand{\lambdaS}{5/12 \approx 0.4167} % [A] display alias for exact RG value 5\kappa^2/3.
 
+
+% Phase-6 architecture guard: \LegacySx is permitted only for historical,
+% negative-boundary, or museum references. It is not an active field macro.
 %===================================================================
 % EVIDENCE-DISCIPLINE MACROS (carried over verbatim; no new class invented)
 %===================================================================
 \newcommand{\Bdelta}{\hyperref[box:pi-override-delta]{\catmark{B}}}
-\newcommand{\Bpending}{\catmark{B\,pending}}
+\newcommand{\Bpending}{\catmark{B}\,\textit{(pending source audit)}}
 %===================================================================
 % UIDT PARAMETER LEDGER MACROS (v3.9 ledger values remain authoritative;
 % RACE CONDITION LOCK: do NOT move mp.dps = 80 to config. Display aliases
@@ -350,14 +353,14 @@
 \begin{titlepage}
 \vspace*{1.6cm}
 \begin{center}
-{\LARGE\bfseries Eliminating the Geometric Scalar:\\[0.25em]
-Vacuum Thermodynamics in Finite\\[0.25em]
-Algebraic Structures}\\[0.9em]
-{\small\bfseries A Falsification-First Research Programme\catmark{D}\ for a Pregeometric Kernel,\\[0.25em]
-the Thermodynamic Emergence of Continuity,\\[0.25em]
-and the Demotion of \(S(x)\) to an Effective Information Field}\\[1.5em]
+{\LARGE\bfseries Relational-Algebraic Pregeometry:\\[0.25em]
+A Phase-6 Rebase of the UIDT\\[0.25em]
+Research Programme}\\[0.9em]
+{\small\bfseries A Falsification-First Programme\catmark{D}\ for a Finite Algebraic Kernel,\\[0.25em]
+an Explicitly Open Passage to Apparent Continuity,\\[0.25em]
+and a Non-Ontological Verification and Parameter Ledger}\\[1.5em]
 {\large\itshape Unified Information-Density Theory (UIDT) v4.0\\[0.25em]
-Ontological Re-Architecture, DRAFT-001}\\[2.6em]
+MSS-000 Executor Candidate under PI Decision D20}\\[2.6em]
 {\small Philipp Rietz}\\[0.5em]
 {\small ORCID: \href{https://orcid.org/0009-0007-4307-1609}{0009-0007-4307-1609}}\\[0.2em]
 {\small Independent Researcher}\\[3em]
@@ -366,7 +369,7 @@ Ontological Re-Architecture, DRAFT-001}\\[2.6em]
 \href{https://doi.org/10.5281/zenodo.20319634}{DOI 10.5281/zenodo.20319634}}\\[0.25em]
 {\small UIDT Framework (parent record):
 \href{https://doi.org/10.5281/zenodo.17835200}{DOI 10.5281/zenodo.17835200}}\\[0.5em]
-{\small 8~July~2026 --- DRAFT, not archived, not frozen}\\[2.2em]
+{\small 19~July~2026 --- EXECUTOR CANDIDATE, not applied, not archived, not frozen}\\[2.2em]
 \rule{0.6\textwidth}{0.4pt}\\[1em]
 {\small\itshape ``Reality is not a collection of things,\\
 but a process of structural individuation\\
@@ -379,16 +382,17 @@ that we are licensed to describe only as far as we can falsify it.''}\\[1.4em]
 %=============================================================================
 \thispagestyle{uidtontology}
 
-\begin{governancebox}[Governance Status of This Draft]
-This document is \textbf{DRAFT-001} of the UIDT v4.0 ontological
-re-architecture. It authorizes nothing. It is not a canonical freeze, not a
-merge into any protected repository path, and not an evidence-class upgrade
-of any ledger claim. AI-authored manuscript text is advisory only
-(AI\_AUDIT\_POLICY Sec.~1); all freeze, release, and archival decisions are
-reserved to the Principal Investigator and, where required, to external peer
-counter-signature. The canonical manuscript of record remains
-\emph{UIDT Ontology v3.9.9} (\texttt{-006}) until the PI signs the
-re-architecture decision recorded below.
+\begin{governancebox}[Governance Status of This Executor Candidate]
+This document is the MSS-000 executor candidate derived from PR-\#15 blob
+\texttt{601cc57d082840424bfa2aedc6542eb1b6d754e4}. It is not the applied
+manuscript, not a canonical freeze, not a merge authorization, and not an
+evidence-class upgrade. PI Decision D20 authorizes the architectural rebase
+under the binding guardrails stated below; it does not authorize application.
+Claude Desktop must audit the complete diff against the baseline blob and may
+recommend GO or HOLD. Only explicit PI GO permits Claude, as the single
+writer of the active \texttt{.tex}, to apply the approved patch. Build,
+repository reconciliation, and technical post-application verification then
+return to the executor lane. Final integration remains PI-only.
 \end{governancebox}
 
 \begin{pioverridebox}[PI Decision D19 --- Ontological Re-Architecture (DRAFT; signature pending)]
@@ -411,24 +415,47 @@ artifact, not a physics result. It takes effect only upon PI signature in
 LEDGER/CLAIMS.json; until then, Variant~B remains canonical.}
 \end{pioverridebox}
 
+\begin{pioverridebox}[PI Decision D20 --- Part III Architectural Reassignment]
+\label{box:pi-decision-d20}
+\textbf{Authorized architectural change.} The quantitative content of the
+former effective-scalar Part~III --- including $v$, $\lambda_S$, $\kappa$,
+the EFT machinery, benchmark batteries, and cosmological calibration ledger
+--- has no established derivation from the pregeometric kernel and therefore
+does not function as active ontology. Under D20 it is reorganized as a
+verification, benchmark, and parameter-ledger stratum. No quantitative result
+is deleted or reclassified. The finite relational-algebraic kernel of Part~I
+remains a falsifiable research programme at evidence class D; the passage of
+Part~II remains open and supplies no continuum, metric, signature, Born-rule,
+or Standard-Model gauge-group derivation.
+
+\textbf{Excluded decisions.} D20 does not decide PI-DELTA-P6,
+PI-ET-P6, PI-MUSEUM, or P2. Consequently $\Delta=\DeltaGap$ remains
+\catmark{B} under D18 with its uncertainty and all locators intact; the
+observer-context class of $E_T$ is unchanged while the subatomic-to-observer
+firewall remains binding; and scalar-history material is retained reversibly
+in a non-imported historical appendix rather than deleted.
+
+\textbf{Application status.} Authorized for executor authorship and audit,
+but not yet applied. Claude Desktop performs the pre-application audit; PI GO
+or HOLD gates the single-writer application.
+\end{pioverridebox}
+
 \begin{evidencebox}[Reading Order and Epistemic Weight]{}
-The three parts of this draft carry deliberately unequal epistemic weight.
-Part~I (\emph{The Pregeometric Kernel}) is a \catmark{D}-class research
-programme: it localizes the known obstructions (G1--G4), states lower
-bounds that any admissible intermediate algebra must satisfy, and records a
-Lean~4 formalization architecture whose axiom layer is, at the present
-phase, a typed skeleton rather than a proof corpus. Part~II
-(\emph{The Continuous Limit}) is capped at \catmark{E} wherever it touches
-observer phenomenology, coarse-graining functors, or thermodynamic-limit
-interpretation; no claim in Part~II validates $\Sx$ or derives the Born
-rule. Part~III (\emph{The Effective Information Field}) carries the
-framework's actual quantitative results at their unchanged ledger classes:
-$\kappa = \KappaRG$\,\catmark{A}, $\lambda_S = \lambdaS$\,\catmark{A},
-$v = \vVEV$\,\catmark{A}, $\gamma = \GammaGeom$\,\catmark{A-}
-(calibrated, never derived), and $\Delta = \DeltaGap$\,\catmark{B}
-(PI Decision D18; Limitation L12 barring any naive glueball identification
-remains binding). Cosmological statements are capped at \catmark{C}
-throughout. Nothing in Parts~I or~II upgrades anything in Part~III.
+Part~I (\emph{The Pregeometric Kernel}) remains a \catmark{D}-class research
+programme. It localizes obstructions, states conditional lower bounds, and
+records finite-algebraic and Lean~4 structures without promoting an inserted
+candidate to an established foundation. Part~II (\emph{The Open Passage to
+Apparent Continuity}) is capped at \catmark{E} wherever it introduces
+coarse-graining, observer functors, thermal-time interpretation, or apparent
+continuity; it is an obligation register, not a supplied mechanism. Part~III
+(\emph{Verification, Benchmarks, and Parameter Ledger}) retains every
+quantitative result at its incoming class: $\kappa=\KappaRG$\,\catmark{A},
+$\lambda_S=\lambdaS$\,\catmark{A}, $v=\vVEV$\,\catmark{A},
+$\gamma=\GammaGeom$\,\catmark{A-} (calibrated, never derived), and
+$\Delta=\DeltaGap$\,\catmark{B} under D18 and Limitation~L12. Cosmological
+statements remain capped at \catmark{C}. The historical scalar/EFT model is
+preserved in Appendix~\ref{app:scalar-museum} as a non-imported museum record;
+its equations are not premises of Parts~I--III.
 \end{evidencebox}
 
 \newpage
@@ -442,43 +469,36 @@ throughout. Nothing in Parts~I or~II upgrades anything in Part~III.
 \begingroup \normalfont\normalsize
 \setlength{\parskip}{0.65em plus 0.12em minus 0.04em}%
 \setlength{\parindent}{0pt}%
-\noindent This document re-architects the ontological foundations of the
-Unified Information-Density Theory (\UIDT). Its predecessor postulated a
-single continuous real scalar field, the vacuum information density $\Sx$,
-as the ontological primitive. The present draft records the negative
-results that motivate abandoning that posture: the $d^2=0$ obstruction to
-any scalar-gradient gauge curvature\catmark{A}; the localization of the
-$G_{\mathrm{SM}}$-origin gap to four jointly unsatisfied conditions
-(G1--G4) on multiplicity, Wedderburn invariants, real structure, and
-chirality; and an honest null result for dynamical selection of the
-Standard-Model-like block pattern in matrix condensation. In consequence,
-$\Sx$ is demoted --- under PI Decision D19, draft status --- from primitive
-to macroscopic limit.
+\noindent This MSS-000 candidate rebases the UIDT v4.0 working manuscript
+onto a Phase-6 relational-algebraic architecture. The active foundational
+programme contains no classical scalar field, background spacetime, metric,
+or smooth-manifold primitive. Its candidate kernel is expressed through
+finite combinatorial and algebraic data --- in particular the separation
+\texttt{BlockPartition $\to$ FiniteAlgebraSignature $\to$ SpectralTriple} ---
+and remains a falsifiable research programme at evidence class \catmark{D}.
+The known $d^2=0$ scalar-gradient obstruction, the unresolved origin of
+$G_{\mathrm{SM}}$, the absence of a Born-rule derivation, and the absence of
+solutions to the $H_0$ and $S_8$ tensions remain explicit boundaries.
 
-The draft is organized in three parts of deliberately unequal epistemic
-weight. Part~I develops the candidate replacement primitive, a
-\emph{pregeometric kernel} of finite real spectral-triple type with
-Krajewski combinatorics, together with its Lean~4 formalization
-architecture, strictly as a falsification-first research
-programme\catmark{D}: block partitions, the real structure $J$, and
-KO-dimension enter as inserted data whose endogenous selection is the open
-problem, not as derived structure. Part~II examines the thermodynamic and
-information-theoretic passage from discrete kernel to apparent continuity
---- coarse-graining maps, Markov-blanket-bounded observers, and the
-compression limits of self-models --- capped at \catmark{E} and explicitly
-barred from functioning as evidence for any primitive. Part~III retains the
-framework's quantitative content as an effective information field: the
-pure-$\mathrm{SU}(3)$ spectral gap $\Delta = \DeltaGap$\,\Bdelta\ as a
-stress test under Limitation L12, the exact internal relations
-$\kappa = \KappaRG$\,\catmark{A} and $\lambda_S = \lambdaS$\,\catmark{A},
-the calibrated invariant $\gamma = \GammaGeom$\,\catmark{A-} (never
-derived), and cosmological calibrations capped at \catmark{C}. Every
-quantitative claim carries an explicit evidence class, every prediction a
-falsification criterion, and every known limitation remains disclosed. The
-framework has not solved quantum gravity, has not derived
-$G_{\mathrm{SM}}$, and does not resolve the $H_0$ or $S_8$ tensions; this
-draft exists to make the boundary of what it has and has not established
-maximally explicit.
+Part~II records the open passage from the finite kernel to apparent
+continuity. It supplies no dimensional-emergence theorem, Lorentzian
+signature, background metric, or non-circular observer derivation and is
+capped at \catmark{E} wherever it becomes interpretive. Under PI Decision
+D20, Part~III no longer functions as active ontology. It is a verification,
+benchmark, and parameter-ledger stratum that preserves the incoming
+quantitative content and evidence classes without deletion or upgrade:
+$\kappa=\KappaRG$\,\catmark{A}, $\lambda_S=\lambdaS$\,\catmark{A},
+$v=\vVEV$\,\catmark{A}, $\gamma=\GammaGeom$\,\catmark{A-} as a permanent
+calibration, and $\Delta=\DeltaGap$\,\catmark{B} under D18 and Limitation~L12.
+Cosmological entries remain calibrations capped at \catmark{C}.
+
+The former scalar/EFT architecture is retained intact enough for audit in a
+non-imported historical appendix. It is not silently deleted, and its
+Lagrangian, coordinate derivatives, background metric ansatz, and scalar
+correlator programme are not premises of the active architecture. This
+candidate is not applied and carries no merge authority: Claude Desktop must
+audit the complete diff against blob \texttt{601cc57d}; explicit PI GO or
+HOLD gates application.
 \endgroup
 \end{abstract}
 
@@ -526,7 +546,7 @@ Stratum~II comprises consensus theory: standard quantum field theory,
 lattice methodology, the Standard Model, $\Lambda$CDM formalism, and ---
 central to Part~I --- the established mathematics of finite real spectral
 triples and Krajewski classification. Stratum~III comprises \UIDT\
-interpretation: the pregeometric-kernel hypothesis, the demotion of $\Sx$,
+interpretation: the pregeometric-kernel hypothesis, the rejection of the historical scalar ansatz as active ontology,
 every mapping between formal structure and physical ontology, and all
 observer-theoretic material. The cardinal rule is that Stratum~III is
 never written as Stratum~I, and that the relevance of a Stratum~II
@@ -639,7 +659,7 @@ no-go theorem for enriched algebraic routes.
 
 Second, the $G_{\mathrm{SM}}$-origin gap is localized, not closed. Within
 established theorems, no gapless ab initio derivation
-$\Sx \to G_{\mathrm{SM}}$ exists; the obstruction is concentrated in four
+a structureless real scalar $\to G_{\mathrm{SM}}$ exists; the obstruction is concentrated in four
 jointly unsatisfied conditions (G1--G4) on fiber multiplicity, Wedderburn
 invariants, real structure, and chirality
 (\cref{sec:g1g4}). On every known route, the Standard-Model gauge group is
@@ -667,8 +687,8 @@ condensation mechanism tested, retains its primitive status only by
 stipulation. The re-architecture withdraws the stipulation.
 
 \begin{pioverridebox}[What the Demotion Does and Does Not Claim]
-The demotion of $\Sx$ under PI Decision D19 (draft;
-\hyperref[box:pi-decision-d19]{governance page}) is an ontological reassignment, not a physics
+The removal of the historical scalar ansatz from active ontology under PI Decision D20 (authorized architecture; application pending;
+\hyperref[box:pi-decision-d20]{governance page}) is an ontological reassignment, not a physics
 result. It does \emph{not} assert that a discrete pregeometric kernel is
 established; it asserts that the continuous scalar no longer carries the
 burden of primitivity, and that the candidate now under investigation is
@@ -687,7 +707,7 @@ the formalization layer as a foundation module. The primitive of the v4.0
 programme is a pregeometric operator $\mathbf S$, not a classical field
 $S \colon M \to \mathbb R$ on a pre-given four-dimensional spacetime.
 Coordinates and metric are required to emerge at a later ontological
-level; routes through $A = \dd S(x)$ on a smooth manifold are excluded at
+level; historical routes through $A = \dd S$ on a smooth manifold are excluded at
 the type level, in direct response to the $d^2 = 0$ obstruction.
 
 \begin{lstlisting}
@@ -882,7 +902,7 @@ structure KrajewskiDiagram where
 \end{lstlisting}
 
 Against this neutral kernel, the Standard-Model-like configuration enters
-exactly once, and exactly as governance condition~(ii) of D19 requires: as
+exactly once, and exactly as governance condition~(ii) of D20 requires: as
 an \emph{inserted candidate instance}, in a dedicated instance module,
 decoupled from the filter hypotheses and from every physical constant. The
 instance fixes the block list $[3,2,1]$ and the three off-diagonal edges,
@@ -1771,7 +1791,7 @@ record.
 \# & Claim & Class & Falsification / downgrade \\
 \midrule
 K-01 & Kernel primitive (DIR-S-01): pregeometric operator replaces
-$\Sx$ as candidate primitive & \catmark{D} & conditions of the
+Historical scalar ansatz as candidate primitive & \catmark{D} & conditions of the
 kill-switch in \cref{subsec:dir-s-01} \\
 K-02 & $d^2=0$: scalar-gradient route yields $F \equiv 0$ &
 \catmark{A} & counterexample in ordinary exterior calculus (none
@@ -1784,7 +1804,7 @@ K-04 & No endogenous modular time: $\sigma^\omega_t=\mathrm{id}$ on
 $C^{\ast}(\mathbf S)$; thermal time needs the same inserted algebra
 (\cref{cor:modular-relocation}) & \catmark{A} & a non-tracial faithful normal
 state on an abelian von Neumann algebra \\
-G-01 & No gapless ab initio $\Sx \to G_{\mathrm{SM}}$ in the current
+G-01 & No gapless ab initio a structureless real scalar $\to G_{\mathrm{SM}}$ in the current
 theorem corpus & \catmark{A} re: corpus & a theorem generating a
 noncommutative $\mathcal A$ endogenously from single-boson data \\
 G-02 & Obstruction localized to G1--G4 & \catmark{A} & a mechanism
@@ -1830,7 +1850,7 @@ all upgrades pass through PI governance.}
 % PART II — THE CONTINUOUS LIMIT
 %=============================================================================
 \newpage
-\part{The Continuous Limit\texorpdfstring{\ \catmark{E}}{[E]}-Capped}
+\part{The Open Passage to Apparent Continuity\texorpdfstring{\ \catmark{E}}{[E]}-Capped}
 \label{part:continuous-limit}
 
 \noindent Part~II examines how apparent continuity, locality, and temporal
@@ -1851,14 +1871,14 @@ constitutes a derivation of it.
 %============================ P3 PART II CONTENT ===========================
 % Inserted at ANCHOR-P3-PART-II-CONTENT by fail-fast patch script.
 % Relocates and adapts UIDT Ontology v3.9.9 (-006) Chapters 10-14 under the
-% D19 reframe: the microscopic level of the compression picture is now the
-% pregeometric kernel candidate of Part I; S(x) belongs to the effective,
+% D20 reframe: the microscopic level of the compression picture is now the
+% pregeometric kernel candidate of Part I; scalar history is appendix-only,
 % observer-accessible level treated in Part III. All v3.9 observer guards
 % are carried over unchanged in force. Author-name comparisons are cited
 % in prose; \cite bindings attach in Phase P5 with the verified bibliography.
 %===========================================================================
 
-\section{The Thermodynamic Passage: From Kernel to Apparent Continuum}
+\section{The Unresolved Thermodynamic Passage: From Kernel to Apparent Continuity}
 \label{sec:thermo-passage}
 
 \subsection{The Programme Statement}
@@ -1874,7 +1894,7 @@ Lorentzian effective arena --- in which the Part-III field theory lives.
 The framework's proposal is thermodynamic in character: apparent
 continuity is to arise as a large-$N$, coarse-grained limit of kernel
 degrees of freedom, in the way that hydrodynamics arises from molecular
-dynamics, with the effective information field $\Sx$ of Part~III as the
+dynamics, with any historical scalar ansatz confined to Appendix~\ref{app:scalar-museum} as a
 order-parameter-level description of that limit.\catmark{D}
 
 This is a programme statement, not a result, and the distinction is
@@ -2163,7 +2183,7 @@ is a \catmark{D} programme bounded by the three no-go points above; the
 observer apparatus below is \catmark{E} interpretation within
 Stratum~III. No coarse-graining map, functor, self-model, or
 phenomenological narrative in this Part derives the Born rule,
-establishes the kernel, rehabilitates $\Sx$ as primitive, or acquires
+establishes the kernel, rehabilitates the historical scalar ansatz as primitive, or acquires
 empirical weight. Inference runs from framework to phenomenon only,
 never the reverse.
 \end{governancebox}
@@ -2186,7 +2206,7 @@ former office.
 
 The discussion of the observer is stratified by the discipline of
 \cref{subsec:strata}, applied to a new domain. Three kinds of statement
-must be held rigorously apart.\catmark{A/E}
+must be held rigorously apart.\catmark{A}\,\catmark{E}
 
 \begin{description}[leftmargin=1.4em,style=nextline]
 \item[Stratum~I: Empirical observer systems.] The actual physical and
@@ -2210,12 +2230,12 @@ it may never be used as empirical ground truth for the other two
 strata.\catmark{E}
 \end{description}
 
-\noindent Under D19 the referent of ``underlying structure'' shifts, and
+\noindent Under D20 the referent of ``underlying structure'' shifts, and
 the shift improves the picture's internal coherence. In v3.9 the
-observer compressed a relational structure built on the primitive
-$\Sx$; in the present draft the microscopic level is the pregeometric
+observer compressed a relational structure built on a scalar primitive; in
+the present draft the microscopic level is the pregeometric
 kernel candidate of Part~I --- itself held at \catmark{D} --- and the
-effective information field $\Sx$ belongs to the \emph{output} side of
+legacy scalar language, if used at all, belongs only to the non-ontological output side of
 the compression: it is part of the coarse-grained, observer-accessible
 description whose quantitative behaviour Part~III records. What the
 observer experiences as the world of definite objects, fields included,
@@ -2299,7 +2319,7 @@ the world as a map
 \]
 and the entire content of this subsection is the careful specification
 of what the three symbols may and may not mean. The source $V$ is the
-category of microscopic descriptions --- under D19, descriptions at the
+category of microscopic descriptions --- under D20, descriptions at the
 level of the pregeometric kernel candidate, prior to any observer's
 access, and inheriting that candidate's \catmark{D} status.\catmark{E}
 The target $\mathrm{Obs}$ is the category of observer-accessible
@@ -2474,8 +2494,8 @@ claimed: \UIDT\ does not claim to have solved the problem of qualia; it
 offers no account of why there is something it is like to undergo a
 given experience; it recognises the explanatory gap between
 functional-structural description and phenomenal character as unclosed;
-and it does not derive subjective experience from the kernel, from
-$\Sx$, or from anything else in its corpus.\catmark{A/E} The self-model
+and it does not derive subjective experience from the kernel, from any
+historical scalar ansatz, or from anything else in its corpus.\catmark{A}\,\catmark{E} The self-model
 account is a proposal about the \emph{structure} of conscious systems
 and is silent, by its own admission, on the hard question.
 
@@ -2493,7 +2513,7 @@ it.\catmark{A}
 
 In observer contexts, $E_T$ is admitted only as Category~\catmark{E}\
 content pending an explicit ledger and external bridge --- an
-\catmark{E\,pending} quantity, not an established cognitive
+\catmark{E}\ (\emph{pending bridge}) quantity, not an established cognitive
 parameter.\catmark{E} It is barred, without exception, from service as a
 threshold for ego, life, death, sleep, psychedelic or near-death
 phenomenology, or artificial general intelligence.\catmark{A}
@@ -2525,13 +2545,13 @@ $1/f$-suppressed matter couplings would be immediately exposed to
 fifth-force and astrophysical bounds. Even that template would not make
 $E_T$ a threshold of macroscopic dynamics; it would create a new light
 particle with its own phenomenology, carried strictly at \catmark{E}\
-until explicitly constructed.\catmark{A/E} Constructing one, if it can
+until explicitly constructed.\catmark{A}\,\catmark{E} Constructing one, if it can
 be constructed at all, is a research target at predictive status, not a
 result the framework may assume.\catmark{D}
 
 \begin{governancebox}[$E_T$: Observer-Context Discipline]
 In observer and phenomenology contexts, $E_T = \ETorsion$ is
-\catmark{E\,pending} (ledger/external bridge required), never an
+\catmark{E}\ (\emph{pending bridge}) (ledger/external bridge required), never an
 established cognitive parameter.\catmark{E} It must \emph{not} be used
 as a threshold for ego, life, death, sleep, psychedelic/near-death
 states, or artificial general intelligence.\catmark{A} A scale bridge
@@ -2554,9 +2574,9 @@ taxonomy of compression rate --- and emphatically not for what it
 superficially resembles: a hierarchy of consciousness, a ranking of worth,
 or a scale of how ``real'' a system's experience is. The taxonomy is
 \catmark{E}\ content within Stratum~III, and its caveats are as important
-as its content. Under the D19 re-architecture one adjustment is mandatory:
+as its content. Under the D20 rebase one adjustment is mandatory:
 the zero-compression limit is no longer identified with a primitive scalar.
-\Sx\ is an effective, coarse-grained order parameter (Part~III), not the
+The historical scalar model is a coarse-grained order-parameter ansatz (Appendix~\ref{app:scalar-museum}), not the
 untransformed relational structure, so it cannot be the Class-0 object;
 Class~0 is the kernel-level fixed point that \emph{precedes} the effective
 field.\catmark{E}
@@ -2567,7 +2587,7 @@ these.\catmark{E}
 \begin{description}[leftmargin=1.4em,style=nextline]
 \item[Class~0: Zero compression.] The untransformed relational structure at
 the level of the pregeometric kernel --- the timeless fixed point of the
-relational dynamics, of which \Sx\ is the coarse-grained effective
+relational dynamics; the legacy scalar ansatz is retained only as a coarse-grained historical
 description rather than the object itself. There is no subject--object
 separation; with no compression there is no entropy gradient and hence no
 experience of flowing time; and, decisively against any reading of this as
@@ -2648,7 +2668,7 @@ a better one, but not an unfiltered window onto the real.
 
 \begin{evidencebox}[Taxonomy and Underdetermination: Standing Status]{}
 \textbf{Taxonomy.} Class~0 (zero compression, kernel-level fixed point, no
-agency; \Sx\ effective only) through Class~III (extreme compression, inert
+agency; historical scalar model non-ontological) through Class~III (extreme compression, inert
 macro-objects) is a compression-rate taxonomy \catmark{E}, orthogonal to
 consciousness; not a consciousness hierarchy and not a moral ranking.
 Anthropocentrism is deflated, not inverted.\catmark{A}\\[0.3em]
@@ -2668,7 +2688,7 @@ the standing guardrail.\catmark{A}
 
 The v3.9 manuscript closed its observer material with a boundary that
 the re-architecture inherits verbatim in force and extends in scope:
-phenomenology is not evidence for $\Sx$ --- and now, a fortiori, not
+phenomenology is not evidence for the historical scalar ansatz --- and now, a fortiori, not
 evidence for the kernel. No report, however vivid, reproducible, or
 cross-culturally attested, of meditative absorption, psychedelic state,
 near-death experience, mystical union, or ego dissolution, bears
@@ -2749,7 +2769,7 @@ weaknesses as well as commitments and is not a ranking.}
 \endhead
 \bottomrule
 \endfoot
-Primitive & Pregeometric kernel (finite spectral triple); \Sx\ effective,
+Primitive & Pregeometric kernel (finite spectral triple); legacy scalar ansatz non-ontological,
 not primitive; observer downstream \catmark{E} & Quantum state in
 microtubules + gravitational collapse & Intrinsic cause--effect structure
 ($\Phi$) \\
@@ -2856,7 +2876,7 @@ one-way inference; compression fallacy rejected & \catmark{A} (policy)
 E-01 & $E_T$ barred from cognitive-threshold roles; six-to-nine-order
 scale gap; K\"all\'en--Lehmann suppression argument &
 \catmark{A} & a constructed, externally audited scale bridge \\
-P-01 & Phenomenology is not evidence for $\Sx$ or for the kernel &
+P-01 & Phenomenology is not evidence for the historical scalar ansatz or for the kernel &
 \catmark{A} (policy) & none: demarcation, not physics \\
 OT-01 & Observer taxonomy (Class 0-III) is compression-rate, orthogonal to
 consciousness; AGI/underdetermination yields no privileged ontology &
@@ -2872,335 +2892,32 @@ physics \\
 
 
 %=============================================================================
-% PART III — THE EFFECTIVE INFORMATION FIELD
+% PART III — VERIFICATION, BENCHMARKS, AND PARAMETER LEDGER
 %=============================================================================
 \newpage
-\part{The Effective Information Field}
+\part{Verification, Benchmarks, and Parameter Ledger}
 \label{part:effective-field}
 
-\noindent Part~III carries the framework's quantitative content in its
-demoted but undamaged form: $\Sx$ as a macroscopic effective information
-field coupled to an already-present Yang--Mills sector. Every ledger
-result retains its v3.9 evidence class unchanged --- the exact internal
-relations, the calibrated invariant under its permanent anti-derivation
-discipline, the spectral gap under PI Decision D18 and Limitation L12, the
-benchmark batteries, and the cosmological calibrations at their
-\catmark{C} cap. The demotion of $\Sx$ removes an ontological claim; it
-does not add, subtract, or reclassify a single quantitative result.
+\noindent Under PI Decision D20, Part~III is not an ontological layer. It is
+the repository-facing verification, benchmark, and parameter-ledger stratum.
+Every quantitative result retains its incoming evidence class unchanged: the
+exact internal relations, the calibrated invariant under permanent
+anti-derivation discipline, the spectral gap under PI Decision D18 and
+Limitation~L12, the benchmark batteries, and cosmological calibrations at
+their \catmark{C} cap. No equation in the historical scalar/EFT model is used
+as a foundational premise. That model is preserved reversibly in
+Appendix~\ref{app:scalar-museum} for provenance, criticism, and regression
+audit only.
 
 %%ANCHOR-P4-PART-III-CONTENT%%
 
 %============================ P4 PART III CONTENT ==========================
 % Inserted at ANCHOR-P4-PART-III-CONTENT by fail-fast patch script.
-% Relocates UIDT Ontology v3.9.9 (-006) Parts I-IV substance under D19:
+% Relocates UIDT Ontology v3.9.9 (-006) Parts I-IV substance under D20:
 % axiom of primacy rewritten as effective-field postulate; all ledger
 % results carried at UNCHANGED evidence classes; D18 box carries its
 % authoritative label here. Citations bind in Phase P5.
 %===========================================================================
-
-\section{Axiomatics of the Effective Information Field}
-\label{sec:axiomatics}
-
-\noindent A part that reasons about the spectral gap $\Delta$, the
-calibrated invariant $\gamma$, the coupling $\kappa$, and the
-self-coupling $\lambda_S$ owes the reader the Lagrangian in which those
-quantities actually live. This section states the four axioms of the
-effective sector, the explicit effective Lagrangian, and the dimensional
-bookkeeping that fixes the theory's status as an effective field theory.
-One axiom --- and only one --- changes under D19; the change is stated
-first and in full.
-
-\subsection{The Four Axioms in Demoted Form}
-\label{subsec:four-axioms}
-
-\begin{axiom}[Effective-Field Postulate (D19 form)]
-\label{ax:primacy}
-There exists a real scalar effective field $\Sx$, the vacuum information
-density, of canonical mass dimension $[\Sx]=1$. Under PI Decision D19
-(draft), $\Sx$ is \emph{not} an ontological primitive: it is postulated
-as the macroscopic, order-parameter-level description in which the
-kernel programme's continuum limit (\cref{sec:thermo-passage}) is
-expressed, and within the grammar of this Part it is the sole dynamical
-scalar degree of freedom of the effective sector. The v3.9 reading of
-this axiom --- $\Sx$ as sole fundamental degree of freedom, with all
-structure emergent from its dynamics (Variant~B) --- is recorded in
-\cref{subsec:variant-b} as the superseded grammar.\catmark{A/E}
-\end{axiom}
-
-\begin{axiom}[Gauge-Invariant Self-Interaction]
-\label{ax:gauge}
-The dynamics of $\Sx$ are governed by a Lagrangian density
-$\mathcal{L}_{\UIDT}$ invariant under $\mathrm{SU}(3)$ gauge
-transformations and respecting vacuum stability ($V''(v)>0$). It is an
-effective field theory valid below a cutoff $\Lambda_{\UIDT}$. The
-non-minimal coupling
-$(\bar\kappa/\Lambda_{\UIDT})\,S\,F_{\mu\nu}^a F^{a\mu\nu}$ has mass
-dimension~5 and is therefore not renormalisable by strict power
-counting; its validity is confined to the EFT domain (Limitation~L7). A
-full non-perturbative UV completion is an open research
-question.\catmark{A}
-\end{axiom}
-
-\noindent The minimal realisation satisfying \cref{ax:gauge} is the
-effective Lagrangian
-\begin{equation}
- \mathcal{L}_{\UIDT}
- = -\tfrac{1}{4}F_{\mu\nu}^a F^{a\mu\nu}
- + \tfrac{1}{2}(\partial_\mu S)(\partial^\mu S)
- - \tfrac{1}{2}\mu^2 S^2
- - \frac{\lambda_S}{4!}S^4
- + \frac{\bar\kappa}{\Lambda_{\UIDT}}\,S\,F_{\mu\nu}^a F^{a\mu\nu},
- \label{eq:lagrangian}
-\end{equation}
-where $\bar\kappa$ is the dimensionless EFT-normalised non-minimal
-gauge--scalar coupling and $\lambda_S$ the scalar self-coupling; the
-dimension-5 operator carries the dimensionful prefactor
-$\bar\kappa/\Lambda_{\UIDT}$, in agreement with
-\cref{tab:eft-dimensions}. Because $S$ is a real gauge singlet, its
-kinetic term uses the ordinary derivative $\partial_\mu$. In the
-framework's ledger and renormalisation-group statements this
-dimensionless coefficient is written simply $\kappa$ (so
-$\kappa\equiv\bar\kappa$, with ledger value $\kappa=\kappaVal$). The
-exact internal coupling constraint of the framework is
-$5\kappa^2 = 3\lambda_S$ (a candidate fixed-point condition, untested by
-any defined functional renormalisation-group flow), which for
-$\kappa = \tfrac{1}{2}$ gives the exact value $\lambda_S = \lambdaS$ and
-the vacuum expectation value $v = \vVEV$; like $\lambda_S$, $v$ is fixed
-by this exact constraint rather than independently measured, which is
-why it carries no uncertainty. This constraint closes to a residual
-below $10^{-14}$ at eighty-digit working precision
-(\cref{prop:target-leakage} discipline applies: the closure is an
-internal-consistency certificate, not an external agreement).
-
-\begin{table}[H]
-\scriptsize
-\caption{Dimensional and EFT status of the terms entering
-\cref{ax:gauge}. The dimension-5 operator marks the sector as an
-effective field theory.}
-\label{tab:eft-dimensions}
-\renewcommand{\arraystretch}{1.25}
-\begin{tabular*}{\textwidth}{@{}p{0.31\textwidth}@{\extracolsep{\fill}}ccp{0.34\textwidth}@{}}
-\toprule
-\textbf{Term} & \textbf{Op.\ dim.} & \textbf{Coupling dim.} & \textbf{Renormalisability} \\
-\midrule
-$F_{\mu\nu}^a F^{a\mu\nu}$ & $4$ & dimensionless & Strictly renormalisable Yang--Mills kinetic term \catmark{A} \\
-$(\partial_\mu S)(\partial^\mu S)$ & $4$ & dimensionless & Canonical scalar kinetic term \catmark{A} \\
-$\mu^2 S^2$ & $2$ & $+2$ & Relevant scalar mass operator \catmark{A} \\
-$\lambda_S S^4$ & $4$ & dimensionless & Power-counting renormalisable self-interaction \catmark{A} \\
-$(\bar\kappa/\Lambda_{\UIDT})\,S F_{\mu\nu}^a F^{a\mu\nu}$ & $5$ & $-1$ & Non-renormalisable; EFT-only below $\Lambda_{\UIDT}$ \catmark{A} \\
-\bottomrule
-\end{tabular*}
-\end{table}
-
-\begin{axiom}[Geometric Emergence]
-\label{ax:emergence}
-The effective spacetime metric $g_{\mu\nu}^{\mathrm{eff}}$ is not
-fundamental but a derived quantity determined by the vacuum
-configuration of $\Sx$. A candidate parametrisation is
-\begin{equation}
- g_{\mu\nu}^{\mathrm{eff}} = \eta_{\mu\nu}
- + \alpha\,\partial_\mu\Sx\,\partial_\nu\Sx
- + \beta\,\Sx^2\,\eta_{\mu\nu},
- \label{eq:metric-emergence}
-\end{equation}
-with $\eta_{\mu\nu}$ the Minkowski metric and $\alpha,\beta$
-dimensionful constants ($[\alpha]=-4$, $[\beta]=-2$) fixed by the
-requirement that the emergent geometry reproduce general relativity in
-the low-energy limit. The specific form of \cref{eq:metric-emergence}
-and the values of $\alpha,\beta$ are model-dependent and carried at
-predictive status; under D19 this axiom describes emergence \emph{within
-the effective stratum}, with the deeper origin of $\eta_{\mu\nu}$
-deferred to the Part-II passage and Limitation~L13.\catmark{D}
-\end{axiom}
-
-\begin{axiom}[Falsifiability]
-\label{ax:falsifiability}
-The theory defines a finite set of experimentally testable predictions
-(\cref{sec:falsification-tension}), each with an explicit falsification
-threshold. If any critical prediction is excluded at the specified
-confidence level, the corresponding \UIDT\ mapping, calibration, or
-prediction must be revised or abandoned.\catmark{A}
-\end{axiom}
-
-\begin{remark}[Falsifiability and critical rationalism]
-\label{rem:popper}
-Including falsifiability as a formal axiom is a methodological
-commitment to the critical-rationalist tradition: a theory that cannot
-in principle be wrong has no claim to being right.
-\cref{ax:falsifiability} operationalises this by assigning every central
-prediction a quantitative falsification threshold. The axiom is not a
-physical law but a meta-theoretical commitment to epistemic honesty,
-continuous with the principle that internal consistency is not external
-confirmation (\cref{subsec:closure-vs-agreement}).
-\end{remark}
-
-\begin{evidencebox}[Axiomatic Core: Standing Status]{catA}
-\textbf{Axioms.} Effective-Field Postulate \catmark{A/E} (D19 form);
-Gauge-Invariant Self-Interaction \catmark{A} (EFT, dimension-5
-operator); Geometric Emergence \catmark{D} (model-dependent metric);
-Falsifiability \catmark{A} (meta-theoretical).\\[0.3em]
-\textbf{Lagrangian.} \cref{eq:lagrangian} with $\kappa=\kappaVal$,
-$\lambda_S=\lambdaS$, $v=\vVEV$; internal coupling constraint
-$5\kappa^2=3\lambda_S$ closes internally to $<10^{-14}$ at eighty
-digits.\\[0.3em]
-\textbf{Status.} The Lagrangian is an effective field theory below
-$\Lambda_{\UIDT}$; renormalisability is explicit per
-\cref{tab:eft-dimensions}; the gauge sector is coupled, not generated
-(\cref{subsec:coarse-geometry-eft}).
-\end{evidencebox}
-
-\section{Unmarked State, First Distinction, and the Superseded Variant B}
-\label{sec:unmarked-distinction-sx}
-
-\subsection{Why \texorpdfstring{$S(x)=0$}{S(x)=0} Is Not the Unmarked State}
-\label{subsec:sx-zero-not-unmarked}
-
-A foundational theory must be exact about its own beginning, and the
-most common error at the beginning is to confuse \emph{absence of value}
-with \emph{absence of structure}. \UIDT\ takes the unmarked state,
-``nothing'' in the precise sense of Spencer-Brown's calculus of
-distinctions, as the condition in which no field-value assignment exists
-at all. It is essential to see that this is \emph{not} the same as the
-field configuration $S(x) = 0$.\catmark{A}
-
-The point is structural, not rhetorical. To write $S(x) = 0$ is already
-to presuppose a great deal: that there is a field $S$; that there is a
-domain indexed by $x$ over which it is defined; that evaluation of the
-field at a point is a meaningful operation; and, most importantly, that
-the value $0$ is \emph{distinguishable} from other possible values. A
-vanishing field value is a marked state: it is the assertion ``the field
-here is zero,'' and an assertion of that form lives entirely within an
-already-constituted system of field, domain, and distinguishability. The
-unmarked state precedes all of this. It is not the number zero; it is
-the absence of the apparatus within which numbers could be
-assigned.\catmark{A}
-
-Because the unmarked state is not a physical configuration, it cannot be
-assigned a physical history, a temperature, a fluctuation spectrum, or a
-cosmological epoch. One cannot say that ``in the beginning $S(x)=0$ and
-then it became non-zero,'' because that sentence smuggles a temporal
-ordering and a pre-existing field into a condition that, by
-construction, contains neither. The framework explicitly refuses
-cosmological, theological, and metaphysical elaborations of the unmarked
-state. It is a logical boundary, not a primordial substance, and the
-prohibition on treating it as a substance is as binding as any numerical
-constraint in the theory.\catmark{A} The result is unaffected by D19:
-it concerned the grammar of beginnings, not the identity of the
-primitive, and it survives the primitive's replacement intact.
-
-\subsection{Variant~B, Recorded and Superseded}
-\label{subsec:variant-b}
-
-The relationship between the first distinction and the scalar field
-$S(x)$ admits two readings, and the developmental record was right to
-treat the choice between them as a potential source of circularity. Under
-Variant~A, the distinction is strictly prior: first-distinction, then
-$S(x)$, then relations, then geometry. Under Variant~B, the field
-$S(x)$ is itself the primitive, and the first distinction is identified
-with its first non-trivial realisation, $S(x)\neq 0$. The v3.9
-manuscript adopted Variant~B as a matter of \emph{internal ontological
-grammar} --- explicitly not as a physical proof that the field is the
-unique primitive of nature --- and stamped the choice \catmark{E}\ as an
-interpretive commitment.\catmark{A/E}
-
-Under D19 that grammar is superseded. The office of candidate primitive
-transfers to the pregeometric kernel of Part~I, held at \catmark{D}; the
-first distinction is no longer identified with $S(x)\neq 0$, and the
-question of what, in a finite algebraic primitive, plays the role of
-first non-trivial structure is recorded as open rather than answered by
-relabelling. Two elements of the Variant-B analysis are retained at full
-force because they were never specific to the scalar. The first is the
-anti-circularity discipline itself: naming the primitive choice, and
-labelling it as a grammar rather than a proof, is what keeps the
-definitional circle from closing unnoticed, and D19 is written in
-exactly that register. The second is the terminology guard.
-
-\begin{governancebox}[Terminology Guard: $S(x)$ and ``Information'']
-The \UIDT\ information density $S(x)$ is not Shannon, semantic, Bateson,
-algorithmic, thermodynamic, or epistemic information. It is a real
-scalar effective field (D19). ``Information'' in \UIDT\ is the emergent
-counting-measure of difference, attaching at the first distinction.
-Under no reading is $S(x)$ identified with consciousness; that
-identification is a category error and is prohibited --- and the same
-prohibition applies, unchanged, to the kernel candidate of
-Part~I.\catmark{A}
-\end{governancebox}
-
-\subsection{The Corrected Ontological Sequence: Morphism as Formal Tool, Not Generator}
-\label{subsec:corrected-sequence}
-
-The developmental dialogue at one stage placed ``morphism'' within the
-vertical sequence of ontological stages, as though a morphism were a
-step in the genesis of being. The honesty audit corrected this, and the
-correction survives D19 unchanged because it is a statement about
-mathematics, not about the primitive. The corrected architecture rests
-on a separation between two axes: a vertical \emph{ontological} axis,
-the genesis of reality, and a horizontal \emph{formal} axis, the
-mathematical apparatus used to describe that genesis.\catmark{A}
-
-The decisive observation is elementary and therefore robust. A morphism
-$f\colon A\to B$ presupposes a distinguishable domain $A$ and a
-distinguishable codomain $B$; the very act of writing down a morphism
-requires that two distinct objects already exist to be related. A
-morphism therefore cannot be the generator of distinction, because it
-presupposes distinction.\catmark{A} It belongs to the formal
-representation layer, not to the primitive genesis layer. Information
-docks at the first distinction, as the emergent counting-measure of
-difference; morphisms dock at relations, as the computational interface.
-Neither is a constituent of the genesis.\catmark{A/E} Under D19 the
-vertical line is re-read with the kernel candidate at its base and the
-effective field far downstream; the placement of the formal apparatus on
-the horizontal axis is unchanged, and the major categorical and
-relational programmes --- topos theory, causal sets, constructor theory,
-QBism --- remain \emph{lenses}, not definitions of the
-primitive.\catmark{A/E}
-
-\subsection{Relations, Graph Discipline, and the Effective-Field Boundary}
-\label{subsec:coarse-geometry-eft}
-
-The graph stage of the vertical line is a \emph{theorem target}, not a
-completed construction: the honest form of the proposal is not ``the
-world is a graph'' but ``reconstructing an effective spacetime from a
-correlation network is a legitimate theorem target.''\catmark{D} No
-quantitative graph claim --- no count of edges, no degree distribution,
-no spectral property --- is admissible until nodes, edges, weights, and
-dynamics are explicitly defined; graph notation represents relational
-structure and is not that structure; and the schematic $I \to R(I)$ is
-toy notation, a recorded direction of construction, not a defined
-map.\catmark{E} The candidate primary observable
-$G(x,y) = \langle S(x)\,S(y)\rangle$ is recorded as a candidate whose
-canonical status must be confirmed against the ledger before any
-load-bearing use.\catmark{D} One prohibition carries Class~A force and
-is inherited by Part~II's boundary: there is no direct inference from
-phenomenology to graph structure.\catmark{A}
-
-Geometry, in this architecture, is a coarse-grained representation of
-underlying structure --- the pregeometric tradition's position, with the
-thermodynamic derivation of the Einstein equations from horizon entropy
-(Jacobson)~\cite{jacobson1995} and the later entropic-gravity programme~\cite{padmanabhan2010,verlinde2011,chirco2014} invoked as
-Stratum-II precedent that emergent geometry is a respectable position,
-not as a derivation imported into \UIDT.\catmark{E} Downstream of
-geometry lies the effective field regime, whose most important sentence
-must be stated plainly, because it is the honest boundary this Part
-inherits from v3.9 and now shares with Part~I: the framework couples the
-scalar $S(x)$ to a Yang--Mills sector that is \emph{already present}.
-The gauge fields are part of the effective description, not something
-the scalar has been shown to generate.\catmark{A}
-
-\begin{evidencebox}[The Effective-Field Boundary]{catA}
-\textbf{Regime.} The gauge sector is an effective-field-theory regime,
-in which $S(x)$ is coupled to an already-present Yang--Mills sector. It
-is not a generative regime.\catmark{A}\\[0.3em]
-\textbf{Negative result.} \UIDT\ does \emph{not} derive the
-Standard-Model gauge group $G_{\mathrm{SM}}$ from a structureless real
-scalar $S(x)\in\mathbb{R}$ --- and, per Part~I, no known route derives
-it from the kernel candidate either; on every known route it is
-selected, not forced.\catmark{A}\\[0.3em]
-\textbf{Consequence.} The transition from primitive to
-$G_{\mathrm{SM}}$ is a research programme, not a result; its
-localization (G1--G4), lower bounds, and candidate algebras are the
-subject of Part~I.\catmark{D}
-\end{evidencebox}
 
 \section{Numerical Epistemology}
 \label{sec:numerical-epistemology}
@@ -3399,10 +3116,10 @@ around which the strictest discipline is enforced. Its classification is
 fixed and not subject to upgrade: $\gamma$ is \catmark{A-}, calibrated.
 It is \emph{not} \catmark{A}, and it is not derived from
 renormalisation-group first principles.\catmark{A-} To be precise about
-what ``calibrated'' means: $\gamma$ is fixed by matching to the kinetic
-vacuum-expectation structure of $\Sx$ in the effective Lagrangian of
-\cref{eq:lagrangian} --- a calibration to an internal kinetic reference,
-not a derivation from a renormalisation-group flow. The public-facing
+what ``calibrated'' means: $\gamma$ is retained as the calibrated reference value recorded by the parameter ledger.
+Its historical kinetic-VEV motivation is documented in Appendix~\ref{app:scalar-museum};
+that motivation is not a first-principles derivation and is not imported as
+an active ontological premise. The public-facing
 description must read ``calibrated to the kinetic VEV,'' never ``derived
 from the kinetic VEV''; the latter phrasing violates the \catmark{A-}
 discipline and is corrected wherever it appears.\catmark{A-}
@@ -3456,7 +3173,7 @@ dimensionful quantities, contaminated by scale-setting conventions, but
 gradient-flow scale $t_0$ and the $\overline{\mathrm{MS}}$ scale where a
 perturbative bridge is appropriate, the candidate ratios include
 $m_{0^{++}}\sqrt{8t_0}$, $\chi_{\mathrm{top}}^{1/4}\sqrt{8t_0}$, and the
-$\Lambda_{\overline{\mathrm{MS}}}$-normalised forms.\catmark{B pending}
+$\Lambda_{\overline{\mathrm{MS}}}$-normalised forms.\catmark{B}\ (\emph{pending external verification})
 Every external ratio must arrive with a verified source and an explicit
 covariance model, because the ratios share inputs and are correlated;
 treating correlated ratios as independent would manufacture false
@@ -3466,7 +3183,7 @@ blind solver: post-hoc comparators only.\catmark{A} If a ratio fails to
 match, the first reading is a constraint on operator choice, truncation,
 or scale bridge; only after those are exhausted does a persistent
 mismatch rise to a serious tension against the framework as a
-whole.\catmark{A/D}
+whole.\catmark{A}\,\catmark{D}
 
 \subsection{\texorpdfstring{$\Delta$}{Delta}, the Glueball, and the L12 Separation}
 \label{subsec:delta-glueball-l12}
@@ -3614,7 +3331,7 @@ established. The Weinberg--Witten theorem~\cite{weinbergwitten1980} bars any int
 emergent metric as a composite spin-2 graviton in the naive flat-space
 sense --- consistent with, not a refutation of, the thermodynamic
 reading borrowed from Jacobson~\cite{jenkins2009,carlip2014} --- and the framework has not yet
-specified which loophole its construction exploits. Under D19 this
+specified which loophole its construction exploits. Under D20 this
 limitation acquires a sharper address: the dynamical origin of
 $\eta_{\mu\nu}$ is exactly the Part-II passage
 (\cref{subsec:no-go-points}), where it remains open.\catmark{D}
@@ -3660,7 +3377,7 @@ not (L8--L11).\catmark{A}
 The simplest conceivable way to extract a gauge field from a scalar is
 to identify the gauge potential with the gradient of the scalar. Its
 failure is fundamental, and it is stated with full precision because the
-framework treats it as a decisive result --- and because, under D19, it
+framework treats it as a decisive result --- and because, under D20, it
 is the first of the negative results on which the re-architecture
 rests (\cref{subsec:negative-results}).
 
@@ -3730,7 +3447,7 @@ Part~I now maps, with its localization of the obstruction to the
 multiplicity insertion (G1--G4), its corrected admissibility lattice,
 its lower bounds on any intermediate algebra, and its candidate
 programmes, all at their stated classes. The v3.9 fork --- strict scalar
-versus enriched primitive --- has been taken: D19 commits the research
+versus enriched primitive --- has been taken: D20 commits the research
 programme to the enriched arm, at \catmark{D}, with the strict-scalar
 arm's honest boundary preserved here as the permanent record of why.
 
@@ -3738,8 +3455,9 @@ arm's honest boundary preserved here as the permanent record of why.
 \label{sec:cosmological-calibration}
 
 \noindent Every cosmological quantity in this section is
-Category~\catmark{C}: calibrated to external data, never derived from
-$\Sx$, and never presented as resolving an observational tension. The
+Category~\catmark{C}: calibrated to external data, not derived from the
+pregeometric kernel or from the historical scalar ansatz, and never presented
+as resolving an observational tension. The
 framework's cosmological role is that of a consumer of empirical inputs,
 not a producer of predictions.\catmark{C}
 
@@ -3776,7 +3494,7 @@ supernova-inclusive combinations trace an equation of state that crosses
 $w=-1$ at intermediate redshift --- a phantom crossing that a single
 canonical real scalar cannot smoothly realise without a ghost
 instability, which is precisely why these are imported as external
-constraints rather than derived from $\Sx$.\catmark{C}
+constraints rather than derived from the kernel or the historical scalar ansatz.\catmark{C}
 
 \paragraph{Matter fluctuation amplitude $S_8$.}
 The parameter $S_8\equiv\sigma_8\sqrt{\Omega_m/0.3}$ is currently
@@ -3821,26 +3539,25 @@ effective regime as an exponentially expanding metric. The picture
 computes no inflationary observable, predicts no primordial spectrum,
 and does not touch the \catmark{C}\ cap.\catmark{E}
 
-\section{The Closed-Circle Sequence and Final Claims}
+\section{The Verification Return Path and Final Claims}
 \label{sec:closed-circle}
 
-\subsection{The Empirical-to-Ontology Return Path}
+\subsection{The Empirical-to-Ledger Return Path}
 \label{subsec:return-path}
 
-The architecture of this draft traces a single large loop, and it closes
-without inflation. One begins from the empirical and lattice stress
+The verification architecture traces a controlled return path from external
+comparators to the parameter ledger without promoting that path to ontology. One begins from the empirical and lattice stress
 tests of pure $\mathrm{SU}(3)$ (\catmark{B}\,pending their source and
 covariance audit); computes the framework-side quantities \emph{blindly}
 per \cref{prop:target-leakage} (\catmark{D}); compares \emph{post hoc}
-through an explicit uncertainty and covariance model; identifies
-structural successes and failures (\catmark{A/D}); and interprets last,
-at \catmark{E}. The closure is governed throughout by the two structural
+through an explicit uncertainty and covariance model; identifies structural audit facts \catmark{A} and open programme failures
+\catmark{D}; and interprets last, at \catmark{E}. The closure is governed throughout by the two structural
 limits this draft has doubled down on: the $d^2=0$ obstruction
 (\cref{prop:d2-obstruction}) and the localized
-$G_{\mathrm{SM}}$-origin gap (\cref{sec:g1g4}). The circle does not
-close on a triumph; it closes on a disciplined accounting, and closing
-it without evidence inflation is the whole achievement of the
-synthesis.\catmark{A}
+$G_{\mathrm{SM}}$-origin gap (\cref{sec:g1g4}). The return path terminates in a disciplined accounting rather than an
+ontological closure. Its auditability is a software and governance fact
+\catmark{A}; its physical interpretation remains bounded by the individual
+claim classes.
 
 \subsection{Final Allowed Claims}
 \label{sec:final-claims}
@@ -3850,7 +3567,7 @@ synthesis.\catmark{A}
 \begin{longtable}{p{0.10\textwidth} p{0.56\textwidth} p{0.10\textwidth} p{0.12\textwidth}}
 \caption{Final allowed claims, with conservative evidence classes and
 strata. Negative and open entries are included deliberately; classes are
-unchanged from v3.9 except where D19 renames the grammar (ONT-11).}
+unchanged from the incoming ledger; D20 changes architectural role only (ONT-11).}
 \label{tab:claims}\\
 \toprule
 \textbf{ID} & \textbf{Claim} & \textbf{Class} & \textbf{Stratum} \\
@@ -3862,17 +3579,17 @@ unchanged from v3.9 except where D19 renames the grammar (ONT-11).}
 \endhead
 \bottomrule
 \endfoot
-ONT-01 & $S(x)=0$ is a marked state, not the unmarked state. & \catmark{A} & II/III \\
+ONT-01 & In the historical scalar grammar, a vanishing field value is a marked state, not the unmarked state; this is retained only in Appendix~\ref{app:scalar-museum}. & \catmark{A} & II/III \\
 ONT-02 & A morphism $f\colon A\to B$ presupposes distinguishable $A,B$; morphism is a formal tool, not an ontological generator. & \catmark{A} & II/III \\
 ONT-03 & With $A=\dd S$, the curvature $F=\dd^2 S=0$ identically; the naive scalar-gradient route fails. & \catmark{A} & II \\
 ONT-04 & $\gamma = \GammaGeom$ is calibrated, never derived from RG first principles. & \catmark{A-} & III \\
 ONT-05 & $\Delta = \DeltaGap$: internally consistent, lattice-compatible; determination D18 (\cref{box:pi-override-delta}); not externally peer-confirmed, not derived. & \catmark{B} & I/III \\
 ONT-06 & $\kappa = \KappaRG$ exact framework input (fixed-point reading a candidate condition, untested by any defined flow); $5\kappa^2 = 3\lambda_S$ closes internally to $<10^{-14}$. The empirically calibrated reading $\kappa = 0.500 \pm 0.008$ is a separate, lower-class statement. & \catmark{A} & II \\
-ONT-07 & Pure $\mathrm{SU}(3)$ ratio comparisons are post-hoc stress tests with solver access disabled. & \catmark{B\,pending} & I/III \\
+ONT-07 & Pure $\mathrm{SU}(3)$ ratio comparisons are post-hoc stress tests with solver access disabled. & \catmark{B}\ (\emph{pending external verification}) & I/III \\
 ONT-08 & Primitive $\to\mathcal{A}\to G_{\mathrm{SM}}$ is the research programme; localization, lower bounds, and candidates are recorded in Part~I. & \catmark{D} & III \\
 ONT-09 & Cosmological parameters are calibrated, capped at~C; no tension is declared resolved. & \catmark{C} & I/III \\
 ONT-10 & The observer functor $F\colon V\to\mathrm{Obs}$ and the compression taxonomy are bounded interpretive frameworks. & \catmark{E} & III \\
-ONT-11 & Under PI Decision D19 (draft), $\Sx$ is demoted from primitive to effective information field; the kernel candidate of Part~I holds the primitive office at \catmark{D}. & \catmark{D} & III \\
+ONT-11 & Under PI Decision D20, Part~III is a verification/benchmark/ledger stratum rather than active ontology; the kernel candidate of Part~I remains a research programme at \catmark{D}. & \catmark{D} & III \\
 \end{longtable}
 }
 
@@ -3885,11 +3602,11 @@ are labelled as ambitions.\catmark{A}
 
 \begin{governancebox}[Final Forbidden Claims]
 \textbf{(1)} No derivation of the full Standard-Model gauge group
-$G_{\mathrm{SM}}$ --- from the scalar $S(x)$, and equally none from the
+$G_{\mathrm{SM}}$ --- from the historical scalar ansatz, and equally none from the
 kernel candidate: Part~I records selection, not derivation.\\[0.3em]
 \textbf{(2)} No derivation of the Born rule.\\[0.3em]
 \textbf{(3)} No solution of consciousness or qualia.\\[0.3em]
-\textbf{(4)} No validation of $S(x)$ or of the kernel by psychedelic,
+\textbf{(4)} No validation of the historical scalar ansatz or of the kernel by psychedelic,
 near-death, or mystical experience.\\[0.3em]
 \textbf{(5)} No use of $E_T$ as a threshold for life, death, ego,
 psychedelic states, or artificial general intelligence.\\[0.3em]
@@ -3942,7 +3659,7 @@ locally per proof-critical block; no global precision mutation; no
 proof-critical floating-point or rounding heuristics.\\[0.3em]
 \textbf{F3: Complete benchmark accounting.} Every external benchmark
 carries a verified source, an uncertainty budget, and a covariance
-model. \catmark{A/B\,pending}\\[0.3em]
+model. \catmark{A}\,\catmark{B}\ (\emph{pending external verification})\\[0.3em]
 \textbf{F4: L12 separation.} $\Delta$ is not identified with the
 $0^{++}$ glueball without operator matching (\cref{lim:L12}).\\[0.3em]
 \textbf{F5: $G_{\mathrm{SM}}$-origin honesty.} The gauge-origin gap is
@@ -3980,10 +3697,10 @@ rather than smoothed.}
 \bottomrule
 \endfoot
 T1 & $\gamma_{\mathrm{MC}} = \GammaMC$ versus calibrated $\gamma = \GammaGeom$. & \textbf{[consistent within MC variance]}; displayed separately, not merged by selection. & Reduce MC variance; non-leaking derivation of $\gamma$. \\
-T2 & $\Delta = \DeltaGap$ evidence class. & Would sit \catmark{E\,pending} absent external work; determination D18 sets \catmark{B}\ (\cref{box:pi-override-delta}). & External peer counter-signature. \\
+T2 & $\Delta = \DeltaGap$ evidence class. & Would sit \catmark{E}\ (\emph{pending bridge}) absent external work; determination D18 sets \catmark{B}\ (\cref{box:pi-override-delta}). & External peer counter-signature. \\
 T3 & $\Delta$ versus $0^{++}$ glueball identity. & \catmark{A}\ separation enforced (L12); identity unproven. & Operator matching. \\
-T4 & SVZ leading-order topology route versus lattice topology. & \catmark{A/B\,pending}; SVZ route is museum-only. & Audited lattice $\chi_{\mathrm{top}}$ ratios. \\
-T5 & $E_T$ observer/neural scale bridge. & Absent; $\sim$6--9 orders of magnitude. \catmark{A/E} & Derive or refute a principled scale bridge. \\
+T4 & SVZ leading-order topology route versus lattice topology. & \catmark{A}\,\catmark{B}\ (\emph{pending external verification}); SVZ route is museum-only. & Audited lattice $\chi_{\mathrm{top}}$ ratios. \\
+T5 & $E_T$ observer/neural scale bridge. & Absent; $\sim$6--9 orders of magnitude. \catmark{A}\,\catmark{E} & Derive or refute a principled scale bridge. \\
 T6 & Born-rule derivation. & Absent; borrowed from Stratum~II. \catmark{A} & Non-circular coarse-graining derivation. \\
 T7 & Cosmological tensions ($H_0$, $S_8$). & Capped at \catmark{C}; calibrated, \emph{not} closed. & Independent prediction, not fit. \\
 T8 & $[2,2,2]$ rejection (H2) rests on an unverified mass-degeneracy argument (\cref{tab:lattice}). & \catmark{D}; the weakest verdict in the corrected lattice; the conditional selection proposition inherits it. & Primary-source theorem or free-energy stability analysis settling the case either way. \\
@@ -4011,7 +3728,7 @@ be easier to admire and impossible to trust.\catmark{A}
 
 %============================== R1 CODA CONTENT ============================
 % Restores UIDT Ontology v3.9.9 (-006) Chapters 20-21 and the Adversary Test,
-% adapted to the D19 architecture. Dropped in error during P2-P4; recovered in
+% adapted to the D20 architecture. Dropped in error during P2-P4; recovered in
 % the R0 reading stage. Evidence classes unchanged from -006 throughout.
 %===========================================================================
 
@@ -4046,8 +3763,8 @@ the physics strata depends on it.\catmark{E} The proposal is narrow: not
 that all mathematical structures are physically real, but that one
 specific structure is offered as the candidate constituting structure.
 
-\begin{governancebox}[What D19 Does to the Structural-Realist Position]
-Under PI Decision D19 the identity of the candidate constituting
+\begin{governancebox}[What D20 Does to the Structural-Realist Position]
+Under PI Decision D20 the identity of the candidate constituting
 structure changes, and the position is thereby \emph{weakened}, not
 strengthened. In v3.9.x the candidate was the self-interacting vacuum
 information density of \cref{eq:lagrangian}: a concrete Lagrangian, with
@@ -4176,7 +3893,7 @@ Stratum-III reading at \catmark{E} and is not inherited by this
 framework.\catmark{E} A particularly close ontological cousin is the
 Carroll--Singh proposal~\cite{carrollsingh2018}, in which the only
 fundamental objects are a vector in Hilbert space and a Hamiltonian;
-\UIDT\ under D19 has moved \emph{toward} that austerity, replacing a
+\UIDT\ under D20 has moved \emph{toward} that austerity, replacing a
 concrete real-scalar field with a finite algebraic candidate, while
 sharing the aim of a maximally frugal primitive.
 
@@ -4234,7 +3951,7 @@ way.\catmark{E}
 
 The question ``why this universe and not another?'' is therefore
 answered, if at all, by structural minimality rather than by modal
-necessity or anthropic selection. Under D19 even that answer contracts:
+necessity or anthropic selection. Under D20 even that answer contracts:
 the minimality argument applies to the effective sector, and no
 minimality argument exists for the kernel. The spectral gap
 $\Delta = \DeltaGap$ remains, in this reading, a structurally determined
@@ -4276,7 +3993,7 @@ elegant.\catmark{E}
 \begin{evidencebox}[Philosophical Context: Standing Status]{catE}
 \textbf{This entire coda is \catmark{E}, Stratum~III,} except where a
 tag states otherwise. Structural realism is a position held, not a
-result; under D19 its candidate structure is a \catmark{D} research
+result; under D20 its candidate structure is a \catmark{D} research
 programme, which weakens the position rather than strengthening it.
 Minimality is a construction claim about the effective sector, not a
 uniqueness proof, and no minimality argument exists for the kernel.
@@ -4294,9 +4011,8 @@ alters any evidence class.\catmark{E}
 formalised attempt to break its own strongest-looking claim. The
 discipline of this edition requires that the test be run honestly, which
 means reporting where the adversary \emph{wins}, not staging a defence
-that quietly declares victory. This draft runs the test twice: once
-against the v3.9 claim it inherits, and once against the D19
-re-architecture it introduces.
+that quietly declares victory. This draft runs the test twice: once against the v3.9 scalar claim it
+inherits as history, and once against the D20 Phase-6 rebase.
 
 \subsection{First Round: The Origin of \texorpdfstring{$\gamma$}{gamma} (Limitation L4)}
 \label{subsec:adversary-gamma}
@@ -4322,8 +4038,8 @@ the evidence that no mechanism could have produced the split. A solver
 whose stopping criterion reads $\gamma$ is corrupt regardless of the
 elegance of its output.\catmark{A} As for the broader charge, the defence
 is partial and is recorded as partial. $\gamma$ is fixed by matching to
-the internal kinetic vacuum structure of $\Sx$
-(\cref{subsec:gamma-discipline}), independently of cosmology, so a
+a historical internal kinetic reference documented in
+Appendix~\ref{app:scalar-museum}, independently of cosmology, so a
 vacuum-energy calculation using $\gamma$ is not circular \emph{with
 respect to the cosmological data}; but this does not make $\gamma$
 derived. The honest verdict is that the adversarial argument
@@ -4333,11 +4049,11 @@ first-principles derivation but the structural separation of strata
 together with the anti-target-leakage rule
 (\cref{prop:target-leakage}).\catmark{A-}
 
-\subsection{Second Round: The D19 Re-Architecture}
+\subsection{Second Round: The D20 Phase-6 Rebase}
 \label{subsec:adversary-d19}
 
 \paragraph{Adversarial argument.}
-The re-architecture, says the adversary, is an evasion dressed as
+The Phase-6 rebase, says the adversary, is an evasion dressed as
 rigour. Faced with a primitive that cannot generate gauge structure, the
 framework has not solved the problem; it has renamed the primitive.
 Three charges follow. \emph{First}, the kernel is unestablished: Part~I
@@ -4391,7 +4107,7 @@ the adversary and stays quarantined; the rejection is methodological
 (backward construction), with primality as the evidence. The calibration
 of $\gamma$ is non-circular with respect to cosmology but is \emph{not} a
 derivation; $\gamma$ remains \catmark{A-}.\\[0.35em]
-\textbf{Round 2 (D19).} All three charges conceded: the kernel is an
+\textbf{Round 2 (D20).} All three charges conceded: the kernel is an
 unestablished \catmark{D} candidate; the inner-derivation route relocates
 the $d^2=0$ obstruction rather than closing it, and any ``foundation for
 gauge groups'' reading is withdrawn; the $N=6$ selection proposition is
@@ -4420,8 +4136,9 @@ reproducible from the following commands and artefacts. Nothing in this
 section constitutes an authorization.
 
 \paragraph{Numerical claims.}
-The only proof-critical arithmetic asserted in this draft is the exact
-internal coupling constraint of \cref{eq:lagrangian}. Working precision
+The exact coupling identity retained from the historical scalar/EFT record
+is reproduced from Appendix~\ref{app:scalar-museum}; it is an internal
+ledger relation, not a premise of the active ontology. Working precision
 is set locally, never globally:
 \begin{verbatim}
 python3 -c "from mpmath import mp,mpf; mp.dps=80; assert mp.dps==80
@@ -4443,13 +4160,15 @@ gives $\mathrm{Aut}(M_N(\mathbb{C})) = PU(N)$; and the rank budget for
 level-one simply-laced affine algebras yields $\mathrm{rank} = 1$.
 
 \paragraph{Formal corpus.}
-The Lean~4 statements quoted in Part~I are transliterations of the
-repository sources at commit \texttt{61bc24da}. The audit reported in
+The Lean~4 statements quoted in Part~I remain a historical snapshot of the
+repository sources at commit \texttt{61bc24da}; MSS-000 does not claim that
+this manuscript excerpt is the live repository bridge. The audit reported in
 \cref{subsec:formalization-status} is a \emph{static structural audit}
 of that snapshot: proof-obligation counts are from a whole-word scan for
 \texttt{sorry}; no \texttt{lake build} was executed, and no build result
-is asserted anywhere in this draft. Reproduction requires fetching the
-stated commit and repeating the scan; Findings F1--F3 are stated so that
+is asserted anywhere in this draft. Reproduction of that historical audit requires fetching the stated commit
+and repeating the scan; live bridge reconciliation is a separate
+post-application executor obligation; Findings F1--F3 are stated so that
 they can be checked, and refuted, at that commit.
 
 \paragraph{Empirical values.}
@@ -4507,7 +4226,7 @@ evidence distribution and is not a substitute for them.
 \centering\scriptsize
 \begin{tabular}{@{}p{2.5cm}p{3.4cm}p{3.2cm}p{3.4cm}@{}}
 \toprule
-Class & Part I & Part II & Part III \\
+Class & Part I & Part II & Part III ledger \\
 \midrule
 \catmark{A} (proof/identity/audit fact) & K-02, G-01--G-04, L-01, L-02 & O-01, O-03, Q-01, E-01, P-01 & ONT-01--ONT-03, ONT-06 \\
 \catmark{A-} (calibrated) & --- & --- & ONT-04 ($\gamma$) \\
@@ -4572,6 +4291,33 @@ audit output is advisory only (AI\_AUDIT\_POLICY Sec.~1, Gate~F8).
 \rule{6cm}{0.4pt}\qquad\textit{Date:}\ \rule{2.5cm}{0.4pt}
 \end{pioverridebox}
 
+\section{Ledger Record: PI Decision D20}
+\label{sec:d20-ledger-record}
+
+\begin{pioverridebox}[D20 --- Ledger Record: Architectural Reassignment]
+\textbf{Decision.} The quantitative content of the former scalar/EFT Part~III
+loses its role as active ontology and is reorganized as a verification,
+benchmark, and parameter-ledger stratum. The historical scalar model is
+retained in Appendix~\ref{app:scalar-museum} and is not imported into the
+active architecture. The finite algebraic pregeometric kernel remains a
+candidate under investigation at evidence class D.
+
+\textbf{Binding conditions.}
+(i)~Part~I remains a formal research programme at evidence class D, not a
+theorem corpus; no machine-checked statement upgrades a physics claim without
+separate governance.
+(ii)~No Standard-Model-like block partition is hard-coded into a core formal
+structure; partitions enter as inserted candidate instances under GLBC.
+(iii)~All incoming evidence classes remain unchanged exactly as recorded in
+the preceding D19 ledger entry; D20 changes architectural role only.
+(iv)~PI-DELTA-P6, PI-ET-P6, PI-MUSEUM, and P2 remain separate decisions.
+
+\textbf{Application boundary.} This executor candidate is subject to a
+pre-application audit against blob \texttt{601cc57d}. Claude Desktop may
+recommend GO or HOLD. Explicit PI GO is required before the single-writer
+application. Final integration and merge remain PI-only.
+\end{pioverridebox}
+
 \section*{Open Obligations Carried Forward}
 \addcontentsline{toc}{section}{Open Obligations Carried Forward}
 
@@ -4600,6 +4346,328 @@ tensions, and the origin of $G_{\mathrm{SM}}$ remain exactly where the
 tension ledger (\cref{tab:tensions}) places them: unresolved, displayed,
 and available for falsification.
 \end{enumerate}
+
+
+\clearpage
+\appendix
+\part*{Historical Appendix: Non-Imported Scalar/EFT Museum Record}
+\addcontentsline{toc}{part}{Historical Appendix: Non-Imported Scalar/EFT Museum Record}
+
+\begin{governancebox}[Museum Route B --- Reversible Retention under D20]
+The material in this appendix is preserved to prevent silent loss, support
+regression audit, and document the superseded v3.9/D19 scalar and EFT grammar.
+It is not imported into Parts~I--III. Occurrences of
+$\LegacySx$, $\partial_\mu S$, $\eta_{\mu\nu}$, the effective metric ansatz,
+the scalar potential, or scalar correlators below are historical model content,
+not active primitives, operators, acceptance conditions, or derivations. D20
+does not authorize deletion; a future PI-MUSEUM decision may retain, relocate,
+or remove this record through a separately audited patch.
+\end{governancebox}
+
+\section{Historical Effective-Scalar Axiomatics}
+\label{sec:axiomatics}
+\label{app:scalar-museum}
+
+\noindent The v3.9 effective-sector record that associated the spectral gap $\Delta$, the
+calibrated invariant $\gamma$, the coupling $\kappa$, and the
+self-coupling $\lambda_S$ owes the reader the Lagrangian in which those
+quantities actually live. This section preserves the four historical axioms, the effective
+Lagrangian, and the dimensional bookkeeping for audit. None of these equations
+is imported as a premise of the active Phase-6 architecture.
+One axiom --- and only one --- changes under D19; the change is stated
+first and in full.
+
+\subsection{The Four Axioms in Demoted Form}
+\label{subsec:four-axioms}
+
+\begin{axiom}[Historical Effective-Field Postulate (D19 record)]
+\label{ax:primacy}
+There exists a real scalar effective field $\LegacySx$, the vacuum information
+density, of canonical mass dimension $[\LegacySx]=1$. Under PI Decision D19
+(draft), $\LegacySx$ is \emph{not} an ontological primitive: it is postulated
+as the macroscopic, order-parameter-level description in which the
+kernel programme's continuum limit (\cref{sec:thermo-passage}) is
+expressed, and within the grammar of this Part it is the sole dynamical
+scalar degree of freedom of the effective sector. The v3.9 reading of
+this axiom --- $\LegacySx$ as sole fundamental degree of freedom, with all
+structure emergent from its dynamics (Variant~B) --- is recorded in
+\cref{subsec:variant-b} as the superseded grammar.\catmark{A}\,\catmark{E}
+\end{axiom}
+
+\begin{axiom}[Gauge-Invariant Self-Interaction]
+\label{ax:gauge}
+The dynamics of $\LegacySx$ are governed by a Lagrangian density
+$\mathcal{L}_{\UIDT}$ invariant under $\mathrm{SU}(3)$ gauge
+transformations and respecting vacuum stability ($V''(v)>0$). It is an
+effective field theory valid below a cutoff $\Lambda_{\UIDT}$. The
+non-minimal coupling
+$(\bar\kappa/\Lambda_{\UIDT})\,S\,F_{\mu\nu}^a F^{a\mu\nu}$ has mass
+dimension~5 and is therefore not renormalisable by strict power
+counting; its validity is confined to the EFT domain (Limitation~L7). A
+full non-perturbative UV completion is an open research
+question.\catmark{A}
+\end{axiom}
+
+\noindent The minimal realisation satisfying \cref{ax:gauge} is the
+effective Lagrangian
+\begin{equation}
+ \mathcal{L}_{\UIDT}
+ = -\tfrac{1}{4}F_{\mu\nu}^a F^{a\mu\nu}
+ + \tfrac{1}{2}(\partial_\mu S)(\partial^\mu S)
+ - \tfrac{1}{2}\mu^2 S^2
+ - \frac{\lambda_S}{4!}S^4
+ + \frac{\bar\kappa}{\Lambda_{\UIDT}}\,S\,F_{\mu\nu}^a F^{a\mu\nu},
+ \label{eq:lagrangian}
+\end{equation}
+where $\bar\kappa$ is the dimensionless EFT-normalised non-minimal
+gauge--scalar coupling and $\lambda_S$ the scalar self-coupling; the
+dimension-5 operator carries the dimensionful prefactor
+$\bar\kappa/\Lambda_{\UIDT}$, in agreement with
+\cref{tab:eft-dimensions}. Because $S$ is a real gauge singlet, its
+kinetic term uses the ordinary derivative $\partial_\mu$. In the
+framework's ledger and renormalisation-group statements this
+dimensionless coefficient is written simply $\kappa$ (so
+$\kappa\equiv\bar\kappa$, with ledger value $\kappa=\kappaVal$). The
+exact internal coupling constraint of the framework is
+$5\kappa^2 = 3\lambda_S$ (a candidate fixed-point condition, untested by
+any defined functional renormalisation-group flow), which for
+$\kappa = \tfrac{1}{2}$ gives the exact value $\lambda_S = \lambdaS$ and
+the vacuum expectation value $v = \vVEV$; like $\lambda_S$, $v$ is fixed
+by this exact constraint rather than independently measured, which is
+why it carries no uncertainty. This constraint closes to a residual
+below $10^{-14}$ at eighty-digit working precision
+(\cref{prop:target-leakage} discipline applies: the closure is an
+internal-consistency certificate, not an external agreement).
+
+\begin{table}[H]
+\scriptsize
+\caption{Dimensional and EFT status of the terms entering
+\cref{ax:gauge}. The dimension-5 operator marks the sector as an
+effective field theory.}
+\label{tab:eft-dimensions}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular*}{\textwidth}{@{}p{0.31\textwidth}@{\extracolsep{\fill}}ccp{0.34\textwidth}@{}}
+\toprule
+\textbf{Term} & \textbf{Op.\ dim.} & \textbf{Coupling dim.} & \textbf{Renormalisability} \\
+\midrule
+$F_{\mu\nu}^a F^{a\mu\nu}$ & $4$ & dimensionless & Strictly renormalisable Yang--Mills kinetic term \catmark{A} \\
+$(\partial_\mu S)(\partial^\mu S)$ & $4$ & dimensionless & Canonical scalar kinetic term \catmark{A} \\
+$\mu^2 S^2$ & $2$ & $+2$ & Relevant scalar mass operator \catmark{A} \\
+$\lambda_S S^4$ & $4$ & dimensionless & Power-counting renormalisable self-interaction \catmark{A} \\
+$(\bar\kappa/\Lambda_{\UIDT})\,S F_{\mu\nu}^a F^{a\mu\nu}$ & $5$ & $-1$ & Non-renormalisable; EFT-only below $\Lambda_{\UIDT}$ \catmark{A} \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\begin{axiom}[Geometric Emergence]
+\label{ax:emergence}
+The effective spacetime metric $g_{\mu\nu}^{\mathrm{eff}}$ is not
+fundamental but a derived quantity determined by the vacuum
+configuration of $\LegacySx$. A candidate parametrisation is
+\begin{equation}
+ g_{\mu\nu}^{\mathrm{eff}} = \eta_{\mu\nu}
+ + \alpha\,\partial_\mu\LegacySx\,\partial_\nu\LegacySx
+ + \beta\,\LegacySx^2\,\eta_{\mu\nu},
+ \label{eq:metric-emergence}
+\end{equation}
+with $\eta_{\mu\nu}$ the Minkowski metric and $\alpha,\beta$
+dimensionful constants ($[\alpha]=-4$, $[\beta]=-2$) fixed by the
+requirement that the emergent geometry reproduce general relativity in
+the low-energy limit. The specific form of \cref{eq:metric-emergence}
+and the values of $\alpha,\beta$ are model-dependent and carried at
+predictive status; under D19 this axiom describes emergence \emph{within
+the effective stratum}, with the deeper origin of $\eta_{\mu\nu}$
+deferred to the Part-II passage and Limitation~L13.\catmark{D}
+\end{axiom}
+
+\begin{axiom}[Falsifiability]
+\label{ax:falsifiability}
+The theory defines a finite set of experimentally testable predictions
+(\cref{sec:falsification-tension}), each with an explicit falsification
+threshold. If any critical prediction is excluded at the specified
+confidence level, the corresponding \UIDT\ mapping, calibration, or
+prediction must be revised or abandoned.\catmark{A}
+\end{axiom}
+
+\begin{remark}[Falsifiability and critical rationalism]
+\label{rem:popper}
+Including falsifiability as a formal axiom is a methodological
+commitment to the critical-rationalist tradition: a theory that cannot
+in principle be wrong has no claim to being right.
+\cref{ax:falsifiability} operationalises this by assigning every central
+prediction a quantitative falsification threshold. The axiom is not a
+physical law but a meta-theoretical commitment to epistemic honesty,
+continuous with the principle that internal consistency is not external
+confirmation (\cref{subsec:closure-vs-agreement}).
+\end{remark}
+
+\begin{evidencebox}[Historical Effective-Scalar Record: Preserved Status]{catA}
+\textbf{Axioms.} Effective-Field Postulate \catmark{A}\,\catmark{E} (D19 form);
+Gauge-Invariant Self-Interaction \catmark{A} (EFT, dimension-5
+operator); Geometric Emergence \catmark{D} (model-dependent metric);
+Falsifiability \catmark{A} (meta-theoretical).\\[0.3em]
+\textbf{Lagrangian.} \cref{eq:lagrangian} with $\kappa=\kappaVal$,
+$\lambda_S=\lambdaS$, $v=\vVEV$; internal coupling constraint
+$5\kappa^2=3\lambda_S$ closes internally to $<10^{-14}$ at eighty
+digits.\\[0.3em]
+\textbf{Status.} The Lagrangian is an effective field theory below
+$\Lambda_{\UIDT}$; renormalisability is explicit per
+\cref{tab:eft-dimensions}; the gauge sector is coupled, not generated
+(\cref{subsec:coarse-geometry-eft}).
+\end{evidencebox}
+
+\section{Unmarked State, First Distinction, and Superseded Variant B (Historical Record)}
+\label{sec:unmarked-distinction-sx}
+
+\subsection{Why \texorpdfstring{$S(x)=0$}{S(x)=0} Is Not the Unmarked State}
+\label{subsec:sx-zero-not-unmarked}
+
+A foundational theory must be exact about its own beginning, and the
+most common error at the beginning is to confuse \emph{absence of value}
+with \emph{absence of structure}. \UIDT\ takes the unmarked state,
+``nothing'' in the precise sense of Spencer-Brown's calculus of
+distinctions, as the condition in which no field-value assignment exists
+at all. It is essential to see that this is \emph{not} the same as the
+field configuration $S(x) = 0$.\catmark{A}
+
+The point is structural, not rhetorical. To write $S(x) = 0$ is already
+to presuppose a great deal: that there is a field $S$; that there is a
+domain indexed by $x$ over which it is defined; that evaluation of the
+field at a point is a meaningful operation; and, most importantly, that
+the value $0$ is \emph{distinguishable} from other possible values. A
+vanishing field value is a marked state: it is the assertion ``the field
+here is zero,'' and an assertion of that form lives entirely within an
+already-constituted system of field, domain, and distinguishability. The
+unmarked state precedes all of this. It is not the number zero; it is
+the absence of the apparatus within which numbers could be
+assigned.\catmark{A}
+
+Because the unmarked state is not a physical configuration, it cannot be
+assigned a physical history, a temperature, a fluctuation spectrum, or a
+cosmological epoch. One cannot say that ``in the beginning $S(x)=0$ and
+then it became non-zero,'' because that sentence smuggles a temporal
+ordering and a pre-existing field into a condition that, by
+construction, contains neither. The framework explicitly refuses
+cosmological, theological, and metaphysical elaborations of the unmarked
+state. It is a logical boundary, not a primordial substance, and the
+prohibition on treating it as a substance is as binding as any numerical
+constraint in the theory.\catmark{A} The result is unaffected by D19:
+it concerned the grammar of beginnings, not the identity of the
+primitive, and it survives the primitive's replacement intact.
+
+\subsection{Variant~B, Recorded and Superseded}
+\label{subsec:variant-b}
+
+The relationship between the first distinction and the scalar field
+$S(x)$ admits two readings, and the developmental record was right to
+treat the choice between them as a potential source of circularity. Under
+Variant~A, the distinction is strictly prior: first-distinction, then
+$S(x)$, then relations, then geometry. Under Variant~B, the field
+$S(x)$ is itself the primitive, and the first distinction is identified
+with its first non-trivial realisation, $S(x)\neq 0$. The v3.9
+manuscript adopted Variant~B as a matter of \emph{internal ontological
+grammar} --- explicitly not as a physical proof that the field is the
+unique primitive of nature --- and stamped the choice \catmark{E}\ as an
+interpretive commitment.\catmark{A}\,\catmark{E}
+
+Under D19 that grammar is superseded. The office of candidate primitive
+transfers to the pregeometric kernel of Part~I, held at \catmark{D}; the
+first distinction is no longer identified with $S(x)\neq 0$, and the
+question of what, in a finite algebraic primitive, plays the role of
+first non-trivial structure is recorded as open rather than answered by
+relabelling. Two elements of the Variant-B analysis are retained at full
+force because they were never specific to the scalar. The first is the
+anti-circularity discipline itself: naming the primitive choice, and
+labelling it as a grammar rather than a proof, is what keeps the
+definitional circle from closing unnoticed, and D19 is written in
+exactly that register. The second is the terminology guard.
+
+\begin{governancebox}[Terminology Guard: $S(x)$ and ``Information'']
+The \UIDT\ information density $S(x)$ is not Shannon, semantic, Bateson,
+algorithmic, thermodynamic, or epistemic information. It is a real
+scalar effective field (D19). ``Information'' in \UIDT\ is the emergent
+counting-measure of difference, attaching at the first distinction.
+Under no reading is $S(x)$ identified with consciousness; that
+identification is a category error and is prohibited --- and the same
+prohibition applies, unchanged, to the kernel candidate of
+Part~I.\catmark{A}
+\end{governancebox}
+
+\subsection{The Corrected Ontological Sequence: Morphism as Formal Tool, Not Generator}
+\label{subsec:corrected-sequence}
+
+The developmental dialogue at one stage placed ``morphism'' within the
+vertical sequence of ontological stages, as though a morphism were a
+step in the genesis of being. The honesty audit corrected this, and the
+correction survives D19 unchanged because it is a statement about
+mathematics, not about the primitive. The corrected architecture rests
+on a separation between two axes: a vertical \emph{ontological} axis,
+the genesis of reality, and a horizontal \emph{formal} axis, the
+mathematical apparatus used to describe that genesis.\catmark{A}
+
+The decisive observation is elementary and therefore robust. A morphism
+$f\colon A\to B$ presupposes a distinguishable domain $A$ and a
+distinguishable codomain $B$; the very act of writing down a morphism
+requires that two distinct objects already exist to be related. A
+morphism therefore cannot be the generator of distinction, because it
+presupposes distinction.\catmark{A} It belongs to the formal
+representation layer, not to the primitive genesis layer. Information
+docks at the first distinction, as the emergent counting-measure of
+difference; morphisms dock at relations, as the computational interface.
+Neither is a constituent of the genesis.\catmark{A}\,\catmark{E} Under D19 the
+vertical line is re-read with the kernel candidate at its base and the
+effective field far downstream; the placement of the formal apparatus on
+the horizontal axis is unchanged, and the major categorical and
+relational programmes --- topos theory, causal sets, constructor theory,
+QBism --- remain \emph{lenses}, not definitions of the
+primitive.\catmark{A}\,\catmark{E}
+
+\subsection{Relations, Graph Discipline, and the Effective-Field Boundary}
+\label{subsec:coarse-geometry-eft}
+
+The graph stage of the vertical line is a \emph{theorem target}, not a
+completed construction: the honest form of the proposal is not ``the
+world is a graph'' but ``reconstructing an effective spacetime from a
+correlation network is a legitimate theorem target.''\catmark{D} No
+quantitative graph claim --- no count of edges, no degree distribution,
+no spectral property --- is admissible until nodes, edges, weights, and
+dynamics are explicitly defined; graph notation represents relational
+structure and is not that structure; and the schematic $I \to R(I)$ is
+toy notation, a recorded direction of construction, not a defined
+map.\catmark{E} The candidate primary observable
+$G(x,y) = \langle S(x)\,S(y)\rangle$ is recorded as a candidate whose
+canonical status must be confirmed against the ledger before any
+load-bearing use.\catmark{D} One prohibition carries Class~A force and
+is inherited by Part~II's boundary: there is no direct inference from
+phenomenology to graph structure.\catmark{A}
+
+Geometry, in this architecture, is a coarse-grained representation of
+underlying structure --- the pregeometric tradition's position, with the
+thermodynamic derivation of the Einstein equations from horizon entropy
+(Jacobson)~\cite{jacobson1995} and the later entropic-gravity programme~\cite{padmanabhan2010,verlinde2011,chirco2014} invoked as
+Stratum-II precedent that emergent geometry is a respectable position,
+not as a derivation imported into \UIDT.\catmark{E} Downstream of
+geometry lies the effective field regime, whose most important sentence
+must be stated plainly, because it is the honest boundary this Part
+inherits from v3.9 and now shares with Part~I: the framework couples the
+scalar $S(x)$ to a Yang--Mills sector that is \emph{already present}.
+The gauge fields are part of the effective description, not something
+the scalar has been shown to generate.\catmark{A}
+
+\begin{evidencebox}[Historical Effective-Field Boundary]{catA}
+\textbf{Regime.} The gauge sector is an effective-field-theory regime,
+in which $S(x)$ is coupled to an already-present Yang--Mills sector. It
+is not a generative regime.\catmark{A}\\[0.3em]
+\textbf{Negative result.} \UIDT\ does \emph{not} derive the
+Standard-Model gauge group $G_{\mathrm{SM}}$ from a structureless real
+scalar $S(x)\in\mathbb{R}$ --- and, per Part~I, no known route derives
+it from the kernel candidate either; on every known route it is
+selected, not forced.\catmark{A}\\[0.3em]
+\textbf{Consequence.} The transition from primitive to
+$G_{\mathrm{SM}}$ is a research programme, not a result; its
+localization (G1--G4), lower bounds, and candidate algebras are the
+subject of Part~I.\catmark{D}
+\end{evidencebox}
 
 \newpage
 
