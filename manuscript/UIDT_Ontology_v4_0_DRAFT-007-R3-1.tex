@@ -1521,6 +1521,68 @@ vacuum would arise as a stable attractor rather than as an axiom. The
 programme is stated here in falsification-disciplined form; none of its
 attractor claims is established.
 
+\subsection{The Matrix Arena and the Exact Classical Comparison}
+\label{subsec:matrix-arena}
+
+\paragraph{External model.}
+A concrete arena in which a block partition is a representation-theoretic
+object is the three-matrix Yang--Mills--Chern--Simons model
+\cite{azuma2004}, with Hermitian $N\times N$ matrices and action
+\begin{equation}
+\label{eq:ymcs-action}
+S[X]=N\,\operatorname{Tr}\!\left(
+-\frac14[X_a,X_b][X_a,X_b]
++\frac{2i\alpha}{3}\,\varepsilon_{abc}X_aX_bX_c
+\right).
+\end{equation}
+This action is an external Stratum-II input.\catmark{B}
+
+\paragraph{Stationary branches, not an exhaustive classification.}
+Direct variation of \cref{eq:ymcs-action} gives
+\begin{equation}
+\label{eq:ymcs-eom}
+[X_b,[X_b,X_a]]+i\alpha\,\varepsilon_{abc}[X_b,X_c]=0.
+\end{equation}
+Consequently, $X_a=\alpha L_a$ is a stationary branch whenever
+$[L_a,L_b]=i\varepsilon_{abc}L_c$; mutually commuting triples form
+another stationary branch. These statements identify named branches.
+They do not classify every stationary point of the model.\catmark{A}
+
+\paragraph{Exact action comparison.}
+For the representation branch, substitution and the quadratic Casimir
+identity give
+\begin{equation}
+\label{eq:ymcs-classical-value}
+S[\alpha L]= -\frac{N\alpha^4}{6}\operatorname{Tr}(L_aL_a).
+\end{equation}
+For one irreducible representation of dimension $N$,
+\(
+\operatorname{Tr}(L_aL_a)=N(N^2-1)/4
+\).
+For $k$ equal irreducible blocks of dimension $n=N/k$,
+\(
+\operatorname{Tr}(L_aL_a)=N(n^2-1)/4
+\).
+The exact finite-$N$ magnitude ratio is therefore
+\begin{equation}
+\label{eq:ymcs-equal-block-ratio}
+\frac{|S_k|}{|S_1|}
+=\frac{n^2-1}{N^2-1}
+=\frac{N^2-k^2}{k^2(N^2-1)},
+\end{equation}
+which approaches $1/k^2$ only at fixed $k$ as $N\to\infty$. Mutually
+commuting triples have $S=0$. The equal-block representation branch is
+therefore ordered at tree level by the exact finite-$N$ expression; this
+is not an all-orders no-go theorem, a global classification of extrema,
+or a derivation of a Standard-Model-like partition.\catmark{A}
+
+\paragraph{UIDT boundary.}
+The algebra above is exact under the displayed assumptions. External
+phase-structure claims require primary numerical sources, while the use
+of the comparison as a boundary on the UIDT partition-selection
+programme remains an internal \catmark{D} interpretation. No UIDT target
+value enters the action, initialization, detector, or conclusion.
+
 \subsection{Matrix Condensation and the Wedderburn Moduli Problem}
 \label{subsec:attractor-condensation}
 
