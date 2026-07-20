@@ -128,6 +128,22 @@
 
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage{eso-pic}
+
+% Museum-appendix watermark: activated only after \appendix (see below), applies
+% diagonally to every page of the Historical Appendix to prevent a reader from
+% mistaking demoted, non-imported material for active ontology.
+\newtoggle{museumwatermark}
+\togglefalse{museumwatermark}
+\AddToShipoutPictureBG{%
+  \iftoggle{museumwatermark}{%
+    \AtPageCenter{%
+      \makebox[0pt]{\rotatebox{55}{\scalebox{2.4}{%
+        \color[gray]{0.85}\sffamily\bfseries
+        MUSEUM ROUTE B --- NOT ACTIVE ONTOLOGY}}}%
+    }%
+  }{}%
+}
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,positioning,shadows}
@@ -4773,6 +4789,7 @@ and available for falsification.
 
 \clearpage
 \appendix
+\toggletrue{museumwatermark}
 \part*{Historical Appendix: Non-Imported Scalar/EFT Museum Record}
 \addcontentsline{toc}{part}{Historical Appendix: Non-Imported Scalar/EFT Museum Record}
 
