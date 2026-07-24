@@ -1,0 +1,60 @@
+name: Manuscript provenance
+
+on:
+  pull_request:
+    paths:
+      - "environment/**"
+      - "scripts/build_manuscript.sh"
+      - "verification/tests/fixtures/prov002/**"
+      - "verification/tests/test_prov002_locks.py"
+      - ".github/workflows/manuscript-provenance.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static-lock-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify immutable locks and source identity
+        run: python verification/tests/test_prov002_locks.py -v
+
+  container-fixtures:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Positive fixture must compile
+        run: |
+          scripts/build_manuscript.sh \
+            --source verification/tests/fixtures/prov002/positive.tex \
+            --output "${RUNNER_TEMP}/prov002-positive"
+      - name: Negative fixture must fail
+        run: |
+          if scripts/build_manuscript.sh \
+            --source verification/tests/fixtures/prov002/negative.tex \
+            --output "${RUNNER_TEMP}/prov002-negative"; then
+            echo "Negative fixture unexpectedly compiled." >&2
+            exit 1
+          fi
+      - name: Locked manuscript build
+        run: |
+          scripts/build_manuscript.sh \
+            --output "${RUNNER_TEMP}/prov002-manuscript"
+      - name: Upload environment-qualified reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prov002-build-reports
+          path: |
+            ${{ runner.temp }}/prov002-positive/report.json
+            ${{ runner.temp }}/prov002-negative/report.json
+            ${{ runner.temp }}/prov002-manuscript/report.json

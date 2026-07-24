@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "status": "environment-qualified",
+  "registry": "registry.gitlab.com",
+  "repository": "islandoftex/images/texlive",
+  "tag": "TL2026-2026-07-19-full",
+  "index_digest": "sha256:1a1b8588cd73ac33fe1d7722c4065b3e6eaa3f3a20fb54d2934e42310264d134",
+  "platform_manifest_digest": "sha256:dac049f9abef293db8317a3f4b8398330c2a402065c2b91db00859be4bde573a",
+  "config_digest": "sha256:c30ab0639856ec3ca10289d2cb9770ba0fe2d59fc511011fe8475fffe1c884f6",
+  "architecture": "amd64",
+  "os": "linux",
+  "image_reference": "registry.gitlab.com/islandoftex/images/texlive@sha256:dac049f9abef293db8317a3f4b8398330c2a402065c2b91db00859be4bde573a",
+  "inspection_timestamp_utc": "2026-07-23T23:50:52Z",
+  "image_created_utc": "2026-07-19T05:48:41.65066882Z",
+  "package_lock": {
+    "kind": "immutable-container-manifest",
+    "scheme": "full",
+    "tex_live_release": "2026",
+    "pdftex": "3.141592653-2.6-1.40.29",
+    "kpathsea": "6.4.2",
+    "biber": "2.21",
+    "xindy": "2.5.1",
+    "luatex": "1.24.0",
+    "manifest_digest": "sha256:dac049f9abef293db8317a3f4b8398330c2a402065c2b91db00859be4bde573a",
+    "config_digest": "sha256:c30ab0639856ec3ca10289d2cb9770ba0fe2d59fc511011fe8475fffe1c884f6"
+  },
+  "provenance": {
+    "gitlab_project_id": 12498082,
+    "gitlab_registry_repository_id": 573747,
+    "pipeline_id": 2688016554,
+    "pipeline_iid": 1070,
+    "pipeline_commit": "ba6770beb91ad1a2b001ac5110243a19bf8a772b",
+    "build_job_id": 15417577473,
+    "source_repository": "https://gitlab.com/islandoftex/images/texlive",
+    "tag_api": "https://gitlab.com/api/v4/registry/repositories/573747/tags/TL2026-2026-07-19-full",
+    "build_log": "https://gitlab.com/islandoftex/images/texlive/-/jobs/15417577473/raw"
+  },
+  "limitations": [
+    "The immutable container manifest locks the TeX package set; it does not validate manuscript scientific claims.",
+    "The local audit host did not provide Docker, so the container build remains environment-qualified until a recorded runner executes it."
+  ]
+}

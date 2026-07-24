@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "repository": "badbugsarts-hue/UIDT-Framework-V3.9-UNIVERSUM_SIM",
+  "branch": "mss000-rebase-v2",
+  "commit": "c8daae119b8699e665c462c06e8580b6e34f831a",
+  "path": "manuscript/Relational_Algebraic_Pregeometry_v4_0_DRAFT-001.tex",
+  "git_blob_sha1": "c3197df2b927dd4dd76296bafe21ffea1283d03a",
+  "sha256": "44001472703afb2b469774d59de2faa210abcdfa8b96f82c0f71808cd99136ac",
+  "source_role": "Chain-of-Verification boundary reference",
+  "claim_boundary": "Source identity only; no scientific or canonical-status inference."
+}
