@@ -2,88 +2,45 @@ name: Scientific Integrity Gates
 
 on:
   pull_request:
-    branches: [ "master" ]
+    branches:
+      - master
+
+permissions:
+  contents: read
 
 jobs:
-  evidence-tags:
-    name: Check Evidence Tags
+  scientific-integrity:
+    name: Scientific Integrity (Fail Closed)
     runs-on: ubuntu-latest
+    env:
+      BASE_SHA: ${{ github.event.pull_request.base.sha }}
+      HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      PR_BODY: ${{ github.event.pull_request.body }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out complete PR history
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: "3.12"
 
-      - name: Run evidence-tag check
+      - name: Install test dependency
+        run: python -m pip install pytest
+
+      - name: Run fail-closed range tests
+        run: python -m pytest verification/tests/test_integrity_gates.py -v
+
+      - name: Check evidence tags on exact PR range
         run: python verification/scripts/check_evidence_tags.py
 
-  gamma-targeting:
-    name: Check No Gamma Targeting
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Run gamma-targeting check
+      - name: Check target leakage on exact PR range
         run: python verification/scripts/check_no_gamma_targeting.py
 
-  merge-requirements:
-    name: Check Merge Requirements
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Run merge-requirements check
-        env:
-          PR_BODY: ${{ github.event.pull_request.body }}
+      - name: Check merge requirements on exact PR range
         run: python verification/scripts/check_merge_requirements.py
 
-  protected-paths:
-    name: Check Protected Paths
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Run protected-paths check
+      - name: Check protected paths on exact PR range
         run: python verification/scripts/check_protected_paths.py
-
-  integrity-tests:
-    name: Run Integrity Gate Tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install pytest
-        run: pip install pytest
-
-      - name: Run tests
-        run: pytest verification/tests/test_integrity_gates.py -v

@@ -1,151 +1,100 @@
 #!/usr/bin/env python3
-"""check_evidence_tags.py — GOV-001 Scientific Integrity Gate
+"""Block forbidden evidence classes and target-adjacent strong classes."""
 
-Block any diff that:
-  1. Introduces [A], [A-], or [B] within three lines of target literals
-     (16.339, 49/3, 49 / 3, 17/3000, glueball).
-  2. Contains invented evidence classes ([A+], [B+], [B-], [C+], [D+]).
+from __future__ import annotations
 
-Per AI_AUDIT_POLICY §7.
-Deterministic. No LLM calls. Fail-closed on errors.
-"""
 import re
-import subprocess
-import sys
 
-# Valid evidence classes
-VALID_CLASSES = {"[A]", "[A-]", "[B]", "[C]", "[D]", "[E]"}
+from git_diff_range import AddedLine, DiffRangeError, load_added_lines
 
-# Invented / forbidden classes (regex patterns)
-INVENTED_CLASS_PATTERNS = [
-    r"\[A\+\]",
-    r"\[B\+\]",
-    r"\[B-\]",
-    r"\[C\+\]",
-    r"\[D\+\]",
-]
-
-# Strong evidence classes that must not appear near target literals
-STRONG_CLASSES = [r"\[A\]", r"\[A-\]", r"\[B\]"]
-
-# Target literals that must not appear near strong evidence classes
-TARGET_LITERALS = [
-    r"16\.339",
-    r"49/3",
-    r"49\s*/\s*3",
-    r"17/3000",
-    r"glueball",
-]
-
-PROXIMITY_WINDOW = 3  # lines
+INVENTED_CLASS_PATTERNS = (
+    re.compile(r"\[A\+\]"),
+    re.compile(r"\[B\+\]"),
+    re.compile(r"\[B-\]"),
+    re.compile(r"\[C\+\]"),
+    re.compile(r"\[D\+\]"),
+)
+STRONG_CLASSES = (
+    re.compile(r"\[A\]"),
+    re.compile(r"\[A-\]"),
+    re.compile(r"\[B\]"),
+)
+TARGET_LITERALS = (
+    re.compile(r"16\.339", re.IGNORECASE),
+    re.compile(r"49\s*/\s*3", re.IGNORECASE),
+    re.compile(r"17\s*/\s*3000", re.IGNORECASE),
+    re.compile(r"glueball", re.IGNORECASE),
+)
+PROXIMITY_WINDOW = 3
 
 
-def get_diff_lines():
-    """Get the staged or HEAD diff lines. Fail closed on errors."""
-    try:
-        result = subprocess.run(
-            ["git", "diff", "--cached", "--unified=0", "--no-color"],
-            capture_output=True, text=True, timeout=30
-        )
-        if result.returncode != 0:
-            # Try HEAD diff as fallback
-            result = subprocess.run(
-                ["git", "diff", "HEAD~1", "--unified=0", "--no-color"],
-                capture_output=True, text=True, timeout=30
-            )
-        if result.returncode != 0:
-            print(f"FAIL: git diff exited with code {result.returncode}: {result.stderr.strip()}")
-            sys.exit(1)
-        return result.stdout
-    except subprocess.TimeoutExpired:
-        print("FAIL: git diff timed out")
-        sys.exit(1)
-    except FileNotFoundError:
-        print("FAIL: git not found")
-        sys.exit(1)
-    except Exception as e:
-        print(f"FAIL: unexpected error running git diff: {e}")
-        sys.exit(1)
+def _field(entry: AddedLine | dict[str, object], name: str, fallback: object) -> object:
+    if isinstance(entry, AddedLine):
+        return getattr(entry, name)
+    return entry.get(name, fallback)
 
 
-def parse_diff_added_lines(diff_text):
-    """Extract added lines with their file and approximate line number."""
-    current_file = None
-    entries = []
-    for line in diff_text.splitlines():
-        if line.startswith("diff --git"):
-            parts = line.split(" b/")
-            current_file = parts[-1] if len(parts) > 1 else "unknown"
-        elif line.startswith("+") and not line.startswith("+++"):
-            entries.append({"file": current_file, "text": line[1:]})
-    return entries
-
-
-def check_invented_classes(entries):
-    """Check for invented evidence classes."""
-    violations = []
-    for i, entry in enumerate(entries):
+def check_invented_classes(
+    entries: list[AddedLine] | list[dict[str, object]],
+) -> list[str]:
+    violations: list[str] = []
+    for entry in entries:
+        text = str(_field(entry, "text", ""))
+        path = str(_field(entry, "file", "unknown"))
+        line = int(_field(entry, "line", 0))
         for pattern in INVENTED_CLASS_PATTERNS:
-            if re.search(pattern, entry["text"]):
+            if pattern.search(text):
                 violations.append(
-                    f"BLOCKED: invented evidence class {pattern} in {entry['file']}: {entry['text'].strip()}"
+                    f"BLOCKED: invented evidence class at {path}:{line}"
                 )
     return violations
 
 
-def check_proximity(entries):
-    """Check for strong evidence classes near target literals."""
-    violations = []
-    for i, entry in enumerate(entries):
-        for cls_pattern in STRONG_CLASSES:
-            if re.search(cls_pattern, entry["text"]):
-                # Check surrounding lines within window
-                window_start = max(0, i - PROXIMITY_WINDOW)
-                window_end = min(len(entries), i + PROXIMITY_WINDOW + 1)
-                for j in range(window_start, window_end):
-                    if j == i:
-                        continue
-                    for target in TARGET_LITERALS:
-                        if re.search(target, entries[j]["text"], re.IGNORECASE):
-                            violations.append(
-                                f"BLOCKED: {cls_pattern} within {PROXIMITY_WINDOW} lines of "
-                                f"'{target}' in {entry['file']}: "
-                                f"class line='{entry['text'].strip()}', "
-                                f"target line='{entries[j]['text'].strip()}'"
-                            )
-                # Also check same line
-                for target in TARGET_LITERALS:
-                    if re.search(target, entry["text"], re.IGNORECASE):
-                        violations.append(
-                            f"BLOCKED: {cls_pattern} on same line as '{target}' "
-                            f"in {entry['file']}: {entry['text'].strip()}"
-                        )
+def check_proximity(
+    entries: list[AddedLine] | list[dict[str, object]],
+) -> list[str]:
+    normalized: list[tuple[str, int, str]] = []
+    for index, entry in enumerate(entries, start=1):
+        normalized.append(
+            (
+                str(_field(entry, "file", "unknown")),
+                int(_field(entry, "line", index)),
+                str(_field(entry, "text", "")),
+            )
+        )
+    violations: list[str] = []
+    for path, line, text in normalized:
+        if not any(pattern.search(text) for pattern in STRONG_CLASSES):
+            continue
+        for other_path, other_line, other_text in normalized:
+            if path != other_path or abs(line - other_line) > PROXIMITY_WINDOW:
+                continue
+            if any(pattern.search(other_text) for pattern in TARGET_LITERALS):
+                violations.append(
+                    f"BLOCKED: strong evidence class within "
+                    f"{PROXIMITY_WINDOW} lines of a guarded literal at "
+                    f"{path}:{line}"
+                )
+                break
     return violations
 
 
-def main():
-    diff_text = get_diff_lines()
-    if not diff_text.strip():
-        print("OK: no diff to check")
-        sys.exit(0)
-
-    entries = parse_diff_added_lines(diff_text)
-    if not entries:
-        print("OK: no added lines in diff")
-        sys.exit(0)
-
-    violations = []
-    violations.extend(check_invented_classes(entries))
-    violations.extend(check_proximity(entries))
-
+def main() -> int:
+    try:
+        entries = load_added_lines()
+    except DiffRangeError as exc:
+        print(f"FAIL: {exc}")
+        return 1
+    violations = [
+        *check_invented_classes(entries),
+        *check_proximity(entries),
+    ]
     if violations:
-        for v in violations:
-            print(v)
-        sys.exit(1)
-    else:
-        print("OK: no evidence-tag violations found")
-        sys.exit(0)
+        print("\n".join(violations))
+        return 1
+    print("OK: no evidence-tag violations found")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

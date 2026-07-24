@@ -1,139 +1,88 @@
 #!/usr/bin/env python3
-"""check_no_gamma_targeting.py — GOV-001 Scientific Integrity Gate
+"""Block target-shaped assignments in added PR content."""
 
-Block any code that contains gamma-targeting patterns:
-  - K_S = (Delta*/gamma), K_S = (Δ*/γ)
-  - target = 16.339, target = 49/3, target = 17/3000
-  - Use of these literals as loss, objective, goal, or kill_switch thresholds.
+from __future__ import annotations
 
-Per AI_AUDIT_POLICY §7.
-Deterministic. No LLM calls. Fail-closed on errors.
-"""
 import re
-import subprocess
-import sys
+
+from git_diff_range import AddedLine, DiffRangeError, load_added_lines
+
+DIRECT_TARGET_PATTERNS = (
+    re.compile(r"K_S\s*=\s*\(?\s*Delta\s*\*?\s*/\s*gamma\s*\)?", re.I),
+    re.compile(r"K_S\s*=\s*\(?\s*Δ\s*\*?\s*/\s*γ\s*\)?", re.I),
+    re.compile(r"K_S\s*=\s*\(?\s*\\Delta\s*\*?\s*/\s*\\gamma\s*\)?", re.I),
+)
+TARGET_LITERALS = (
+    re.compile(r"16\.339"),
+    re.compile(r"49\s*/\s*3"),
+    re.compile(r"17\s*/\s*3000"),
+)
+TARGETING_CONTEXTS = (
+    re.compile(r"target", re.I),
+    re.compile(r"loss", re.I),
+    re.compile(r"objective", re.I),
+    re.compile(r"goal", re.I),
+    re.compile(r"kill[_\s]*switch", re.I),
+    re.compile(r"fit[_\s]*target", re.I),
+    re.compile(r"desired", re.I),
+    re.compile(r"expected[_\s]*value", re.I),
+)
 
 
-# Direct targeting patterns
-DIRECT_TARGET_PATTERNS = [
-    (r"K_S\s*=\s*\(?\s*Delta\s*\*?\s*/\s*gamma\s*\)?", "K_S = (Delta*/gamma)"),
-    (r"K_S\s*=\s*\(?\s*[ΔΔ]\s*\*?\s*/\s*[γγ]\s*\)?", "K_S = (Δ*/γ)"),
-    (r"K_S\s*=\s*\(?\s*\\?Delta\s*\*?\s*/\s*\\?gamma\s*\)?", "K_S = (\\Delta*/\\gamma)"),
-]
-
-# Target literal values
-TARGET_LITERALS = [
-    (r"16\.339", "16.339"),
-    (r"49\s*/\s*3", "49/3"),
-    (r"17\s*/\s*3000", "17/3000"),
-]
-
-# Context keywords that indicate targeting behavior
-TARGETING_CONTEXTS = [
-    r"target",
-    r"loss",
-    r"objective",
-    r"goal",
-    r"kill[_\s]*switch",
-    r"fit[_\s]*target",
-    r"desired",
-    r"expected[_\s]*value",
-]
+def _value(entry: AddedLine | dict[str, object], key: str, default: object) -> object:
+    if isinstance(entry, AddedLine):
+        return getattr(entry, key)
+    return entry.get(key, default)
 
 
-def get_diff_lines():
-    """Get the staged or HEAD diff lines. Fail closed on errors."""
-    try:
-        result = subprocess.run(
-            ["git", "diff", "--cached", "--unified=0", "--no-color"],
-            capture_output=True, text=True, timeout=30
-        )
-        if result.returncode != 0:
-            result = subprocess.run(
-                ["git", "diff", "HEAD~1", "--unified=0", "--no-color"],
-                capture_output=True, text=True, timeout=30
+def check_direct_targeting(
+    entries: list[AddedLine] | list[dict[str, object]],
+) -> list[str]:
+    violations: list[str] = []
+    for entry in entries:
+        text = str(_value(entry, "text", ""))
+        if any(pattern.search(text) for pattern in DIRECT_TARGET_PATTERNS):
+            violations.append(
+                f"BLOCKED: direct target-shaped assignment at "
+                f"{_value(entry, 'file', 'unknown')}:"
+                f"{_value(entry, 'line', 0)}"
             )
-        if result.returncode != 0:
-            print(f"FAIL: git diff exited with code {result.returncode}: {result.stderr.strip()}")
-            sys.exit(1)
-        return result.stdout
-    except subprocess.TimeoutExpired:
-        print("FAIL: git diff timed out")
-        sys.exit(1)
-    except FileNotFoundError:
-        print("FAIL: git not found")
-        sys.exit(1)
-    except Exception as e:
-        print(f"FAIL: unexpected error running git diff: {e}")
-        sys.exit(1)
-
-
-def parse_diff_added_lines(diff_text):
-    """Extract added lines with their file context."""
-    current_file = None
-    entries = []
-    for line in diff_text.splitlines():
-        if line.startswith("diff --git"):
-            parts = line.split(" b/")
-            current_file = parts[-1] if len(parts) > 1 else "unknown"
-        elif line.startswith("+") and not line.startswith("+++"):
-            entries.append({"file": current_file, "text": line[1:]})
-    return entries
-
-
-def check_direct_targeting(entries):
-    """Check for direct K_S targeting patterns."""
-    violations = []
-    for entry in entries:
-        for pattern, desc in DIRECT_TARGET_PATTERNS:
-            if re.search(pattern, entry["text"], re.IGNORECASE):
-                violations.append(
-                    f"BLOCKED: gamma-targeting pattern '{desc}' in {entry['file']}: "
-                    f"{entry['text'].strip()}"
-                )
     return violations
 
 
-def check_literal_in_targeting_context(entries):
-    """Check for target literals used in targeting contexts."""
-    violations = []
+def check_literal_in_targeting_context(
+    entries: list[AddedLine] | list[dict[str, object]],
+) -> list[str]:
+    violations: list[str] = []
     for entry in entries:
-        text = entry["text"]
-        for lit_pattern, lit_desc in TARGET_LITERALS:
-            if re.search(lit_pattern, text):
-                for ctx_pattern in TARGETING_CONTEXTS:
-                    if re.search(ctx_pattern, text, re.IGNORECASE):
-                        violations.append(
-                            f"BLOCKED: target literal '{lit_desc}' used in "
-                            f"targeting context '{ctx_pattern}' in {entry['file']}: "
-                            f"{text.strip()}"
-                        )
+        text = str(_value(entry, "text", ""))
+        if not any(pattern.search(text) for pattern in TARGET_LITERALS):
+            continue
+        if any(pattern.search(text) for pattern in TARGETING_CONTEXTS):
+            violations.append(
+                f"BLOCKED: guarded literal used in targeting context at "
+                f"{_value(entry, 'file', 'unknown')}:"
+                f"{_value(entry, 'line', 0)}"
+            )
     return violations
 
 
-def main():
-    diff_text = get_diff_lines()
-    if not diff_text.strip():
-        print("OK: no diff to check")
-        sys.exit(0)
-
-    entries = parse_diff_added_lines(diff_text)
-    if not entries:
-        print("OK: no added lines in diff")
-        sys.exit(0)
-
-    violations = []
-    violations.extend(check_direct_targeting(entries))
-    violations.extend(check_literal_in_targeting_context(entries))
-
+def main() -> int:
+    try:
+        entries = load_added_lines()
+    except DiffRangeError as exc:
+        print(f"FAIL: {exc}")
+        return 1
+    violations = [
+        *check_direct_targeting(entries),
+        *check_literal_in_targeting_context(entries),
+    ]
     if violations:
-        for v in violations:
-            print(v)
-        sys.exit(1)
-    else:
-        print("OK: no gamma-targeting violations found")
-        sys.exit(0)
+        print("\n".join(violations))
+        return 1
+    print("OK: no gamma-targeting violations found")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
