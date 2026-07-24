@@ -1,95 +1,60 @@
 %=============================================================================
-% UIDT Ontology v4.0 MSS-000 EXECUTOR CANDIDATE — Phase-6 Rebase:
-% Relational-Algebraic Pregeometry, Open Continuum Passage, and Verification Ledger
+% UIDT / Relational-Algebraic Pregeometry Programme v4.0
+% CONTENT-FINALIZATION CANDIDATE — Claude Desktop single-writer package
 % Author: Philipp Rietz (ORCID: 0009-0007-4307-1609)
-% STATUS: MSS-000 EXECUTOR CANDIDATE under PI Decision D20; not applied; PI GO required.
-% Basis manuscript: UIDT_Ontology_v3_9_9_DEWRAPPED-006 (DOI 10.5281/zenodo.20319634)
-% Parent framework record: DOI 10.5281/zenodo.17835200
+% BASELINE: watermarked manuscript Git blob 7962e5e74fb504416565f276512da12e4eaaf5b5
+% BASELINE SHA-256: 2e72d1cdd32e1bea25d077b3dfe9b769251f795796d6109f762e462e4ecdedab
+% STATUS: ready for Claude pre-application audit; not frozen; not merged.
+% Basis manuscript: UIDT_Ontology_v3_9_9_DEWRAPPED-006
+% Ontology DOI: 10.5281/zenodo.20319634
+% Parent framework DOI: 10.5281/zenodo.17835200
 % License: CC BY 4.0
 %
-% MSS-000 EXECUTOR NOTE (non-rendering):
-% This candidate is derived from PR-#15 blob 601cc57d under D20. It is not the
-% applied manuscript, not a merge authorization, not a canonical freeze, not a
-% proof of UIDT, and not an evidence-class upgrade. Claude Desktop audits the
-% full diff before application; explicit PI GO gates the single-writer apply.
-%
-% FAIL-FAST ANCHORS (each occurs exactly once; patch scripts must abort if
-% an anchor count differs from 1):
-%   ANCHOR-P2-PART-I-CONTENT / ANCHOR-P3-PART-II-CONTENT /
-%   ANCHOR-P4-PART-III-CONTENT / ANCHOR-P5-BIBLIOGRAPHY
-%   (live form: double-percent delimited, one occurrence each)
+% SINGLE-WRITER BOUNDARY:
+% The executor authors this patch. Claude Desktop audits and applies it to the
+% active .tex only after PI authorization. The executor performs subsequent
+% build/repository reconciliation. No merge authority is conveyed.
 %=============================================================================
 %=============================================================================
 % PROCESSING-COVERAGE LEDGER  (non-rendering; audit artifact)
-% Updated: R3.1 tension-ledger pass, 2026-07-13 (T9 row + T1 copy-edit;
-%          gated by O-1/O-1-followup/O-2/O-3, advisory, PI signature pending). Percentages are share of source lines actually
-% READ (not skimmed, not summarised). "Used" = content entered the manuscript.
-% This block exists so that a fresh session can see, without asking, what has
-% and has not been consumed. Do not delete. Update at every phase close.
+% Updated: 2026-07-23 content-finalization and decision-closure pass.
+% Percentages are source lines actually read, not inferred from summaries.
 %
-% --- PHASES ------------------------------------------------------------------
-%  P1 skeleton .................. 100%  done
-%  P2 Part I .................... 100%  done
-%  P3 Part II ................... 100%  done
-%  P4 Part III .................. 100%  done
-%  P5 back matter + bib ......... 100%  done
-%  R0 reading stage .............  60%  Modules B/C/E only partially read
-%  R1 coda (philosophy+adversary) 100%  done
-%  R2 Part I additions .......... 100%  done
-%  R3 Part II additions .........  ~90% II-1, II-2, II-3, DIR-S-02/03,
-%                                       observer taxonomy (Class 0-III, D20
-%                                       Class-0 reframe: kernel-level, not the historical scalar model),
-%                                       AGI underdetermination red team, and
-%                                       consciousness-physics demarcation matrix
-%                                       (D20 primitive-cell reframe) DRAFTED.
-%                                       R3 prose complete; OPEN only: compile.
-%                                       Compile + four-checker NOT run this pass
-%                                       (must run in Desktop/Claude Code).
-%  R4 MSS-000 architecture ....... 100%  executor candidate; audit pending
-%  R5 post-apply reconciliation ..   0%  executor verification pending
+% --- MANUSCRIPT PHASES -------------------------------------------------------
+%  P1 skeleton ............................ 100% complete
+%  P2 Part I .............................. 100% structurally complete
+%  P3 Part II ............................. 100% structurally complete
+%  P4 Part III ............................ 100% structurally complete
+%  P5 back matter + bibliography .......... 100% structurally complete
+%  R0 source reading ....................... 60% historical estimate; reset below
+%  R1--R4 architecture and MSS-000 ........ complete in baseline blob 7962e5e7
+%  R5 manuscript post-application checks .. complete only for manuscript bytes;
+%                                             live Lean and PROV-002 remain open
 %
-% --- SOURCES -----------------------------------------------------------------
-%  -006 canonical (3125 ln) ............... ~88% read | 23/26 sections relocated
-%      OPEN: §412 empirical baseline; §1050 deeper gap/milestones;
-%            §1411 psychedelics/NDE; §1748 architecture/synthesis
-%            (§1321 observer taxonomy + §1463 demarcation matrix relocated R3)
-%  Lean corpus @ 61bc24da (26 files) ...... 100% static audit | F1/F2/F3 open
-%                                            (GitHub issue #10, advisory)
-%  Module A  FOUNDATION      (2,046 ln) ...  ~5% structure map only
-%  Module B  MATRIX THERMO  (29,505 ln) ...  ~4% targeted extraction only
-%                                            (= raw chat UIDT-CHAT-002 x26)
-%  Module C  COSMOLOGY/PBH   (2,026 ln) ... ~10% structure + PBH claim scan
-%                                            (contains NO UIDT PBH model)
-%  Module D  OPERATOR NORMS    (170 ln) ... 100% read | audit2 PATCH C refuted
-%  Module E  MISC/LITERATURE(23,348 ln) ...  ~2% structure map only
-%                                            (= raw chat UIDT-CHAT-001 x14)
-%  01_KNOWLEDGE_GRAPH.json ................    0% unread
-%  Ultimate_Pipeline/*.tex (1,995 ln) .....    0% unread (5 modules)
-%  json_output/ (111 files) ............... ~5% (DR-010,018,024,026 only)
-%  UNIVERSUM_SIM-master LEDGER/ docs/ ..... 0% unread
+% --- SOURCE STATUS -----------------------------------------------------------
+%  -006 canonical ........................ ~88% historical reading estimate
+%  Lean corpus @ 61bc24da ................ 100% historical static snapshot only;
+%                                             not a live-repository assertion
+%  Module A FOUNDATION .................... ~5% structure map only
+%  Module B MATRIX THERMO ................. ~4% targeted extraction only
+%  Module C COSMOLOGY/PBH ................. ~10% structure + claim scan
+%  Module D OPERATOR NORMS ................ 100% read
+%  Module E MISC/LITERATURE ............... ~2% structure map only
+%  01_KNOWLEDGE_GRAPH.json ................ 0% UNREAD / exact artifact unavailable
+%  Ultimate_Pipeline/*.tex ................ 0% UNREAD / exact artifacts unavailable
+%  json_output/ (111 files) ............... ~5% selected reports only
+%  UNIVERSUM_SIM-master LEDGER/docs ....... 0% UNREAD / live snapshot required
 %
-% --- BIBLIOGRAPHY ------------------------------------------------------------
-%  99 bibitems | 59 cited | 0 dangling  (bibitem/cite counts grep-verified on
-%    this file at R3 pass; parker2019 + rabinovici2021 now cited by II-3.
-%    overfull/undefined-ref status pending pdflatex, not run this pass)
-%  Verified in this session: cacic2011 (pp/venue), vansuijlekom2019 (authorship
-%    corrected), cubitt2015, vanraamsdonk2010
-%  NOT resolved -> may not be cited: Kocharovsky BEC papers; DR-006 (OCR-degraded)
-%  Resolved this pass: cubitt2015, vanraamsdonk2010 (R2); connesrovelli1994 (R2);
-%    parker2019, rabinovici2021 (post-R2, pre-R3)
+%  Rule: unread or unavailable sources contribute no manuscript claim. Reading
+%  coverage is not evidence quality; primary-source verification is tracked
+%  independently in the executor source register.
 %
 % --- STANDING GATES ----------------------------------------------------------
-%  G-DIFF   run at every phase close: map every -006 section to
-%           relocated / superseded-with-reason / dropped-with-reason
-%  G-SOURCE no manuscript block written from a summary of a source
-%  G-CLASS  every externally supplied evidence tag re-derived from scratch
-%
-% --- REFUSED (do not reintroduce) --------------------------------------------
-%  audit2 Gap 3.3  Markov blanket "forces" (3,2,1)      -> target hunting
-%  audit2 Gap 10   container smash as [A] no-go theorem -> no theorem exists
-%  audit2 PATCH C  fluctuation floor ~2a^2 tagged [A]   -> refuted by its source
-%  Module B        "inner derivations lay the foundation for gauge groups"
-%                                                       -> Prop. inner-derivation
+%  G-DIFF   map every baseline section to retained/relocated/split/removed
+%  G-SOURCE no manuscript claim from a summary where the primary source exists
+%  G-CLASS  one legal evidence class per atomic proposition
+%  G-LEAN   historical snapshots are never described as current repository state
+%  G-PROV   all builds are environment-qualified until PROV-002 is complete
 %=============================================================================
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{table,svgnames,dvipsnames}{xcolor}
@@ -205,11 +170,11 @@
 \fancypagestyle{uidtontology}{%
  \fancyhf{}
  \fancyhead[LE,RO]{\thepage}
- \fancyhead[RE]{\small\textit{UIDT v4.0 MSS-000: Phase-6 Rebase Candidate}}
+ \fancyhead[RE]{\small\textit{Relational-Algebraic Pregeometry v4.0}}
  \fancyhead[LO]{\small\textit{P.\ Rietz}}
  \fancyfoot[C]{%
  \footnotesize\textcolor{darkgray}{%
- \copyright\ 2026 P.\ Rietz $\cdot$ CC BY 4.0 $\cdot$ MSS-000 candidate (D20; application pending) $\cdot$
+ \copyright\ 2026 P.\ Rietz $\cdot$ CC BY 4.0 $\cdot$ Relational-Algebraic Pregeometry v4.0 working draft (pre-freeze) $\cdot$
  basis: \href{https://doi.org/10.5281/zenodo.20319634}{DOI 10.5281/zenodo.20319634} | \href{https://github.com/Mass-Gap/UIDT-Framework-v3.9-Canonical}{UIDT Canonical Repository}}%
  }
  \renewcommand{\headrulewidth}{0.4pt}
@@ -220,7 +185,7 @@
 % METADATA
 %=============================================================================
 \hypersetup{
- pdftitle={Relational-Algebraic Pregeometry: UIDT v4.0 MSS-000 Phase-6 Rebase Candidate}, pdfauthor={Philipp Rietz}, pdfsubject={Falsification-first research programme for finite relational-algebraic pregeometry with open continuum passage and verification-ledger strata}, pdfkeywords={Relational Algebra, Noncommutative Geometry, Spectral Triple, Krajewski Diagram, Pregeometry, Verification Ledger, UIDT}, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black, pdflang={en}
+ pdftitle={Relational-Algebraic Pregeometry: Finite Kernels, Open Continuum Emergence, and Formal Verification}, pdfauthor={Philipp Rietz}, pdfsubject={Finite relational-algebraic pregeometry, open continuum emergence, formal verification, and a non-ontological parameter ledger}, pdfkeywords={Relational-Algebraic Pregeometry, Finite Algebra, Spectral Triple, Krajewski Diagram, Formal Verification, UIDT historical lineage}, colorlinks=true, linkcolor=black, citecolor=black, urlcolor=black, pdflang={en}
 }
 
 %=============================================================================
@@ -256,7 +221,11 @@
 \Crefname{limitation}{Limitation}{Limitations}
 
 % Custom Commands (carried over; Part III depends on these)
-\newcommand{\UIDT}{\textsc{uidt}}
+\newcommand{\ProjectName}{Relational-Algebraic Pregeometry Programme}
+\newcommand{\ProjectShort}{Relational-Algebraic Pregeometry}
+\newcommand{\RAP}{\ProjectShort}
+\newcommand{\LegacyProjectName}{Unified Information-Density Theory}
+\newcommand{\UIDT}{\textsc{uidt}} % historical lineage, DOI, repository, and legacy notation only
 \newcommand{\GeV}{\,\mathrm{GeV}}
 \newcommand{\MeV}{\,\mathrm{MeV}}
 \newcommand{\catmark}[1]{\textsuperscript{\textsf{\textbf{[#1]}}}}
@@ -282,7 +251,7 @@
 \newcommand{\GammaGeom}{16.339} % [A-] calibrated, NEVER derived
 \newcommand{\GammaMC}{16.374 \pm 1.005} % [A-] Monte Carlo mean; tension entry vs 16.339
 \newcommand{\vVEV}{47.7\MeV} % [A]
-\newcommand{\ETorsion}{2.44\MeV} % [E pending] observer-context only
+\newcommand{\ETorsion}{2.44\MeV} % [E] subatomic-only reference; no neural/biological bridge
 \newcommand{\LambdaGrid}{0.66\,\mathrm{nm}} % [D]
 \newcommand{\KappaRG}{\tfrac{1}{2}\ \text{(exact)}} % [A] exact framework input
 %===================================================================
@@ -370,22 +339,23 @@
 \vspace*{1.6cm}
 \begin{center}
 {\LARGE\bfseries Relational-Algebraic Pregeometry:\\[0.25em]
-A Phase-6 Rebase of the UIDT\\[0.25em]
-Research Programme}\\[0.9em]
-{\small\bfseries A Falsification-First Programme\catmark{D}\ for a Finite Algebraic Kernel,\\[0.25em]
+Finite Kernels, Open Continuum Emergence,\\[0.25em]
+and Formal Verification}\\[0.9em]
+{\small\bfseries A Falsification-First Programme\,\catmark{D}\ for a Finite Relational-Algebraic Kernel,\\[0.25em]
 an Explicitly Open Passage to Apparent Continuity,\\[0.25em]
 and a Non-Ontological Verification and Parameter Ledger}\\[1.5em]
-{\large\itshape Unified Information-Density Theory (UIDT) v4.0\\[0.25em]
-MSS-000 Executor Candidate under PI Decision D20}\\[2.6em]
+{\large\itshape Relational-Algebraic Pregeometry Programme --- Version 4.0}\\[0.5em]
+{\small Version 4.0 of the research programme formerly designated\\
+Unified Information-Density Theory (UIDT)}\\[2.6em]
 {\small Philipp Rietz}\\[0.5em]
 {\small ORCID: \href{https://orcid.org/0009-0007-4307-1609}{0009-0007-4307-1609}}\\[0.2em]
 {\small Independent Researcher}\\[3em]
-{\normalsize Successor draft to UIDT Ontology v3.9.9 (basis: -006)}\\[0.5em]
-{\small Basis manuscript (Ontology v3.9):
+{\normalsize Historical lineage: UIDT versions 1--3.9}\\[0.5em]
+{\small Ontology v3.9 record:
 \href{https://doi.org/10.5281/zenodo.20319634}{DOI 10.5281/zenodo.20319634}}\\[0.25em]
-{\small UIDT Framework (parent record):
+{\small Parent framework record:
 \href{https://doi.org/10.5281/zenodo.17835200}{DOI 10.5281/zenodo.17835200}}\\[0.5em]
-{\small 19~July~2026 --- EXECUTOR CANDIDATE, not applied, not archived, not frozen}\\[2.2em]
+{\small 23~July~2026 --- DRAFT-001, not archived, not frozen}\\[2.2em]
 \rule{0.6\textwidth}{0.4pt}\\[1em]
 {\small\itshape ``Reality is not a collection of things,\\
 but a process of structural individuation\\
@@ -398,37 +368,49 @@ that we are licensed to describe only as far as we can falsify it.''}\\[1.4em]
 %=============================================================================
 \thispagestyle{uidtontology}
 
-\begin{governancebox}[Governance Status of This Executor Candidate]
-This document is the MSS-000 executor candidate derived from PR-\#15 blob
-\texttt{601cc57d082840424bfa2aedc6542eb1b6d754e4}. It is not the applied
-manuscript, not a canonical freeze, not a merge authorization, and not an
-evidence-class upgrade. PI Decision D20 authorizes the architectural rebase
-under the binding guardrails stated below; it does not authorize application.
-Claude Desktop must audit the complete diff against the baseline blob and may
-recommend GO or HOLD. Only explicit PI GO permits Claude, as the single
-writer of the active \texttt{.tex}, to apply the approved patch. Build,
-repository reconciliation, and technical post-application verification then
-return to the executor lane. Final integration remains PI-only.
+\begin{governancebox}[Governance Status of This Finalization Candidate]
+The input to this patch is the watermarked manuscript blob
+\texttt{7962e5e7} (full Git blob recorded in the package provenance file),
+independently reproduced from the supplied source file. The earlier MSS-000 architectural rebase is
+therefore treated as the applied baseline for this finalization pass; stale
+``executor candidate'' wording in that baseline is corrected here. This
+patch closes the scientifically determinate PI dispositions, normalizes
+compound evidence tags, and separates historical Lean snapshots from live
+repository claims. It is not a canonical freeze, not a merge authorization,
+and not an evidence-class upgrade. Claude Desktop audits the complete diff
+and applies it as the sole writer of the active \texttt{.tex} after PI
+authorization. Build, repository reconciliation, and technical
+post-application verification then return to the executor lane. Final
+integration remains PI-only.
 \end{governancebox}
 
-\begin{pioverridebox}[PI Decision D19 --- Ontological Re-Architecture (DRAFT; signature pending)]
+\begin{pioverridebox}[PI Decision D19 --- Ontological Re-Architecture (CLOSED)]
 \label{box:pi-decision-d19}
-\textbf{Decision under review.} The continuous real scalar field $\Sx$,
-which UIDT v3.9.x treated as the ontological primitive (Variant~B), is in
-this draft \emph{demoted} to a macroscopic effective-field-theory limit
-(Part~III). The candidate primitive investigated in its place is a finite
-algebraic structure --- a real spectral-triple kernel with Krajewski
-combinatorics --- presented throughout Part~I strictly as a
-\emph{research programme at evidence class \catmark{D}}, never as an
-established foundation. Three binding conditions attach to this decision:
-(i)~Part~I is declared a formal research programme\catmark{D}, not a
-theorem corpus; (ii)~no Standard-Model-like block partition is hard-coded
-into any core formal structure --- partitions enter only as inserted
-candidate instances under the Gap-Localization-before-Construction (GLBC)
-principle; (iii)~all v3.9 ledger results retain their existing evidence
-classes unchanged inside Part~III. \textbf{This box is a governance
-artifact, not a physics result. It takes effect only upon PI signature in
-LEDGER/CLAIMS.json; until then, Variant~B remains canonical.}
+\textbf{Decision.} The continuous real scalar field $\Sx$, treated in UIDT
+v3.9.x as the ontological primitive, is demoted to a historical macroscopic
+effective-field description. The active v4.0 candidate primitive is a finite
+relational-algebraic kernel, presented strictly as a research programme at
+evidence class \catmark{D}. The decision is closed under the PI standing
+instruction that scientifically determinate dispositions are approved.
+
+\textbf{Scientific basis.} A scalar-gradient construction cannot generate
+non-trivial curvature because $\mathrm d^2=0$; a single self-adjoint generator
+also yields an abelian generated algebra on which its own inner derivation
+vanishes. The manuscript supplies no non-circular bridge from the historical
+scalar to the required non-commutative multiplicity structure. Retaining the
+scalar as foundational would therefore overstate the available mathematics.
+
+\textbf{Binding conditions.}
+(i)~Part~I remains a formal research programme at \catmark{D}, not an
+established ontology or theorem corpus.
+(ii)~No Standard-Model-like block partition may occur in a core definition,
+axiom, hypothesis, loss, or acceptance condition; candidate instances may
+occur only downstream of target-independent predicates under GLBC.
+(iii)~Historical quantitative results retain their incoming evidence classes
+inside Part~III or the museum appendix.
+
+\textbf{Status.} CLOSED on 23~July~2026. This is a governance determination,
+not a new physics result and not an evidence-class upgrade.
 \end{pioverridebox}
 
 \begin{pioverridebox}[PI Decision D20 --- Part III Architectural Reassignment]
@@ -444,17 +426,91 @@ remains a falsifiable research programme at evidence class D; the passage of
 Part~II remains open and supplies no continuum, metric, signature, Born-rule,
 or Standard-Model gauge-group derivation.
 
-\textbf{Excluded decisions.} D20 does not decide PI-DELTA-P6,
-PI-ET-P6, PI-MUSEUM, or P2. Consequently $\Delta=\DeltaGap$ remains
-\catmark{B} under D18 with its uncertainty and all locators intact; the
-observer-context class of $E_T$ is unchanged while the subatomic-to-observer
-firewall remains binding; and scalar-history material is retained reversibly
-in a non-imported historical appendix rather than deleted.
+\textbf{Historical scope boundary.} At the time of D20,
+PI-DELTA-P6, PI-ET-P6, PI-MUSEUM, and P2 were explicitly excluded. They are
+resolved separately below by Decisions D21--D24. D20 itself changes no
+quantitative value and no evidence class.
 
-\textbf{Application status.} Authorized for executor authorship and audit,
-but not yet applied. Claude Desktop performs the pre-application audit; PI GO
-or HOLD gates the single-writer application.
+\textbf{Application status.} The MSS-000 architecture is present in the
+supplied watermarked baseline blob \texttt{7962e5e7}; this finalization patch
+preserves D20 and does not authorize merge or freeze.
 \end{pioverridebox}
+
+\begin{pioverridebox}[PI Decision D21 --- $\Delta$ Evidence Status (CLOSED)]
+\label{box:pi-decision-d21-delta}
+\textbf{Decision.} The proposed upgrade of $\Delta=\DeltaGap$ from
+\catmark{B} with uncertainty to an exact Class~A value is rejected.
+Determination D18 remains controlling: $\Delta=1.710\pm0.015\,\mathrm{GeV}$
+is a lattice-compatible reference with no UIDT-internal derivation of the
+number and no operator matching to a physical particle observable. It is not
+a particle mass and is not identified with the $0^{++}$ glueball.
+
+\textbf{Status.} CLOSED: retain D18 and \catmark{B}. No external
+counter-signature is required because no upgrade is made.
+\end{pioverridebox}
+
+\begin{pioverridebox}[PI Decision D22 --- $E_T$ Firewall and Class (CLOSED)]
+\label{box:pi-decision-d22-et}
+\textbf{Decision.} $E_T=\ETorsion$ remains a subatomic reference at
+\catmark{E}; the proposed upgrade to Class~C is rejected because no
+specified subatomic observable with uncertainty and no validated scale bridge
+has been supplied. The MeV-to-neural, biological, cognitive, macroscopic, or
+life/death transfer is barred from active v4.0 use unless a separately audited
+physical channel, coupling, transfer function, observable, and empirical
+protocol are produced.
+
+\textbf{Status.} CLOSED: firewall confirmed; class retained at \catmark{E}.
+\end{pioverridebox}
+
+\begin{pioverridebox}[PI Decision D23 --- Historical Scalar Museum (CLOSED)]
+\label{box:pi-decision-d23-museum}
+\textbf{Decision.} Museum Route~B is final for v4.0. The historical scalar/EFT
+material remains in a visibly marked, non-imported appendix. It is preserved
+for provenance and regression audit, supplies no premise to Parts~I--III, and
+may not be silently deleted or reactivated.
+
+\textbf{Status.} CLOSED: reversible appendix retention approved.
+\end{pioverridebox}
+
+\begin{pioverridebox}[PI Decision D24 --- FSS/P2 Disposition (CLOSED BY QUARANTINE)]
+\label{box:pi-decision-d24-p2}
+\textbf{Decision.} Because the required raw data, immutable run artefacts,
+seeds, configuration, and provenance are unavailable, FSS/P2 is placed in
+archival quarantine. It contributes no active quantitative claim, no evidence
+upgrade, and no manuscript premise. The disposition may be reopened only by a
+new PI record after source-faithful raw-data audit. No simulation or result
+reconstruction is authorized by this decision.
+
+\textbf{Status.} CLOSED as a governance disposition; the underlying
+scientific question remains unresolved.
+\end{pioverridebox}
+
+\begin{pioverridebox}[PI Decision D25 --- Programme and Manuscript Name (CLOSED)]
+\label{box:pi-decision-d25-name}
+\textbf{Decision.} The active v4.0 programme name is
+\emph{Relational-Algebraic Pregeometry Programme}. The manuscript title is
+\emph{Relational-Algebraic Pregeometry: Finite Kernels, Open Continuum
+Emergence, and Formal Verification}. ``Unified Information-Density Theory
+(UIDT)'' is retained as the historical name for versions~1--3.9, existing DOI
+titles, repository provenance, and legacy notation.
+
+\textbf{Application rule.} The scientific-content patch is audited and
+applied before the isolated name-migration patch, so that branding changes do
+not obscure substantive review.
+
+\textbf{Status.} CLOSED under the PI's stated agreement with the naming
+recommendation.
+\end{pioverridebox}
+
+\begin{governancebox}[Name and Provenance Convention]
+\ProjectName\ is the active name of the v4.0 research programme. The token
+\UIDT\ is retained only for the historical programme lineage, versions
+1--3.9, existing DOI titles, repository and path identifiers, quoted legacy
+claims, and historical effective-sector notation. A retained UIDT occurrence
+therefore does not reactivate the superseded ``Unified Information-Density
+Theory'' ontology.
+\end{governancebox}
+
 
 \begin{evidencebox}[Reading Order and Epistemic Weight]{}
 Part~I (\emph{The Pregeometric Kernel}) remains a \catmark{D}-class research
@@ -485,36 +541,37 @@ its equations are not premises of Parts~I--III.
 \begingroup \normalfont\normalsize
 \setlength{\parskip}{0.65em plus 0.12em minus 0.04em}%
 \setlength{\parindent}{0pt}%
-\noindent This MSS-000 candidate rebases the UIDT v4.0 working manuscript
-onto a Phase-6 relational-algebraic architecture. The active foundational
-programme contains no classical scalar field, background spacetime, metric,
-or smooth-manifold primitive. Its candidate kernel is expressed through
-finite combinatorial and algebraic data --- in particular the separation
-\texttt{BlockPartition $\to$ FiniteAlgebraSignature $\to$ SpectralTriple} ---
+\noindent This manuscript presents a relational-algebraic pregeometry
+programme whose active foundational layer contains no classical scalar field,
+background spacetime, metric, or smooth-manifold primitive. The candidate
+kernel is expressed through finite combinatorial and algebraic data, with the
+formal separation
+\texttt{BlockPartition $\to$ FiniteAlgebraSignature $\to$ SpectralTriple},
 and remains a falsifiable research programme at evidence class \catmark{D}.
-The known $d^2=0$ scalar-gradient obstruction, the unresolved origin of
+The $\mathrm d^2=0$ scalar-gradient obstruction, the unresolved origin of
 $G_{\mathrm{SM}}$, the absence of a Born-rule derivation, and the absence of
-solutions to the $H_0$ and $S_8$ tensions remain explicit boundaries.
+solutions to the $H_0$ and $S_8$ tensions are retained as explicit
+boundaries.
 
 Part~II records the open passage from the finite kernel to apparent
 continuity. It supplies no dimensional-emergence theorem, Lorentzian
 signature, background metric, or non-circular observer derivation and is
-capped at \catmark{E} wherever it becomes interpretive. Under PI Decision
-D20, Part~III no longer functions as active ontology. It is a verification,
-benchmark, and parameter-ledger stratum that preserves the incoming
-quantitative content and evidence classes without deletion or upgrade:
-$\kappa=\KappaRG$\,\catmark{A}, $\lambda_S=\lambdaS$\,\catmark{A},
-$v=\vVEV$\,\catmark{A}, $\gamma=\GammaGeom$\,\catmark{A-} as a permanent
-calibration, and $\Delta=\DeltaGap$\,\catmark{B} under D18 and Limitation~L12.
+capped at \catmark{E} wherever it becomes interpretive. Part~III is a
+verification, benchmark, and parameter-ledger stratum rather than active
+ontology. It preserves the incoming quantitative content without evidential
+upgrade: $\kappa=\KappaRG$\,\catmark{A},
+$\lambda_S=\lambdaS$\,\catmark{A}, $v=\vVEV$\,\catmark{A},
+$\gamma=\GammaGeom$\,\catmark{A-} as a calibration, and
+$\Delta=\DeltaGap$\,\catmark{B} under D18/D21 and Limitation~L12.
 Cosmological entries remain calibrations capped at \catmark{C}.
 
-The former scalar/EFT architecture is retained intact enough for audit in a
-non-imported historical appendix. It is not silently deleted, and its
-Lagrangian, coordinate derivatives, background metric ansatz, and scalar
-correlator programme are not premises of the active architecture. This
-candidate is not applied and carries no merge authority: Claude Desktop must
-audit the complete diff against blob \texttt{601cc57d}; explicit PI GO or
-HOLD gates application.
+The superseded scalar/EFT architecture is retained in a visibly marked,
+non-imported historical appendix. Its Lagrangian, coordinate derivatives,
+background metric ansatz, and scalar correlator programme are provenance
+records and are not premises of the active architecture. The manuscript
+therefore claims a disciplined research programme and a set of localized
+obstructions, not a completed derivation of spacetime, the Standard Model, or
+its empirical parameters.
 \endgroup
 \end{abstract}
 
@@ -561,7 +618,7 @@ empirical measurements and externally sourced values with uncertainties.
 Stratum~II comprises consensus theory: standard quantum field theory,
 lattice methodology, the Standard Model, $\Lambda$CDM formalism, and ---
 central to Part~I --- the established mathematics of finite real spectral
-triples and Krajewski classification. Stratum~III comprises \UIDT\
+triples and Krajewski classification. Stratum~III comprises \RAP\
 interpretation: the pregeometric-kernel hypothesis, the rejection of the historical scalar ansatz as active ontology,
 every mapping between formal structure and physical ontology, and all
 observer-theoretic material. The cardinal rule is that Stratum~III is
@@ -693,9 +750,10 @@ coupling, confirming the preregistered literature null (single-sphere
 vacuum) with an independently validated instrument.\catmark{D} The
 protocol, its frozen outcome table, and the recorded outcome
 (\texttt{PRE-O1}) are archived at \texttt{verification/prereg/PR-B1/}
-with the corresponding ledger entry in \texttt{LEDGER/CLAIMS.json}. No
-verified mechanism forcing a stable asymmetric block vacuum is known;
-that search remains an open \catmark{D}/\catmark{E} programme.
+with the corresponding ledger entry in \texttt{LEDGER/CLAIMS.json}. No verified mechanism forcing a stable asymmetric block vacuum is known;
+the target-independent construction problem remains an open research
+programme at \catmark{D}. Any broader thermodynamic interpretation of that
+unknown mechanism remains speculative at \catmark{E}.
 
 A primitive that cannot generate the gauge sector, cannot curve anything
 through its own gradient, and is not dynamically selected by the one
@@ -703,8 +761,8 @@ condensation mechanism tested, retains its primitive status only by
 stipulation. The re-architecture withdraws the stipulation.
 
 \begin{pioverridebox}[What the Demotion Does and Does Not Claim]
-The removal of the historical scalar ansatz from active ontology under PI Decision D20 (authorized architecture; application pending;
-\hyperref[box:pi-decision-d20]{governance page}) is an ontological reassignment, not a physics
+The removal of the historical scalar ansatz from active ontology under Decisions D19--D20
+(\hyperref[box:pi-decision-d20]{governance page}) is an ontological reassignment, not a physics
 result. It does \emph{not} assert that a discrete pregeometric kernel is
 established; it asserts that the continuous scalar no longer carries the
 burden of primitivity, and that the candidate now under investigation is
@@ -801,24 +859,22 @@ structure SpectralGapParam where
   delta : Real
   delta_pos : 0 < delta
 
-/-- [D] Explicit blocker for premature physical
-    identification. The glueball mass conjecture is stated
-    as False in the formal core, preventing any theorem
-    from accidentally relying on Delta = M(0++). -/
+/-- Historical software sentinel in the 61bc24da snapshot.
+    This definition is not a proof of physical non-identification. -/
 def DeltaGlueballConjecture (Delta : Real) : Prop := False
 \end{lstlisting}
 
-The second definition deserves a sentence of appreciation and a sentence
-of precision. It renders Limitation~L12 as a type-level fact: any formal
-development that attempted to consume the glueball identification would
-have to prove \texttt{False}, which is to say it could not proceed. The
-precision: this blocks the identification \emph{inside the formal corpus};
-it neither strengthens nor weakens the manuscript-level status of L12,
-which remains a Stratum-II/III discipline boundary. Likewise, the ledger
-constants $\gamma = \GammaGeom$\,\catmark{A-} and
-$\Delta = \DeltaGap$\,\catmark{B} appear in the corpus only inside warning
-comments; a literal scan of the head confirms no occurrence in any
-definition, hypothesis, loss, or initial condition.
+The second definition is a software sentinel, not a theorem. Defining a
+proposition to be \texttt{False} can prevent downstream code from consuming
+that proposition, but it does not prove that two physical quantities are
+unequal and does not encode the missing operator-matching problem.\catmark{A}
+The manuscript therefore relies on Limitation~L12 and Decision~D21, not on
+this declaration, for the non-identification boundary. The repository repair
+tracked as LEAN-009 must replace the sentinel with typed separation between a
+mathematical spectral-gap object, a physical mass observable, and an explicit
+operator-matching witness. Statements about literal absence of protected
+constants are restricted to the historical \texttt{61bc24da} snapshot until
+a live commit tree is reconciled.
 
 \subsection{The Real-Structure Layer (Phase 7)}
 \label{subsec:real-structure}
@@ -948,18 +1004,19 @@ states the anti-target-leakage policy as a first-class object: no proof
 may contain its own target as input; the candidate partition must not
 appear in any definition, axiom, or hypothesis, and may appear only in
 theorem conclusions and test assertions, enforceable by review and by
-grep-based continuous-integration checks. The policy also fixes the
-correct reading of every Lean tag in this Part: all definitions are
-\catmark{D}/\catmark{E} unless a proof is supplied, in which case the
-proven statement is \catmark{A} within the formal system and is not
-thereby a physics claim.
+grep-based continuous-integration checks. The policy also fixes the correct reading of every Lean tag in this Part:
+unproved formal design structures are \catmark{D}; interpretive physical
+readings are separately \catmark{E}. Where a proof is supplied, the proven
+proposition is \catmark{A} within the formal system and is not thereby a
+physics claim.
 
-\subsection{Formalization Status at Head \texttt{61bc24da} and Audit Findings}
+\subsection{Historical Static Audit at Head \texttt{61bc24da}}
 \label{subsec:formalization-status}
 
-The table below records the verified status of the corpus at the audited
-head. ``Closed'' means no \texttt{sorry} in the file at head; counts are
-from a literal whole-word scan of the snapshot.
+The table below records only the historical static-audit state of commit
+\texttt{61bc24da}. ``Closed'' means that no \texttt{sorry} was found in the
+named file in that snapshot; it is not a claim about the current repository.
+Counts came from a literal whole-word scan and no build was executed.
 
 \begin{table}[H]
 \centering\small
@@ -985,10 +1042,20 @@ substantive open obligations in total. Static audit; no build executed.}
 \label{tab:lean-status}
 \end{table}
 
+\begin{governancebox}[Live Lean Status Is Not Established by This Manuscript]
+The historical findings F1--F3 below remain part of the audit record, but they
+must not be projected onto a later branch without raw-file reconciliation.
+The current commit tree, complete import graph, build log, axiom inventory,
+and whole-repository \texttt{sorry}/\texttt{admit} scan remain external
+requirements under GAP-22. Until those artefacts are supplied, this manuscript
+makes no claim that the historical defects persist and no claim that they
+have been repaired.
+\end{governancebox}
+
 \begin{probbox}[Audit Finding F1]{Register--Code Contradiction}
 The corpus's own proof-obligation register asserts that the flagship
 selection proposition (\cref{sec:selection}) is closed by native
-decision-procedure evaluation. At the audited head this is false: the
+decision-procedure evaluation. At the audited historical head the register statement was false: the
 theorem body is \texttt{sorry}, as are its thirty-three per-partition
 verdict examples. Until the discrepancy is resolved on the remote, the
 proposition's ``formally verified'' tag inside the corpus must be read as
@@ -999,7 +1066,7 @@ decidable proof route is plausible and small.
 \end{probbox}
 
 \begin{probbox}[Audit Finding F2]{Target-Shaped Admissibility Definition}
-A wrapper in the candidate-instance layer defines a carrier to be
+In the audited historical snapshot, a wrapper in the candidate-instance layer defines a carrier to be
 admissible if and only if its KO-dimension is $6$ \emph{and its block list
 equals} $[3,2,1]$, and then proves the inserted candidate admissible by
 reflexivity. This is definitional target-matching: the theorem is vacuous,
@@ -1013,7 +1080,7 @@ Phase~P5.
 \end{probbox}
 
 \begin{probbox}[Audit Finding F3]{Under-Registered Proof Debt}
-Of the 51 open obligations at head, the register covers only the five
+Of the 51 open obligations in the audited historical head, the register covers only the five
 canonical-form regressions and the enumeration class; the 34 obligations
 of the elimination module and one audit-module obligation are
 unregistered. The corpus's own rule --- no \texttt{sorry} survives
@@ -1478,10 +1545,12 @@ of mathematics~\cite{cubitt2015}; that theorem is about the class of such
 questions, and asserts nothing about the Yang--Mills gap or about
 $\Delta$.\catmark{A} \emph{Second}, and consequently, any infrared
 operator matching of the kind Limitation~L12 demands presupposes a fixed
-floor. L12 is therefore not merely the declarative statement that no
-operator matching has been performed; it is the structural statement that
-the matching cannot begin without a postulate that is undecidable in
-general and leakage-prone in practice.\catmark{A}/\catmark{D}
+floor. The general spectral-gap decision problem is algorithmically undecidable
+for broad Hamiltonian classes.\catmark{A} This theorem does not establish
+undecidability of a specific UIDT operator. In the present programme, the
+operator, infrared floor, and matching map are not constructed; supplying
+them without importing the target remains an open design problem at
+\catmark{D}.
 \end{limitation}
 
 \subsection{The Division-Algebra Programme Is Exogenous}
@@ -1498,7 +1567,7 @@ relational zero in which no continuum, no field, and no algebra of
 functions is available. The programme therefore does not evade G1; it
 does not meet G1 either. It occupies a different starting point
 altogether, and its successes are successes of \emph{that} starting
-point. Any \UIDT\ use of the programme must state this exogeneity, and no
+point. Any \RAP\ use of the programme must state this exogeneity, and no
 result of the programme transfers to the kernel hypothesis without a
 construction of the relevant algebra from the kernel --- which does not
 exist.\catmark{D}
@@ -1784,7 +1853,7 @@ distinguishes random-matrix spectral rigidity (the dip--ramp--plateau
 profile, with the symmetry class fixed by the sign triple) from
 Poissonian level statistics~\cite{cotler2017}. The protocol is a
 \catmark{D}\ proposal; no simulation or measurement of it exists for any
-\UIDT-relevant ensemble.
+\RAP-relevant ensemble.
 
 \begin{killswitch}
 If a concrete attractor realisation (PR-B1 together with PR-B2) is
@@ -1813,7 +1882,8 @@ APP-B-03 & Anomaly freedom prunes $\mathcal U(\mathcal A_F)$ to $G_{\mathrm{SM}}
 APP-B-04 & The order-one condition is a combinatorial admissibility constraint; the anomaly-consistent stratum is non-unique & \catmark{A} & exhibition of uniqueness at three summands \\
 APP-B-05 & Quiver-attractor uniqueness is Conjecture C-B1 & \catmark{E} & a defined flow with regulator, truncation, boundary conditions, and a leak-free uniqueness proof \\
 APP-B-06 & KO-6 is selected conditionally by fermion-doubling resolution plus Majorana admissibility & \catmark{B} cond. & a dynamical derivation of inputs (i)/(ii) or of $J$ \\
-APP-B-07 & The dynamical origin of the order-one condition is open; the freezing gap stands & \catmark{A}/\catmark{D} & a principle answering \cref{oq:freezing-gap} under PR-B1/PR-B2 \\
+APP-B-07a & No dynamical origin of the order-one condition is present in the audited corpus & \catmark{A} (audit fact) & a source-faithful construction in the live corpus \\
+APP-B-07b & The freezing mechanism remains an open research problem & \catmark{D} & a target-independent principle answering \cref{oq:freezing-gap} under PR-B1/PR-B2 \\
 APP-B-08 & Spectral-form-factor protocol as discriminator for any future realisation & \catmark{D} & executable only upon a concrete realisation \\
 \bottomrule
 \end{tabular}
@@ -1846,7 +1916,7 @@ exists to check.\catmark{A}
 \begin{governancebox}[Forbidden Inferences]
 Nothing in this section licenses the statements that the Connes vacuum
 emerges thermodynamically, that KO-dimension~6 is dynamically necessary,
-that anomaly cancellation selects the $(1,2,3)$ algebra, or that \UIDT\
+that anomaly cancellation selects the $(1,2,3)$ algebra, or that \RAP\
 derives $G_{\mathrm{SM}}$. The established inputs are external literature
 results on matrix condensation, unimodularity, and conditional
 KO-dimension selection; the attractor content consists of two programme
@@ -1890,15 +1960,12 @@ satisfying G1--G4 jointly \\
 G-03 & G1 = non-abelian fiber; $J$ exists at $\dim V_{ij}=1$;
 $[3,2,1]$ satisfies G1 & \catmark{A} (textual) & a primary source
 requiring block repetition for $J$ \\
-G-04 & Lower bounds on $\mathcal A$ (multiplicity, rank, KO-6 $J$,
-chirality) & \catmark{A}/\catmark{D} & a theorem fixing the invariants
-endogenously \\
+G-04a & The stated multiplicity, rank, KO-6 $J$, and chirality conditions are explicit constraints & \catmark{A} (formal statement) & a source or counterexample changing the stated constraints \\
+G-04b & Their endogenous selection from the kernel is not derived & \catmark{D} & a target-independent theorem fixing the invariants endogenously \\
 G-05 & $[2,2,2]$ rejection rests on an unverified mass-degeneracy
 argument & \catmark{D} & primary-source theorem settling the case
 either way \\
-L-01 & Lean layers Foundation/RealStructure/FOC/Krajewski/DeltaScale
-closed at head \texttt{61bc24da} & \catmark{A} (formal) & scan or build
-exhibiting an open obligation in these files \\
+L-01 & Historical scan reported no \texttt{sorry} in Foundation/RealStructure/FOC/Krajewski/DeltaScale at \texttt{61bc24da}; no live status is asserted & \catmark{A} (snapshot audit fact) & raw live-tree reconciliation changing the record \\
 L-02 & 51 open obligations at head; register under-reports them
 (F1/F3); one target-shaped definition (F2) & \catmark{A} (audit fact) &
 a head at which the counts or findings no longer hold \\
@@ -2137,7 +2204,7 @@ Two disciplinary statements bound this subsection. Neither
 \cite{parker2019} nor \cite{rabinovici2021} asserts any collapse of
 state-space differentiability; both concern operator-complexity growth and
 its bounds, and the bibliography records this scope explicitly. The
-differentiability consequence is a \UIDT\ inference at \catmark{D},
+differentiability consequence is a \RAP\ inference at \catmark{D},
 conditional on an antecedent --- plateau saturation for an admissible
 kernel dynamics --- that is itself unestablished, since no admissible
 kernel candidate of Part~I has been shown even to admit the Lanczos
@@ -2197,7 +2264,7 @@ The correct posture toward the matrix-model signature results is the one
 Part~I takes toward block selection: acknowledgement, not positioning. It
 is outside this framework's competence to reject the IKKT or related
 programmes wholesale, and no such rejection is asserted. What \emph{is}
-asserted is a target-leakage guard: no \UIDT\ construction may select the
+asserted is a target-leakage guard: no \RAP\ construction may select the
 underlying ensemble, action, or boundary prescription \emph{because} it
 yields a $(3{+}1)$ Lorentzian signature. A signature chosen to obtain the
 desired arena is leaked target, not derived structure. Until a signature is
@@ -2224,7 +2291,7 @@ without temporal input.
 
 \begin{killswitch}
 DIR-S-02 is falsified, and the state-level account of time abandoned, by
-exhibiting a \UIDT-compatible construction in which a fundamental time
+exhibiting a \RAP-compatible construction in which a fundamental time
 parameter precedes any thermodynamic state --- for instance, a primitive
 carrying an intrinsic one-parameter evolution not derived from a modular or
 KMS structure --- while remaining consistent with the Part-III demotion.
@@ -2273,7 +2340,7 @@ never the reverse.
 \label{subsec:observer-stratification}
 
 The single most important commitment of the entire observer programme
-can be stated in one sentence: \UIDT\ does not use consciousness as a
+can be stated in one sentence: \RAP\ does not use consciousness as a
 collapse mech\-a\-nism.\catmark{A} The framework takes no position that the
 awareness of an observer is what reduces a quantum superposition to a
 definite outcome. This is a deliberate exclusion, and it is if anything
@@ -2293,15 +2360,15 @@ an interpretive proposal at \catmark{E}.
 biological systems that perform measurements: detectors, instruments,
 and, in the biological case, nervous systems with their measurable
 dynamics. Claims at this level are empirical and carry the ordinary
-obligations of empirical science, including uncertainties. \UIDT\ adds
+obligations of empirical science, including uncertainties. \RAP\ adds
 nothing to this stratum and borrows from it.
 \item[Stratum~II: Standard quantum and decoherence formalism.] The
 consensus physics of measurement: unitary evolution, the decoherence
 programme's account of how environmental interaction suppresses
 interference and selects a preferred basis, and the Born rule as the
 standard quantum recipe for outcome probabilities. This stratum is the
-field's, not \UIDT's; the framework cites it and is bound by it.
-\item[Stratum~III: The \UIDT\ interpretation.] The framework's own
+field's, not \RAP's; the framework cites it and is bound by it.
+\item[Stratum~III: The \RAP\ interpretation.] The framework's own
 reading, in which the observer is treated as \emph{compression-limited
 relational access}: a subsystem that, by virtue of its finite capacity,
 has access only to a coarse-grained projection of the underlying
@@ -2345,15 +2412,15 @@ decoherence leaves open.\catmark{E}
 Nowhere is the discipline of the observer programme tested more sharply
 than at the Born rule, because the Born rule is exactly the kind of
 thing a confident framework would be tempted to claim it had derived.
-\UIDT\ makes the opposite, harder commitment: it states plainly that it
+\RAP\ makes the opposite, harder commitment: it states plainly that it
 has no such derivation.
 
 The honest accounting is threefold. First, the Born rule is, in its
 established form, a standard quantum rule belonging to Stratum~II; the
 probability of an outcome is the squared modulus of the corresponding
 amplitude, and this rule is borrowed from consensus physics, not
-produced by \UIDT.\catmark{A} Second, the framework has no completed
-Born-rule theorem of its own: there is no \UIDT\ argument that derives
+produced by \RAP.\catmark{A} Second, the framework has no completed
+Born-rule theorem of its own: there is no \RAP\ argument that derives
 the quadratic form of the probability measure from the kernel
 hypothesis, from the demoted scalar, or from the compression
 picture.\catmark{A} Third, and most specifically, the forgetful or
@@ -2377,7 +2444,7 @@ is no derivation at all.\catmark{D}
 
 \begin{governancebox}[The Born Rule: Standing Status]
 The Born rule is a Stratum~II standard quantum rule, borrowed, not
-derived by \UIDT.\catmark{A} \UIDT\ has no completed Born-rule
+derived by \RAP.\catmark{A} \RAP\ has no completed Born-rule
 theorem.\catmark{A} The forgetful/non-invertible functor does not derive
 Born probabilities.\catmark{A} The open target is to obtain probability
 weights from coarse-graining information loss without circular
@@ -2439,7 +2506,7 @@ must be stated plainly.\catmark{E}
 In category theory proper, a forgetful functor is a fully defined
 object: it has a specified source category, a specified target category,
 a definite action on objects and on morphisms, and an explicit account
-of which structure is forgotten. The \UIDT\ forgetful functor has none
+of which structure is forgotten. The \RAP\ forgetful functor has none
 of these in completed form. It is a symbolic name for the intuition of
 structural forgetting under observer compression, and it must not be
 treated as a completed category-theoretic construction until its
@@ -2478,7 +2545,7 @@ Stratum~III, interpretive and phenomenological, and it carries no
 evidential weight whatsoever. Most emphatically, none of death,
 near-death report, psychedelic phenomenology, mystical experience, or
 ego dissolution may be cited as \emph{evidence} for the forgetful
-functor or for any \UIDT\ claim.\catmark{A} The direction of inference
+functor or for any \RAP\ claim.\catmark{A} The direction of inference
 is strictly one-way: the framework's interpretive picture may be used to
 think about these phenomena, but the phenomena may never be turned
 around and used to support the framework. To do so would be to mistake a
@@ -2496,7 +2563,7 @@ are retained as Category~\catmark{E}\ phenomenological edge-cases of the
 compression picture, within Stratum~III. They carry no evidential
 weight. Death, near-death reports, psychedelic or mystical experience,
 and ego dissolution may not be cited as evidence for the forgetful
-functor or any \UIDT\ claim.\catmark{A} The compression fallacy ---
+functor or any \RAP\ claim.\catmark{A} The compression fallacy ---
 ``less filter $=$ more truth'' --- is rejected: intelligence is
 compression; a filterless observer is incapacitated, not
 enlightened.\catmark{E} Inference runs from framework to phenomenon
@@ -2522,7 +2589,7 @@ category error rather than an aspiration.\catmark{E}
 
 If the observer is a compression-limited process rather than a
 substance, then the entity we are most tempted to reify --- the ego, the
-self --- must be treated the same way. \UIDT's interpretive proposal,
+self --- must be treated the same way. \RAP's interpretive proposal,
 held as Category~\catmark{E}\ content within Stratum~III, is that the
 ego is not a thing but a \emph{dynamic self-model boundary process}: a
 continuous, energy-expending activity by which a subsystem maintains a
@@ -2546,7 +2613,7 @@ world. These frameworks --- associated with such authors as Friston~\cite{fristo
 Clark, Hohwy, Metzinger~\cite{metzinger2003}, Seth, and Gazzaniga --- are named as comparison
 points whose attribution and content remain to be verified against their
 primary sources before any is treated as established support for a
-\UIDT\ claim; the verified bindings attach with the Phase-P5
+\RAP\ claim; the verified bindings attach with the Phase-P5
 bibliography.\catmark{E} They are lenses, not pillars.
 
 The framework's characteristic image for the ego is the whirlpool: a
@@ -2570,7 +2637,7 @@ compression-bound self-model: a self-model that takes itself as one of
 its own objects, sustains itself against entropic decay through
 continuous activity, and is bounded throughout by the compression its
 finite substrate imposes.\catmark{E} What is explicitly \emph{not}
-claimed: \UIDT\ does not claim to have solved the problem of qualia; it
+claimed: \RAP\ does not claim to have solved the problem of qualia; it
 offers no account of why there is something it is like to undergo a
 given experience; it recognises the explanatory gap between
 functional-structural description and phenomenal character as unclosed;
@@ -2583,65 +2650,41 @@ and is silent, by its own admission, on the hard question.
 \subsection{The Torsion Energy \texorpdfstring{$E_T$}{E\_T} and the Missing Scale Bridge}
 \label{subsec:et-scale-bridge}
 
-The developmental corpus assigns a prominent role to a torsion binding
-energy, $E_T = \ETorsion$, and treats it, in its observer-phenomenology
-sections, as a master threshold: a bound above which interactions become
-irreversible, matter condenses, life is sustained, death occurs upon its
-loss, and altered states arise from its disruption. This is precisely
-the kind of sweeping cross-scale identification that the framework's
-discipline exists to restrain, and the present section restrains
-it.\catmark{A}
+The developmental corpus assigned the torsion reference
+$E_T=\ETorsion$ roles extending from a subatomic effective sector to life,
+death, cognition, altered states, and artificial intelligence. Decision~D22
+rejects that cross-scale use. In the current manuscript $E_T$ remains a
+subatomic phenomenological reference at \catmark{E}; it is not a neural,
+biological, cognitive, macroscopic, or life/death threshold.\catmark{E}
 
-In observer contexts, $E_T$ is admitted only as Category~\catmark{E}\
-content pending an explicit ledger and external bridge --- an
-\catmark{E}\ (\emph{pending bridge}) quantity, not an established cognitive
-parameter.\catmark{E} It is barred, without exception, from service as a
-threshold for ego, life, death, sleep, psychedelic or near-death
-phenomenology, or artificial general intelligence.\catmark{A}
+The blocking fact is narrower than the historical argument suggested. No
+Hamiltonian coupling, operator matching, response function, spectral density,
+renormalisation-group matching, transfer function, or intervention protocol is
+specified that maps the $E_T$ sector to neural or biological observables. This
+absence is a documentable property of the present construction.\catmark{A}
+A nominal comparison between mega-electron-volt and electron-volt or
+millielectron-volt scales spans roughly six to nine decimal orders, depending
+on the chosen observable, but dimensional separation alone is not a universal
+no-go theorem. In particular, this draft does not claim a model-independent
+K\"all\'en--Lehmann suppression factor, does not assert a unique consensus
+cross-scale mechanism, and does not infer impossibility from scale separation
+alone.\catmark{A}
 
-The reason is a missing scale bridge, and the gap is enormous. The
-torsion energy is a mega-electron-volt-scale quantity --- nuclear and
-subnuclear physics --- while neural and cognitive dynamics unfold at
-molecular and synaptic scales of order electron-volts and below, with
-characteristic events at millielectron-volt scale~\cite{attwell2001,harris2012,levy2021}; the separation spans
-roughly six to nine orders of magnitude depending on the endpoints
-compared~\cite{appelquist1975}. To assert that a mega-electron-volt bound governs the onset of
-life, the moment of death, or the throttling of a cortical network is to
-leap across that gap without any mechanism connecting the two
-regimes.\catmark{A} The obstruction can be stated sharply. By the
-K\"all\'en--Lehmann spectral representation, correlation functions are
-analytic below the lightest physical threshold, so a mega-electron-volt
-parameter can imprint itself on millielectron-volt dynamics only through
-renormalisations of existing couplings, through local operators
-suppressed by powers such as $(E/E_T)^{2} \sim 10^{-19}$ at
-$E \sim \mathrm{meV}$, or through slowly varying logarithms --- never
-through a functional threshold~\cite{appelquist1975}.\catmark{A} The only consensus mechanism
-by which an MeV-scale quantity generates sub-eV dynamics is a
-pseudo-Goldstone mode, and that template is quantitative: a
-millielectron-volt mode tied to $E_T$ would require a global symmetry
-spontaneously broken at $f \approx E_T^{2}/m \approx
-6\times10^{6}\,\mathrm{GeV}$ with explicit breaking at the $E_T$ scale
---- structures the present framework does not contain, and whose
-$1/f$-suppressed matter couplings would be immediately exposed to
-fifth-force and astrophysical bounds. Even that template would not make
-$E_T$ a threshold of macroscopic dynamics; it would create a new light
-particle with its own phenomenology. That EFT consequence is a structural
-statement.\catmark{A} Any associated phenomenological interpretation remains
-at \catmark{E}. Within \UIDT, the route remains an unconstructed proposal at
-\catmark{E} until explicitly constructed. Constructing one, if it can
-be constructed at all, is a research target at predictive status, not a
-result the framework may assume.\catmark{D}
+Any future bridge must introduce the missing mathematical map, identify a
+measurable subatomic observable and a distinct low-energy observable, state
+all couplings and assumptions independently of the desired phenomenology, and
+produce a falsifiable protocol with uncertainties. Constructing such a bridge
+is an open research programme at \catmark{D}. Until then every observer-side
+interpretation remains quarantined at \catmark{E} and contributes no evidence
+to the pregeometric kernel.\catmark{E}
 
-\begin{governancebox}[$E_T$: Observer-Context Discipline]
-In observer and phenomenology contexts, $E_T = \ETorsion$ is
-\catmark{E}\ (\emph{pending bridge}) (ledger/external bridge required), never an
-established cognitive parameter.\catmark{E} It must \emph{not} be used
-as a threshold for ego, life, death, sleep, psychedelic/near-death
-states, or artificial general intelligence.\catmark{A} A scale bridge
-from mega-electron-volt physics to electron-volt-scale neural dynamics
---- a separation of roughly six to nine orders of magnitude --- does not
-exist; supplying one is a \catmark{D}\ research target, not an
-assumption.\catmark{A}
+\begin{governancebox}[$E_T$: Subatomic-Only Firewall under D22]
+$E_T=\ETorsion$ remains \catmark{E} and subatomic-only. It must not be used as
+a threshold for ego, consciousness, life, death, sleep, psychedelic or
+near-death states, neural computation, biological regulation, macroscopic
+thermodynamics, or artificial general intelligence. No class upgrade is
+authorized. Reopening requires a separately audited scale bridge and primary
+empirical evidence; verbal analogy is insufficient.
 \end{governancebox}
 
 \section{The Observer Taxonomy and the Underdetermination Red Team}
@@ -2723,7 +2766,9 @@ The speculative Class~I raises a seductive question: would a sufficiently
 powerful artificial intelligence, a better compressor than any human,
 thereby gain privileged access to the true ontology? The framework treats
 this as a red-team challenge to its own deflationary commitments, and the
-answer it returns is a firm \emph{no}.\catmark{D}/\catmark{E}
+design-level answer is negative.\catmark{D} The broader philosophical
+claim that no compressor can obtain a unique ontology remains an
+interpretive position at \catmark{E}.
 
 The reason is the underdetermination of ontology by data, in the
 Quine--Duhem sense. A finite body of empirical data never determines a
@@ -2737,7 +2782,7 @@ empirically equivalent ontologies. Prediction is not ontology, and the gap
 does not close with increasing intelligence.\catmark{A}
 
 This is the precise sense in which the framework refuses naive realism.
-\UIDT\ does not claim to be a final revelation of physics, and could not
+\RAP\ does not claim to be a final revelation of physics, and could not
 earn such a claim even in principle.\catmark{A} Its actual claim is more
 modest and more defensible: that its objects --- the relational structure,
 the renormalisation-group flows, the proposed invariants --- may compress
@@ -2755,10 +2800,11 @@ agency; historical scalar model non-ontological) through Class~III (extreme comp
 macro-objects) is a compression-rate taxonomy \catmark{E}, orthogonal to
 consciousness; not a consciousness hierarchy and not a moral ranking.
 Anthropocentrism is deflated, not inverted.\catmark{A}\\[0.3em]
-\textbf{AGI red team.} A superior compressor gains instrumental power, not
-ontological truth; Quine--Duhem underdetermination forbids a unique
-ontology from data.\catmark{D}/\catmark{E}\\[0.3em]
-\textbf{No final revelation.} \UIDT\ claims representational efficiency, not
+\textbf{AGI red team.} The programme assigns a superior compressor greater
+instrumental capacity but no automatic ontology privilege.\catmark{D}
+The Quine--Duhem reading of permanent ontological underdetermination is an
+interpretive claim at \catmark{E}.\\[0.3em]
+\textbf{No final revelation.} \RAP\ claims representational efficiency, not
 ultimate reality; prediction $\neq$ ontology; the compression fallacy is
 the standing guardrail.\catmark{A}
 \end{evidencebox}
@@ -2795,7 +2841,7 @@ support from data it merely accommodates.\catmark{E}
 \subsection{Orchestrated Objective Reduction as a Neutral Contrast}
 \label{subsec:orch-or}
 
-To locate the \UIDT\ observer programme in the wider landscape of theories
+To locate the \RAP\ observer programme in the wider landscape of theories
 connecting physics to mind, the framework selects one contrast case for
 detailed juxtaposition --- orchestrated objective reduction, the
 Penrose--Hameroff proposal --- and treats it as exactly that: a neutral
@@ -2803,19 +2849,19 @@ contrast, not a foil to be defeated.\catmark{E} Orchestrated objective
 reduction posits that consciousness arises from quantum computations in
 neuronal microtubules, terminated by a gravitationally induced objective
 collapse of the wavefunction. Its interest here is that it differs from
-\UIDT\ on precisely the axis where \UIDT\ has taken a strong position: it
-asserts an \emph{objective physical collapse}, whereas \UIDT, in the
+\RAP\ on precisely the axis where \RAP\ has taken a strong position: it
+asserts an \emph{objective physical collapse}, whereas \RAP, in the
 epistemic tradition of quantum Bayesianism, denies physical collapse and
 reads quantum probabilities as the structural ignorance of a
 compression-limited observer (\cref{subsec:observer-stratification}).\catmark{E}
 
-Three cautions govern the comparison. First, \UIDT\ does not collapse all
+Three cautions govern the comparison. First, \RAP\ does not collapse all
 quantum-mind theories into orchestrated objective reduction; the broader
 field --- integrated information theory~\cite{tononi2004}, global-workspace
 accounts, and others --- comprises distinct programmes that must not be
-conflated.\catmark{A} Second, \UIDT\ does not render orchestrated objective
+conflated.\catmark{A} Second, \RAP\ does not render orchestrated objective
 reduction obsolete; the two are different research programmes on different
-premises, and \UIDT's denial of objective collapse is a difference of
+premises, and \RAP's denial of objective collapse is a difference of
 commitment, not a refutation.\catmark{A} Third, any detailed empirical
 claim about microtubule coherence times or specific experiments would
 require external citation audit before it could be stated here, so the
@@ -2827,9 +2873,9 @@ framework confines itself to structural commitments.\catmark{A}
 The framework's preferred instrument for situating itself among theories of
 consciousness is a comparison matrix, and its purpose must be stated before
 its content: it is a \emph{demarcation instrument}, not a scorecard. The
-matrix is not built to show that \UIDT\ wins; it is built to make the
-commitments and the weaknesses of each framework, \UIDT\ included, explicit
-and comparable along neutral axes.\catmark{A} Throughout, the \UIDT\
+matrix is not built to show that \RAP\ wins; it is built to make the
+commitments and the weaknesses of each framework, \RAP\ included, explicit
+and comparable along neutral axes.\catmark{A} Throughout, the \RAP\
 observer material is marked \catmark{E}, because it has not been formalised
 or tested, and the framework's own weaknesses are recorded as plainly as
 anyone else's.\catmark{E}
@@ -2838,7 +2884,7 @@ anyone else's.\catmark{E}
 \renewcommand{\arraystretch}{1.3}
 \begin{longtable}{p{0.20\textwidth} p{0.24\textwidth} p{0.24\textwidth} p{0.22\textwidth}}
 \caption{Consciousness--physics demarcation matrix. A neutral comparison
-instrument; \UIDT\ observer material is \catmark{E}. The matrix records
+instrument; \RAP\ observer material is \catmark{E}. The matrix records
 weaknesses as well as commitments and is not a ranking.}
 \label{tab:demarcation-matrix}\\
 \toprule
@@ -2880,24 +2926,25 @@ physics mapping \\
 }
 
 \noindent Several features of \cref{tab:demarcation-matrix} are deliberately
-uncomfortable for \UIDT, and that discomfort is the point. The observer
+uncomfortable for \RAP, and that discomfort is the point. The observer
 programme offers \emph{no} evidence for its observer-level claims; its
 scale bridge is openly marked missing; its observer claims are, as yet, not
 falsifiable; and its characteristic category-error risks --- the slide from
 information to mind, the leap from mega-electron-volt physics to neural
 dynamics --- are named in its own cell rather than hidden. A matrix built
-to flatter \UIDT\ would not contain these admissions; their presence is
+to flatter \RAP\ would not contain these admissions; their presence is
 what makes the instrument a demarcation tool rather than an
 advertisement.\catmark{A}
 
 \begin{evidencebox}[Comparative Frameworks: Standing Status]{}
 \textbf{Orch.\ OR.} Used as a neutral contrast (objective collapse vs.\
-\UIDT's QBist no-collapse); not a foil; \UIDT\ neither subsumes nor
-obsoletes it; detailed empirical claims pending citation
-audit.\catmark{A}/\catmark{E}\\[0.3em]
+\RAP's QBist no-collapse); not a foil; \RAP\ neither subsumes nor
+obsoletes it. This demarcation policy is an audit fact.\catmark{A}
+Detailed empirical comparison remains pending citation audit and is capped at
+\catmark{E}.\\[0.3em]
 \textbf{Matrix.} A demarcation instrument on neutral axes (parsimony,
 mathematical maturity, empirical status, falsifiability, category-error
-risk), not a ranking; \UIDT\ observer material marked \catmark{E}; \UIDT's
+risk), not a ranking; \RAP\ observer material marked \catmark{E}; \RAP's
 own weaknesses recorded explicitly.\catmark{A}
 \end{evidencebox}
 
@@ -2983,14 +3030,10 @@ criterion before it can move from interpretation to a falsifiable programme.
 T-01 & Thermodynamic passage kernel $\to$ continuum as programme &
 \catmark{D} & construction failing the three no-go points terminally;
 or succeeding, which upgrades by governance only \\
-T-02 & No dimensional-emergence theorem; UV/IR mixing; thermal-time
-circularity risk & \catmark{D}/\catmark{E} & primary-source theorem
-closing any of the three \\
-T-03 & Modular flow gives no endogenous time: $\sigma^\omega_t=\mathrm{id}$
-on $C^\ast(\mathbf S)$; thermal-time reading needs the inserted algebra
-(\cref{cor:modular-relocation}) \emph{and} a non-circular state selection &
-\catmark{A}/\catmark{E} & a state-selection principle from pregeometric
-data without temporal input (\cref{oq:state-selection}) \\
+T-02a & The manuscript and audited snapshot contain no dimensional-emergence theorem and record UV/IR and thermal-time gaps & \catmark{A} (audit fact) & a contradictory source-faithful corpus audit \\
+T-02b & Resolving those continuum-passage gaps remains an open research programme & \catmark{D} & a construction surviving the stated no-go tests \\
+T-03a & On the abelian algebra $C^\ast(\mathbf S)$, the stated modular flow is trivial: $\sigma^\omega_t=\mathrm{id}$ & \catmark{A} & a mathematical error in \cref{cor:modular-relocation} \\
+T-03b & A thermal-time interpretation requires an inserted non-abelian algebra and non-circular state selection & \catmark{E} & a state-selection principle from pregeometric data without temporal input (\cref{oq:state-selection}) \\
 T-04 & Krylov saturation $\Rightarrow$ no smooth state-space metric, as a
 conditional consequence for the coarse-graining map & \catmark{D} & an
 admissible kernel reaching the RMT plateau that still supports a smooth
@@ -3000,7 +3043,7 @@ $\mathrm{KO}$-dimension nor forced by matrix ensembles & \catmark{D} &
 a leak-free mechanism producing the signature independently of the target
 (\cref{subsec:dir-s-03}) \\
 DS-02 & DIR-S-02: time and temperature are state-level, not fundamental &
-\catmark{D} & a \UIDT-compatible fundamental time preceding any
+\catmark{D} & a \RAP-compatible fundamental time preceding any
 thermodynamic state \\
 DS-03 & DIR-S-03: signature is an open gap, never hand-chosen &
 \catmark{D} & signature selected to match the target is leakage; discharge
@@ -3010,25 +3053,21 @@ O-01 & No consciousness-collapse mechanism anywhere in the framework &
 a discovery) \\
 O-02 & Observer as compression-limited relational access & \catmark{E}
 & interpretive; carries no evidential weight by construction \\
-O-03 & Born rule borrowed from Stratum~II; no \UIDT\ derivation;
+O-03 & Born rule borrowed from Stratum~II; no \RAP\ derivation;
 functor supplies none & \catmark{A} & a completed non-circular
 derivation, externally audited \\
-O-04 & $F\colon V\to\mathrm{Obs}$ is an ansatz; forgetful functor is a
-name, not a construction & \catmark{A}/\catmark{E} & fully specified
-categories, functor action, and forgotten structure \\
+O-04a & No fully specified categories, functor action, or forgotten structure are supplied in the current manuscript & \catmark{A} (audit fact) & a contradictory explicit construction \\
+O-04b & $F\colon V\to\mathrm{Obs}$ remains an interpretive ansatz & \catmark{E} & fully specified categories, functor action, and forgotten structure \\
 Q-01 & Altered-states/death narratives quarantined at \catmark{E};
 one-way inference; compression fallacy rejected & \catmark{A} (policy)
 & none: governance, not physics \\
-E-01 & $E_T$ barred from cognitive-threshold roles; six-to-nine-order
-scale gap; K\"all\'en--Lehmann suppression argument &
-\catmark{A} & a constructed, externally audited scale bridge \\
+E-01a & Governance bars $E_T$ from cognitive, biological, or life/death threshold roles under Decision D22 & \catmark{A} (policy) & a superseding PI record \\
+E-01b & No validated physical scale bridge from the subatomic $E_T$ sector to neural observables is supplied & \catmark{D} & a constructed, externally audited scale bridge \\
 P-01 & Phenomenology is not evidence for the historical scalar ansatz or for the kernel &
 \catmark{A} (policy) & none: demarcation, not physics \\
-OT-01 & Observer taxonomy (Class 0-III) is compression-rate, orthogonal to
-consciousness; AGI/underdetermination yields no privileged ontology &
-\catmark{E}/\catmark{A} & a demonstration that superior compression yields
-a unique ontology (breaking Quine--Duhem) \\
-DM-01 & Demarcation matrix is a neutral instrument recording \UIDT's own
+OT-01a & Observer Classes 0--III form an interpretive compression-rate taxonomy, not a consciousness hierarchy & \catmark{E} & an operational empirical model \\
+OT-01b & The programme grants no evidential privilege merely from superior compression & \catmark{A} (governance policy) & a superseding policy record \\
+DM-01 & Demarcation matrix is a neutral instrument recording \RAP's own
 weaknesses, not a ranking & \catmark{A} (policy) & none: demarcation, not
 physics \\
 \end{longtable}
@@ -3171,7 +3210,7 @@ strength: it cannot be evaded by cleverness, only by architecture. The
 calibrated value $\gamma = 16.339$, every quarantined museum constant,
 and every external benchmark value must be \emph{inaccessible} to any
 code path that purports to compute $\gamma$, $\Delta$, or related
-quantities from within \UIDT; benchmark values are stored with solver
+quantities from within \RAP; benchmark values are stored with solver
 access explicitly disabled.\catmark{A} The blind computation and the
 post-hoc comparison must be \emph{two distinct programs}. The framework
 keeps documented instances of the failure mode --- a hard-coded target
@@ -3210,19 +3249,16 @@ status is \Bpending.\catmark{B} And the spectral gap $\Delta$\,\Bdelta\
 must not be naively identified with the $0^{++}$ glueball mass
 (Limitation~L12, \cref{lim:L12}).
 
-\begin{pioverridebox}[PI Decision D18 --- Evidence-Class Determination for $\Delta$ (carried over)]
+\begin{pioverridebox}[PI Decisions D18/D21 --- Evidence-Class Determination for $\Delta$]
 \label{box:pi-override-delta}
-The value $\Delta = \DeltaGap$ is recorded at Class~\catmark{B}:
-internally consistent and lattice-compatible under the recorded
-determination; not externally peer-confirmed and not derived. The
-conservative audit notes independently that, absent completed external
-verification, the value would otherwise sit at \catmark{E\,pending}; the
-determination sets the working class to~B while leaving that caution on
-the record, with external peer counter-signature pending. This
-determination concerns the \emph{value's} class only; the
-\emph{identification} of $\Delta$ with any particle state is a separate
-matter and is barred by L12 regardless of class. D18 is unchanged by
-D19.
+The value $\Delta=\DeltaGap$ remains at Class~\catmark{B}: an internally
+consistent, lattice-compatible reference under the recorded determination,
+not a UIDT-internal derivation and not an exact mathematical theorem for the
+numerical value. Decision D21 rejects the proposed upgrade to Class~A; no
+external counter-signature is sought because no upgrade occurs. The class of
+the value does not identify it with a particle state. Limitation~L12 bars any
+$0^{++}$ glueball or particle-mass identification without an explicit
+operator and correlator matching.
 \end{pioverridebox}
 
 \subsection{Topology and the Topological Susceptibility}
@@ -3276,7 +3312,7 @@ A solver that has access to the value it is meant to predict cannot be
 said to predict it. Therefore the calibrated value $\gamma = 16.339$,
 together with all quarantined museum constants and all external
 benchmark values, must remain inaccessible to any code path that claims
-to compute $\gamma$, $\Delta$, or related quantities from within \UIDT.
+to compute $\gamma$, $\Delta$, or related quantities from within \RAP.
 Blind computation and post-hoc comparison must be separated
 programmatically; benchmark values are stored with solver access
 disabled. A derivation that imports its own target is a tautology
@@ -3346,7 +3382,7 @@ matching}, and no such matching has been established.\catmark{A}
 
 \begin{limitation}[Naive $\Delta\!\leftrightarrow\!0^{++}$ Identification: L12]
 \label{lim:L12}
-The \UIDT\ spectral gap $\Delta$ must not be identified with the mass of
+The \RAP\ spectral gap $\Delta$ must not be identified with the mass of
 the lightest scalar ($0^{++}$) glueball of pure $\mathrm{SU}(3)$
 Yang--Mills theory in the absence of explicit operator matching.
 Numerical proximity of the two values does not constitute
@@ -3454,8 +3490,9 @@ mentions are historical only.\catmark{E}
 The dimension-5 non-minimal coupling makes the Lagrangian an effective
 field theory valid only below a cutoff $\Lambda_{\UIDT}$, which must lie
 above the gap scale and is \emph{not} identified with the torsion scale
-$E_T = \ETorsion$; the latter is a separate, much lower observer-context
-quantity (\cref{subsec:et-scale-bridge}). The value of $\Lambda_{\UIDT}$
+$E_T = \ETorsion$; the latter is a separate subatomic reference with no
+constructed observer, neural, biological, or macroscopic scale bridge
+(\cref{subsec:et-scale-bridge}). The value of $\Lambda_{\UIDT}$
 is not fixed and a non-perturbative UV completion remains
 open.\catmark{D}
 \end{limitation}
@@ -3655,7 +3692,7 @@ resolved tension.\catmark{C}
 
 \begin{table}[H]
 \footnotesize
-\caption{Stratum-I empirical inputs to which \UIDT\ calibrates. All
+\caption{Stratum-I empirical inputs to which \RAP\ calibrates. All
 entries are Category~[C]; none is a prediction or a tension resolution.}
 \label{tab:cosmology-inputs}
 \renewcommand{\arraystretch}{1.3}
@@ -3765,7 +3802,7 @@ factual evidence.\\[0.3em]
 independent empirical discovery where $\lambda_S$ is fixed
 definitionally by that same constraint.\\[0.3em]
 \textbf{(9)} No claim that DESI, $H_0$, $S_8$, or $w_0$--$w_a$ data
-validate \UIDT\ beyond calibrated Category~\catmark{C}\
+validate \RAP\ beyond calibrated Category~\catmark{C}\
 status.\\[0.3em]
 \textbf{(10)} No claim that a lattice-compatible number establishes the
 Standard-Model gauge group, a confinement mechanism, or a Clay-grade
@@ -3902,7 +3939,7 @@ established earlier.
 \label{subsec:structural-realism}
 
 The ontological proposal that physical reality is constituted by
-mathematical structure raises an epistemological question: does \UIDT\
+mathematical structure raises an epistemological question: does \RAP\
 claim the universe \emph{is} a mathematical object, or merely that it is
 \emph{best described by} one? The framework's working answer leans toward
 the former, an ontic-structural-realist position, but it is held as a
@@ -3954,7 +3991,7 @@ statement about the class of questions to which such questions
 belong.\catmark{A}
 
 The framework also distinguishes itself from a simulation hypothesis:
-\UIDT\ posits no external simulator and no computational substrate.
+\RAP\ posits no external simulator and no computational substrate.
 Whatever force the structural-realist picture has, it is ontological
 speculation, not a claim that the universe is being computed by
 something.\catmark{E} The computational vocabulary that appears in the
@@ -3964,27 +4001,27 @@ is metaphor, and is barred from any argument in this manuscript.
 \subsection{Comparison with Alternative Frameworks}
 \label{subsec:alt-frameworks}
 
-It is useful, and disciplined, to state where \UIDT\ sits relative to
+It is useful, and disciplined, to state where \RAP\ sits relative to
 established programmes, always as comparison, never as a claim of
 superiority.
 
-Against string theory, \UIDT\ is far more ontologically frugal but
+Against string theory, \RAP\ is far more ontologically frugal but
 correspondingly far less developed and far less mathematically mature;
 frugality is not a virtue if it buys its simplicity by leaving the hard
 problems unsolved, and the $G_{\mathrm{SM}}$-origin gap is exactly such
 an unsolved problem.\catmark{E} Against entropic gravity
 (Verlinde~\cite{verlinde2011}, Padmanabhan~\cite{padmanabhan2010}),
-\UIDT\ shares the intuition that geometry is emergent and thermodynamic
+\RAP\ shares the intuition that geometry is emergent and thermodynamic
 in spirit but does not claim to have improved on it; the relationship is
 one of shared intuition, not demonstrated advance.\catmark{E} Against
-loop quantum gravity, \UIDT\ shares the \emph{aspiration} to background
+loop quantum gravity, \RAP\ shares the \emph{aspiration} to background
 independence but does not yet achieve it in full: the metric-emergence
 map (\cref{ax:emergence}) is written as a perturbation about a fixed
 Minkowski background, so background independence is at present only
 partial (\cref{lim:L13}); it takes the opposite route to geometry (a
 continuum coarse-graining limit rather than quantised geometric
 structures); and like LQG it has not recovered the full Standard-Model
-particle content --- indeed \UIDT\ has not recovered it at all, which is
+particle content --- indeed \RAP\ has not recovered it at all, which is
 the content of the open gap.\catmark{E}
 
 Two comparisons are new to this draft, and both are unflattering. Against
@@ -3992,7 +4029,7 @@ the noncommutative-geometry programme of Connes, Chamseddine, and
 collaborators, Part~I is a strict consumer: every structural constraint
 it uses --- Krajewski combinatorics, multiplicity matrices, the
 KO-dimension-6 real structure, the classification of irreducible
-geometries --- is imported, and \UIDT\ has added no theorem to that
+geometries --- is imported, and \RAP\ has added no theorem to that
 literature. Against the matrix-model programme (IKKT, BFSS, and their
 condensation studies), the framework's dynamical-selection search
 returned an honest null. The relationship in both cases is that of a
@@ -4014,7 +4051,7 @@ asserted.
 \subsection{Relation to the Information-Theoretic and Structural-Realist Tradition}
 \label{subsec:prior-art}
 
-The general move that \UIDT\ makes --- taking an information-theoretic
+The general move that \RAP\ makes --- taking an information-theoretic
 primitive as ontologically basic and recovering spacetime, and
 aspirationally gauge structure, as emergent --- is not itself novel, and
 intellectual honesty requires locating it explicitly within an
@@ -4034,7 +4071,7 @@ non-perturbative description of quantum gravity, and that disentangling
 the degrees of freedom associated with two regions causes those regions
 to pull apart and pinch off, quantifiable by standard entanglement
 measures~\cite{vanraamsdonk2010}. That statement is a
-Stratum-II\,\catmark{B} result \emph{within} AdS/CFT; \UIDT\ has no
+Stratum-II\,\catmark{B} result \emph{within} AdS/CFT; \RAP\ has no
 holographic dual and no boundary conformal field theory, so the
 generalisation ``spatial connectivity \emph{is} entanglement'' is a
 Stratum-III reading at \catmark{E} and is not inherited by this
@@ -4051,17 +4088,17 @@ disconnects the bulk geometry~\cite{vanraamsdonk2010}. \catmark{B},
 Stratum~II.\\[0.25em]
 \textbf{RMC-01b} The generalisation ``spatial connectivity \emph{is}
 entanglement'' beyond holography. \catmark{E}, Stratum~III. Not inherited
-by \UIDT.\\[0.25em]
+by \RAP.\\[0.25em]
 \textbf{RMC-02} Time as a local informational calibration measure.
 \catmark{E}, Stratum~III.\\[0.25em]
 \textbf{RMC-03} Continuous gravity as an effective field theory; the
 thermodynamic-gravity results of Jacobson, Padmanabhan, and Verlinde are
 \emph{precedent} that emergent geometry is a respectable position, not
-derivations imported into \UIDT. \catmark{A} re: corpus (as a statement
-about what \UIDT\ does and does not derive); \catmark{E} for the mapping.
+derivations imported into \RAP. \catmark{A} re: corpus (as a statement
+about what \RAP\ does and does not derive); \catmark{E} for the mapping.
 \end{evidencebox}
 
-\noindent Against this background, what is specific to \UIDT\ --- and
+\noindent Against this background, what is specific to \RAP\ --- and
 what is offered as its actual contribution, as distinct from the shared
 tradition above --- is narrow and concrete: the particular Lagrangian of
 \cref{eq:lagrangian} with its non-minimal $S\,F^2$ coupling at a stated
@@ -4073,7 +4110,7 @@ quantitative lower bounds on any admissible intermediate algebra
 (\cref{subsec:lower-bounds}); and the explicit evidence-grading
 discipline under which every claim in this manuscript is carried. None of
 these is a claim to have solved the emergence problem that the tradition
-leaves open; they are the specific, falsifiable form in which \UIDT\
+leaves open; they are the specific, falsifiable form in which \RAP\
 states its version of it.\catmark{E}
 
 \section{Scientific Context and Reciprocal Demarcation}
@@ -4543,8 +4580,7 @@ GAP-21 & Vacuum extraction & Protocol compatible with passivity, quantum
 inequalities, conservation, and backreaction. & \catmark{D}\\
 GAP-22 & Live Lean reconciliation & Current commit tree, build log, axiom/sorry
 inventory, and line-by-line manuscript reconciliation. & \catmark{A}\\
-GAP-23 & NORM-01 & Single-class decomposition of compound claims with invariant
-class census --- closed 2026-07-19, commit \texttt{dc1cef4}. & \catmark{A}\\
+GAP-23 & NORM-01 & Single-class decomposition of compound claims; closed by this content-finalization patch, subject to Claude diff audit. & \catmark{A}\\
 GAP-24 & PROV-002 & Immutable TeX image digest, source lock, negative fixtures,
 and deterministic report. & \catmark{A}\\
 GAP-25 & Governance enforcement & Non-empty PR-range gates, protected branch,
@@ -4553,8 +4589,7 @@ GAP-26 & Source authority & Claim graph separating chat, hypothesis, source,
 raw data, code, derived artefact, and manuscript statement. & \catmark{A}\\
 GAP-27 & External replication & Independent formal and numerical reproduction
 on a separately controlled system. & \catmark{D}\\
-GAP-28 & FSS/P2 disposition & PI disposition based on raw data or explicit
-archival quarantine. & \catmark{D}\\
+GAP-28 & FSS/P2 scientific result & Active use is quarantined under Decision D24; the scientific question remains open pending raw data. & \catmark{D}\\
 \bottomrule
 \caption{UIDT v4.0 research-gap atlas.}
 \label{tab:ctx-v4-gap-atlas}
@@ -4689,45 +4724,28 @@ governance commitments. A framework whose strongest statements are the
 statements of its own limits has not thereby proved anything about
 nature; it has, at least, made itself checkable.
 
-\section{Ledger Draft: PI Decision D19}
-\label{sec:d19-ledger-draft}
+\section{Ledger Record: PI Decision D19}
+\label{sec:d19-ledger-record}
 
-\begin{pioverridebox}[D19 --- Ledger Entry, DRAFT for PI Signature]
-\textbf{Decision.} The continuous real scalar field $\Sx$ is demoted
-from ontological primitive (Variant~B, canonical in v3.9.x) to a
-macroscopic effective-field-theory limit. A finite algebraic
-pregeometric kernel is recorded as the candidate primitive under
-investigation, at evidence class \catmark{D}.
+\begin{pioverridebox}[D19 --- Ledger Record: Ontological Re-Architecture]
+\textbf{Decision.} The continuous real scalar field $\Sx$ is demoted from
+ontological primitive to a historical macroscopic effective-field model. A
+finite relational-algebraic pregeometric kernel is the active candidate under
+investigation at evidence class \catmark{D}.
 
 \textbf{Binding conditions.}
-(i)~Part~I is a formal research programme\catmark{D}, not a theorem
-corpus; no Lean result, once machine-checked, upgrades a physics claim
-without governance.
-(ii)~No Standard-Model-like block partition is hard-coded into any core
-formal structure; partitions enter as inserted candidate instances only,
-under GLBC.
-(iii)~All v3.9 ledger evidence classes are carried unchanged:
+(i)~Part~I is a formal research programme at \catmark{D}, not an established
+foundation.
+(ii)~No target block partition is permitted in core definitions, axioms,
+hypotheses, losses, or acceptance conditions.
+(iii)~Historical ledger values retain their recorded classes:
 $\kappa = \KappaRG$\,\catmark{A}, $\lambda_S = \lambdaS$\,\catmark{A},
 $v = \vVEV$\,\catmark{A}, $\gamma = \GammaGeom$\,\catmark{A-},
-$\Delta = \DeltaGap$\,\catmark{B} (D18 unchanged), cosmology
-$\leq$\,\catmark{C}. D19 reclassifies no constant.
+$\Delta = \DeltaGap$\,\catmark{B} under D18/D21, and cosmological entries
+at no higher than \catmark{C}.
 
-\textbf{New ledger rows.} ONT-11 (\catmark{D}, Stratum~III);
-tension entry T8 ($[2,2,2]$ rejection unverified, \catmark{D}).
-
-\textbf{Scope.} D19 is an ontological reassignment, not a physics
-result. It does not assert that the kernel is established. It removes a
-stipulation; it adds no evidence.
-
-\textbf{Status.} DRAFT. Takes effect only upon PI signature in
-\texttt{LEDGER/CLAIMS.json}. Until signature, UIDT Ontology v3.9.9
-(\texttt{-006}) remains the canonical manuscript of record and Variant~B
-remains the canonical grammar. This document authorizes nothing; AI
-audit output is advisory only (AI\_AUDIT\_POLICY Sec.~1, Gate~F8).
-
-\medskip
-\noindent\textit{Principal Investigator signature:}\\[1.4em]
-\rule{6cm}{0.4pt}\qquad\textit{Date:}\ \rule{2.5cm}{0.4pt}
+\textbf{Status.} CLOSED on 23~July~2026 under the PI standing instruction for
+scientifically determinate decisions. No constant is reclassified by D19.
 \end{pioverridebox}
 
 \section{Ledger Record: PI Decision D20}
@@ -4749,13 +4767,30 @@ separate governance.
 structure; partitions enter as inserted candidate instances under GLBC.
 (iii)~All incoming evidence classes remain unchanged exactly as recorded in
 the preceding D19 ledger entry; D20 changes architectural role only.
-(iv)~PI-DELTA-P6, PI-ET-P6, PI-MUSEUM, and P2 remain separate decisions.
+(iv)~PI-DELTA-P6, PI-ET-P6, PI-MUSEUM, and P2 were separate decisions at D20 and are subsequently closed by D21--D24.
 
-\textbf{Application boundary.} This executor candidate is subject to a
-pre-application audit against blob \texttt{601cc57d}. Claude Desktop may
-recommend GO or HOLD. Explicit PI GO is required before the single-writer
-application. Final integration and merge remain PI-only.
+\textbf{Application record.} The MSS-000 rebase was audited against blob
+\texttt{601cc57d} and is present in the supplied watermarked baseline blob
+\texttt{7962e5e7}. This statement records manuscript provenance only; final
+integration and merge remain PI-only.
 \end{pioverridebox}
+
+\section{Closed PI Dispositions D21--D25}
+\label{sec:closed-pi-dispositions}
+
+\begin{description}[leftmargin=2.8cm,style=nextline]
+\item[D21 --- $\Delta$.] Upgrade rejected; D18 retained at
+$1.710\pm0.015\,\mathrm{GeV}$ and \catmark{B}. No particle-mass or glueball
+identification.
+\item[D22 --- $E_T$.] Scale firewall confirmed; class retained at
+\catmark{E}; no neural, biological, cognitive, macroscopic, or life/death
+application without a separately audited scale bridge.
+\item[D23 --- Museum.] Route~B approved as the final v4.0 historical-retention
+route. The appendix is non-imported and reversible.
+\item[D24 --- P2.] FSS/P2 placed in archival quarantine because raw data and
+run provenance are absent. No active claim survives the quarantine.
+\item[D25 --- Name.] Active programme and manuscript names approved by Decision D25; UIDT remains the historical lineage name.
+\end{description}
 
 \section*{Open Obligations Carried Forward}
 \addcontentsline{toc}{section}{Open Obligations Carried Forward}
@@ -4764,11 +4799,11 @@ application. Final integration and merge remain PI-only.
 mistakes its completeness for closure.
 
 \begin{enumerate}[leftmargin=1.6em,itemsep=0.25em]
-\item Lean findings F1 (register--code contradiction on the selection
-proposition), F2 (target-shaped admissibility wrapper), and F3
-(under-registered proof debt: 51 open obligations at head, 35
-unregistered) are open. Discharging F1 upgrades the \emph{formal} layer
-only; the proposition's physical grade remains bounded by H1 and H2.
+\item Lean findings F1--F3 are historical findings at
+\texttt{61bc24da}. Their current status is unresolved until the live raw tree,
+build log, axiom inventory, and whole-repository proof-debt scan are
+reconciled. Any repair upgrades only the formal software layer; physical
+claims remain bounded by their hypotheses.
 \item Hypothesis H1 (intersection-form filter) is design-level: its
 derivation from spectral-triple axioms is the stated upgrade path.
 Hypothesis H2 (mass non-degeneracy) is a heuristic proxy for a claim
@@ -4780,10 +4815,10 @@ publishable.
 \item The thermodynamic passage of Part~II has no construction. The
 three no-go points --- absence of a dimensional-emergence theorem,
 UV/IR mixing, and thermal-time circularity --- stand.
-\item The Born rule, the $E_T$ scale bridge, the $H_0$ and $S_8$
-tensions, and the origin of $G_{\mathrm{SM}}$ remain exactly where the
-tension ledger (\cref{tab:tensions}) places them: unresolved, displayed,
-and available for falsification.
+\item The Born rule, a physical $E_T$ scale bridge, the $H_0$ and $S_8$
+tensions, and the origin of $G_{\mathrm{SM}}$ remain unresolved. Decision
+D22 closes only the misuse boundary, not the missing scale bridge; Decision
+D24 closes only the active use of P2, not its scientific question.
 \end{enumerate}
 
 
@@ -4793,15 +4828,16 @@ and available for falsification.
 \part*{Historical Appendix: Non-Imported Scalar/EFT Museum Record}
 \addcontentsline{toc}{part}{Historical Appendix: Non-Imported Scalar/EFT Museum Record}
 
-\begin{governancebox}[Museum Route B --- Reversible Retention under D20]
+\begin{governancebox}[Museum Route B --- Final Reversible Retention under D23]
 The material in this appendix is preserved to prevent silent loss, support
 regression audit, and document the superseded v3.9/D19 scalar and EFT grammar.
 It is not imported into Parts~I--III. Occurrences of
 $\LegacySx$, $\partial_\mu S$, $\eta_{\mu\nu}$, the effective metric ansatz,
 the scalar potential, or scalar correlators below are historical model content,
-not active primitives, operators, acceptance conditions, or derivations. D20
-does not authorize deletion; a future PI-MUSEUM decision may retain, relocate,
-or remove this record through a separately audited patch.
+not active primitives, operators, acceptance conditions, or derivations.
+Decision D23 fixes Route~B for v4.0: the record is retained, non-imported, and
+may not be silently deleted or reactivated. Any later relocation requires a
+new separately audited PI record.
 \end{governancebox}
 
 \section{Historical Effective-Scalar Axiomatics}
@@ -4823,8 +4859,7 @@ first and in full.
 \begin{axiom}[Historical Effective-Field Postulate (D19 record)]
 \label{ax:primacy}
 There exists a real scalar effective field $\LegacySx$, the vacuum information
-density, of canonical mass dimension $[\LegacySx]=1$. Under PI Decision D19
-(draft), $\LegacySx$ is \emph{not} an ontological primitive: it is postulated
+density, of canonical mass dimension $[\LegacySx]=1$. Under PI Decision D19, $\LegacySx$ is \emph{not} an ontological primitive: it is postulated
 as the macroscopic, order-parameter-level description in which the
 kernel programme's continuum limit (\cref{sec:thermo-passage}) is
 expressed, and within the grammar of this Part it is the sole dynamical
