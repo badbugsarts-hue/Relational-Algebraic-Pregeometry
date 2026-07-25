@@ -28,11 +28,12 @@ py -m verification.pregeometry.experiments.run_pr1_null_ensembles --iterations 8
 |---|---:|---:|---:|---:|---:|
 | erdos_renyi | 128 | 9.578125 | 35.59375 | 4.353515625 | 0.007751937984 |
 | random_dag | 128 | 8.90625 | 34.71875 | 4.263671875 | 0.007751937984 |
-| degree_preserving_shuffle | 128 | 0 | 0 | 0 | 1 |
+| label_permutation_control | 128 | 0 | 0 | 0 | 1 |
 | preferential_attachment | 128 | 2 | 6 | 0.75 | 0.007751937984 |
 
 ## Negative Results And Limitations
 
+`label_permutation_control` changes identity labels only. It is a representation-invariance control, not a structural rewiring null; zero distance is expected for isomorphism-invariant observables.
 A nonzero distance is only a software distinguishability statement against the selected null ensembles.
 Physical interpretation remains outside the scope of this benchmark.
 Post-hoc metric selection is not used; the registered metric list is fixed in `PRE_REGISTERED_PR1_METRICS.md`.
@@ -133,7 +134,7 @@ Post-hoc metric selection is not used; the registered metric list is fixed in `P
         }
       },
       "claim_status": "[D]",
-      "ensemble": "degree_preserving_shuffle",
+      "ensemble": "label_permutation_control",
       "final_state_l1_mean": {
         "decimal": "0",
         "denominator": 1,
@@ -201,7 +202,7 @@ Post-hoc metric selection is not used; the registered metric list is fixed in `P
     "ensembles": [
       "erdos_renyi",
       "random_dag",
-      "degree_preserving_shuffle",
+      "label_permutation_control",
       "preferential_attachment"
     ],
     "iterations": 8,

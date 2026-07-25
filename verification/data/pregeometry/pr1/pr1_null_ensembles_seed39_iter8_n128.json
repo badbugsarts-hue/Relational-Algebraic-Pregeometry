@@ -91,7 +91,7 @@
         }
       },
       "claim_status": "[D]",
-      "ensemble": "degree_preserving_shuffle",
+      "ensemble": "label_permutation_control",
       "final_state_l1_mean": {
         "decimal": "0",
         "denominator": 1,
@@ -159,7 +159,7 @@
     "ensembles": [
       "erdos_renyi",
       "random_dag",
-      "degree_preserving_shuffle",
+      "label_permutation_control",
       "preferential_attachment"
     ],
     "iterations": 8,

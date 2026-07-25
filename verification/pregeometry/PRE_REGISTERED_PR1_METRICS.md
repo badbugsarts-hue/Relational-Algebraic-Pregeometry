@@ -28,14 +28,20 @@ The only PR-1 observables are the PR-0 graph-invariant telemetry series:
 
 No new physical observable is introduced in PR-1.
 
-## Primary Null Ensembles
+## Primary Comparators
 
-The pre-registered null ensembles are:
+The pre-registered comparators are:
 
 - Erdos-Renyi graph ensemble
 - Random DAG ensemble
-- Degree-preserving shuffled graph ensemble
+- Label-permutation control (representation-invariance control; not a rewiring
+  null). Zero distance is expected for isomorphism-invariant observables.
 - Preferential-attachment baseline
+
+The deprecated Python alias `degree_preserving_shuffle_state` is retained only
+for one compatibility cycle and is scheduled for removal with the next
+major PR-1 output-schema revision (`v2`). It emits `DeprecationWarning`; no
+generated output uses the legacy semantic label.
 
 ## Primary Separation Metrics
 

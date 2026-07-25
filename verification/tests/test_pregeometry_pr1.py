@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from fractions import Fraction
+from itertools import permutations
 from pathlib import Path
 
 import pytest
@@ -14,10 +15,12 @@ from verification.pregeometry.experiments.run_pregeometry_toy import run_pr0
 from verification.pregeometry.null_ensembles import (
     degree_preserving_shuffle_state,
     generate_all_ensembles,
+    label_permutation_control,
     pr0_invariant_trace,
     pr0_state_trace,
     undirected_degree_sequence,
 )
+from verification.pregeometry.observables import compute_graph_invariants
 from verification.pregeometry.separation_metrics import (
     final_state_l1,
     pseudo_label_permutation_p_value,
@@ -39,17 +42,60 @@ def test_null_ensembles_are_deterministic_for_fixed_seed() -> None:
     assert first == second
 
 
-def test_degree_preserving_shuffle_preserves_pr0_final_degree_sequence() -> None:
+def _canonical_unlabeled_edges(state: object) -> tuple[tuple[int, int, bool], ...]:
+    node_count = state.distinction_count()
+    edges = tuple(
+        (relation.source.value, relation.target.value, relation.directed)
+        for relation in state.relations
+    )
+    return min(
+        tuple(
+            sorted(
+                (
+                    permutation[a],
+                    permutation[b],
+                    True,
+                )
+                if directed
+                else (
+                    min(permutation[a], permutation[b]),
+                    max(permutation[a], permutation[b]),
+                    False,
+                )
+                for a, b, directed in edges
+            )
+        )
+        for permutation in permutations(range(node_count))
+    )
+
+
+def test_label_permutation_control_preserves_isomorphism_and_exact_invariants() -> None:
     reference = pr0_state_trace(8)[-1]
-    candidate = degree_preserving_shuffle_state(reference, seed=39, member_index=0)
+    candidate = label_permutation_control(reference, seed=39, member_index=0)
     assert sorted(undirected_degree_sequence(candidate)) == sorted(undirected_degree_sequence(reference))
+    assert _canonical_unlabeled_edges(candidate) == _canonical_unlabeled_edges(reference)
+    assert pr0_invariant_trace(8)[-1] == compute_graph_invariants(candidate)
 
 
-def test_degree_preserving_shuffle_is_deterministic_for_fixed_seed() -> None:
+def test_label_permutation_control_is_deterministic_for_fixed_seed() -> None:
     reference = pr0_state_trace(8)[-1]
-    first = degree_preserving_shuffle_state(reference, seed=39, member_index=3)
-    second = degree_preserving_shuffle_state(reference, seed=39, member_index=3)
+    first = label_permutation_control(reference, seed=39, member_index=3)
+    second = label_permutation_control(reference, seed=39, member_index=3)
     assert first == second
+
+
+def test_deprecated_degree_shuffle_alias_is_deterministic_and_warns() -> None:
+    reference = pr0_state_trace(8)[-1]
+    with pytest.warns(DeprecationWarning, match="isomorphic label permutation"):
+        legacy = degree_preserving_shuffle_state(reference, seed=39, member_index=3)
+    assert legacy == label_permutation_control(reference, seed=39, member_index=3)
+
+
+def test_label_permutation_control_has_zero_invariant_distance() -> None:
+    reference = pr0_invariant_trace(8)
+    candidate_state = label_permutation_control(pr0_state_trace(8)[-1], seed=39, member_index=0)
+    candidate_final = compute_graph_invariants(candidate_state)
+    assert final_state_l1(reference[-1], candidate_final) == 0
 
 
 def test_metrics_are_deterministic_for_fixed_input() -> None:

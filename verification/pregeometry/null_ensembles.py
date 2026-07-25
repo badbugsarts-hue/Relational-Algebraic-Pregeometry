@@ -8,18 +8,24 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from random import Random
+import warnings
 
 from verification.pregeometry.growth_rules import apply_pr0_growth_step
 from verification.pregeometry.observables import GraphInvariants, compute_graph_invariants
-from verification.pregeometry.primitives import DistinctionID, RelationalState, state_from_edges
+from verification.pregeometry.primitives import DistinctionID, Relation, RelationalState, state_from_edges
 
 
 NULL_ENSEMBLE_NAMES = (
     "erdos_renyi",
     "random_dag",
-    "degree_preserving_shuffle",
+    "label_permutation_control",
     "preferential_attachment",
 )
+
+# Preserve the pre-existing deterministic permutation stream while correcting
+# the public semantic label. This is an algorithm-domain key, never an output
+# label or a claim that structural rewiring occurred.
+_LABEL_PERMUTATION_SEED_DOMAIN = "degree_preserving_shuffle"
 
 
 @dataclass(frozen=True)
@@ -68,18 +74,19 @@ def generate_null_trace(*, name: str, iterations: int, seed: int, member_index: 
         raise ValueError("iterations must be non-negative.")
     if name not in NULL_ENSEMBLE_NAMES:
         raise ValueError(f"Unknown PR-1 null ensemble: {name}")
-    rng = Random(_derived_seed(seed, member_index, name))
+    seed_domain = _LABEL_PERMUTATION_SEED_DOMAIN if name == "label_permutation_control" else name
+    rng = Random(_derived_seed(seed, member_index, seed_domain))
     trace: list[GraphInvariants] = []
-    pr0_states = pr0_state_trace(iterations) if name == "degree_preserving_shuffle" else ()
+    pr0_states = pr0_state_trace(iterations) if name == "label_permutation_control" else ()
     for tick in range(1, iterations + 1):
         node_count = tick
         if name == "erdos_renyi":
             state = _erdos_renyi_state(node_count, rng)
         elif name == "random_dag":
             state = _random_dag_state(node_count, rng)
-        elif name == "degree_preserving_shuffle":
+        elif name == "label_permutation_control":
             reference_state = pr0_states[tick - 1]
-            state = _degree_preserving_shuffle_state(reference_state, rng)
+            state = _label_permutation_control_state(reference_state, rng)
         else:
             state = _preferential_attachment_state(node_count, rng)
         trace.append(compute_graph_invariants(state))
@@ -102,14 +109,39 @@ def generate_all_ensembles(*, iterations: int, seed: int, ensemble_size: int) ->
     }
 
 
+def label_permutation_control(
+    reference_state: RelationalState,
+    *,
+    seed: int,
+    member_index: int,
+) -> RelationalState:
+    """Return an isomorphic relabeling control.
+
+    This operation changes identity labels only. It is not a rewiring null,
+    and isomorphism-invariant observables are expected to remain exactly equal.
+    """
+    rng = Random(_derived_seed(seed, member_index, _LABEL_PERMUTATION_SEED_DOMAIN))
+    return _label_permutation_control_state(reference_state, rng)
+
+
 def degree_preserving_shuffle_state(
     reference_state: RelationalState,
     *,
     seed: int,
     member_index: int,
 ) -> RelationalState:
-    rng = Random(_derived_seed(seed, member_index, "degree_preserving_shuffle"))
-    return _degree_preserving_shuffle_state(reference_state, rng)
+    """Deprecated compatibility alias for :func:`label_permutation_control`."""
+    warnings.warn(
+        "degree_preserving_shuffle_state is deprecated; use label_permutation_control. "
+        "The operation is an isomorphic label permutation, not a rewiring null.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    return label_permutation_control(
+        reference_state,
+        seed=seed,
+        member_index=member_index,
+    )
 
 
 def _erdos_renyi_state(node_count: int, rng: Random) -> RelationalState:
@@ -130,8 +162,8 @@ def _random_dag_state(node_count: int, rng: Random) -> RelationalState:
     return state_from_edges(node_count, edges, directed=True)
 
 
-def _degree_preserving_shuffle_state(reference_state: RelationalState, rng: Random) -> RelationalState:
-    """Return a label-shuffled comparator with the exact reference degree sequence."""
+def _label_permutation_control_state(reference_state: RelationalState, rng: Random) -> RelationalState:
+    """Return a comparator produced only by a bijective label permutation."""
     node_count = reference_state.distinction_count()
     if node_count <= 1:
         return state_from_edges(node_count, (), directed=False)
@@ -140,15 +172,41 @@ def _degree_preserving_shuffle_state(reference_state: RelationalState, rng: Rand
     shuffled = list(labels)
     rng.shuffle(shuffled)
     permutation = dict(zip(labels, shuffled))
-    edges = sorted(
-        tuple(sorted((permutation[relation.source.value], permutation[relation.target.value])))
+    relations = tuple(
+        Relation(
+            DistinctionID(permutation[relation.source.value]),
+            DistinctionID(permutation[relation.target.value]),
+            directed=relation.directed,
+            weight=relation.weight,
+        )
         for relation in reference_state.relations
     )
-    candidate = state_from_edges(node_count, edges, directed=False)
-    reference_degrees = sorted(undirected_degree_sequence(reference_state))
-    candidate_degrees = sorted(undirected_degree_sequence(candidate))
-    if candidate_degrees != reference_degrees:
-        raise AssertionError("degree_preserving_shuffle failed to preserve the PR-0 degree sequence exactly.")
+    candidate = RelationalState(
+        distinctions=tuple(DistinctionID(index) for index in range(node_count)),
+        relations=relations,
+    )
+    expected_relations = {
+        (
+            permutation[relation.source.value],
+            permutation[relation.target.value],
+            relation.directed,
+            relation.weight,
+        )
+        for relation in reference_state.relations
+    }
+    candidate_relations = {
+        (
+            relation.source.value,
+            relation.target.value,
+            relation.directed,
+            relation.weight,
+        )
+        for relation in candidate.relations
+    }
+    if candidate_relations != expected_relations:
+        raise AssertionError("label_permutation_control changed relational adjacency.")
+    if compute_graph_invariants(candidate) != compute_graph_invariants(reference_state):
+        raise AssertionError("label_permutation_control changed an exact graph invariant.")
     return candidate
 
 
