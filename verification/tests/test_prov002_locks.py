@@ -47,9 +47,6 @@ class Prov002LockTests(unittest.TestCase):
         )
 
     def test_canonical_source_matches_both_locks(self) -> None:
-        source_path = ROOT / self.source["path"]
-        payload = source_path.read_bytes()
-        self.assertEqual(hashlib.sha256(payload).hexdigest(), self.source["sha256"])
         completed = subprocess.run(
             ["git", "-C", ROOT, "hash-object", "--", self.source["path"]],
             check=True,
@@ -57,6 +54,21 @@ class Prov002LockTests(unittest.TestCase):
             text=True,
         )
         self.assertEqual(completed.stdout.strip(), self.source["git_blob_sha1"])
+        blob = subprocess.run(
+            [
+                "git",
+                "-C",
+                ROOT,
+                "cat-file",
+                "blob",
+                self.source["git_blob_sha1"],
+            ],
+            check=True,
+            capture_output=True,
+        ).stdout
+        self.assertEqual(
+            hashlib.sha256(blob).hexdigest(), self.source["git_blob_sha256"]
+        )
         self.assertEqual(
             self.source["commit"], "c8daae119b8699e665c462c06e8580b6e34f831a"
         )
@@ -79,6 +91,8 @@ class Prov002LockTests(unittest.TestCase):
         self.assertIn("git -C", script)
         self.assertIn("sha256sum", script)
         self.assertIn("exit 69", script)
+        self.assertIn("git_blob_sha256", script)
+        self.assertIn("platform_manifest_digest", script)
         self.assertNotIn(":latest", script)
         self.assertIsNone(re.search(r"docker\s+run.*:[Ll]atest", script))
 
@@ -86,6 +100,22 @@ class Prov002LockTests(unittest.TestCase):
         script = BUILD_SCRIPT.read_text(encoding="utf-8")
         self.assertIn("verification/data/pregeometry", script)
         self.assertIn("Build outputs are forbidden", script)
+
+    def test_negative_lock_fixtures_are_mismatched(self) -> None:
+        fixture_root = ROOT / "verification" / "tests" / "fixtures" / "prov002"
+        wrong_source = json.loads(
+            (fixture_root / "wrong-source-lock.json").read_text(encoding="utf-8")
+        )
+        wrong_image = json.loads(
+            (fixture_root / "wrong-image-lock.json").read_text(encoding="utf-8")
+        )
+        self.assertNotEqual(
+            wrong_source["git_blob_sha256"], self.source["git_blob_sha256"]
+        )
+        self.assertNotEqual(
+            wrong_image["image_reference"].split("@", 1)[1],
+            wrong_image["platform_manifest_digest"],
+        )
 
 
 if __name__ == "__main__":

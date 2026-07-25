@@ -45,6 +45,30 @@ jobs:
             echo "Negative fixture unexpectedly compiled." >&2
             exit 1
           fi
+      - name: Wrong source hash must fail
+        run: |
+          if scripts/build_manuscript.sh \
+            --source-lock verification/tests/fixtures/prov002/wrong-source-lock.json \
+            --output "${RUNNER_TEMP}/prov002-wrong-source"; then
+            echo "Wrong source hash unexpectedly passed." >&2
+            exit 1
+          fi
+      - name: Wrong image digest must fail
+        run: |
+          if scripts/build_manuscript.sh \
+            --environment-lock verification/tests/fixtures/prov002/wrong-image-lock.json \
+            --output "${RUNNER_TEMP}/prov002-wrong-image"; then
+            echo "Wrong image digest unexpectedly passed." >&2
+            exit 1
+          fi
+      - name: Missing lock must fail
+        run: |
+          if scripts/build_manuscript.sh \
+            --environment-lock verification/tests/fixtures/prov002/does-not-exist.json \
+            --output "${RUNNER_TEMP}/prov002-missing-lock"; then
+            echo "Missing lock unexpectedly passed." >&2
+            exit 1
+          fi
       - name: Locked manuscript build
         run: |
           scripts/build_manuscript.sh \

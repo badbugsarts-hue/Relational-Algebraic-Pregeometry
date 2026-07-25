@@ -1,0 +1,6 @@
+{
+  "architecture": "amd64",
+  "os": "linux",
+  "platform_manifest_digest": "sha256:dac049f9abef293db8317a3f4b8398330c2a402065c2b91db00859be4bde573a",
+  "image_reference": "registry.gitlab.com/islandoftex/images/texlive@sha256:0000000000000000000000000000000000000000000000000000000000000000"
+}

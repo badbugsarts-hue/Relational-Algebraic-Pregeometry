@@ -36,6 +36,14 @@ while (($#)); do
       output_dir="${2:?missing value for --output}"
       shift 2
       ;;
+    --environment-lock)
+      environment_lock="${2:?missing value for --environment-lock}"
+      shift 2
+      ;;
+    --source-lock)
+      source_lock="${2:?missing value for --source-lock}"
+      shift 2
+      ;;
     -h|--help)
       usage
       exit 0
@@ -51,6 +59,15 @@ done
 if [[ -z "${output_dir}" ]]; then
   printf '%s\n' '--output is required' >&2
   exit 64
+fi
+
+if [[ ! -f "${environment_lock}" ]]; then
+  printf 'Environment lock does not exist: %s\n' "${environment_lock}" >&2
+  exit 66
+fi
+if [[ ! -f "${source_lock}" ]]; then
+  printf 'Source lock does not exist: %s\n' "${source_lock}" >&2
+  exit 66
 fi
 
 read_lock() {
@@ -94,28 +111,47 @@ case "${output_abs}/" in
 esac
 
 if [[ "${source_rel}" == "${canonical_source}" ]]; then
-  expected_sha256="$(read_lock "${source_lock}" sha256)"
+  expected_blob_sha256="$(read_lock "${source_lock}" git_blob_sha256)"
   expected_blob="$(read_lock "${source_lock}" git_blob_sha1)"
-  actual_sha256="$(sha256sum "${source_abs}" | awk '{print $1}')"
   actual_blob="$(git -C "${repo_root}" hash-object -- "${source_rel}")"
-  if [[ "${actual_sha256}" != "${expected_sha256}" || "${actual_blob}" != "${expected_blob}" ]]; then
-    printf 'Canonical source lock mismatch: sha256=%s blob=%s\n' \
-      "${actual_sha256}" "${actual_blob}" >&2
+  actual_blob_sha256="$(
+    git -C "${repo_root}" cat-file blob "${actual_blob}" | sha256sum | awk '{print $1}'
+  )"
+  if [[ "${actual_blob_sha256}" != "${expected_blob_sha256}" || "${actual_blob}" != "${expected_blob}" ]]; then
+    printf 'Canonical source lock mismatch: blob_sha256=%s blob=%s\n' \
+      "${actual_blob_sha256}" "${actual_blob}" >&2
     exit 65
   fi
-fi
-
-if ! command -v docker >/dev/null 2>&1; then
-  printf '%s\n' '[BLOCKED] Docker is required for the pinned PROV-002 build.' >&2
-  exit 69
+else
+  actual_blob="$(git -C "${repo_root}" hash-object -- "${source_rel}")"
+  actual_blob_sha256="$(
+    git -C "${repo_root}" cat-file blob "${actual_blob}" | sha256sum | awk '{print $1}'
+  )"
 fi
 
 image_ref="$(read_lock "${environment_lock}" image_reference)"
+platform_manifest="$(read_lock "${environment_lock}" platform_manifest_digest)"
 locked_arch="$(read_lock "${environment_lock}" architecture)"
 locked_os="$(read_lock "${environment_lock}" os)"
 if [[ "${locked_arch}" != "amd64" || "${locked_os}" != "linux" ]]; then
   printf 'Unsupported lock platform: %s/%s\n' "${locked_os}" "${locked_arch}" >&2
   exit 65
+fi
+if [[ ! "${platform_manifest}" =~ ^sha256:[0-9a-f]{64}$ ]]; then
+  printf 'Malformed platform manifest digest: %s\n' "${platform_manifest}" >&2
+  exit 65
+fi
+if [[ "${image_ref}" != *@${platform_manifest} ]]; then
+  printf 'Image reference does not match the locked platform manifest.\n' >&2
+  exit 65
+fi
+
+environment_lock_sha256="$(sha256sum "${environment_lock}" | awk '{print $1}')"
+source_lock_sha256="$(sha256sum "${source_lock}" | awk '{print $1}')"
+
+if ! command -v docker >/dev/null 2>&1; then
+  printf '%s\n' '[BLOCKED] Docker is required for the pinned PROV-002 build.' >&2
+  exit 69
 fi
 
 docker pull --platform linux/amd64 "${image_ref}" >"${output_abs}/docker-pull.log" 2>&1
@@ -140,7 +176,16 @@ docker run --rm \
 build_exit=$?
 set -e
 
-"${python_cmd}" - "${output_abs}" "${source_rel}" "${image_ref}" "${build_exit}" <<'PY'
+"${python_cmd}" - \
+  "${output_abs}" \
+  "${source_rel}" \
+  "${image_ref}" \
+  "${build_exit}" \
+  "${actual_blob}" \
+  "${actual_blob_sha256}" \
+  "${environment_lock_sha256}" \
+  "${source_lock_sha256}" <<'PY'
+import hashlib
 import json
 import pathlib
 import re
@@ -156,6 +201,10 @@ report = {
     "source": sys.argv[2],
     "image_reference": sys.argv[3],
     "exit_code": int(sys.argv[4]),
+    "source_git_blob_sha1": sys.argv[5],
+    "source_git_blob_sha256": sys.argv[6],
+    "environment_lock_sha256": sys.argv[7],
+    "source_lock_sha256": sys.argv[8],
     "tex_engine": engine_file.read_text(encoding="utf-8").strip()
         if engine_file.exists() else None,
     "pages": max((int(v) for v in re.findall(r"Output written on .*?\\((\\d+) pages?", log)), default=None),
@@ -164,6 +213,13 @@ report = {
     "undefined_citations": len(re.findall(r"undefined citations?", log, flags=re.I)),
     "overfull_boxes": len(re.findall(r"Overfull \\\\[hv]box", log)),
 }
+for name in ("input.tex", "build.log", "artifact.pdf"):
+    artifact = out / name
+    report[f"{name}_sha256"] = (
+        hashlib.sha256(artifact.read_bytes()).hexdigest()
+        if artifact.exists()
+        else None
+    )
 (out / "report.json").write_text(
     json.dumps(report, indent=2, sort_keys=True) + "\n",
     encoding="utf-8",

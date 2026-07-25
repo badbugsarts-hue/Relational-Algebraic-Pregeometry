@@ -10,7 +10,7 @@
   "architecture": "amd64",
   "os": "linux",
   "image_reference": "registry.gitlab.com/islandoftex/images/texlive@sha256:dac049f9abef293db8317a3f4b8398330c2a402065c2b91db00859be4bde573a",
-  "inspection_timestamp_utc": "2026-07-23T23:50:52Z",
+  "inspection_timestamp_utc": "2026-07-24T01:50:52Z",
   "image_created_utc": "2026-07-19T05:48:41.65066882Z",
   "package_lock": {
     "kind": "immutable-container-manifest",
