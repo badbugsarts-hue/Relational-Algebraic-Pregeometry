@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "source_commit": "c8daae119b8699e665c462c06e8580b6e34f831a",
+  "source_path": "manuscript/Relational_Algebraic_Pregeometry_v4_0_DRAFT-001.tex",
+  "git_blob_sha1": "c3197df2b927dd4dd76296bafe21ffea1283d03a",
+  "sha256": "f9d0c1a19c754c83dd425c5b9f7792159cb5ed5bda8b6f81facf1da89f139e35",
+  "classes": {
+    "A-": 20,
+    "A": 207,
+    "B": 55,
+    "C": 25,
+    "D": 136,
+    "E": 143
+  },
+  "qualifiers": {},
+  "total": 586,
+  "status": "locked-blob observation; no scientific validity inference"
+}

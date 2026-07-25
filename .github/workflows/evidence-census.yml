@@ -1,0 +1,50 @@
+name: Evidence Census
+
+on:
+  pull_request:
+    branches:
+      - mss000-rebase-v2
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run parser regression tests
+        run: >-
+          python -m unittest
+          verification.tests.test_evidence_census_parser
+          -v
+
+      - name: Compare actual base and head manuscript blobs
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python verification/scripts/evidence_census_parser.py \
+            --git-base "${BASE_SHA}" \
+            --git-head "${HEAD_SHA}" \
+            --git-path manuscript/Relational_Algebraic_Pregeometry_v4_0_DRAFT-001.tex \
+            --baseline-manifest verification/data/pregeometry/evidence-census/c3197df2b927dd4dd76296bafe21ffea1283d03a.json \
+            --require-conservation \
+            --base-locations-csv "${RUNNER_TEMP}/census-base-locations.csv" \
+            --head-locations-csv "${RUNNER_TEMP}/census-head-locations.csv" \
+            --output-json "${RUNNER_TEMP}/census-comparison.json"
+
+      - name: Upload census records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence-census-records
+          path: |
+            ${{ runner.temp }}/census-base-locations.csv
+            ${{ runner.temp }}/census-head-locations.csv
+            ${{ runner.temp }}/census-comparison.json
