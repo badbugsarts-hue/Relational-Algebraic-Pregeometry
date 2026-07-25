@@ -1,0 +1,49 @@
+{
+  "schema": "uidt-pregeometry-pr2-retrospective-registration-v1",
+  "registration_kind": "retrospective",
+  "protocol_state": "prototype",
+  "precision_decimal_digits": 80,
+  "walk_lengths": {
+    "start": 1,
+    "stop_inclusive": 20
+  },
+  "log_slope_window": {
+    "start_index": 5,
+    "end_index": 15
+  },
+  "graph_transformations": [
+    "identity",
+    "label_permutation"
+  ],
+  "null_ensemble_sample_size": 5,
+  "seeds": [
+    42
+  ],
+  "thresholds": {
+    "determinism_absolute_difference": "0",
+    "relabeling_absolute_residual": "1e-14"
+  },
+  "required_components": [
+    "pr0_toy_graph",
+    "pr1_null_ensemble_graph_states",
+    "seed_stability",
+    "label_permutation_invariance"
+  ],
+  "failure_conditions": [
+    "missing_required_component",
+    "fixed_configuration_nondeterminism",
+    "equivalent_relabeling_order_change",
+    "registered_seed_instability",
+    "post_observation_diagnostic_selection",
+    "forbidden_target_label",
+    "artifact_outside_pregeometry_output",
+    "physical_interpretation_above_D_E"
+  ],
+  "source_basis": {
+    "walk_lengths": "legacy runner max_walk_length default",
+    "log_slope_window": "legacy runner fixed call",
+    "null_ensemble_sample_size": "legacy runner ensemble_size default",
+    "seeds": "legacy runner seed default",
+    "relabeling_absolute_residual": "legacy observer_stability threshold"
+  }
+}

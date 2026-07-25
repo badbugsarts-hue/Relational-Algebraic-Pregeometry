@@ -1,10 +1,12 @@
 # PR-2 Pre-Registered Spectral Graph Diagnostics
 
-Status: pre-registered software benchmark plan for the separate experimental
-pregeometry workspace.
+Status: retrospective prototype registration for the separate experimental
+pregeometry workspace. Because implementation preceded a complete frozen
+registration, current outputs must report `INCOMPLETE_PROTOCOL`.
 
-This file registers PR-2 before any implementation or interpretation of
-spectral graph diagnostics. It is not a canonical UIDT repository claim and
+This document records the intended PR-2 boundary. The machine-readable
+registration is `pr2_registration.json`; it explicitly records its
+retrospective status. This is not a canonical UIDT repository claim and
 does not describe canonical release, ledger, or merge status.
 
 ## Scope
@@ -53,10 +55,9 @@ The pre-registered PR-2 diagnostics are:
 
 All diagnostics have status `[D]`.
 
-## Required Registration Before Code
+## Required Registration State
 
-Before implementing PR-2 code, the following must be fixed in the run script or
-report configuration:
+The following components are frozen in `pr2_registration.json`:
 
 - walk lengths;
 - log-slope window bounds;
@@ -65,7 +66,10 @@ report configuration:
 - seed list;
 - failure thresholds for instability and leakage.
 
-These values must not be selected after observing diagnostic outputs.
+The current implementation does not execute every registered component.
+Therefore it remains a prototype and must fail closed with
+`INCOMPLETE_PROTOCOL`. A complete or `preregistered_complete` label is
+prohibited.
 
 ## Failure Conditions
 
