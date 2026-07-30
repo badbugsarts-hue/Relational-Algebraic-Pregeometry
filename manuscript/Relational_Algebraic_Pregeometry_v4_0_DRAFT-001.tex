@@ -1,10 +1,15 @@
 %=============================================================================
-% UIDT / Relational-Algebraic Pregeometry Programme v4.0
-% CONTENT-FINALIZATION CANDIDATE — Claude Desktop single-writer package
+% Relational-Algebraic Pregeometry Programme v4.0
+% MANUSCRIPT-DEPTH CORE CANDIDATE — proposed, not applied
 % Author: Philipp Rietz (ORCID: 0009-0007-4307-1609)
-% BASELINE: watermarked manuscript Git blob 7962e5e74fb504416565f276512da12e4eaaf5b5
-% BASELINE SHA-256: 2e72d1cdd32e1bea25d077b3dfe9b769251f795796d6109f762e462e4ecdedab
-% STATUS: ready for Claude pre-application audit; not frozen; not merged.
+% APPLIED BASELINE COMMIT: c8daae1
+% APPLIED BASELINE BRANCH: mss000-rebase-v2
+% APPLIED BASELINE PATH: manuscript/Relational_Algebraic_Pregeometry_v4_0_DRAFT-001.tex
+% APPLIED BASELINE GIT BLOB: c3197df2b927dd4dd76296bafe21ffea1283d03a
+% APPLIED BASELINE SHA-256: f9d0c1a19c754c83dd425c5b9f7792159cb5ed5bda8b6f81facf1da89f139e35
+% CANDIDATE SCOPE: provenance hygiene; L8-L11; Krajewski completeness boundary;
+%                  division-algebra stabilizer boundary.
+% STATUS: external candidate for Claude pre-application audit; not applied; not merged.
 % Basis manuscript: UIDT_Ontology_v3_9_9_DEWRAPPED-006
 % Ontology DOI: 10.5281/zenodo.20319634
 % Parent framework DOI: 10.5281/zenodo.17835200
@@ -17,7 +22,7 @@
 %=============================================================================
 %=============================================================================
 % PROCESSING-COVERAGE LEDGER  (non-rendering; audit artifact)
-% Updated: 2026-07-23 content-finalization and decision-closure pass.
+% Updated: 2026-07-30 manuscript-depth core candidate against applied blob c3197df2.
 % Percentages are source lines actually read, not inferred from summaries.
 %
 % --- MANUSCRIPT PHASES -------------------------------------------------------
@@ -27,9 +32,10 @@
 %  P4 Part III ............................ 100% structurally complete
 %  P5 back matter + bibliography .......... 100% structurally complete
 %  R0 source reading ....................... 60% historical estimate; reset below
-%  R1--R4 architecture and MSS-000 ........ complete in baseline blob 7962e5e7
-%  R5 manuscript post-application checks .. complete only for manuscript bytes;
-%                                             live Lean and PROV-002 remain open
+%  R1--R4 architecture and MSS-000 ........ applied through Decisions D19/D21--D25
+%                                             in baseline blob c3197df2
+%  R5 manuscript post-application checks .. baseline bytes verified; live Lean,
+%                                             remote CI, and PROV-002 remain open
 %
 % --- SOURCE STATUS -----------------------------------------------------------
 %  -006 canonical ........................ ~88% historical reading estimate
@@ -355,7 +361,7 @@ Unified Information-Density Theory (UIDT)}\\[2.6em]
 \href{https://doi.org/10.5281/zenodo.20319634}{DOI 10.5281/zenodo.20319634}}\\[0.25em]
 {\small Parent framework record:
 \href{https://doi.org/10.5281/zenodo.17835200}{DOI 10.5281/zenodo.17835200}}\\[0.5em]
-{\small 23~July~2026 --- DRAFT-001, not archived, not frozen}\\[2.2em]
+{\small 30~July~2026 --- DRAFT-001, not archived, not frozen}\\[2.2em]
 \rule{0.6\textwidth}{0.4pt}\\[1em]
 {\small\itshape ``Reality is not a collection of things,\\
 but a process of structural individuation\\
@@ -995,6 +1001,20 @@ configuration, and this draft uses the Lean form wherever the formal layer
 is in view.
 \end{remark}
 
+\begin{governancebox}[No Audited ``66 to 7'' Krajewski Reduction in This Draft]
+The exhaustive finite enumeration stated in \cref{sec:selection} is the
+eleven-element set of sorted integer partitions of $N=6$ under the
+declared H1/H2 predicates. It is not an enumeration of sixty-six
+Krajewski diagrams. No sixty-six-element starting domain, equivalence
+relation, ordered list of fifty-nine eliminations, or seven-survivor
+register is supplied in the applied manuscript baseline. Consequently,
+this draft asserts no ``$66\to7$'' result. A future insertion requires an
+immutable starting inventory, target-independent filters, complete
+disposition of every eliminated diagram, and a proof-status record for
+each formal step; absent any one item, the number remains
+\textsc{missing data} rather than a scientific result.\catmark{D}
+\end{governancebox}
+
 \subsection{Evidence Tags and Anti-Target-Leakage in Code}
 \label{subsec:code-evidence}
 
@@ -1334,6 +1354,21 @@ satisfies the lower bounds of \cref{subsec:lower-bounds} by
 necessary. Any UIDT use of it must carry these three bounds explicitly;
 it must not be cited as a verified mechanism for unique
 $G_{\mathrm{SM}}$ selection.
+
+\paragraph{Stabilizer boundary.}
+In the cited division-algebraic constructions, the displayed gauge
+symmetries are symmetry or stabilizer algebras relative to selected
+division-algebraic data: complex structures, ideals, ladder-operator
+systems, or subalgebras that the construction requires one to preserve
+\cite{furey2018,fureyhughes2022,furey2025}.\catmark{B}
+That is a result internal to the chosen algebraic representation; it is
+not an endogenous derivation of those data from
+\texttt{BlockPartition}, \texttt{FiniteAlgebraSignature}, or the RAP
+bridge.\catmark{D}
+In particular, an $SU(3)$ stabilizer of octonionic data does not by itself
+derive the full $SU(3)_C\times SU(2)_L\times U(1)_Y$ gauge structure,
+its hypercharge normalization, chirality, anomaly cancellation, or three
+generations. Those remain separate inputs or open obligations in RAP.\catmark{D}
 
 \subsection{The Relocation Necessity Conjecture}
 \label{subsec:rnc}
@@ -3426,11 +3461,12 @@ ODE is deleted as a claimed derivation.\catmark{A}
 \label{subsec:limitation-register}
 
 The framework's known limitations are enumerated in one place. Entries
-L1--L7 and L12--L15 are textually anchored; four entries (L8--L11) are
-referenced in the developmental record but could not be recovered to a
-definite wording, and are marked \textsc{unknown} rather than
-reconstructed, because fabricating a limitation would be as much an
-integrity failure as concealing one.\catmark{A}
+L1--L7 and L12--L15 remain historically anchored. Entries L8--L11 below
+are newly issued limitation statements derived from the applied
+manuscript's explicit formal boundaries; they are not presented as
+recovered quotations from the missing developmental notes. Their status
+is therefore provenance-clean: replacement statements, not reconstructed
+history.\catmark{A}
 
 \begin{limitation}[L1: The geometric scale factor (ill-defined)]
 \label{lim:L1}
@@ -3497,12 +3533,54 @@ is not fixed and a non-perturbative UV completion remains
 open.\catmark{D}
 \end{limitation}
 
-\begin{limitation}[L8--L11: Unrecovered register entries]
-\label{lim:L8toL11}
-Four further limitations are referenced in the developmental record but
-could not be recovered to a definite wording. They are marked
-\textsc{unknown} and remain so until the underlying source notes are
-restored; they are not reconstructed.\catmark{E}
+\begin{limitation}[L8: Algebraic identities do not select a partition]
+\label{lim:L8}
+The block-thermodynamic relations collected in this draft constrain
+bookkeeping among block sizes, diagonal sectors, off-diagonal sectors,
+and entropy terms. No target-independent functional is supplied whose
+global minimiser uniquely selects $[3,2,1]$. An exact decomposition or
+conservation identity is therefore an internal consistency relation, not
+a dynamical selection theorem. Any future selector must be fixed before
+the candidate is evaluated and must survive sealed null controls under
+\cref{prop:target-leakage}.\catmark{D}
+\end{limitation}
+
+\begin{limitation}[L9: H1/H2 are conditional filters, not derived laws]
+\label{lim:L9}
+The conditional $N=6$ proposition depends entirely on H1 and H2.
+H1 is a design-level extrapolation from intersection-form constraints;
+H2 is a heuristic proxy for non-degenerate fermion masses. Their finite
+filtering power is auditable, but neither predicate is derived from the
+pregeometric kernel or from a free-energy stability theorem. Completion
+of the Lean checker would certify only the implication
+$\mathrm{H1}\wedge\mathrm{H2}\Rightarrow[3,2,1]$ over the declared finite
+domain; it would not upgrade the physical selection claim above
+\catmark{D}.
+\end{limitation}
+
+\begin{limitation}[L10: Finite $N=6$ enumeration is not large-$N$ dynamics]
+\label{lim:L10}
+Exhaustive enumeration of the eleven sorted integer partitions of $6$
+establishes, at most, completeness and filter verdicts for that finite
+candidate set. It does not establish a thermodynamic limit, a
+large-$N$ phase transition, continuum emergence, spontaneous
+Wedderburn splitting, or asymptotic selection of gauge symmetries.
+Claims of that kind require a separately defined dynamics, scaling
+regime, and target-independent convergence criterion.\catmark{D}
+\end{limitation}
+
+\begin{limitation}[L11: The formal bridge is structure-losing and incomplete]
+\label{lim:L11}
+The current bridge transfers a combinatorial block list into abstract
+finite-algebra and spectral-triple records through derived dimensions
+and axiomatic markers. It does not establish an equivalence with the
+classification of finite real spectral triples, and it does not
+endogenously supply bimodule multiplicities, chirality, Krajewski edges,
+a physical representation, or analytic spectral-triple axioms. Any
+conversion through a generic number-partition representation additionally
+forgets ordering or labels unless those data are restored and proved
+invariant. The bridge is therefore scaffolding for a formal programme,
+not a completeness theorem for noncommutative geometry.\catmark{D}
 \end{limitation}
 
 \begin{limitation}[L13: Background independence only partial]
@@ -3548,9 +3626,10 @@ figure is therefore a scalar-sector prediction awaiting both a
 non-Abelian-consistent derivation and direct sub-nanometre metrology.\catmark{D}
 \end{limitation}
 
-\noindent The register is thus complete in enumeration: anchored where
-the corpus permits (L1--L7, L12--L15), and honestly blank where it does
-not (L8--L11).\catmark{A}
+\noindent The register is complete in enumeration. L1--L7 and
+L12--L15 preserve the historical anchored entries; L8--L11 are explicitly
+identified as newly issued replacement limitations and carry no claim of
+verbatim recovery from the missing notes.\catmark{A}
 
 \section{The \texorpdfstring{$d^2 = 0$}{d2=0} Obstruction}
 \label{sec:d2-obstruction}
@@ -4706,8 +4785,8 @@ Class & Part I & Part II & Part III ledger \\
 \catmark{A-} (calibrated) & --- & --- & ONT-04 ($\gamma$) \\
 \catmark{B} (benchmarked) & lattice verdicts, \cref{tab:lattice} & --- & ONT-05 ($\Delta$, D18), ONT-07 \\
 \catmark{C} (cosmology cap) & --- & --- & ONT-09 \\
-\catmark{D} (programme) & K-01, G-05, S-01, S-02, C-01, C-02 & T-01, T-02 & ONT-08, ONT-11 \\
-\catmark{E} (interpretive/museum) & quarantined audit doc & O-02, O-04 & ONT-10, L6, L8--L11 \\
+\catmark{D} (programme) & K-01, G-05, S-01, S-02, C-01, C-02, L8--L11 & T-01, T-02 & ONT-08, ONT-11 \\
+\catmark{E} (interpretive/museum) & quarantined audit doc & O-02, O-04 & ONT-10, L6 \\
 \bottomrule
 \end{tabular}
 \caption{Evidence distribution across the three parts. The firmest
@@ -4819,6 +4898,10 @@ UV/IR mixing, and thermal-time circularity --- stand.
 tensions, and the origin of $G_{\mathrm{SM}}$ remain unresolved. Decision
 D22 closes only the misuse boundary, not the missing scale bridge; Decision
 D24 closes only the active use of P2, not its scientific question.
+\item No ``$66\to7$'' Krajewski reduction is part of this manuscript
+without the complete starting inventory and elimination ledger required in
+\cref{subsec:krajewski}. Division-algebra stabilizers remain imported
+comparators, not a derivation from the RAP kernel.
 \end{enumerate}
 
 
