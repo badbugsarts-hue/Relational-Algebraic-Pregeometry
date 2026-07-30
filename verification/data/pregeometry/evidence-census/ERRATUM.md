@@ -9,9 +9,19 @@
 
 ## Correction
 
-The previous execution handout expected 144 semantic class-E evidence markers
-and one `E pending` qualifier. Two independent scans of the locked Git blob
-instead find:
+The previous execution handout's count of 144 semantic class-E evidence
+markers and one `E pending` qualifier applies to the supplied watermarked
+baseline:
+
+```text
+Git blob: 7962e5e74fb504416565f276512da12e4eaaf5b5
+Blob SHA-256: 2e72d1cdd32e1bea25d077b3dfe9b769251f795796d6109f762e462e4ecdedab
+semantic \catmark calls: 592
+class E: 144
+E pending qualifier: 1
+```
+
+Two independent scans of the locked final Git blob identified above find:
 
 ```text
 semantic \catmark calls: 586
@@ -19,15 +29,19 @@ class E: 143
 E pending qualifier: 0
 ```
 
-The expected `\catmark{E\,pending}` occurrence is absent from the locked blob.
-No synthetic marker or manuscript edit is introduced to manufacture the prior
+The `\catmark{E\,pending}` occurrence belongs to the baseline blob and is
+absent from the locked final blob. The two census results therefore describe
+different revisions and do not conflict. No synthetic marker or manuscript
+edit is introduced to make either result satisfy the other revision's
 expectation.
 
 The correction concerns census provenance only. It does not adjudicate the
 scientific correctness of any marked claim and does not upgrade evidence.
 
-[TENSION ALERT] The earlier `E = 144` assertion is not valid for the locked
-blob identified above.
+[TENSION ALERT — ATTRIBUTION CORRECTED] The earlier `E = 144` assertion
+applies to baseline blob `7962e5e74fb504416565f276512da12e4eaaf5b5`;
+the locked final blob `c3197df2b927dd4dd76296bafe21ffea1283d03a`
+yields `E = 143`.
 
 NO DIRECT MANUSCRIPT APPLY
 NO MERGE
