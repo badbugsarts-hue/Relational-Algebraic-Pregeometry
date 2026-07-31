@@ -11,6 +11,23 @@ manuscript, so it is permitted to lag without making the manuscript self-contrad
 `manuscript/Relational_Algebraic_Pregeometry_v4_0_DRAFT-001.tex` on branch `mss000-rebase-v2`.
 Where this file and the commit graph disagree, the commit graph wins.
 
+**Scope of this record.** This file is a narrative projection of the commit graph, not a substitute
+for it. It states no SHA of its own containing commit — that would reintroduce the self-reference
+D-2' removed.
+
+```yaml
+provenance_scope:
+  covers_through_parent: b58ca6a      # last commit fully recorded below
+  containing_commit: resolved_from_git_graph
+  current_manuscript_identity: resolved_from_git_tree
+  self_sha_embedded: false
+  may_lag_behind_head: true           # by design; not a defect
+```
+
+**This file may lag the branch head.** That is intended: it is external to the hashed manuscript,
+so a lag here never makes the manuscript self-contradictory. Resolve the current identity from the
+tree, not from this table.
+
 **Not merged.** Nothing below authorizes a merge. Build statements remain environment-qualified
 while PROV-002 is open.
 
@@ -32,7 +49,7 @@ while PROV-002 is open.
 | `5af0c2f` | `8098be57` | Header: stale self-description corrected (first attempt; see note below) |
 | `d0bf762` | `2790067a` | GAP-22: commit-scoped Lean reconciliation, `61bc24da` alongside `f1ae5486` |
 | `8d2bfc7` | `9b4faf49` | D-1: each CI run bound to its own commit |
-| *this commit* | — | D-2': self-referential commit/blob removed from the header |
+| `b58ca6a` | `6bdf26eb` | D-2': self-referential commit/blob removed from the header; this file added |
 
 Blob column lists the file blob **after** that commit where recorded. Absent entries were not
 captured at the time; the commit graph remains authoritative in every case.
@@ -42,8 +59,15 @@ captured at the time; the commit graph remains authoritative in every case.
 `5af0c2f` corrected a real defect — the applied manuscript described itself as an unapplied
 candidate — but did so by writing concrete SHAs into the header. That converted a one-off
 contradiction into a recurring one: three commits later the header again named a superseded state.
-`D-2'` removes the self-reference entirely rather than chasing it. The header can no longer go
-stale by construction.
+`D-2'` removes the self-reference entirely rather than chasing it.
+
+**Precise scope of what D-2' fixed.** The header no longer contains self-referential Git identity;
+commit and blob provenance are delegated to the commit graph and to this file. That specific class
+of unavoidable staleness is closed. Other header fields can still go stale and are not covered:
+the branch name, the file path, the `not merged` declaration, the PROV-002 qualification, and the
+licence/DOI metadata all remain ordinary facts that a future change could invalidate. An earlier
+summary of this work claimed the header "can no longer go stale by construction"; that was too
+broad and is corrected here.
 
 ## Open gates at the time of writing
 
