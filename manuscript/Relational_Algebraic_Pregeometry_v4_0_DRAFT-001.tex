@@ -1125,13 +1125,17 @@ made for that file.\catmark{A}
 At \texttt{master} commit \texttt{07ef753b}, the root build is reported to
 fail because \texttt{Bimodule} and \texttt{KrajewskiDiagram} are declared
 through conflicting modules.\catmark{A}
-The failure is recorded in Issue~\#25 and in historical Ubuntu~24.04 Actions
-runs \texttt{29294970334} (2026-07-14) and \texttt{28909958494}
-(2026-07-08), whose logs report that the environment already contains
+The failure is recorded in Issue~\#25 and at two named heads: Ubuntu~24.04
+Actions run \texttt{28909958494} (2026-07-08) ran at \texttt{61bc24da}, and
+run \texttt{29294970334} (2026-07-14) ran at \texttt{07ef753b}; both logs
+report that the environment already contains
 \texttt{Antigravit2.NCG.Bimodule.mk} from
 \texttt{Antigravit2.NCG.KrajewskiCore}.\catmark{A}
+Because \texttt{61bc24da} is an ancestor of \texttt{07ef753b} and is the
+historical head documented in \cref{tab:lean-status}, the collision is
+evidenced at both commits this manuscript names.\catmark{A}
 Those runner-backed failures predate the later account-level CI-start block;
-they therefore remain evidence about the named \texttt{master} snapshot,
+they therefore remain evidence about those two named snapshots,
 not about \texttt{f1ae5486} or a future repaired head.\catmark{A}
 \end{governancebox}
 
