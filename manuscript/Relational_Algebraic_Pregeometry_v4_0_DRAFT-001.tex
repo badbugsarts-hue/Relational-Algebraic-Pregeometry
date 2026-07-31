@@ -35,8 +35,9 @@
 %  R0 source reading ....................... 60% historical estimate; reset below
 %  R1--R4 architecture and MSS-000 ........ applied through Decisions D19/D21--D25
 %                                             in baseline blob c3197df2
-%  R5 manuscript post-application checks .. baseline bytes verified; live Lean,
-%                                             remote CI, and PROV-002 remain open
+%  R5 manuscript post-application checks .. baseline bytes verified; Lean snapshot
+%                                             f1ae5486 reconciled; later heads, remote CI,
+%                                             and PROV-002 remain open
 %
 % --- SOURCE STATUS -----------------------------------------------------------
 %  -006 canonical ........................ ~88% historical reading estimate
@@ -1063,50 +1064,126 @@ substantive open obligations in total. Static audit; no build executed.}
 \label{tab:lean-status}
 \end{table}
 
-\begin{governancebox}[Live Lean Status Is Not Established by This Manuscript]
-The historical findings F1--F3 below remain part of the audit record, but they
-must not be projected onto a later branch without raw-file reconciliation.
-The current commit tree, complete import graph, build log, axiom inventory,
-and whole-repository \texttt{sorry}/\texttt{admit} scan remain external
-requirements under GAP-22. Until those artefacts are supplied, this manuscript
-makes no claim that the historical defects persist and no claim that they
-have been repaired.
+\subsection{Reconciled Lean Snapshot at Head \texttt{f1ae5486}}
+\label{subsec:formalization-status-f1ae5486}
+
+The second snapshot is tied only to commit
+\texttt{f1ae548633abac7cb47b971917bbab7992801a3f}. It is not a statement
+about \texttt{master}, PR~\#24, or any later repository state.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{@{}lp{4.2cm}p{6.4cm}@{}}
+\toprule
+Audit object & Observation at \texttt{f1ae5486} & Scope and qualification \\
+\midrule
+Root import graph & 18 reachable modules from \texttt{Antigravit2.lean} &
+The source tree contains 22 Lean files; four are outside the root graph.\catmark{A} \\
+Environment-qualified build & 18/18 reachable modules exited successfully &
+Direct \texttt{lean} invocation with \texttt{LEAN\_PATH} on Windows; 591 seconds; not a pinned-container or complete \texttt{lake build}.\catmark{A} \\
+Registered proof debt & 8 occurrences of \texttt{sorry}, all registered &
+Five in \texttt{NCG/SpectralTriple.lean} and three in \texttt{Filters/Enumeration.lean}; no register mismatch was found.\catmark{A} \\
+Flagship declaration & \texttt{Filters.unique\_321\_N6} has no \texttt{sorryAx} &
+Its printed dependency inventory contains \texttt{propext}; this is a formal-software fact, not a physical selection result.\catmark{A} \\
+Trust audit & No \texttt{Lean.ofReduceBool} in the supplied inventory &
+The avoidance of \texttt{native\_decide} leaves the eight registered obligations open rather than importing that trust path.\catmark{A} \\
+\bottomrule
+\end{tabular}
+\caption{Named-commit Lean reconciliation at \texttt{f1ae5486}. Every row is commit-scoped; the build statement is environment-qualified while PROV-002 remains open.}
+\label{tab:lean-status-f1ae5486}
+\end{table}
+
+The complete supplied axiom inventory for the named head is:
+\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,breaklines=true,columns=fullflexible]
+Antigravit2.NCG.reality_JJ                         [propext, Classical.choice, Quot.sound]
+Antigravit2.NCG.toSignature_totalDim               [propext]
+Antigravit2.MatrixThermo.entropyList_replicate_one [propext, Quot.sound]
+Antigravit2.NCG.trivialRealStruct                  [propext, Classical.choice, Quot.sound]
+Antigravit2.NCG.trivialFiniteAlgebra               [propext, Classical.choice, Quot.sound]
+Antigravit2.Filters.unique_321_N6                  [propext]
+Antigravit2.NCG.orientabilityCondition             no additional axioms
+Antigravit2.NCG.AdmissibleSpectralTriple           no additional axioms
+\end{lstlisting}
+This inventory contains neither \texttt{sorryAx} nor
+\texttt{Lean.ofReduceBool}.\catmark{A}
+
+\begin{governancebox}[Reachability Boundary and the Latent Krajewski Collision]
+The four source modules outside the root import graph at
+\texttt{f1ae5486} are \texttt{NCG/Krajewski.lean},
+\texttt{Foundation/PrimitiveOperator.lean},
+\texttt{Meta/EvidenceTags.lean}, and \texttt{NCG/ModuliStub.lean}.\catmark{A}
+The first module's unreachability is why the duplicate Krajewski declaration
+is latent at this head: a root-only build does not exercise the conflicting
+module.\catmark{A}
+The primitive-operator module is also outside the successful set because the
+reported environment could not resolve
+\texttt{Mathlib.Analysis.CStarAlgebra.Spectrum}; no successful build claim is
+made for that file.\catmark{A}
 \end{governancebox}
 
-\begin{probbox}[Audit Finding F1]{Register--Code Contradiction}
-The corpus's own proof-obligation register asserts that the flagship
-selection proposition (\cref{sec:selection}) is closed by native
-decision-procedure evaluation. At the audited historical head the register statement was false: the
-theorem body is \texttt{sorry}, as are its thirty-three per-partition
-verdict examples. Until the discrepancy is resolved on the remote, the
-proposition's ``formally verified'' tag inside the corpus must be read as
-aspirational, and this manuscript cites it strictly as \emph{stated, not
-machine-checked at head \texttt{61bc24da}}. The finding is a
-documentation-integrity defect, not a mathematical one; the intended
-decidable proof route is plausible and small.
+\begin{governancebox}[The Reconciled Head Must Not Be Projected onto \texttt{master}]
+At \texttt{master} commit \texttt{07ef753b}, the root build is reported to
+fail because \texttt{Bimodule} and \texttt{KrajewskiDiagram} are declared
+through conflicting modules.\catmark{A}
+The failure is recorded in Issue~\#25 and in historical Ubuntu~24.04 Actions
+runs \texttt{29294970334} (2026-07-14) and \texttt{28909958494}
+(2026-07-08), whose logs report that the environment already contains
+\texttt{Antigravit2.NCG.Bimodule.mk} from
+\texttt{Antigravit2.NCG.KrajewskiCore}.\catmark{A}
+Those runner-backed failures predate the later account-level CI-start block;
+they therefore remain evidence about the named \texttt{master} snapshot,
+not about \texttt{f1ae5486} or a future repaired head.\catmark{A}
+\end{governancebox}
+
+\begin{governancebox}[Live Lean Status Is Commit-Scoped, Not Projected]
+The five GAP-22 artefacts---the commit tree, complete root import graph,
+build log, axiom inventory, and whole-repository
+\texttt{sorry}/\texttt{admit} scan---are available for the named head
+\texttt{f1ae548633abac7cb47b971917bbab7992801a3f}.\catmark{A}
+They close the reconciliation requirement only for that commit. Every later
+head requires a new five-part snapshot, and no result in
+\cref{tab:lean-status-f1ae5486} is projected onto \texttt{master}, PR~\#24,
+or an unspecified current state.\catmark{A}
+The successful 18-module build remains environment-qualified while PROV-002
+is open and does not cover the four unreachable modules.\catmark{A}
+\end{governancebox}
+
+\begin{probbox}[Audit Finding F1]{Register--Code Contradiction --- Historical at \texttt{61bc24da}, Reconciled at \texttt{f1ae5486}}
+At the historical head \texttt{61bc24da}, the register stated that the
+flagship declaration was closed while the theorem body and its verdict
+examples still contained \texttt{sorry}; that historical contradiction is
+retained in \cref{tab:lean-status}.\catmark{A}
+At \texttt{f1ae5486}, the supplied whole-tree scan and declaration inventory
+are consistent: \texttt{Antigravit2.Filters.unique\_321\_N6} contains no
+\texttt{sorryAx} and reports \texttt{propext} as its dependency.\catmark{A}
+This closes F1 only as a documentation and formal-software discrepancy at the
+named commit. The proposition still depends on design-level H1 and heuristic
+H2, so its physical class remains \catmark{D}; formal closure is not a
+physical selection result.
 \end{probbox}
 
-\begin{probbox}[Audit Finding F2]{Target-Shaped Admissibility Definition}
-In the audited historical snapshot, a wrapper in the candidate-instance layer defines a carrier to be
-admissible if and only if its KO-dimension is $6$ \emph{and its block list
-equals} $[3,2,1]$, and then proves the inserted candidate admissible by
-reflexivity. This is definitional target-matching: the theorem is vacuous,
-and the definition violates the corpus's own anti-target-leakage policy,
-which bars the candidate partition from definitions. Two Prop-valued
-signature fields are additionally discharged with the trivial proposition
-rather than with proofs of the intended properties. The repair is
-mechanical --- define admissibility through the generic filter predicates
-and derive the candidate's status --- and is queued in the fix handout of
-Phase~P5.
+\begin{probbox}[Audit Finding F2]{Target-Shaped Admissibility Definition --- Status Open at \texttt{f1ae5486}}
+The historical \texttt{61bc24da} audit found a candidate-instance wrapper
+whose admissibility condition explicitly matched KO-dimension~6 and the block
+list $[3,2,1]$.\catmark{A}
+The supplied \texttt{f1ae5486} reconciliation does not include the dedicated
+target-shape scan needed to determine whether that wrapper persists, was
+repaired, or moved. The status of F2 therefore remains open; absence of an
+audit artefact is not evidence of repair.\catmark{D}
+No statement in this manuscript treats the formal closure of
+\texttt{unique\_321\_N6} as resolving this separate target-leakage question.
 \end{probbox}
 
-\begin{probbox}[Audit Finding F3]{Under-Registered Proof Debt}
-Of the 51 open obligations in the audited historical head, the register covers only the five
-canonical-form regressions and the enumeration class; the 34 obligations
-of the elimination module and one audit-module obligation are
-unregistered. The corpus's own rule --- no \texttt{sorry} survives
-silently --- is therefore violated at head. Register synchronization is
-queued alongside F1/F2.
+\begin{probbox}[Audit Finding F3]{Under-Registered Proof Debt --- Historical at \texttt{61bc24da}, Reconciled at \texttt{f1ae5486}}
+The historical head contained 51 open obligations and an incomplete register,
+as retained in \cref{tab:lean-status}.\catmark{A}
+At \texttt{f1ae5486}, the whole-repository scan reports eight occurrences of
+\texttt{sorry}: five in \texttt{NCG/SpectralTriple.lean} and three in
+\texttt{Filters/Enumeration.lean}. All eight are present in the supplied
+register, so the under-registration defect is not present at that named
+commit.\catmark{A}
+The eight obligations remain proof debt; register consistency records them
+honestly and does not close them.
 \end{probbox}
 
 \section{The G1--G4 Obstruction Set and the Corrected Admissibility Lattice}
@@ -1273,26 +1350,22 @@ H1 and H2, as documented in the formal corpus.}
 \label{tab:elimination}
 \end{table}
 
-\begin{proposition}[Conditional $N=6$ selection; \catmark{D}; checker
-status open]
+\begin{proposition}[Conditional $N=6$ selection; physical class \catmark{D}; formal declaration closed at \texttt{f1ae5486}]
 \label{prop:unique321}
 Under H1 and H2, $[3,2,1]$ is the unique admissible partition of $N=6$.
 \end{proposition}
 
 The grading of this proposition is layered, and the layers must not be
-collapsed. The \emph{logical} content --- exhaustive filtering of a
-finite, machine-enumerable list --- is decidable and, once the pending
-proof obligations are discharged, will be \catmark{A} within the formal
-system. At the audited head it is stated, not machine-checked
-(Finding~F1). The \emph{physical} content is bounded above by its
-weakest hypothesis: design-level H1 and heuristic H2 place the
-proposition at \catmark{D}, and no completion of the Lean proof will
-change that; only deriving H1 from intersection-form axioms and replacing
-H2 by a stability theorem for the free-energy landscape could. The
-falsification structure is explicit and welcome: weakening H1 admits
-$[5,1]$ and $[4,2]$; weakening H2 admits $[2,2,1,1]$ and the all-equal
-partitions. A selection principle that survives only at one exact filter
-strength is a hypothesis about that strength, and is recorded as such.
+collapsed. At commit \texttt{f1ae5486}, the declaration
+\texttt{Antigravit2.Filters.unique\_321\_N6} has no \texttt{sorryAx} and
+its reported dependency inventory is \texttt{[propext]}.\catmark{A}
+That is a commit-scoped formal-software statement. The physical content is
+still bounded by its weakest hypothesis: design-level H1 and heuristic H2
+place the proposition at \catmark{D}, and no completion of the Lean proof
+changes that. Only deriving H1 from spectral-triple axioms and replacing H2
+by a target-independent stability theorem could alter the physical grade.
+The falsification structure remains explicit: weakening H1 admits $[5,1]$
+and $[4,2]$; weakening H2 admits $[2,2,1,1]$ and the all-equal partitions.
 
 \begin{openquestion}[Staircase conjecture; \catmark{D}]
 \label{oq:staircase}
@@ -1307,16 +1380,13 @@ satisfying both H1 and H2.
 \subsection{Target-Leakage Audit of the Selection Layer}
 \label{subsec:selection-leakage}
 
-The generic layer passes the audit: the filter definitions quantify over
-arbitrary partitions, the candidate list appears in the enumeration only
-as one member of the complete $p(6) = 11$ inventory, and the ledger
-constants appear nowhere outside warning comments. The single violation
-is the wrapper of Finding~F2, which is confined to the instance module
-and touches neither the filters nor the enumeration. The structural
-conclusion of the audit is therefore: the selection result, once
-machine-checked, will owe nothing to hard-coded bias --- but it will owe
-everything to H1 and H2, which is exactly what its \catmark{D} grade
-says.
+At the historical head \texttt{61bc24da}, the generic filters quantified over
+arbitrary partitions while the candidate-instance wrapper triggered Finding~F2.
+The supplied \texttt{f1ae5486} materials close the proof-status and
+proof-register questions but do not contain the dedicated target-shape scan
+needed to adjudicate that wrapper. F2 therefore remains open. Independently of
+that unresolved code-location question, the physical selection claim owes its
+content to H1 and H2 and remains \catmark{D}.
 
 \section{Candidate Intermediate Algebras}
 \label{sec:candidates}
@@ -1969,7 +2039,7 @@ record.
 \label{sec:part1-claims}
 
 \begin{table}[htbp]
-\centering\footnotesize
+\centering\scriptsize
 \begin{tabular}{@{}lp{5.3cm}lp{4.3cm}@{}}
 \toprule
 \# & Claim & Class & Falsification / downgrade \\
@@ -2001,14 +2071,11 @@ G-04b & Their endogenous selection from the kernel is not derived & \catmark{D} 
 G-05 & $[2,2,2]$ rejection rests on an unverified mass-degeneracy
 argument & \catmark{D} & primary-source theorem settling the case
 either way \\
-L-01 & Historical scan reported no \texttt{sorry} in Foundation/RealStructure/FOC/Krajewski/DeltaScale at \texttt{61bc24da}; no live status is asserted & \catmark{A} (snapshot audit fact) & raw live-tree reconciliation changing the record \\
-L-02 & 51 open obligations at head; register under-reports them
-(F1/F3); one target-shaped definition (F2) & \catmark{A} (audit fact) &
-a head at which the counts or findings no longer hold \\
-S-01 & Conditional selection: H1 $\wedge$ H2 $\Rightarrow$ unique
-$[3,2,1]$ at $N=6$ & \catmark{D}; checker open & discharge of F1
-upgrades only the formal layer; weakening either filter voids
-uniqueness \\
+L-01 & Historical head \texttt{61bc24da}: 51 open obligations and incomplete registration & \catmark{A} & a corrected audit of that exact commit \\
+L-02a & Named head \texttt{f1ae5486}: 8 registered \texttt{sorry} occurrences; 18 of 22 source modules reachable from the root & \catmark{A} & a raw rescan or import-graph reconstruction at that exact commit \\
+L-02b & F2 target-shape status at \texttt{f1ae5486} remains open because the dedicated scan is absent & \catmark{D} & a commit-scoped target-shape audit \\
+S-01a & \texttt{unique\_321\_N6} at \texttt{f1ae5486} has no \texttt{sorryAx} and reports \texttt{[propext]} & \catmark{A} & declaration inspection at that exact commit \\
+S-01b & H1 $\wedge$ H2 $\Rightarrow [3,2,1]$ remains physically conditional & \catmark{D} & target-independent derivations replacing both filters \\
 S-02 & Staircase conjecture for general $N$ & \catmark{D} &
 non-staircase partition passing H1 $\wedge$ H2 \\
 C-01 & Division-algebra programme is a \catmark{D} candidate for
@@ -4658,8 +4725,7 @@ GAP-20 & Black-hole sector & Defined singularity, entropy, evaporation, and
 information-recovery model. & \catmark{D}\\
 GAP-21 & Vacuum extraction & Protocol compatible with passivity, quantum
 inequalities, conservation, and backreaction. & \catmark{D}\\
-GAP-22 & Live Lean reconciliation & Current commit tree, build log, axiom/sorry
-inventory, and line-by-line manuscript reconciliation. & \catmark{A}\\
+GAP-22 & Lean reconciliation at \texttt{f1ae5486} & Five-part snapshot and line-by-line adjudication completed for the named commit; every later head requires a fresh reconciliation. & \catmark{A}\\
 GAP-23 & NORM-01 & Single-class decomposition of compound claims; closed by this content-finalization patch, subject to Claude diff audit. & \catmark{A}\\
 GAP-24 & PROV-002 & Immutable TeX image digest, source lock, negative fixtures,
 and deterministic report. & \catmark{A}\\
@@ -4714,16 +4780,14 @@ gives $\mathrm{Aut}(M_N(\mathbb{C})) = PU(N)$; and the rank budget for
 level-one simply-laced affine algebras yields $\mathrm{rank} = 1$.
 
 \paragraph{Formal corpus.}
-The Lean~4 statements quoted in Part~I remain a historical snapshot of the
-repository sources at commit \texttt{61bc24da}; MSS-000 does not claim that
-this manuscript excerpt is the live repository bridge. The audit reported in
-\cref{subsec:formalization-status} is a \emph{static structural audit}
-of that snapshot: proof-obligation counts are from a whole-word scan for
-\texttt{sorry}; no \texttt{lake build} was executed, and no build result
-is asserted anywhere in this draft. Reproduction of that historical audit requires fetching the stated commit
-and repeating the scan; live bridge reconciliation is a separate
-post-application executor obligation; Findings F1--F3 are stated so that
-they can be checked, and refuted, at that commit.
+Part~I now records two non-interchangeable repository states. The historical
+table at \texttt{61bc24da} remains a static whole-word scan for which no build
+was executed. The reconciled table at \texttt{f1ae5486} records the supplied
+commit tree, root import graph, environment-qualified 18-module build, axiom
+inventory, and whole-repository proof-debt scan. Reproduction requires
+fetching the named commit and repeating those exact operations. Neither
+snapshot is projected onto \texttt{master} or a later head, and the successful
+build does not constitute a physics result.
 
 \paragraph{Empirical values.}
 All Stratum-I values (\cref{tab:cosmology-inputs} and the benchmark
@@ -4879,10 +4943,12 @@ run provenance are absent. No active claim survives the quarantine.
 mistakes its completeness for closure.
 
 \begin{enumerate}[leftmargin=1.6em,itemsep=0.25em]
-\item Lean findings F1--F3 are historical findings at
-\texttt{61bc24da}. Their current status is unresolved until the live raw tree,
-build log, axiom inventory, and whole-repository proof-debt scan are
-reconciled. Any repair upgrades only the formal software layer; physical
+\item Lean findings F1 and F3 are reconciled for the named head
+\texttt{f1ae5486}: the flagship declaration has no \texttt{sorryAx}, and the
+eight remaining \texttt{sorry} occurrences are all registered. F2 remains
+open because no dedicated target-shape scan was supplied. Four modules remain
+outside the successful root build, and every later head requires a fresh
+reconciliation. These facts alter only the formal software record; physical
 claims remain bounded by their hypotheses.
 \item Hypothesis H1 (intersection-form filter) is design-level: its
 derivation from spectral-triple axioms is the stated upgrade path.
