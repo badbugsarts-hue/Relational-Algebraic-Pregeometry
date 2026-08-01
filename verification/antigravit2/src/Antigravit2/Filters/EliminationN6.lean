@@ -194,13 +194,28 @@ example : phase9Admissible [1, 1, 1, 1, 1, 1] = false := rfl
     partitions.
 
     STATUS: The logical derivation is [A] within the formal system
-    (verified by exhaustive enumeration). The physical validity depends
-    on the epistemic status of H1 [DESIGN-LEVEL] and H2 [HEURISTIC].
+    (exhaustive relative to the reference list `partitions6`; see PROOF
+    METHOD below for what is and is not machine-verified). The physical
+    validity depends on the epistemic status of H1 [DESIGN-LEVEL] and
+    H2 [HEURISTIC].
 
-    PROOF METHOD: Exhaustive filtering of the complete partition list
-    `partitions6` (verified equal to `enumPartitions 6` by decide in
-    Enumeration.lean). Each of the 10 non-[3,2,1] partitions is
-    eliminated by at least one filter.
+    PROOF METHOD: Filtering of the reference partition list `partitions6`.
+    Each of the 10 non-[3,2,1] entries is eliminated by at least one filter.
+
+    SCOPE OF "EXHAUSTIVE": `partitions6` is an explicit reference list, not a
+    generated enumeration, and its completeness is NOT machine-verified at
+    this commit. Verified by `decide` in Enumeration.lean: element sums (= 6),
+    positivity, cardinality (= 11), and `Nodup`. NOT verified: that the entries
+    are sorted decreasingly -- Enumeration.lean line 79 is a registered `sorry`
+    [ALLOWED-P10]. That sortedness is precisely the property which would close
+    the gap between "11 pairwise distinct lists" and "all 11 partitions of 6".
+    The regression `enumPartitions 6 = partitions6` is commented out
+    (Enumeration.lean lines 246-248) because `enumPartitionsBounded` is a
+    `partial def` and therefore not reducible by `decide`.
+
+    Consequently this statement is exhaustive relative to `partitions6` as
+    given, not relative to an independently verified enumeration of the
+    partitions of 6.
 
     ELIMINATION PROTOCOL:
     ┌─────────────────────┬──────┬──────┬─────────┬───────────────────┐
@@ -251,7 +266,7 @@ theorem unique_321_N6 :
 -- │ intersectionFilter (H1)  │ DESIGN-LEVEL  │ Derive from NCG axioms  │
 -- │ massNondeg (H2)          │ HEURISTIC     │ Derive from Yukawa      │
 -- │ phase9Admissible         │ DEFINITIONAL  │ Inherits from H1/H2    │
--- │ unique_321_N6            │ [A] formal    │ Stable (exhaustive)     │
+-- │ unique_321_N6            │ [A] formal    │ Verify partitions6 list │
 -- │ Staircase conjecture     │ [D] open      │ Prove or find cex      │
 -- └──────────────────────────┴───────────────┴─────────────────────────┘
 -- ═══════════════════════════════════════════════════════════════
