@@ -241,20 +241,20 @@ theorem unique_321_N6 :
     partitions6.filter phase9Admissible = [[3, 2, 1]] := rfl
 
 -- ═══════════════════════════════════════════════════════════════
--- CONJECTURE (open, documented only)
+-- WITHDRAWN CONJECTURE [D] (LEAN-STAIR-001)
 --
--- For general N, the set of Phase-9-admissible partitions consists
--- exclusively of staircase partitions [k, k-1, ..., 1] where
--- k(k+1)/2 = N. This would imply that admissible total dimensions
--- are triangular numbers.
+-- The former claim that Phase-9-admissible partitions consist exclusively
+-- of complete staircases [k, k-1, ..., 1], and hence occur only at triangular
+-- total dimensions, is false. Definitional regression checks establish that
+-- [3, 2] and [4, 3, 2] are admissible non-complete staircases, while the
+-- complete staircase [3, 2, 1] remains admissible.
 --
--- STATUS: [D] — Unproven conjecture. No counterexample known.
--- The N=6 case (k=3, 3·4/2=6) is the first non-trivial instance.
--- N=10 (k=4, [4,3,2,1]) and N=15 (k=5, [5,4,3,2,1]) are the next
--- test cases.
---
--- FALSIFICATION PATH: Find an N and a non-staircase partition that
--- satisfies both H1 and H2.
+-- CORRECTED OPEN CANDIDATE [D] (not proved here): sorted decreasing lists
+-- satisfying H1 and H2 may be finite consecutive intervals [a, ..., b] with
+-- a > b ≥ 1. This strictly enlarges the candidate set relative to complete
+-- staircases and therefore gives the N=6 uniqueness result more competitors,
+-- not fewer. Establishing or refuting this interval characterization is out
+-- of scope for this truth repair.
 -- ═══════════════════════════════════════════════════════════════
 
 -- ═══════════════════════════════════════════════════════════════
@@ -267,7 +267,7 @@ theorem unique_321_N6 :
 -- │ massNondeg (H2)          │ HEURISTIC     │ Derive from Yukawa      │
 -- │ phase9Admissible         │ DEFINITIONAL  │ Inherits from H1/H2    │
 -- │ unique_321_N6            │ [A] formal    │ Verify partitions6 list │
--- │ Staircase conjecture     │ [D] open      │ Prove or find cex      │
+-- │ Staircase conjecture     │ [D] withdrawn │ Test interval candidate │
 -- └──────────────────────────┴───────────────┴─────────────────────────┘
 -- ═══════════════════════════════════════════════════════════════
 
