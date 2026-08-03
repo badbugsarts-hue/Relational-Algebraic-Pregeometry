@@ -120,21 +120,19 @@ lemma spread_eq_zero_iff (xs : List ℕ) :
 def filter1 {N : ℕ} (p : BlockPartition N) (δ : ℕ := 1) : Prop :=
   spread p.blocks ≤ δ
 
-/-- [HEURISTIC] Filter 2: NOT all blocks equal.
+/-- [HEURISTIC] Filter 2: Combinatorial asymmetry proxy.
 
-    STATUS: Heuristic exclusion rule.
-    MOTIVATION: Fully symmetric block partitions (all n_i equal) produce
-    degenerate fermion mass spectra. Degenerate partitions are dynamically
-    unstable under off-diagonal perturbations in the matrix-thermodynamic
-    free energy landscape.
-    EVIDENCE: Supported by the observation that the Standard Model
-    has three generations with DISTINCT masses (not degenerate).
-    FORMALIZATION GAP: "Dynamical instability" is a physical claim about
-    the free energy landscape, not a combinatorial theorem. The exclusion
-    is a heuristic proxy for a stability analysis.
-    UPGRADE PATH: When the free energy functional F = -αS + βU_off is
-    formalized, this filter should be replaced by a proper saddle-point
-    or stability theorem.
+    FORMAL CONTENT: Reject exactly those block lists for which every block
+    size is equal. The implemented predicate is only `¬ allEqual p.blocks`.
+    INTERPRETATION: This is a modeling proxy, not a mass-spectrum or
+    dynamical-stability result. The corpus contains no Yukawa structure,
+    mass matrix, or theorem connecting equal block sizes to fermion masses,
+    and it contains no perturbative instability theorem for this predicate.
+    FORMALIZATION GAP: Any physical interpretation requires a separately
+    formalized and reviewed bridge from Dirac/Yukawa or free-energy data to
+    this combinatorial condition. Such a bridge is absent.
+    UPGRADE PATH: Supply that bridge before assigning a physical mass or
+    stability interpretation.
 
     Reference: Matrix-Thermodynamik session notes (Massendegeneration)
 -/

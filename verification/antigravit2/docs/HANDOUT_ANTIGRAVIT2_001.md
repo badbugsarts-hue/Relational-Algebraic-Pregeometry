@@ -116,12 +116,15 @@ def filter1 (p : BlockPartition N) : Prop :=
     |p.blocks.get ⟨i, hi⟩ - p.blocks.get ⟨j, hj⟩| ≤ 1
 ```
 
-### 4.2 Filter 2 (Massendegeneration vermeiden)
+### 4.2 Filter 2 (combinatorial asymmetry proxy)
 
-Vollsymmetrische Blockstrukturen (gleich große Blöcke) → fermionische Massendegeneration → dynamisch instabil.
+The formal predicate rejects all-equal block lists. It is only a
+`[HEURISTIC]` modeling proxy: this corpus contains no Yukawa structure,
+mass matrix, or theorem connecting equal block sizes to fermion-mass
+degeneration or dynamical instability.
 
 ```lean
-/-- [D] Filter 2: verbietet vollsymmetrische Blockpartitionen. -/
+/-- [HEURISTIC] Filter 2: combinatorial all-equal exclusion only. -/
 def filter2 (p : BlockPartition N) : Prop :=
   ¬ (∀ n ∈ p.blocks, n = p.blocks.head!)
 ```

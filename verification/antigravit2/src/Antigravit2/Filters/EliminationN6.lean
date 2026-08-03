@@ -14,10 +14,9 @@
   │                    │ by NCG intersection-form non-degeneracy              │
   │                    │ (arXiv:0706.3690) but not a general theorem.         │
   ├────────────────────┼────────────────────────────────────────────────────────┤
-  │ H2 (HEURISTIC)     │ Mass Non-Degeneracy Filter: all block sizes are     │
-  │                    │ pairwise distinct AND at least two blocks exist.     │
-  │                    │ Motivated by experimentally observed non-degenerate  │
-  │                    │ fermion masses in the Standard Model.                │
+  │ H2 (HEURISTIC)     │ Combinatorial proxy: all block sizes are pairwise   │
+  │                    │ distinct AND at least two blocks exist. No Yukawa   │
+  │                    │ or mass relation is formalized.                     │
   └────────────────────┴────────────────────────────────────────────────────────┘
 
   PROPOSITION (Phase 9):
@@ -87,31 +86,30 @@ def atLeastTwo {α : Type} : List α → Bool
   | _ :: _ :: _ => true
   | _ => false
 
-/-- [HEURISTIC] H2: Mass Non-Degeneracy Filter.
-    The partition has at least two summands (the algebra is non-simple)
-    AND all summand dimensions are pairwise distinct (no degenerate
-    fermion masses).
+/-- [HEURISTIC] H2: Combinatorial Non-Degeneration Proxy.
+    FORMAL CONTENT: The block list has at least two elements and no block
+    size occurs more than once. The implementation is exactly
+    `nodupBool xs && atLeastTwo xs`.
 
-    MOTIVATION: A single-block partition [N] produces a simple algebra
-    M_N(ℂ) with a single gauge factor and no inter-sector Yukawa
-    structure, hence no mass spectrum. Repeated block sizes n_i = n_j
-    for i ≠ j produce algebraically indistinguishable sectors and
-    therefore degenerate fermion masses, which is experimentally
-    excluded in the Standard Model.
+    INTERPRETATION: This Bool is only a modeling proxy for a possible
+    physical non-degeneration assumption. The corpus contains no Yukawa
+    structure, mass matrix, or theorem connecting repeated block sizes to
+    fermion masses. Consequently H2 neither derives nor predicts a mass
+    spectrum.
 
-    FORMALIZATION GAP: "Dynamical mass non-degeneracy" is a physical
-    claim about the Yukawa sector, not a pure combinatorial theorem.
-    The exclusion is a proxy for a stability/non-degeneracy analysis.
+    FORMALIZATION GAP: Any physical interpretation requires a separately
+    formalized bridge from spectral-triple Dirac/Yukawa data to this
+    combinatorial predicate. That bridge is absent.
 
-    UPGRADE PATH: Derive from the Dirac operator's Yukawa matrix
-    structure in the formalized spectral triple setting.
+    UPGRADE PATH: Formalize and review such a bridge before assigning a
+    physical mass interpretation.
 -/
 def massNondeg (xs : List ℕ) : Bool :=
   nodupBool xs && atLeastTwo xs
 
 /-- Phase 9 admissibility: H1 ∧ H2.
     A partition is Phase-9-admissible if it satisfies both the
-    intersection-form filter (H1) and the mass non-degeneracy filter (H2).
+    intersection-form filter (H1) and the combinatorial proxy (H2).
 
     STATUS: Definitional conjunction. Inherits epistemic status from
     H1 [DESIGN-LEVEL] and H2 [HEURISTIC].
@@ -141,7 +139,7 @@ example : intersectionFilter [4, 1, 1] = false := rfl
 example : intersectionFilter [3, 1, 1, 1] = false := rfl
 
 -- ═══════════════════════════════════════════════════════════════
--- INDIVIDUAL FILTER VERDICTS — H2 (Mass Non-Degeneracy)
+-- INDIVIDUAL FILTER VERDICTS — H2 (Combinatorial Proxy)
 -- ═══════════════════════════════════════════════════════════════
 
 -- Partitions PASSING H2 (all distinct, ≥2 blocks):
@@ -188,8 +186,8 @@ example : phase9Admissible [1, 1, 1, 1, 1, 1] = false := rfl
 
 /-- [D] Proposition (Phase 9).
 
-    Under hypotheses H1 (intersection-form filter) and H2 (mass
-    non-degeneracy filter), the partition [3,2,1] is the unique
+    Under hypotheses H1 (intersection-form filter) and H2 (combinatorial
+    non-degeneration proxy), the partition [3,2,1] is the unique
     admissible partition of N=6 among all p(6)=11 sorted integer
     partitions.
 
@@ -264,7 +262,7 @@ theorem unique_321_N6 :
 -- │ Entity                   │ Status        │ Upgrade path            │
 -- ├──────────────────────────┼───────────────┼─────────────────────────┤
 -- │ intersectionFilter (H1)  │ DESIGN-LEVEL  │ Derive from NCG axioms  │
--- │ massNondeg (H2)          │ HEURISTIC     │ Derive from Yukawa      │
+-- │ massNondeg (H2)          │ HEURISTIC     │ Requires missing bridge │
 -- │ phase9Admissible         │ DEFINITIONAL  │ Inherits from H1/H2    │
 -- │ unique_321_N6            │ [A] formal    │ Verify partitions6 list │
 -- │ Staircase conjecture     │ [D] withdrawn │ Test interval candidate │
