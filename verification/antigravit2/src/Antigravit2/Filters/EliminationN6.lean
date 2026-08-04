@@ -117,6 +117,124 @@ def massNondeg (xs : List ℕ) : Bool :=
 def phase9Admissible (xs : List ℕ) : Bool :=
   intersectionFilter xs && massNondeg xs
 
+/-- `xs` is a positive consecutive descending interval with at least two entries. -/
+def isConsecInterval (xs : List ℕ) : Bool :=
+  decide (2 ≤ xs.length)
+    && xs.all (fun x => decide (1 ≤ x))
+    && (List.zip xs xs.tail).all (fun p => decide (p.1 = p.2 + 1))
+
+private theorem atLeastTwo_eq_true_iff (xs : List ℕ) :
+    atLeastTwo xs = true ↔ 2 ≤ xs.length := by
+  cases xs with
+  | nil => simp [atLeastTwo]
+  | cons _ xs =>
+      cases xs <;> simp [atLeastTwo]
+
+private theorem nodupBool_eq_true_iff (xs : List ℕ) :
+    nodupBool xs = true ↔ xs.Nodup := by
+  induction xs with
+  | nil => simp [nodupBool]
+  | cons x xs ih => simp [nodupBool, ih, List.nodup_cons]
+
+private theorem intersectionFilter_of_consecutiveSteps (xs : List ℕ)
+    (h : (List.zip xs xs.tail).all
+      (fun p => decide (p.1 = p.2 + 1)) = true) :
+    intersectionFilter xs = true := by
+  induction xs with
+  | nil => simp [intersectionFilter]
+  | cons a xs ih =>
+      cases xs with
+      | nil => simp [intersectionFilter]
+      | cons b rest =>
+          simp only [List.tail_cons, List.zip_cons_cons, List.all_cons,
+            Bool.and_eq_true, decide_eq_true_eq] at h
+          rw [intersectionFilter, if_pos (h.1.le)]
+          exact ih h.2
+
+private theorem pairwise_gt_of_consecutiveSteps (xs : List ℕ)
+    (h : (List.zip xs xs.tail).all
+      (fun p => decide (p.1 = p.2 + 1)) = true) :
+    xs.Pairwise (· > ·) := by
+  induction xs with
+  | nil => simp
+  | cons a xs ih =>
+      cases xs with
+      | nil => simp
+      | cons b rest =>
+          simp only [List.tail_cons, List.zip_cons_cons, List.all_cons,
+            Bool.and_eq_true, decide_eq_true_eq] at h
+          have htail : (b :: rest).Pairwise (· > ·) := ih h.2
+          rw [List.pairwise_cons]
+          constructor
+          · intro y hy
+            rcases List.mem_cons.mp hy with hEq | hy
+            · subst y
+              omega
+            · have hby : b > y := (List.pairwise_cons.mp htail).1 y hy
+              omega
+          · exact htail
+
+private theorem consecutiveSteps_of_sorted_filter (xs : List ℕ)
+    (hsort : xs.Sorted (· ≥ ·)) (hnodup : xs.Nodup)
+    (hfilter : intersectionFilter xs = true) :
+    (List.zip xs xs.tail).all
+      (fun p => decide (p.1 = p.2 + 1)) = true := by
+  induction xs with
+  | nil => simp
+  | cons a xs ih =>
+      cases xs with
+      | nil => simp
+      | cons b rest =>
+          have hsortTail : (b :: rest).Sorted (· ≥ ·) :=
+            (List.pairwise_cons.mp hsort).2
+          have hnodupTail : (b :: rest).Nodup :=
+            (List.nodup_cons.mp hnodup).2
+          rw [intersectionFilter] at hfilter
+          split at hfilter
+          next hab =>
+            have hge : a ≥ b := (List.pairwise_cons.mp hsort).1 b (by simp)
+            have hne : a ≠ b := by
+              intro heq
+              apply (List.nodup_cons.mp hnodup).1
+              simp [heq]
+            have heq : a = b + 1 := by omega
+            simp only [List.tail_cons, List.zip_cons_cons, List.all_cons,
+              Bool.and_eq_true, decide_eq_true_eq]
+            exact ⟨heq, ih hsortTail hnodupTail hfilter⟩
+          next => contradiction
+
+/-- Every positive consecutive interval satisfies the Phase-9 filters. -/
+theorem interval_admissible (xs : List ℕ)
+    (h : isConsecInterval xs = true) :
+    phase9Admissible xs = true := by
+  simp only [isConsecInterval, Bool.and_eq_true, decide_eq_true_eq] at h
+  have hfilter := intersectionFilter_of_consecutiveSteps xs h.2
+  have hnodup : xs.Nodup :=
+    (pairwise_gt_of_consecutiveSteps xs h.2).imp (fun hxy => Nat.ne_of_gt hxy)
+  simp [phase9Admissible, massNondeg, hfilter,
+    (nodupBool_eq_true_iff xs).2 hnodup,
+    (atLeastTwo_eq_true_iff xs).2 h.1.1]
+
+/-- Every sorted positive Phase-9-admissible list is a consecutive interval. -/
+theorem admissible_interval (xs : List ℕ)
+    (hsort : xs.Sorted (· ≥ ·))
+    (hpos : xs.Forall (fun x => 1 ≤ x))
+    (h : phase9Admissible xs = true) :
+    isConsecInterval xs = true := by
+  simp only [phase9Admissible, massNondeg, Bool.and_eq_true] at h
+  have hnodup : xs.Nodup := (nodupBool_eq_true_iff xs).1 h.2.1
+  have hlength : 2 ≤ xs.length := (atLeastTwo_eq_true_iff xs).1 h.2.2
+  have hsteps := consecutiveSteps_of_sorted_filter xs hsort hnodup h.1
+  have hallPos : xs.all (fun x => decide (1 ≤ x)) = true := by
+    simp only [List.all_eq_true, decide_eq_true_eq]
+    exact List.forall_iff_forall_mem.mp hpos
+  simp [isConsecInterval, hlength, hallPos, hsteps]
+
+example : isConsecInterval [3, 2] = true := by decide
+example : isConsecInterval [4, 3, 2] = true := by decide
+example : isConsecInterval [3, 1] = false := by decide
+example : isConsecInterval [2, 1, 0] = false := by decide
+
 -- ═══════════════════════════════════════════════════════════════
 -- INDIVIDUAL FILTER VERDICTS — H1 (Intersection Filter)
 -- ═══════════════════════════════════════════════════════════════

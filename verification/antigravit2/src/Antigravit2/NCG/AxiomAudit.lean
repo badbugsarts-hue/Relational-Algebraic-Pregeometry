@@ -33,6 +33,8 @@ namespace NCG
 
 -- Phase 9 axiom check:
 #print axioms Filters.unique_321_N6
+#print axioms Filters.interval_admissible
+#print axioms Filters.admissible_interval
 
 -- Phase 10b axiom check:
 #print axioms orientabilityCondition
