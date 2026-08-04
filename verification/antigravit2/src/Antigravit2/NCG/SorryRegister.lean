@@ -28,7 +28,7 @@
             `info: src/Antigravit2/NCG/AxiomAudit.lean:35:0: 'Antigravit2.Filters.unique_321_N6' depends on axioms: [propext]`
     Target: Completed.
 
-  [ALLOWED-P10] List.Sorted Enumeration Regression (Enumeration.lean)
+  [CLOSED-P10] List.Sorted Enumeration Regression (Enumeration.lean)
     Reason: SUPERSEDED 2026-08-03. The earlier reason -- that `List.Sorted (· ≥ ·)`
             decidability hangs the elaborator infinitely without `native_decide` --
             does not hold at lean v4.32.0-rc1 / mathlib ba1e3bb. The statement for
@@ -36,12 +36,12 @@
             and hence no `Lean.ofReduceBool`. Measured: all three statements (4/5/6)
             elaborate together in 35 s, and the Decidable instance is obtained by
             `infer_instance`.
-    Scope:  2 instances remaining, Enumeration.lean lines 77-78 (partitions4,
-            partitions5). Line 79 (partitions6) was discharged on 2026-08-03.
-            NOTE: lines 77-78 discharge by the identical one-token change; they are
-            retained only because the authorising task scoped the edit to line 79.
-            Closing them is a PI decision, not a formalisation obstacle.
-    Target: Phase 10 — close lines 77-78; no decidability work is required.
+    Scope:  0 instances remaining. Enumeration.lean is sorry-free.
+            Line 79 (partitions6) was discharged on 2026-08-03.
+            Lines 77-78 (partitions4, partitions5) were closed on 2026-08-03 by PI
+            decision, by the identical one-token change (`sorry` -> `by decide`).
+            No `native_decide` was used, hence no `Lean.ofReduceBool` was introduced.
+    Target: Completed.
 
   [NONE] All RealStructure.lean lemmas — sorry-free as of 2026-06-30
   [NONE] All Bridge.lean lemmas — sorry-free as of 2026-06-30
@@ -52,7 +52,6 @@ namespace Antigravit2
 namespace NCG
 
 -- Status: 5 instances in SpectralTriple.lean lines 98-103.
--- Status: 2 instances in Enumeration.lean lines 77-78.
 
 end NCG
 end Antigravit2

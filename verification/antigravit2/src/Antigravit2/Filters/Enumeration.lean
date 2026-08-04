@@ -74,8 +74,8 @@ example : partitions5.length = 7 := by decide
 example : partitions6.length = 11 := by decide
 
 -- Monotonicity (decreasing order within each partition)
-example : partitions4.Forall (fun xs => xs.Sorted (· ≥ ·)) := sorry
-example : partitions5.Forall (fun xs => xs.Sorted (· ≥ ·)) := sorry
+example : partitions4.Forall (fun xs => xs.Sorted (· ≥ ·)) := by decide
+example : partitions5.Forall (fun xs => xs.Sorted (· ≥ ·)) := by decide
 example : partitions6.Forall (fun xs => xs.Sorted (· ≥ ·)) := by decide
 
 -- No duplicates in the reference lists
