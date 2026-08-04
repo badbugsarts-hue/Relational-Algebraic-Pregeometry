@@ -22,9 +22,9 @@
   PROPOSITION (Phase 9):
     Under H1 and H2, [3,2,1] is the unique admissible partition of N=6.
 
-  CONJECTURE (open):
-    For general N, admissible minima fragment into staircase-type
-    components [k, k-1, ..., 1], or are globally minimized by such.
+  FORMAL CHARACTERISATION:
+    Sorted positive Phase-9-admissible lists are precisely finite decreasing
+    consecutive intervals [a, a-1, ..., b] with 1 <= b < a.
 
   FALSIFICATION PATHS:
     (a) If H1 is weakened (larger block-difference tolerance), additional
@@ -32,8 +32,9 @@
     (b) If H2 is weakened (allowing repeated block sizes), additional
         partitions (e.g. [2,2,1,1]) become admissible.
 
-  Anti-Target-Leakage: filter definitions are generic; [3,2,1] emerges
-  solely from the exhaustive elimination, not from any hard-coded bias.
+  Anti-Target-Leakage: filter definitions are generic; [3,2,1] follows both
+  from explicit elimination and from the general interval/arithmetic route,
+  not from any hard-coded bias.
 
   Reference: Matrix-Thermodynamik session notes (Filter 1, Filter 2)
   Reference: arXiv:0706.3690 (Chamseddine-Connes-Marcolli)
@@ -235,6 +236,143 @@ example : isConsecInterval [4, 3, 2] = true := by decide
 example : isConsecInterval [3, 1] = false := by decide
 example : isConsecInterval [2, 1, 0] = false := by decide
 
+private theorem consecutiveSteps_eq_reverse_range (a : ℕ) (xs : List ℕ)
+    (h : (List.zip (a :: xs) (a :: xs).tail).all
+      (fun p => decide (p.1 = p.2 + 1)) = true) :
+    ∃ b : ℕ, b ≤ a ∧
+      a :: xs = (List.range' b (a - b + 1)).reverse := by
+  induction xs generalizing a with
+  | nil =>
+      exact ⟨a, by simp, by simp⟩
+  | cons b rest ih =>
+      simp only [List.tail_cons, List.zip_cons_cons, List.all_cons,
+        Bool.and_eq_true, decide_eq_true_eq] at h
+      obtain ⟨c, hca, htail⟩ := ih b h.2
+      refine ⟨c, by omega, ?_⟩
+      have hlen : a - c + 1 = (b - c + 1) + 1 := by omega
+      have hend : c + (b - c + 1) = a := by
+        calc
+          c + (b - c + 1) = (c + (b - c)) + 1 := by simp [Nat.add_assoc]
+          _ = b + 1 := by rw [Nat.add_sub_of_le hca]
+          _ = a := h.1.symm
+      have hrange : (List.range' c (a - c + 1)).reverse =
+          a :: (List.range' c (b - c + 1)).reverse := by
+        rw [hlen, List.range'_1_concat, List.reverse_append,
+          List.reverse_singleton, List.singleton_append, hend]
+      calc
+        a :: b :: rest = a :: (List.range' c (b - c + 1)).reverse := by rw [htail]
+        _ = (List.range' c (a - c + 1)).reverse := hrange.symm
+
+private theorem reverse_range_consecutiveSteps (b n : ℕ) :
+    (List.zip (List.range' b n).reverse (List.range' b n).reverse.tail).all
+      (fun p => decide (p.1 = p.2 + 1)) = true := by
+  induction n with
+  | zero => simp
+  | succ n ih =>
+      cases n with
+      | zero => simp
+      | succ n =>
+          simp only [List.range'_1_concat, List.reverse_append, List.reverse_singleton,
+            List.singleton_append, List.tail_cons, List.zip_cons_cons, List.all_cons,
+            Bool.and_eq_true, decide_eq_true_eq]
+          constructor
+          · omega
+          · simpa only [List.range'_1_concat, List.reverse_append,
+              List.reverse_singleton, List.singleton_append,
+              List.tail_cons] using ih
+
+/-- The Boolean interval predicate is equivalent to an explicit descending range. -/
+theorem isConsecInterval_iff_exists_range (xs : List ℕ) :
+    isConsecInterval xs = true ↔
+      ∃ a b : ℕ, 1 ≤ b ∧ b < a ∧
+        xs = (List.range' b (a - b + 1)).reverse := by
+  constructor
+  · intro h
+    simp only [isConsecInterval, Bool.and_eq_true, decide_eq_true_eq] at h
+    cases xs with
+    | nil => simp at h
+    | cons a rest =>
+        obtain ⟨b, hba, hxs⟩ := consecutiveSteps_eq_reverse_range a rest h.2
+        have hpos : ∀ x ∈ a :: rest, 1 ≤ x := by
+          simpa only [List.all_eq_true, decide_eq_true_eq] using h.1.2
+        have hbmem : b ∈ a :: rest := by
+          rw [hxs, List.mem_reverse]
+          simp only [List.mem_range'_1]
+          omega
+        have hlt : b < a := by
+          have hlength := h.1.1
+          rw [hxs, List.length_reverse, List.length_range'] at hlength
+          omega
+        exact ⟨a, b, hpos b hbmem, hlt, hxs⟩
+  · rintro ⟨a, b, hb, hab, rfl⟩
+    have hlength : 2 ≤ (List.range' b (a - b + 1)).reverse.length := by
+      simp only [List.length_reverse, List.length_range']
+      omega
+    have hallPos : (List.range' b (a - b + 1)).reverse.all
+        (fun x => decide (1 ≤ x)) = true := by
+      simp only [List.all_eq_true, decide_eq_true_eq]
+      intro x hx
+      rw [List.mem_reverse, List.mem_range'_1] at hx
+      omega
+    simp only [isConsecInterval, Bool.and_eq_true, decide_eq_true_eq]
+    exact ⟨⟨hlength, hallPos⟩,
+      reverse_range_consecutiveSteps b (a - b + 1)⟩
+
+private theorem sum_range'_mul_two (b n : ℕ) :
+    (List.range' b n).sum * 2 = n * (2 * b + n - 1) := by
+  induction n generalizing b with
+  | zero => simp
+  | succ n ih =>
+      cases n with
+      | zero => simp [Nat.mul_comm]
+      | succ n =>
+          rw [List.range'_succ, List.sum_cons, Nat.add_mul, ih (b + 1)]
+          have hleft : 2 * (b + 1) + (n + 1) - 1 = 2 * b + n + 2 := by omega
+          have hright : 2 * b + (n + 2) - 1 = 2 * b + n + 1 := by omega
+          rw [hleft, hright]
+          ring
+
+/-- Closed form for the sum of a descending interval. -/
+theorem interval_sum (a b : ℕ) (hab : b ≤ a) :
+    (List.range' b (a - b + 1)).reverse.sum * 2 =
+      (a + b) * (a - b + 1) := by
+  rw [List.sum_reverse, sum_range'_mul_two]
+  have hinner : 2 * b + (a - b + 1) - 1 = a + b := by omega
+  rw [hinner, Nat.mul_comm]
+
+/-- The only positive nontrivial consecutive interval summing to six has endpoints 3 and 1. -/
+theorem interval_sum_six (a b : ℕ)
+    (hb : 1 ≤ b) (hab : b < a) (ha : a ≤ 6)
+    (hsum : (a + b) * (a - b + 1) = 12) :
+    a = 3 ∧ b = 1 := by
+  interval_cases a <;> interval_cases b <;> simp_all
+
+/-- N=6 uniqueness over every sorted positive admissible list, independent of `partitions6`. -/
+theorem unique_321_N6_all_sorted (xs : List ℕ)
+    (hsort : xs.Sorted (· ≥ ·))
+    (hpos : xs.Forall (fun x => 1 ≤ x))
+    (hsum : xs.sum = 6)
+    (hadm : phase9Admissible xs = true) :
+    xs = [3, 2, 1] := by
+  have hinterval := admissible_interval xs hsort hpos hadm
+  obtain ⟨a, b, hb, hab, hxs⟩ :=
+    (isConsecInterval_iff_exists_range xs).1 hinterval
+  subst xs
+  have hamem : a ∈ (List.range' b (a - b + 1)).reverse := by
+    rw [List.mem_reverse, List.mem_range'_1]
+    omega
+  have ha : a ≤ 6 := by
+    have := List.le_sum_of_mem hamem
+    omega
+  have hproduct : (a + b) * (a - b + 1) = 12 := by
+    calc
+      (a + b) * (a - b + 1) =
+          (List.range' b (a - b + 1)).reverse.sum * 2 :=
+        (interval_sum a b hab.le).symm
+      _ = 12 := by omega
+  obtain ⟨rfl, rfl⟩ := interval_sum_six a b hb hab ha hproduct
+  decide
+
 -- ═══════════════════════════════════════════════════════════════
 -- INDIVIDUAL FILTER VERDICTS — H1 (Intersection Filter)
 -- ═══════════════════════════════════════════════════════════════
@@ -305,9 +443,8 @@ example : phase9Admissible [1, 1, 1, 1, 1, 1] = false := rfl
 /-- [D] Proposition (Phase 9).
 
     Under hypotheses H1 (intersection-form filter) and H2 (combinatorial
-    non-degeneration proxy), the partition [3,2,1] is the unique
-    admissible partition of N=6 among all p(6)=11 sorted integer
-    partitions.
+    non-degeneration proxy), [3,2,1] is the only admissible entry in the
+    explicit reference list `partitions6`.
 
     STATUS: The logical derivation is [A] within the formal system
     (exhaustive relative to the reference list `partitions6`; see PROOF
@@ -321,17 +458,18 @@ example : phase9Admissible [1, 1, 1, 1, 1, 1] = false := rfl
     SCOPE OF "EXHAUSTIVE": `partitions6` is an explicit reference list, not a
     generated enumeration, and its completeness is NOT machine-verified at
     this commit. Verified by `decide` in Enumeration.lean: element sums (= 6),
-    positivity, cardinality (= 11), and `Nodup`. NOT verified: that the entries
-    are sorted decreasingly -- Enumeration.lean line 79 is a registered `sorry`
-    [ALLOWED-P10]. That sortedness is precisely the property which would close
-    the gap between "11 pairwise distinct lists" and "all 11 partitions of 6".
-    The regression `enumPartitions 6 = partitions6` is commented out
-    (Enumeration.lean lines 246-248) because `enumPartitionsBounded` is a
-    `partial def` and therefore not reducible by `decide`.
+    positivity, decreasing sortedness, cardinality (= 11), and `Nodup`.
+    Enumeration.lean is sorry-free. Those properties still do not independently
+    prove that every partition of 6 occurs in the reference list. The regression
+    `enumPartitions 6 = partitions6` is commented out because
+    `enumPartitionsBounded` is a `partial def` and therefore not reducible by
+    `decide`.
 
     Consequently this statement is exhaustive relative to `partitions6` as
     given, not relative to an independently verified enumeration of the
-    partitions of 6.
+    partitions of 6. The separate theorem `unique_321_N6_all_sorted` proves
+    the N=6 result for arbitrary sorted positive lists and does not depend on
+    completeness of `partitions6`.
 
     ELIMINATION PROTOCOL:
     ┌─────────────────────┬──────┬──────┬─────────┬───────────────────┐
@@ -365,12 +503,12 @@ theorem unique_321_N6 :
 -- [3, 2] and [4, 3, 2] are admissible non-complete staircases, while the
 -- complete staircase [3, 2, 1] remains admissible.
 --
--- CORRECTED OPEN CANDIDATE [D] (not proved here): sorted decreasing lists
--- satisfying H1 and H2 may be finite consecutive intervals [a, ..., b] with
--- a > b ≥ 1. This strictly enlarges the candidate set relative to complete
--- staircases and therefore gives the N=6 uniqueness result more competitors,
--- not fewer. Establishing or refuting this interval characterization is out
--- of scope for this truth repair.
+-- FORMALLY ESTABLISHED REPLACEMENT: `admissible_interval` and
+-- `interval_admissible` identify sorted positive Phase-9-admissible lists with
+-- finite decreasing consecutive intervals. `isConsecInterval_iff_exists_range`
+-- gives the explicit range representation. This is a logical [A] result about
+-- the definitions; its physical interpretation still inherits the unchanged
+-- DESIGN-LEVEL/HEURISTIC status of H1 and H2.
 -- ═══════════════════════════════════════════════════════════════
 
 -- ═══════════════════════════════════════════════════════════════
@@ -382,8 +520,8 @@ theorem unique_321_N6 :
 -- │ intersectionFilter (H1)  │ DESIGN-LEVEL  │ Derive from NCG axioms  │
 -- │ massNondeg (H2)          │ HEURISTIC     │ Requires missing bridge │
 -- │ phase9Admissible         │ DEFINITIONAL  │ Inherits from H1/H2    │
--- │ unique_321_N6            │ [A] formal    │ Verify partitions6 list │
--- │ Staircase conjecture     │ [D] withdrawn │ Test interval candidate │
+-- │ unique_321_N6            │ [A] formal    │ Reference-list theorem  │
+-- │ Staircase conjecture     │ [D] withdrawn │ Replaced formally       │
 -- └──────────────────────────┴───────────────┴─────────────────────────┘
 -- ═══════════════════════════════════════════════════════════════
 

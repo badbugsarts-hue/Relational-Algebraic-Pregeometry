@@ -35,6 +35,10 @@ namespace NCG
 #print axioms Filters.unique_321_N6
 #print axioms Filters.interval_admissible
 #print axioms Filters.admissible_interval
+#print axioms Filters.isConsecInterval_iff_exists_range
+#print axioms Filters.interval_sum
+#print axioms Filters.interval_sum_six
+#print axioms Filters.unique_321_N6_all_sorted
 
 -- Phase 10b axiom check:
 #print axioms orientabilityCondition
