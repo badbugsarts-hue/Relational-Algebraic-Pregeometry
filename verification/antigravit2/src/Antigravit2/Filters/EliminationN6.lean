@@ -94,15 +94,18 @@ def atLeastTwo {α : Type} : List α → Bool
     fermion masses).
 
     MOTIVATION: A single-block partition [N] produces a simple algebra
-    M_N(ℂ) with a single gauge factor and no inter-sector Yukawa
-    structure, hence no mass spectrum. Repeated block sizes n_i = n_j
-    for i ≠ j produce algebraically indistinguishable sectors and
-    therefore degenerate fermion masses, which is experimentally
-    excluded in the Standard Model.
+    M_N(ℂ) with a single gauge factor. This filter excludes such
+    partitions and those with repeated block sizes. The exclusion is
+    a combinatorial proxy for the physical assumption that fermion
+    masses are non-degenerate in the Standard Model — it encodes the
+    assumption as Nodup + ≥ 2 blocks, not as a derived consequence.
+    [LEAN-H2-001]
 
-    FORMALIZATION GAP: "Dynamical mass non-degeneracy" is a physical
-    claim about the Yukawa sector, not a pure combinatorial theorem.
-    The exclusion is a proxy for a stability/non-degeneracy analysis.
+    FORMALIZATION GAP: No Yukawa matrix, mass operator, or fermion
+    mass structure exists in this codebase. "Mass non-degeneracy" is
+    a physical assumption about the Yukawa sector, not a theorem
+    derivable from the combinatorial definitions here. The exclusion
+    is a heuristic proxy, not a causal entailment.
 
     UPGRADE PATH: Derive from the Dirac operator's Yukawa matrix
     structure in the formalized spectral triple setting.

@@ -123,15 +123,17 @@ def filter1 {N : ℕ} (p : BlockPartition N) (δ : ℕ := 1) : Prop :=
 /-- [HEURISTIC] Filter 2: NOT all blocks equal.
 
     STATUS: Heuristic exclusion rule.
-    MOTIVATION: Fully symmetric block partitions (all n_i equal) produce
-    degenerate fermion mass spectra. Degenerate partitions are dynamically
-    unstable under off-diagonal perturbations in the matrix-thermodynamic
-    free energy landscape.
-    EVIDENCE: Supported by the observation that the Standard Model
-    has three generations with DISTINCT masses (not degenerate).
-    FORMALIZATION GAP: "Dynamical instability" is a physical claim about
-    the free energy landscape, not a combinatorial theorem. The exclusion
-    is a heuristic proxy for a stability analysis.
+    MOTIVATION: The exclusion of fully symmetric block partitions
+    (all n_i equal) is a combinatorial proxy for the physical
+    assumption that fermion masses are non-degenerate. The Standard
+    Model has three generations with distinct masses; this filter
+    encodes that observation as a combinatorial constraint
+    (¬ allEqual), not as a derived consequence. [LEAN-H2-001]
+    FORMALIZATION GAP: No Yukawa structure or mass operator exists in
+    this codebase. "Mass non-degeneracy" is a physical assumption
+    about the Yukawa sector, not a theorem derivable from the
+    combinatorial definitions here. The exclusion is a heuristic
+    proxy, not a causal entailment.
     UPGRADE PATH: When the free energy functional F = -αS + βU_off is
     formalized, this filter should be replaced by a proper saddle-point
     or stability theorem.
