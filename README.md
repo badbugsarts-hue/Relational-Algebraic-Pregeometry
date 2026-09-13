@@ -7,6 +7,11 @@
 ## Mission Statement
 This repository contains the formal architecture and manuscript source for **RAP v4.0** (formerly UIDT). The framework replaces continuous physical fields with a discrete, finite relational-algebraic kernel ($\mathcal{A}_F$). It is governed by a strict "falsification-first" discipline and explicitly rejects anthropocentric biases and unverified continuum assumptions.
 
+## Governance & AI Audit Policy
+All agents and contributors must adhere to the rules defined in `governance/AI_AUDIT_POLICY.md` and the `governance/AGENTS.md` steering baseline.
+- **Rule:** Do not introduce physical constants, target cosmology values, Standard Model targets, or calibrated UIDT parameters into pregeometry growth rules, null ensembles, dashboards, or diagnostics unless a dedicated reviewed task explicitly requires it.
+- **Rule:** Runtime artifacts must only be generated under `verification/data/pregeometry/`.
+
 ## Core Architecture
 The physical passage from the finite kernel to apparent continuity is treated as an open thermodynamic limit. The formal separation is defined as:
 `BlockPartition` $\to$ `FiniteAlgebraSignature` $\to$ `SpectralTriple`

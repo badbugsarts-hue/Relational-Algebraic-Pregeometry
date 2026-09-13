@@ -55,3 +55,20 @@ jobs:
           else
             echo "SUCCESS: No unexpected sorries detected."
           fi
+
+  claims-extraction:
+    name: Extract RAP 4.0 Claims
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Generate claims.json
+        run: python scripts/extract_claims.py
+      - name: Upload claims artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: claims-json
+          path: claims.json

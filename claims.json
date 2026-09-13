@@ -1,0 +1,2407 @@
+{
+    "repository": "Relational-Algebraic Pregeometry",
+    "version": "4.0",
+    "total_claims": 600,
+    "claims": [
+        {
+            "context": "\\newcommand{\\Bdelta}{\\hyperref[box:pi-override-delta]{\\catmark{B}}}",
+            "evidence_class": "B"
+        },
+        {
+            "context": "\\newcommand{\\Bpending}{\\catmark{B}\\,\\textit{(pending source audit)}}",
+            "evidence_class": "B"
+        },
+        {
+            "context": "{\\small\\bfseries A Falsification-First Programme\\,\\catmark{D}\\ for a Finite Relational-Algebraic Kernel,\\\\[0.25em]",
+            "evidence_class": "D"
+        },
+        {
+            "context": "evidence class \\catmark{D}. The decision is closed under the PI standing",
+            "evidence_class": "D"
+        },
+        {
+            "context": "(i)~Part~I remains a formal research programme at \\catmark{D}, not an",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{B} with uncertainty to an exact Class~A value is rejected.",
+            "evidence_class": "B"
+        },
+        {
+            "context": "\\textbf{Status.} CLOSED: retain D18 and \\catmark{B}. No external",
+            "evidence_class": "B"
+        },
+        {
+            "context": "\\catmark{E}; the proposed upgrade to Class~C is rejected because no",
+            "evidence_class": "E"
+        },
+        {
+            "context": "\\textbf{Status.} CLOSED: firewall confirmed; class retained at \\catmark{E}.",
+            "evidence_class": "E"
+        },
+        {
+            "context": "Part~I (\\emph{The Pregeometric Kernel}) remains a \\catmark{D}-class research",
+            "evidence_class": "D"
+        },
+        {
+            "context": "Apparent Continuity}) is capped at \\catmark{E} wherever it introduces",
+            "evidence_class": "E"
+        },
+        {
+            "context": "quantitative result at its incoming class: $\\kappa=\\KappaRG$\\,\\catmark{A},",
+            "evidence_class": "A"
+        },
+        {
+            "context": "$\\lambda_S=\\lambdaS$\\,\\catmark{A}, $v=\\vVEV$\\,\\catmark{A},",
+            "evidence_class": "A"
+        },
+        {
+            "context": "$\\gamma=\\GammaGeom$\\,\\catmark{A-} (calibrated, never derived), and",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "$\\Delta=\\DeltaGap$\\,\\catmark{B} under D18 and Limitation~L12. Cosmological",
+            "evidence_class": "B"
+        },
+        {
+            "context": "statements remain capped at \\catmark{C}. The historical scalar/EFT model is",
+            "evidence_class": "C"
+        },
+        {
+            "context": "and remains a falsifiable research programme at evidence class \\catmark{D}.",
+            "evidence_class": "D"
+        },
+        {
+            "context": "capped at \\catmark{E} wherever it becomes interpretive. Part~III is a",
+            "evidence_class": "E"
+        },
+        {
+            "context": "upgrade: $\\kappa=\\KappaRG$\\,\\catmark{A},",
+            "evidence_class": "A"
+        },
+        {
+            "context": "$\\lambda_S=\\lambdaS$\\,\\catmark{A}, $v=\\vVEV$\\,\\catmark{A},",
+            "evidence_class": "A"
+        },
+        {
+            "context": "$\\gamma=\\GammaGeom$\\,\\catmark{A-} as a calibration, and",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "$\\Delta=\\DeltaGap$\\,\\catmark{B} under D18/D21 and Limitation~L12.",
+            "evidence_class": "B"
+        },
+        {
+            "context": "Cosmological entries remain calibrations capped at \\catmark{C}.",
+            "evidence_class": "C"
+        },
+        {
+            "context": "classes, rendered as a typographic tag. \\catmark{A} marks mathematical",
+            "evidence_class": "A"
+        },
+        {
+            "context": "arithmetic and is never external physical agreement. \\catmark{A-} marks a",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "calibrated internal closure: calibrated, not derived. \\catmark{B} marks",
+            "evidence_class": "B"
+        },
+        {
+            "context": "and explicit uncertainty handling. \\catmark{C} is the cosmology cap; no",
+            "evidence_class": "C"
+        },
+        {
+            "context": "\\catmark{C} claims to resolve any observational tension. \\catmark{D} marks",
+            "evidence_class": "C"
+        },
+        {
+            "context": "\\catmark{E} marks speculative, interpretive, withdrawn, or museum content.",
+            "evidence_class": "E"
+        },
+        {
+            "context": "be stated, the claim is downgraded to \\catmark{D} or \\catmark{E} on the",
+            "evidence_class": "D"
+        },
+        {
+            "context": "before Construction} (GLBC)\\catmark{E}\\ (methodology-class content; the",
+            "evidence_class": "E"
+        },
+        {
+            "context": "calibrated invariant $\\gamma = \\GammaGeom$\\,\\catmark{A-} and the spectral",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "gap $\\Delta = \\DeltaGap$\\,\\catmark{B} never appear inside any core formal",
+            "evidence_class": "B"
+        },
+        {
+            "context": "recorded as a \\catmark{D} candidate for the intermediate algebra. Sources",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\part{The Pregeometric Kernel\\texorpdfstring{\\ \\catmark{D}}{[D]}}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "in this part is a research programme at evidence class \\catmark{D} unless",
+            "evidence_class": "D"
+        },
+        {
+            "context": "exactly\\catmark{A}. If a gauge potential is built as $A = \\dd S$ from a",
+            "evidence_class": "A"
+        },
+        {
+            "context": "vacuum) with an independently validated instrument.\\catmark{D} The",
+            "evidence_class": "D"
+        },
+        {
+            "context": "programme at \\catmark{D}. Any broader thermodynamic interpretation of that",
+            "evidence_class": "D"
+        },
+        {
+            "context": "unknown mechanism remains speculative at \\catmark{E}.",
+            "evidence_class": "E"
+        },
+        {
+            "context": "the finite algebraic structure of Part~I, at evidence class \\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "The kernel-primitive hypothesis is downgraded from \\catmark{D} to",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{E} if any of the following occurs: (i)~a theorem shows that no",
+            "evidence_class": "E"
+        },
+        {
+            "context": "result into a physics claim. Lean-proven statements are \\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "unequal and does not encode the missing operator-matching problem.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\catmark{A} within the formal system and physically weightless: it",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\textsc{missing data} rather than a scientific result.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "unproved formal design structures are \\catmark{D}; interpretive physical",
+            "evidence_class": "D"
+        },
+        {
+            "context": "readings are separately \\catmark{E}. Where a proof is supplied, the proven",
+            "evidence_class": "E"
+        },
+        {
+            "context": "proposition is \\catmark{A} within the formal system and is not thereby a",
+            "evidence_class": "A"
+        },
+        {
+            "context": "The source tree contains 22 Lean files; four are outside the root graph.\\catmark{A} \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "Direct \\texttt{lean} invocation with \\texttt{LEAN\\_PATH} on Windows; 591 seconds; not a pinned-container or complete \\texttt{lake build}.\\catmark{A} \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "Five in \\texttt{NCG/SpectralTriple.lean} and three in \\texttt{Filters/Enumeration.lean}; no register mismatch was found.\\catmark{A} \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "Its printed dependency inventory contains \\texttt{propext}; this is a formal-software fact, not a physical selection result.\\catmark{A} \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "The avoidance of \\texttt{native\\_decide} leaves the eight registered obligations open rather than importing that trust path.\\catmark{A} \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\texttt{Lean.ofReduceBool}.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\texttt{Meta/EvidenceTags.lean}, and \\texttt{NCG/ModuliStub.lean}.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "module.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "made for that file.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "through conflicting modules.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\texttt{Antigravit2.NCG.KrajewskiCore}.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "evidenced at both commits this manuscript names.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "not about \\texttt{f1ae5486} or a future repaired head.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\texttt{f1ae548633abac7cb47b971917bbab7992801a3f}.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "or an unspecified current state.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "is open and does not cover the four unreachable modules.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "retained in \\cref{tab:lean-status}.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\texttt{sorryAx} and reports \\texttt{propext} as its dependency.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "H2, so its physical class remains \\catmark{D}; formal closure is not a",
+            "evidence_class": "D"
+        },
+        {
+            "context": "list $[3,2,1]$.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "audit artefact is not evidence of repair.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "as retained in \\cref{tab:lean-status}.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "commit.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\cref{subsec:lower-bounds}.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "document is quarantined at \\catmark{E} as documented failure history and",
+            "evidence_class": "E"
+        },
+        {
+            "context": "admissible\\,\\catmark{B} & real structure exists at $\\dim V_{ij}=1$;",
+            "evidence_class": "B"
+        },
+        {
+            "context": "Pati--Salam-type & passes & mechanism correct\\,\\catmark{B} & admissible",
+            "evidence_class": "B"
+        },
+        {
+            "context": "$[6,3]$-type (unequal pair) & passes & rejected\\,\\catmark{B} &",
+            "evidence_class": "B"
+        },
+        {
+            "context": "$[2,2,2]$ & passes & rejected\\,\\catmark{D} & mass-degeneracy argument;",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{D}-graded verdict of \\cref{tab:lattice}, so the formal layer and",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\begin{proposition}[Conditional $N=6$ selection; physical class \\catmark{D}; formal declaration closed at \\texttt{f1ae5486}]",
+            "evidence_class": "D"
+        },
+        {
+            "context": "its reported dependency inventory is \\texttt{[propext]}.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "place the proposition at \\catmark{D}, and no completion of the Lean proof",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\begin{openquestion}[Staircase conjecture; \\catmark{D}]",
+            "evidence_class": "D"
+        },
+        {
+            "context": "content to H1 and H2 and remains \\catmark{D}.",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\subsection{The Division-Algebra Programme as a \\catmark{D} Candidate}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{D}, bounded exactly as its own primary sources bound it. What",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\cite{furey2018,fureyhughes2022,furey2025}.\\catmark{B}",
+            "evidence_class": "B"
+        },
+        {
+            "context": "bridge.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "generations. Those remain separate inputs or open obligations in RAP.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\begin{openquestion}[Relocation Necessity Conjecture; \\catmark{D};",
+            "evidence_class": "D"
+        },
+        {
+            "context": "routes.\\catmark{A}\\ \\emph{re: corpus}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "present, free moduli~\\cite{cacic2011}.\\catmark{A}\\ \\emph{re: corpus}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "which is condition~(G1) of \\cref{thm:gap-localisation}.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "curvature.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "do.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\catmark{E}. The mathematically correct claim is",
+            "evidence_class": "E"
+        },
+        {
+            "context": "foundation.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "$Q_2 = 0.75\\,\\alpha^2$.\\catmark{A} This is exact algebra and is recorded",
+            "evidence_class": "A"
+        },
+        {
+            "context": "$\\Delta$.\\catmark{A} \\emph{Second}, and consequently, any infrared",
+            "evidence_class": "A"
+        },
+        {
+            "context": "for broad Hamiltonian classes.\\catmark{A} This theorem does not establish",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\catmark{D}.",
+            "evidence_class": "D"
+        },
+        {
+            "context": "exist.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "partition. Established external inputs are carried at \\catmark{B};",
+            "evidence_class": "B"
+        },
+        {
+            "context": "conditional selections at \\catmark{B}\\ under stated hypotheses; the",
+            "evidence_class": "B"
+        },
+        {
+            "context": "attractor content itself as programme requirements at \\catmark{D}\\ or",
+            "evidence_class": "D"
+        },
+        {
+            "context": "conjectures at \\catmark{E}. It operates under",
+            "evidence_class": "E"
+        },
+        {
+            "context": "\\catmark{E}\\ material and is not cited as evidence. The research form",
+            "evidence_class": "E"
+        },
+        {
+            "context": "$\\mathbf S \\to \\mathcal A \\to G_{\\mathrm{SM}}$ remains \\catmark{D}.",
+            "evidence_class": "D"
+        },
+        {
+            "context": "This action is an external Stratum-II input.\\catmark{B}",
+            "evidence_class": "B"
+        },
+        {
+            "context": "They do not classify every stationary point of the model.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "or a derivation of a Standard-Model-like partition.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "programme remains an internal \\catmark{D} interpretation. No UIDT target",
+            "evidence_class": "D"
+        },
+        {
+            "context": "blocks~\\cite{azuma2004,grosse2005,steinacker2010}.\\catmark{B} In",
+            "evidence_class": "B"
+        },
+        {
+            "context": "structural principle.\\catmark{B}",
+            "evidence_class": "B"
+        },
+        {
+            "context": "minimum of an unconstrained ensemble is rejected.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\begin{governancebox}[Programme Requirement PR-B1: Partition Selection \\catmark{D}]",
+            "evidence_class": "D"
+        },
+        {
+            "context": "at \\catmark{E}.",
+            "evidence_class": "E"
+        },
+        {
+            "context": "algebra.\\catmark{B} The configuration space on which any selection",
+            "evidence_class": "B"
+        },
+        {
+            "context": "diagram.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "test.\\catmark{B} Second, the partition $(3,6)$ fails for a",
+            "evidence_class": "B"
+        },
+        {
+            "context": "by an order-one or anomaly argument.\\catmark{B} The symmetric partition",
+            "evidence_class": "B"
+        },
+        {
+            "context": "open.\\catmark{D}\\ This is the primary-source basis of the corrected",
+            "evidence_class": "D"
+        },
+        {
+            "context": "solution set to Pati--Salam~\\cite{ccvs2013,farnsworth2015}.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\begin{remark}[Conjecture C-B1: anomaly-constrained quiver attractor, status \\catmark{E}]",
+            "evidence_class": "E"
+        },
+        {
+            "context": "nothing.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "triple~\\cite{barrett2007,connes2006,ccm2007}.\\catmark{B} With",
+            "evidence_class": "B"
+        },
+        {
+            "context": "mechanism~\\cite{connes2006,ccm2007}.\\catmark{B} The selection is",
+            "evidence_class": "B"
+        },
+        {
+            "context": "developmental record.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "substrate does not supply $J$.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\begin{governancebox}[Programme Requirement PR-B2: Endogenous Real Structure \\catmark{D}]",
+            "evidence_class": "D"
+        },
+        {
+            "context": "resolved.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "answer but are not sufficient for it.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{D}\\ proposal; no simulation or measurement of it exists for any",
+            "evidence_class": "D"
+        },
+        {
+            "context": "form remains \\catmark{D}\\ and no evidence class of the main text is",
+            "evidence_class": "D"
+        },
+        {
+            "context": "altered by this section.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "APP-B-01 & Block condensation with entropy/potential competition and massive bifundamentals is established in matrix models & \\catmark{B} & source audit of the cited literature \\\\",
+            "evidence_class": "B"
+        },
+        {
+            "context": "APP-B-02 & Entropy maximisation is blind to $(1,2,3)$; no functional selects the partition & \\catmark{A} re corpus & a selection theorem satisfying PR-B1 under \\cref{prop:target-leakage} \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "APP-B-03 & Anomaly freedom prunes $\\mathcal U(\\mathcal A_F)$ to $G_{\\mathrm{SM}}$; it does not select $\\mathcal A_F$ & \\catmark{B} & a theorem deriving the algebra from anomaly data alone \\\\",
+            "evidence_class": "B"
+        },
+        {
+            "context": "APP-B-04 & The order-one condition is a combinatorial admissibility constraint; the anomaly-consistent stratum is non-unique & \\catmark{A} & exhibition of uniqueness at three summands \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "APP-B-05 & Quiver-attractor uniqueness is Conjecture C-B1 & \\catmark{E} & a defined flow with regulator, truncation, boundary conditions, and a leak-free uniqueness proof \\\\",
+            "evidence_class": "E"
+        },
+        {
+            "context": "APP-B-06 & KO-6 is selected conditionally by fermion-doubling resolution plus Majorana admissibility & \\catmark{B} cond. & a dynamical derivation of inputs (i)/(ii) or of $J$ \\\\",
+            "evidence_class": "B"
+        },
+        {
+            "context": "APP-B-07a & No dynamical origin of the order-one condition is present in the audited corpus & \\catmark{A} (audit fact) & a source-faithful construction in the live corpus \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "APP-B-07b & The freezing mechanism remains an open research problem & \\catmark{D} & a target-independent principle answering \\cref{oq:freezing-gap} under PR-B1/PR-B2 \\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "APP-B-08 & Spectral-form-factor protocol as discriminator for any future realisation & \\catmark{D} & executable only upon a concrete realisation \\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "exists to check.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "Historical scalar ansatz as candidate primitive & \\catmark{D} & conditions of the",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{A} & counterexample in ordinary exterior calculus (none",
+            "evidence_class": "A"
+        },
+        {
+            "context": "algebra (\\cref{prop:inner-derivation}) & \\catmark{A} & a construction",
+            "evidence_class": "A"
+        },
+        {
+            "context": "(\\cref{cor:modular-relocation}) & \\catmark{A} & a non-tracial faithful normal",
+            "evidence_class": "A"
+        },
+        {
+            "context": "theorem corpus & \\catmark{A} re: corpus & a theorem generating a",
+            "evidence_class": "A"
+        },
+        {
+            "context": "G-02 & Obstruction localized to G1--G4 & \\catmark{A} & a mechanism",
+            "evidence_class": "A"
+        },
+        {
+            "context": "$[3,2,1]$ satisfies G1 & \\catmark{A} (textual) & a primary source",
+            "evidence_class": "A"
+        },
+        {
+            "context": "G-04a & The stated multiplicity, rank, KO-6 $J$, and chirality conditions are explicit constraints & \\catmark{A} (formal statement) & a source or counterexample changing the stated constraints \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "G-04b & Their endogenous selection from the kernel is not derived & \\catmark{D} & a target-independent theorem fixing the invariants endogenously \\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "argument & \\catmark{D} & primary-source theorem settling the case",
+            "evidence_class": "D"
+        },
+        {
+            "context": "L-01 & Historical head \\texttt{61bc24da}: 51 open obligations and incomplete registration & \\catmark{A} & a corrected audit of that exact commit \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "L-02a & Named head \\texttt{f1ae5486}: 8 registered \\texttt{sorry} occurrences; 18 of 22 source modules reachable from the root & \\catmark{A} & a raw rescan or import-graph reconstruction at that exact commit \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "L-02b & F2 target-shape status at \\texttt{f1ae5486} remains open because the dedicated scan is absent & \\catmark{D} & a commit-scoped target-shape audit \\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "S-01a & \\texttt{unique\\_321\\_N6} at \\texttt{f1ae5486} has no \\texttt{sorryAx} and reports \\texttt{[propext]} & \\catmark{A} & declaration inspection at that exact commit \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "S-01b & H1 $\\wedge$ H2 $\\Rightarrow [3,2,1]$ remains physically conditional & \\catmark{D} & target-independent derivations replacing both filters \\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "S-02 & Staircase conjecture for general $N$ & \\catmark{D} &",
+            "evidence_class": "D"
+        },
+        {
+            "context": "C-01 & Division-algebra programme is a \\catmark{D} candidate for",
+            "evidence_class": "D"
+        },
+        {
+            "context": "& \\catmark{D} & verified unique derivation plus spontaneous three",
+            "evidence_class": "D"
+        },
+        {
+            "context": "C-02 & Relocation Necessity Conjecture & \\catmark{D} & continuous",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\part{The Open Passage to Apparent Continuity\\texorpdfstring{\\ \\catmark{E}}{[E]}-Capped}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "material: capped at \\catmark{E} wherever they touch phenomenology, barred",
+            "evidence_class": "E"
+        },
+        {
+            "context": "order-parameter-level description of that limit.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "either inserted or selected among alternatives.\\catmark{D} The kernel",
+            "evidence_class": "D"
+        },
+        {
+            "context": "themselves in question.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "emergent-time claims remain at \\catmark{E}, discussable as proposed",
+            "evidence_class": "E"
+        },
+        {
+            "context": "structure only.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "itself.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "physical time; it is carried here at \\catmark{E}, as interpretive structure",
+            "evidence_class": "E"
+        },
+        {
+            "context": "physical time remains at \\catmark{E}, and the thermal-time route to",
+            "evidence_class": "E"
+        },
+        {
+            "context": "mechanism.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "breakdown.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "differentiability consequence is a \\RAP\\ inference at \\catmark{D},",
+            "evidence_class": "D"
+        },
+        {
+            "context": "Lanczos construction at all, the statement is downgraded from \\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "to \\catmark{E} as a structural analogy without an instantiated antecedent.",
+            "evidence_class": "E"
+        },
+        {
+            "context": "multiplicities.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{D}.",
+            "evidence_class": "D"
+        },
+        {
+            "context": "oversight.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "signature is carried at \\catmark{D}.",
+            "evidence_class": "D"
+        },
+        {
+            "context": "is a \\catmark{D} programme bounded by the three no-go points above; the",
+            "evidence_class": "D"
+        },
+        {
+            "context": "observer apparatus below is \\catmark{E} interpretation within",
+            "evidence_class": "E"
+        },
+        {
+            "context": "collapse mech\\-a\\-nism.\\catmark{A} The framework takes no position that the",
+            "evidence_class": "A"
+        },
+        {
+            "context": "three statement types below is a document-level classification rule.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "an interpretive proposal at \\catmark{E}.",
+            "evidence_class": "E"
+        },
+        {
+            "context": "structure. This is an interpretive commitment, marked \\catmark{E}, and",
+            "evidence_class": "E"
+        },
+        {
+            "context": "strata.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "kernel candidate of Part~I --- itself held at \\catmark{D} --- and the",
+            "evidence_class": "D"
+        },
+        {
+            "context": "information away.\\catmark{E} A picture whose microscopic level is itself",
+            "evidence_class": "E"
+        },
+        {
+            "context": "an unestablished \\catmark{D} candidate is doubly bounded, and this Part",
+            "evidence_class": "D"
+        },
+        {
+            "context": "fact about the state of the theory.\\catmark{A} And the relationship",
+            "evidence_class": "A"
+        },
+        {
+            "context": "decoherence leaves open.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "produced by \\RAP.\\catmark{A} Second, the framework has no completed",
+            "evidence_class": "A"
+        },
+        {
+            "context": "picture.\\catmark{A} Third, and most specifically, the forgetful or",
+            "evidence_class": "A"
+        },
+        {
+            "context": "precisely the step that has not been taken.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "is no derivation at all.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "derived by \\RAP.\\catmark{A} \\RAP\\ has no completed Born-rule",
+            "evidence_class": "A"
+        },
+        {
+            "context": "theorem.\\catmark{A} The forgetful/non-invertible functor does not derive",
+            "evidence_class": "A"
+        },
+        {
+            "context": "Born probabilities.\\catmark{A} The open target is to obtain probability",
+            "evidence_class": "A"
+        },
+        {
+            "context": "import.\\catmark{D} The Born rule remains open.",
+            "evidence_class": "D"
+        },
+        {
+            "context": "access, and inheriting that candidate's \\catmark{D} status.\\catmark{E}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "Part~III live.\\catmark{E} The map $F$ between them is a",
+            "evidence_class": "E"
+        },
+        {
+            "context": "weights.\\catmark{A} It does not explain why there is something it is",
+            "evidence_class": "A"
+        },
+        {
+            "context": "pretending that the connection has been turned into a proof.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "must be stated plainly.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "explicitly defined.\\catmark{A} To write the words ``forgetful functor''",
+            "evidence_class": "A"
+        },
+        {
+            "context": "filter-failures into linear, dualistic narrative.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "fenced on every side. It is Category~\\catmark{E}\\ content within",
+            "evidence_class": "E"
+        },
+        {
+            "context": "functor or for any \\RAP\\ claim.\\catmark{A} The direction of inference",
+            "evidence_class": "A"
+        },
+        {
+            "context": "enter this manuscript at \\catmark{E}\\ under the present quarantine, with no",
+            "evidence_class": "E"
+        },
+        {
+            "context": "are retained as Category~\\catmark{E}\\ phenomenological edge-cases of the",
+            "evidence_class": "E"
+        },
+        {
+            "context": "functor or any \\RAP\\ claim.\\catmark{A} The compression fallacy ---",
+            "evidence_class": "A"
+        },
+        {
+            "context": "enlightened.\\catmark{E} Inference runs from framework to phenomenon",
+            "evidence_class": "E"
+        },
+        {
+            "context": "category error rather than an aspiration.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "held as Category~\\catmark{E}\\ content within Stratum~III, is that the",
+            "evidence_class": "E"
+        },
+        {
+            "context": "noun.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "bibliography.\\catmark{E} They are lenses, not pillars.",
+            "evidence_class": "E"
+        },
+        {
+            "context": "continuous energy dissipation, without ever being an object.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "fundamental at the microscopic level.\\catmark{E} A particle and a self",
+            "evidence_class": "E"
+        },
+        {
+            "context": "matters most. The framework's interpretive model, marked \\catmark{E}, is",
+            "evidence_class": "E"
+        },
+        {
+            "context": "finite substrate imposes.\\catmark{E} What is explicitly \\emph{not}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "historical scalar ansatz, or from anything else in its corpus.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "The self-model account is an interpretive proposal at \\catmark{E} about the",
+            "evidence_class": "E"
+        },
+        {
+            "context": "subatomic phenomenological reference at \\catmark{E}; it is not a neural,",
+            "evidence_class": "E"
+        },
+        {
+            "context": "biological, cognitive, macroscopic, or life/death threshold.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "absence is a documentable property of the present construction.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "alone.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "is an open research programme at \\catmark{D}. Until then every observer-side",
+            "evidence_class": "D"
+        },
+        {
+            "context": "interpretation remains quarantined at \\catmark{E} and contributes no evidence",
+            "evidence_class": "E"
+        },
+        {
+            "context": "to the pregeometric kernel.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "$E_T=\\ETorsion$ remains \\catmark{E} and subatomic-only. It must not be used as",
+            "evidence_class": "E"
+        },
+        {
+            "context": "\\catmark{E}\\ content within Stratum~III, and its caveats are as important",
+            "evidence_class": "E"
+        },
+        {
+            "context": "field.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "these.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "compression axis rather than along it.\\catmark{E} The taxonomy must",
+            "evidence_class": "E"
+        },
+        {
+            "context": "information-theoretic variable and nothing else.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "survival.\\catmark{E} That is a humbling observation, not an exalting one,",
+            "evidence_class": "E"
+        },
+        {
+            "context": "design-level answer is negative.\\catmark{D} The broader philosophical",
+            "evidence_class": "D"
+        },
+        {
+            "context": "interpretive position at \\catmark{E}.",
+            "evidence_class": "E"
+        },
+        {
+            "context": "principle undecidable.\\catmark{E} A more powerful compressor faces exactly",
+            "evidence_class": "E"
+        },
+        {
+            "context": "does not close with increasing intelligence.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "earn such a claim even in principle.\\catmark{A} Its actual claim is more",
+            "evidence_class": "A"
+        },
+        {
+            "context": "claim about ultimate reality.\\catmark{E} The compression fallacy of",
+            "evidence_class": "E"
+        },
+        {
+            "context": "macro-objects) is a compression-rate taxonomy \\catmark{E}, orthogonal to",
+            "evidence_class": "E"
+        },
+        {
+            "context": "Anthropocentrism is deflated, not inverted.\\catmark{A}\\\\[0.3em]",
+            "evidence_class": "A"
+        },
+        {
+            "context": "instrumental capacity but no automatic ontology privilege.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "interpretive claim at \\catmark{E}.\\\\[0.3em]",
+            "evidence_class": "E"
+        },
+        {
+            "context": "the standing guardrail.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "quarantined or withdrawn.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "--- is carried at \\catmark{E}\\ with its original caveats: it is a",
+            "evidence_class": "E"
+        },
+        {
+            "context": "support from data it merely accommodates.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "contrast, not a foil to be defeated.\\catmark{E} Orchestrated objective",
+            "evidence_class": "E"
+        },
+        {
+            "context": "compression-limited observer (\\cref{subsec:observer-stratification}).\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "conflated.\\catmark{A} Second, \\RAP\\ does not render orchestrated objective",
+            "evidence_class": "A"
+        },
+        {
+            "context": "commitment, not a refutation.\\catmark{A} Third, any detailed empirical",
+            "evidence_class": "A"
+        },
+        {
+            "context": "framework confines itself to structural commitments.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "and comparable along neutral axes.\\catmark{A} Throughout, the \\RAP\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "observer material is marked \\catmark{E}, because it has not been formalised",
+            "evidence_class": "E"
+        },
+        {
+            "context": "anyone else's.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "instrument; \\RAP\\ observer material is \\catmark{E}. The matrix records",
+            "evidence_class": "E"
+        },
+        {
+            "context": "not primitive; observer downstream \\catmark{E} & Quantum state in",
+            "evidence_class": "E"
+        },
+        {
+            "context": "Mechanism & Coarse-graining / forgetful functor (ansatz) \\catmark{E} &",
+            "evidence_class": "E"
+        },
+        {
+            "context": "\\catmark{E} & Contested; requires external audit & Correlational; contested",
+            "evidence_class": "E"
+        },
+        {
+            "context": "orders) \\catmark{A} & Microtubule quantum $\\to$ cognition, disputed &",
+            "evidence_class": "A"
+        },
+        {
+            "context": "Collapse claim & No physical collapse (QBist/epistemic) \\catmark{E} &",
+            "evidence_class": "E"
+        },
+        {
+            "context": "Observer role & Compression-limited relational access \\catmark{E} & Locus of",
+            "evidence_class": "E"
+        },
+        {
+            "context": "Falsifiability & Observer claims not yet falsifiable \\catmark{E}; physics",
+            "evidence_class": "E"
+        },
+        {
+            "context": "(both flagged) \\catmark{A} & Quantum $\\to$ phenomenal leap & Axioms $\\to$",
+            "evidence_class": "A"
+        },
+        {
+            "context": "advertisement.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "obsoletes it. This demarcation policy is an audit fact.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\catmark{E}.\\\\[0.3em]",
+            "evidence_class": "E"
+        },
+        {
+            "context": "risk), not a ranking; \\RAP\\ observer material marked \\catmark{E}; \\RAP's",
+            "evidence_class": "E"
+        },
+        {
+            "context": "own weaknesses recorded explicitly.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "either of the other two.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\cite{friston2010,kirchhoff2018}.\\catmark{B} They do not establish that every",
+            "evidence_class": "B"
+        },
+        {
+            "context": "construction remains contested \\cite{raja2021}.\\catmark{B} Accordingly, UIDT",
+            "evidence_class": "B"
+        },
+        {
+            "context": "interpretive proposal.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "\\cite{reimann2017,sizemore2018}.\\catmark{B} The associated ``dimension'' is",
+            "evidence_class": "B"
+        },
+        {
+            "context": "terminological distinction is exact.\\catmark{A} These results show that",
+            "evidence_class": "A"
+        },
+        {
+            "context": "or a UIDT scale bridge.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "\\cite{cogitate2025}.\\catmark{B} UIDT is not identified with either theory and",
+            "evidence_class": "B"
+        },
+        {
+            "context": "supplies no explanation of qualia and no measurable neural prediction.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "\\cite{hameroff2014}.\\catmark{B} The proposal has faced substantial criticism",
+            "evidence_class": "B"
+        },
+        {
+            "context": "\\cite{reimers2014}.\\catmark{B} UIDT neither derives nor experimentally refutes",
+            "evidence_class": "B"
+        },
+        {
+            "context": "\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "\\cite{davis2020}.\\catmark{B} Such reports are data about altered human",
+            "evidence_class": "B"
+        },
+        {
+            "context": "\\catmark{A} Psychedelic, mystical, dream, near-death, and ``manifestation''",
+            "evidence_class": "A"
+        },
+        {
+            "context": "map.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "\\catmark{D} & construction failing the three no-go points terminally;",
+            "evidence_class": "D"
+        },
+        {
+            "context": "T-02a & The manuscript and audited snapshot contain no dimensional-emergence theorem and record UV/IR and thermal-time gaps & \\catmark{A} (audit fact) & a contradictory source-faithful corpus audit \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "T-02b & Resolving those continuum-passage gaps remains an open research programme & \\catmark{D} & a construction surviving the stated no-go tests \\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "T-03a & On the abelian algebra $C^\\ast(\\mathbf S)$, the stated modular flow is trivial: $\\sigma^\\omega_t=\\mathrm{id}$ & \\catmark{A} & a mathematical error in \\cref{cor:modular-relocation} \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "T-03b & A thermal-time interpretation requires an inserted non-abelian algebra and non-circular state selection & \\catmark{E} & a state-selection principle from pregeometric data without temporal input (\\cref{oq:state-selection}) \\\\",
+            "evidence_class": "E"
+        },
+        {
+            "context": "conditional consequence for the coarse-graining map & \\catmark{D} & an",
+            "evidence_class": "D"
+        },
+        {
+            "context": "$\\mathrm{KO}$-dimension nor forced by matrix ensembles & \\catmark{D} &",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{D} & a \\RAP-compatible fundamental time preceding any",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{D} & signature selected to match the target is leakage; discharge",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{A} & (structural commitment; violation would be a defect, not",
+            "evidence_class": "A"
+        },
+        {
+            "context": "O-02 & Observer as compression-limited relational access & \\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "functor supplies none & \\catmark{A} & a completed non-circular",
+            "evidence_class": "A"
+        },
+        {
+            "context": "O-04a & No fully specified categories, functor action, or forgotten structure are supplied in the current manuscript & \\catmark{A} (audit fact) & a contradictory explicit construction \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "O-04b & $F\\colon V\\to\\mathrm{Obs}$ remains an interpretive ansatz & \\catmark{E} & fully specified categories, functor action, and forgotten structure \\\\",
+            "evidence_class": "E"
+        },
+        {
+            "context": "Q-01 & Altered-states/death narratives quarantined at \\catmark{E};",
+            "evidence_class": "E"
+        },
+        {
+            "context": "one-way inference; compression fallacy rejected & \\catmark{A} (policy)",
+            "evidence_class": "A"
+        },
+        {
+            "context": "E-01a & Governance bars $E_T$ from cognitive, biological, or life/death threshold roles under Decision D22 & \\catmark{A} (policy) & a superseding PI record \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "E-01b & No validated physical scale bridge from the subatomic $E_T$ sector to neural observables is supplied & \\catmark{D} & a constructed, externally audited scale bridge \\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{A} (policy) & none: demarcation, not physics \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "OT-01a & Observer Classes 0--III form an interpretive compression-rate taxonomy, not a consciousness hierarchy & \\catmark{E} & an operational empirical model \\\\",
+            "evidence_class": "E"
+        },
+        {
+            "context": "OT-01b & The programme grants no evidential privilege merely from superior compression & \\catmark{A} (governance policy) & a superseding policy record \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "weaknesses, not a ranking & \\catmark{A} (policy) & none: demarcation, not",
+            "evidence_class": "A"
+        },
+        {
+            "context": "their \\catmark{C} cap. No equation in the historical scalar/EFT model is used",
+            "evidence_class": "C"
+        },
+        {
+            "context": "quantity of the first ever amounts to the second.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "against lattice data is a category error and is rejected.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "did the arithmetic correctly.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "implementation pattern.\\catmark{A} Second, proof-critical computations",
+            "evidence_class": "A"
+        },
+        {
+            "context": "result depends upon.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "any theory-generating computation is trusted.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "schema concrete, the framework's simplest \\catmark{A}-class claim, the",
+            "evidence_class": "A"
+        },
+        {
+            "context": "nature.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "access explicitly disabled.\\catmark{A} The blind computation and the",
+            "evidence_class": "A"
+        },
+        {
+            "context": "patterns.\\catmark{A} Part~I extends the same discipline into the formal",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\UIDT.\\catmark{A} The framing is a deliberate inversion of an earlier",
+            "evidence_class": "A"
+        },
+        {
+            "context": "survives, not something it stands upon.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "says nothing automatic about the others.\\catmark{A} The standard",
+            "evidence_class": "A"
+        },
+        {
+            "context": "status is \\Bpending.\\catmark{B} And the spectral gap $\\Delta$\\,\\Bdelta\\",
+            "evidence_class": "B"
+        },
+        {
+            "context": "The value $\\Delta=\\DeltaGap$ remains at Class~\\catmark{B}: an internally",
+            "evidence_class": "B"
+        },
+        {
+            "context": "until its provenance is fully audited.\\catmark{B} For every external",
+            "evidence_class": "B"
+        },
+        {
+            "context": "to any other quantity in the same comparison.\\catmark{A} Only ratios",
+            "evidence_class": "A"
+        },
+        {
+            "context": "with harmonised scale-setting are admissible, and only at \\catmark{D}.",
+            "evidence_class": "D"
+        },
+        {
+            "context": "fixed and not subject to upgrade: $\\gamma$ is \\catmark{A-}, calibrated.",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "That this status is fixed in the ledger is a document-state fact.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "renormalisation-group first principles.\\catmark{A-} To be precise about",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "from the kinetic VEV''; the latter phrasing violates the \\catmark{A-}",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "discipline and is corrected wherever it appears.\\catmark{A-}",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "remains at \\catmark{D} at best.\\catmark{A}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "with their methods and uncertainties.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\textbf{Classification.} $\\gamma = \\GammaGeom$ is \\catmark{A-}\\",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "(calibrated), permanently. It is never \\catmark{A}\\ and never described",
+            "evidence_class": "A"
+        },
+        {
+            "context": "$\\Lambda_{\\overline{\\mathrm{MS}}}$-normalised forms.\\catmark{B}\\ (\\emph{pending external verification})",
+            "evidence_class": "B"
+        },
+        {
+            "context": "significance.\\catmark{A} And as a direct application of",
+            "evidence_class": "A"
+        },
+        {
+            "context": "blind solver: post-hoc comparators only.\\catmark{A} If a ratio fails to",
+            "evidence_class": "A"
+        },
+        {
+            "context": "or scale bridge. This diagnostic ordering is a governance rule.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "serious tension against the framework as a whole.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "matching}, and no such matching has been established.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "quantum numbers, not by coincidence of magnitude.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "them --- a legitimate \\catmark{D} target --- but the relation must be",
+            "evidence_class": "D"
+        },
+        {
+            "context": "quantities.\\catmark{A} A route counts only if it specifies, in advance:",
+            "evidence_class": "A"
+        },
+        {
+            "context": "criteria.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "admitted as a scaffold only.\\catmark{D} It is not a derivation of",
+            "evidence_class": "D"
+        },
+        {
+            "context": "ODE is deleted as a claimed derivation.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "history.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "adopted scaling assumption.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "the geometric scale factor of~L1.\\catmark{C}",
+            "evidence_class": "C"
+        },
+        {
+            "context": "derived.\\catmark{C}",
+            "evidence_class": "C"
+        },
+        {
+            "context": "$\\gamma = \\GammaGeom$ is permanently \\catmark{A-}\\ (calibrated). A",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "satisfy \\cref{prop:target-leakage} in full.\\catmark{A-}",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "experimental corroboration.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "mentions are historical only.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "open.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\cref{prop:target-leakage}.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{D}.",
+            "evidence_class": "D"
+        },
+        {
+            "context": "regime, and target-independent convergence criterion.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "not a completeness theorem for noncommutative geometry.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "(\\cref{subsec:no-go-points}), where it remains open.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "therefore carried at \\catmark{D}\\ and its falsification threshold is",
+            "evidence_class": "D"
+        },
+        {
+            "context": "benchmark.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "non-Abelian-consistent derivation and direct sub-nanometre metrology.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "verbatim recovery from the missing notes.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "field strength.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "everywhere, for any smooth scalar.\\catmark{A}\\footnote{\\textbf{Audit",
+            "evidence_class": "A"
+        },
+        {
+            "context": "composite \\emph{abelian} curvature $F = \\dd u \\wedge \\dd v$.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "universal impossibility theorem claimed.\\catmark{A}} The discrete",
+            "evidence_class": "A"
+        },
+        {
+            "context": "inherits $\\dd^2 = 0$ in its coboundary operator.\\catmark{A} With",
+            "evidence_class": "A"
+        },
+        {
+            "context": "change it.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "susceptibility.\\catmark{A} This is why the topological observables of",
+            "evidence_class": "A"
+        },
+        {
+            "context": "rejected.\\catmark{A} Nor may numerical proximity be presented as a",
+            "evidence_class": "A"
+        },
+        {
+            "context": "rejected wherever it appears.\\catmark{A} What the obstruction",
+            "evidence_class": "A"
+        },
+        {
+            "context": "programme to the enriched arm, at \\catmark{D}, with the strict-scalar",
+            "evidence_class": "D"
+        },
+        {
+            "context": "Category~\\catmark{C}: calibrated to external data, not derived from the",
+            "evidence_class": "C"
+        },
+        {
+            "context": "not a producer of predictions.\\catmark{C}",
+            "evidence_class": "C"
+        },
+        {
+            "context": "overclaim.\\catmark{C}",
+            "evidence_class": "C"
+        },
+        {
+            "context": "DESI+CMB) are carried as Stratum-I inputs at \\catmark{C}, flagged for",
+            "evidence_class": "C"
+        },
+        {
+            "context": "constraints rather than derived from the kernel or the historical scalar ansatz.\\catmark{C}",
+            "evidence_class": "C"
+        },
+        {
+            "context": "resolved tension.\\catmark{C}",
+            "evidence_class": "C"
+        },
+        {
+            "context": "$H_0$ (early) & $67.4 \\pm 0.5\\ \\mathrm{km\\,s^{-1}\\,Mpc^{-1}}$ & Planck 2018 & \\catmark{C} \\\\",
+            "evidence_class": "C"
+        },
+        {
+            "context": "$H_0$ (late) & $73.04 \\pm 1.04\\ \\mathrm{km\\,s^{-1}\\,Mpc^{-1}}$ & SH0ES (Riess 2022) & \\catmark{C} \\\\",
+            "evidence_class": "C"
+        },
+        {
+            "context": "$w_0, w_a$ & $w_0\\!\\approx\\!-0.42\\pm0.21,\\ w_a\\!\\approx\\!-1.75\\pm0.58$ (DESI+CMB; combination-dependent) & DESI DR2 & \\catmark{C} \\\\",
+            "evidence_class": "C"
+        },
+        {
+            "context": "$S_8$ & $0.815^{+0.016}_{-0.021}$ / $0.789\\pm0.012$ & KiDS-Legacy / DES~Y6 & \\catmark{C} \\\\",
+            "evidence_class": "C"
+        },
+        {
+            "context": "strictly as Category~\\catmark{E}\\ interpretation within Stratum~III ---",
+            "evidence_class": "E"
+        },
+        {
+            "context": "a way of thinking, fed into a Category~\\catmark{C}\\ calibration, not a",
+            "evidence_class": "C"
+        },
+        {
+            "context": "derivation of cosmological data.\\catmark{E} The ``beginning'' is read",
+            "evidence_class": "E"
+        },
+        {
+            "context": "reinterpreted, again at \\catmark{E}, as a rapid proliferation of",
+            "evidence_class": "E"
+        },
+        {
+            "context": "and does not touch the \\catmark{C}\\ cap.\\catmark{E}",
+            "evidence_class": "C"
+        },
+        {
+            "context": "tests of pure $\\mathrm{SU}(3)$ (\\catmark{B}\\,pending their source and",
+            "evidence_class": "B"
+        },
+        {
+            "context": "per \\cref{prop:target-leakage} (\\catmark{D}); compares \\emph{post hoc}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "through an explicit uncertainty and covariance model; identifies structural audit facts \\catmark{A} and open programme failures",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\catmark{D}; and interprets last, at \\catmark{E}. The closure is governed throughout by the two structural",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{A}; its physical interpretation remains bounded by the individual",
+            "evidence_class": "A"
+        },
+        {
+            "context": "ONT-01 & In the historical scalar grammar, a vanishing field value is a marked state, not the unmarked state; this is retained only in Appendix~\\ref{app:scalar-museum}. & \\catmark{A} & II/III \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "ONT-02 & A morphism $f\\colon A\\to B$ presupposes distinguishable $A,B$; morphism is a formal tool, not an ontological generator. & \\catmark{A} & II/III \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "ONT-03 & With $A=\\dd S$, the curvature $F=\\dd^2 S=0$ identically; the naive scalar-gradient route fails. & \\catmark{A} & II \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "ONT-04 & $\\gamma = \\GammaGeom$ is calibrated, never derived from RG first principles. & \\catmark{A-} & III \\\\",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "ONT-05 & $\\Delta = \\DeltaGap$: internally consistent, lattice-compatible; determination D18 (\\cref{box:pi-override-delta}); not externally peer-confirmed, not derived. & \\catmark{B} & I/III \\\\",
+            "evidence_class": "B"
+        },
+        {
+            "context": "ONT-06 & $\\kappa = \\KappaRG$ exact framework input (fixed-point reading a candidate condition, untested by any defined flow); $5\\kappa^2 = 3\\lambda_S$ closes internally to $<10^{-14}$. The empirically calibrated reading $\\kappa = 0.500 \\pm 0.008$ is a separate, lower-class statement. & \\catmark{A} & II \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "ONT-07 & Pure $\\mathrm{SU}(3)$ ratio comparisons are post-hoc stress tests with solver access disabled. & \\catmark{B}\\ (\\emph{pending external verification}) & I/III \\\\",
+            "evidence_class": "B"
+        },
+        {
+            "context": "ONT-08 & Primitive $\\to\\mathcal{A}\\to G_{\\mathrm{SM}}$ is the research programme; localization, lower bounds, and candidates are recorded in Part~I. & \\catmark{D} & III \\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "ONT-09 & Cosmological parameters are calibrated, capped at~C; no tension is declared resolved. & \\catmark{C} & I/III \\\\",
+            "evidence_class": "C"
+        },
+        {
+            "context": "ONT-10 & The observer functor $F\\colon V\\to\\mathrm{Obs}$ and the compression taxonomy are bounded interpretive frameworks. & \\catmark{E} & III \\\\",
+            "evidence_class": "E"
+        },
+        {
+            "context": "ONT-11 & Under PI Decision D20, Part~III is a verification/benchmark/ledger stratum rather than active ontology; the kernel candidate of Part~I remains a research programme at \\catmark{D}. & \\catmark{D} & III \\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "are labelled as ambitions.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "validate \\RAP\\ beyond calibrated Category~\\catmark{C}\\",
+            "evidence_class": "C"
+        },
+        {
+            "context": "\\emph{All eleven are Class~\\catmark{A}\\ standing constraints.}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "may never be cited as factual evidence for any claim.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "sufficient warrant.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "covariance model is an internal audit rule. \\catmark{A} Satisfaction of",
+            "evidence_class": "A"
+        },
+        {
+            "context": "that external benchmark condition remains pending at \\catmark{B}.\\\\[0.3em]",
+            "evidence_class": "B"
+        },
+        {
+            "context": "\\emph{Each gate is Class~\\catmark{A}. Passing is advisory; it approves",
+            "evidence_class": "A"
+        },
+        {
+            "context": "T2 & $\\Delta = \\DeltaGap$ evidence class. & Would sit \\catmark{E}\\ (\\emph{pending bridge}) absent external work; determination D18 sets \\catmark{B}\\ (\\cref{box:pi-override-delta}). & External peer counter-signature. \\\\",
+            "evidence_class": "E"
+        },
+        {
+            "context": "T3 & $\\Delta$ versus $0^{++}$ glueball identity. & \\catmark{A}\\ separation enforced (L12); identity unproven. & Operator matching. \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "T4 & SVZ leading-order topology route versus lattice topology. & Separation of the two routes is an audit fact \\catmark{A}; external lattice agreement remains pending at \\catmark{B}. The SVZ route is museum-only. & Audited lattice $\\chi_{\\mathrm{top}}$ ratios. \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "T5 & $E_T$ observer/neural scale bridge. & Its absence and the stated scale mismatch are audit facts \\catmark{A}; any proposed bridge remains interpretive at \\catmark{E}. & Derive or refute a principled scale bridge. \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "T6 & Born-rule derivation. & Absent; borrowed from Stratum~II. \\catmark{A} & Non-circular coarse-graining derivation. \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "T7 & Cosmological tensions ($H_0$, $S_8$). & Capped at \\catmark{C}; calibrated, \\emph{not} closed. & Independent prediction, not fit. \\\\",
+            "evidence_class": "C"
+        },
+        {
+            "context": "T8 & $[2,2,2]$ rejection (H2) rests on an unverified mass-degeneracy argument (\\cref{tab:lattice}). & \\catmark{D}; the weakest verdict in the corrected lattice; the conditional selection proposition inherits it. & Primary-source theorem or free-energy stability analysis settling the case either way. \\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "T9 & Scalar-glueball spectroscopy versus $m_S = 1.705 \\pm 0.015\\GeV$ and the empirical grounding of $\\Delta$. & \\catmark{D}; exploratory lattice work~\\cite{morningstar2024} suggests no state below $2\\,\\mathrm{GeV}$ is predominantly a glueball; the $1.5$--$1.7\\,\\mathrm{GeV}$ pure-gauge consensus is sharpened, not overturned, and the empirical grounding of $\\Delta$ is correspondingly under-determined (L14). & Read $m_S$ against the evolving lattice spectrum, not a fixed benchmark; monitor the sub-$2\\,\\mathrm{GeV}$ picture. \\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "rather than reconciled by selection.\\catmark{A} T8 is new in this manuscript",
+            "evidence_class": "A"
+        },
+        {
+            "context": "be easier to admire and impossible to trust.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "assertion in this coda is Category~\\catmark{E}, Stratum~III, unless",
+            "evidence_class": "E"
+        },
+        {
+            "context": "the physics strata depends on it.\\catmark{E} The proposal is narrow: not",
+            "evidence_class": "E"
+        },
+        {
+            "context": "\\catmark{D}, is not uniquely specified, and whose Wedderburn invariants,",
+            "evidence_class": "D"
+        },
+        {
+            "context": "the distance between \\catmark{D} and \\catmark{A}, and that distance is",
+            "evidence_class": "D"
+        },
+        {
+            "context": "the honest measure of the position's current standing.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "as such.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "are independent of the axioms.\\catmark{A} That result is not a statement",
+            "evidence_class": "A"
+        },
+        {
+            "context": "belong.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "something.\\catmark{E} The computational vocabulary that appears in the",
+            "evidence_class": "E"
+        },
+        {
+            "context": "an unsolved problem.\\catmark{E} Against entropic gravity",
+            "evidence_class": "E"
+        },
+        {
+            "context": "one of shared intuition, not demonstrated advance.\\catmark{E} Against",
+            "evidence_class": "E"
+        },
+        {
+            "context": "the content of the open gap.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "acknowledgement rather than positioning.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "is what the framework offers as its scientific virtue.\\catmark{E} The",
+            "evidence_class": "E"
+        },
+        {
+            "context": "dark energy is withdrawn: cosmology is capped at \\catmark{C}",
+            "evidence_class": "C"
+        },
+        {
+            "context": "Stratum-II\\,\\catmark{B} result \\emph{within} AdS/CFT; \\RAP\\ has no",
+            "evidence_class": "B"
+        },
+        {
+            "context": "Stratum-III reading at \\catmark{E} and is not inherited by this",
+            "evidence_class": "E"
+        },
+        {
+            "context": "framework.\\catmark{E} A particularly close ontological cousin is the",
+            "evidence_class": "E"
+        },
+        {
+            "context": "disconnects the bulk geometry~\\cite{vanraamsdonk2010}. \\catmark{B},",
+            "evidence_class": "B"
+        },
+        {
+            "context": "entanglement'' beyond holography. \\catmark{E}, Stratum~III. Not inherited",
+            "evidence_class": "E"
+        },
+        {
+            "context": "\\catmark{E}, Stratum~III.\\\\[0.25em]",
+            "evidence_class": "E"
+        },
+        {
+            "context": "derivations imported into \\RAP. \\catmark{A} re: corpus (as a statement",
+            "evidence_class": "A"
+        },
+        {
+            "context": "about what \\RAP\\ does and does not derive); \\catmark{E} for the mapping.",
+            "evidence_class": "E"
+        },
+        {
+            "context": "\\GammaGeom$\\,\\catmark{A-}; the localization of the",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "states its version of it.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "raised it.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\catmark{E} It is not a theorem that space, time, objects, causality, or",
+            "evidence_class": "E"
+        },
+        {
+            "context": "structures emerge or fail.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\catmark{A} This rule blocks background spacetime, observers, temperatures,",
+            "evidence_class": "A"
+        },
+        {
+            "context": "ontology.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "explanations that belong to different domains or effective levels.\\catmark{B}",
+            "evidence_class": "B"
+        },
+        {
+            "context": "removing that history from the active primitive layer.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "\\cite{frenchladyman2003,ladymanross2007}.\\catmark{E} UIDT is compatible with",
+            "evidence_class": "E"
+        },
+        {
+            "context": "thermodynamic functional, or parameter value.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\catmark{E} Underdetermination remains binding: predictive equivalence or",
+            "evidence_class": "E"
+        },
+        {
+            "context": "compression efficiency does not uniquely select ontology.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "\\catmark{B} Their existence makes non-fundamental-continuum research",
+            "evidence_class": "B"
+        },
+        {
+            "context": "or bridge.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "relational-algebraic kernel and leaves the continuum passage open.\\catmark{B}",
+            "evidence_class": "B"
+        },
+        {
+            "context": "\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\cite{jacobson1995,padmanabhan2010,verlinde2011}.\\catmark{B} UIDT does not",
+            "evidence_class": "B"
+        },
+        {
+            "context": "dynamics from its kernel.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\cite{connes2006,cc2008,vansuijlekom2019}.\\catmark{B} Standard-Model",
+            "evidence_class": "B"
+        },
+        {
+            "context": "assumptions from a prior featureless substrate.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\cite{furey2018,todorov2022,fureyhughes2022,gourlay2024}.\\catmark{B} These",
+            "evidence_class": "B"
+        },
+        {
+            "context": "satisfies G1--G4 without inserted target structure.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "function, $A=dS$ implies $F=dA=d^2S=0$.\\catmark{A} It excludes one route from",
+            "evidence_class": "A"
+        },
+        {
+            "context": "fields produced by richer systems.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\cite{shannon1948}.\\catmark{A} It does not entail that information is a",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\catmark{A} Wheeler's information-first language remains a historically",
+            "evidence_class": "A"
+        },
+        {
+            "context": "important research heuristic, not a derivation of UIDT.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "quantum lattice systems \\cite{cubitt2015}.\\catmark{A} It does not prove that",
+            "evidence_class": "A"
+        },
+        {
+            "context": "computationally irreducible.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "conditions were never defined.\\catmark{A} They may be retained only as a prose",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "under specified colouring conditions.\\catmark{A} It does not establish that",
+            "evidence_class": "A"
+        },
+        {
+            "context": "that the UIDT kernel generates biological observers.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\cite{connesrovelli1994,pagewootters1983}.\\catmark{B} A 2026 cold-atom",
+            "evidence_class": "B"
+        },
+        {
+            "context": "\\cite{barontini2026}.\\catmark{B} This is a controlled analogue test of a",
+            "evidence_class": "B"
+        },
+        {
+            "context": "problem.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\cite{gleason1957,frembs2023,fiorentino2026}.\\catmark{A} These results clarify",
+            "evidence_class": "A"
+        },
+        {
+            "context": "UIDT pregeometric kernel.\\catmark{A} The Born rule therefore remains a",
+            "evidence_class": "A"
+        },
+        {
+            "context": "Stratum-II import unless a separate bridge is constructed.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{B}. UIDT-specific mappings are carried at \\catmark{E}. Statements",
+            "evidence_class": "B"
+        },
+        {
+            "context": "\\catmark{A}.",
+            "evidence_class": "A"
+        },
+        {
+            "context": "way.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "gloss adds no evidential weight.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "refutation becomes possible and informative.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "Finally, the framework reflects, again purely as \\catmark{E}\\ context, on",
+            "evidence_class": "E"
+        },
+        {
+            "context": "agreements.\\catmark{E} The framework's response is not to claim",
+            "evidence_class": "E"
+        },
+        {
+            "context": "elegant.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "\\textbf{This entire coda is \\catmark{E}, Stratum~III,} except where a",
+            "evidence_class": "E"
+        },
+        {
+            "context": "result; under D20 its candidate structure is a \\catmark{D} research",
+            "evidence_class": "D"
+        },
+        {
+            "context": "alters any evidence class.\\catmark{E}",
+            "evidence_class": "E"
+        },
+        {
+            "context": "elegance of its output.\\catmark{A} As for the broader charge, the defence",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\emph{stands} on its central point: $\\gamma$ is \\catmark{A-}, calibrated,",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "(\\cref{prop:target-leakage}).\\catmark{A-}",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "offers a \\catmark{D} candidate whose block partition, real structure, and",
+            "evidence_class": "D"
+        },
+        {
+            "context": "All three charges are conceded.\\catmark{A} On the first: the transfer is",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\catmark{D}; discharging the Lean obligation would upgrade the formal",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{A-}; the museum construction stays refuted; the calibration is",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "kernel remains \\catmark{D}; the inner-derivation escape is a relocation,",
+            "evidence_class": "D"
+        },
+        {
+            "context": "than it is.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "derivation; $\\gamma$ remains \\catmark{A-}.\\\\[0.35em]",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "unestablished \\catmark{D} candidate; the inner-derivation route relocates",
+            "evidence_class": "D"
+        },
+        {
+            "context": "either adversary is refuted.\\catmark{A-}",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "would be.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "non-uniqueness theorem over an explicit admissible class. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "anomalies, and generations derived without target insertion. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "four conditions with proofs and falsification cases. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "& \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "and measure. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "universality or renormalisation result. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "requested dimension. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "and signature structure. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "state whose flow has physical temporal meaning. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "required low-energy locality and suppresses contamination. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "implementation, observables, and interventions. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "Gleason-type theorem, or permanent import status. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "qualia, collapse, or fundamental-experience overclaim. & \\catmark{E}\\\\",
+            "evidence_class": "E"
+        },
+        {
+            "context": "to neural observables with noise and decoupling analysis. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "internal gap object to a consensus Yang--Mills observable. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "calibrated value. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "an EFT and its parameters follow from the kernel. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "BAO, supernovae, lensing, and structure growth. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "baryogenesis or leptogenesis mechanism. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "information-recovery model. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "inequalities, conservation, and backreaction. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "GAP-22 & Lean reconciliation at \\texttt{f1ae5486} & Five-part snapshot and line-by-line adjudication completed for the named commit; every later head requires a fresh reconciliation. & \\catmark{A}\\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "GAP-23 & NORM-01 & Single-class decomposition of compound claims; closed by this content-finalization patch, subject to Claude diff audit. & \\catmark{A}\\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "and deterministic report. & \\catmark{A}\\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "human PI sign-off, and required external counter-signature. & \\catmark{A}\\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "raw data, code, derived artefact, and manuscript statement. & \\catmark{A}\\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "on a separately controlled system. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "GAP-28 & FSS/P2 scientific result & Active use is quarantined under Decision D24; the scientific question remains open pending raw data. & \\catmark{D}\\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{A} (proof/identity/audit fact) & K-02, G-01--G-04, L-01, L-02 & O-01, O-03, Q-01, E-01, P-01 & ONT-01--ONT-03, ONT-06 \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\catmark{A-} (calibrated) & --- & --- & ONT-04 ($\\gamma$) \\\\",
+            "evidence_class": "A-"
+        },
+        {
+            "context": "\\catmark{B} (benchmarked) & lattice verdicts, \\cref{tab:lattice} & --- & ONT-05 ($\\Delta$, D18), ONT-07 \\\\",
+            "evidence_class": "B"
+        },
+        {
+            "context": "\\catmark{C} (cosmology cap) & --- & --- & ONT-09 \\\\",
+            "evidence_class": "C"
+        },
+        {
+            "context": "\\catmark{D} (programme) & K-01, G-05, S-01, S-02, C-01, C-02, L8--L11 & T-01, T-02 & ONT-08, ONT-11 \\\\",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{E} (interpretive/museum) & quarantined audit doc & O-02, O-04 & ONT-10, L6 \\\\",
+            "evidence_class": "E"
+        },
+        {
+            "context": "ambition sits at \\catmark{D}.}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "\\catmark{D} in any part of this manuscript. The classes above \\catmark{D} are",
+            "evidence_class": "D"
+        },
+        {
+            "context": "investigation at evidence class \\catmark{D}.",
+            "evidence_class": "D"
+        },
+        {
+            "context": "(i)~Part~I is a formal research programme at \\catmark{D}, not an established",
+            "evidence_class": "D"
+        },
+        {
+            "context": "$\\kappa = \\KappaRG$\\,\\catmark{A}, $\\lambda_S = \\lambdaS$\\,\\catmark{A},",
+            "evidence_class": "A"
+        },
+        {
+            "context": "$v = \\vVEV$\\,\\catmark{A}, $\\gamma = \\GammaGeom$\\,\\catmark{A-},",
+            "evidence_class": "A"
+        },
+        {
+            "context": "$\\Delta = \\DeltaGap$\\,\\catmark{B} under D18/D21, and cosmological entries",
+            "evidence_class": "B"
+        },
+        {
+            "context": "at no higher than \\catmark{C}.",
+            "evidence_class": "C"
+        },
+        {
+            "context": "$1.710\\pm0.015\\,\\mathrm{GeV}$ and \\catmark{B}. No particle-mass or glueball",
+            "evidence_class": "B"
+        },
+        {
+            "context": "\\catmark{E}; no neural, biological, cognitive, macroscopic, or life/death",
+            "evidence_class": "E"
+        },
+        {
+            "context": "appendix is a document-state fact.\\catmark{A} The former ontological status",
+            "evidence_class": "A"
+        },
+        {
+            "context": "remains a historical interpretive commitment at \\catmark{E}.",
+            "evidence_class": "E"
+        },
+        {
+            "context": "question.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "$F_{\\mu\\nu}^a F^{a\\mu\\nu}$ & $4$ & dimensionless & Strictly renormalisable Yang--Mills kinetic term \\catmark{A} \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "$(\\partial_\\mu S)(\\partial^\\mu S)$ & $4$ & dimensionless & Canonical scalar kinetic term \\catmark{A} \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "$\\mu^2 S^2$ & $2$ & $+2$ & Relevant scalar mass operator \\catmark{A} \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "$\\lambda_S S^4$ & $4$ & dimensionless & Power-counting renormalisable self-interaction \\catmark{A} \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "$(\\bar\\kappa/\\Lambda_{\\UIDT})\\,S F_{\\mu\\nu}^a F^{a\\mu\\nu}$ & $5$ & $-1$ & Non-renormalisable; EFT-only below $\\Lambda_{\\UIDT}$ \\catmark{A} \\\\",
+            "evidence_class": "A"
+        },
+        {
+            "context": "deferred to the Part-II passage and Limitation~L13.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "prediction must be revised or abandoned.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "document-state fact \\catmark{A}; its historical ontological content is",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\catmark{E} (D19 form). Gauge-Invariant Self-Interaction \\catmark{A} (EFT, dimension-5",
+            "evidence_class": "E"
+        },
+        {
+            "context": "operator); Geometric Emergence \\catmark{D} (model-dependent metric);",
+            "evidence_class": "D"
+        },
+        {
+            "context": "Falsifiability \\catmark{A} (meta-theoretical).\\\\[0.3em]",
+            "evidence_class": "A"
+        },
+        {
+            "context": "field configuration $S(x) = 0$.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "assigned.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "constraint in the theory.\\catmark{A} The result is unaffected by D19:",
+            "evidence_class": "A"
+        },
+        {
+            "context": "unique primitive of nature. That adoption is a document-state fact.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "The choice itself was an interpretive commitment at \\catmark{E}. Any inference",
+            "evidence_class": "E"
+        },
+        {
+            "context": "of unique physical primitiveness from that grammar remains at \\catmark{E}.",
+            "evidence_class": "E"
+        },
+        {
+            "context": "transfers to the pregeometric kernel of Part~I, held at \\catmark{D}; the",
+            "evidence_class": "D"
+        },
+        {
+            "context": "Part~I.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "mathematical apparatus used to describe that genesis.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "presupposes distinction.\\catmark{A} It belongs to the formal",
+            "evidence_class": "A"
+        },
+        {
+            "context": "bookkeeping statement.\\catmark{A} The claim that neither is a constituent",
+            "evidence_class": "A"
+        },
+        {
+            "context": "of genesis remains interpretive at \\catmark{E}. Under D19 the",
+            "evidence_class": "E"
+        },
+        {
+            "context": "QBism --- are catalogued here as external lenses.\\catmark{A} Their exclusion",
+            "evidence_class": "A"
+        },
+        {
+            "context": "\\catmark{E}.",
+            "evidence_class": "E"
+        },
+        {
+            "context": "correlation network is a legitimate theorem target.''\\catmark{D} No",
+            "evidence_class": "D"
+        },
+        {
+            "context": "map.\\catmark{E} The candidate primary observable",
+            "evidence_class": "E"
+        },
+        {
+            "context": "load-bearing use.\\catmark{D} One prohibition carries Class~A force and",
+            "evidence_class": "D"
+        },
+        {
+            "context": "phenomenology to graph structure.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "not as a derivation imported into \\UIDT.\\catmark{E} Downstream of",
+            "evidence_class": "E"
+        },
+        {
+            "context": "the scalar has been shown to generate.\\catmark{A}",
+            "evidence_class": "A"
+        },
+        {
+            "context": "is not a generative regime.\\catmark{A}\\\\[0.3em]",
+            "evidence_class": "A"
+        },
+        {
+            "context": "selected, not forced.\\catmark{A}\\\\[0.3em]",
+            "evidence_class": "A"
+        },
+        {
+            "context": "subject of Part~I.\\catmark{D}",
+            "evidence_class": "D"
+        },
+        {
+            "context": "M.~Ihl, C.~Sachse, C.~S\\\"amann, ``Fuzzy Scalar Field Theory as Matrix Quantum Mechanics,'' JHEP \\textbf{03} (2011) 091. arXiv:1012.3568. DOI 10.1007/JHEP03(2011)091. (Candidate source for the induced-matrix-structure mechanism; \\catmark{D}.)",
+            "evidence_class": "D"
+        }
+    ]
+}
