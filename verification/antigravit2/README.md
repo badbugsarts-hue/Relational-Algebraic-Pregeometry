@@ -4,7 +4,6 @@
 
 | Field | Value |
 |---|---|
-| Project | Antigravit 2.0 |
 | Purpose | Lean 4 / mathlib4 formalization of UIDT ontological structures and filters |
 | Scope | Type-theoretic encoding of DIR-S-01, Matrix Thermodynamics, NCG structures |
 | Status | **Phase 0 — Scaffold** |
