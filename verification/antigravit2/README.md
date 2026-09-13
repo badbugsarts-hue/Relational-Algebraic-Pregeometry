@@ -1,4 +1,4 @@
-# Antigravit 2.0 — Lean 4 Formalization of UIDT Ontological Structures
+# Lean 4 Formalization of UIDT Ontological Structures
 
 > **Evidence Tag: [D/E] — Formal software project. No physical claims. No reality assertions.**
 
