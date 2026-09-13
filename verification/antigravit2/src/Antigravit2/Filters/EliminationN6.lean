@@ -23,9 +23,10 @@
   PROPOSITION (Phase 9):
     Under H1 and H2, [3,2,1] is the unique admissible partition of N=6.
 
-  CONJECTURE (open):
-    For general N, admissible minima fragment into staircase-type
-    components [k, k-1, ..., 1], or are globally minimized by such.
+  CONJECTURE (RETRACTED — see LEAN-STAIR-001 block below):
+    The staircase-only conjecture has been falsified.
+    Replacement conjecture [D]: admissible lists are consecutive
+    intervals [a, a−1, …, b] with a > b ≥ 1 (open, unproven).
 
   FALSIFICATION PATHS:
     (a) If H1 is weakened (larger block-difference tolerance), additional
@@ -93,15 +94,18 @@ def atLeastTwo {α : Type} : List α → Bool
     fermion masses).
 
     MOTIVATION: A single-block partition [N] produces a simple algebra
-    M_N(ℂ) with a single gauge factor and no inter-sector Yukawa
-    structure, hence no mass spectrum. Repeated block sizes n_i = n_j
-    for i ≠ j produce algebraically indistinguishable sectors and
-    therefore degenerate fermion masses, which is experimentally
-    excluded in the Standard Model.
+    M_N(ℂ) with a single gauge factor. This filter excludes such
+    partitions and those with repeated block sizes. The exclusion is
+    a combinatorial proxy for the physical assumption that fermion
+    masses are non-degenerate in the Standard Model — it encodes the
+    assumption as Nodup + ≥ 2 blocks, not as a derived consequence.
+    [LEAN-H2-001]
 
-    FORMALIZATION GAP: "Dynamical mass non-degeneracy" is a physical
-    claim about the Yukawa sector, not a pure combinatorial theorem.
-    The exclusion is a proxy for a stability/non-degeneracy analysis.
+    FORMALIZATION GAP: No Yukawa matrix, mass operator, or fermion
+    mass structure exists in this codebase. "Mass non-degeneracy" is
+    a physical assumption about the Yukawa sector, not a theorem
+    derivable from the combinatorial definitions here. The exclusion
+    is a heuristic proxy, not a causal entailment.
 
     UPGRADE PATH: Derive from the Dirac operator's Yukawa matrix
     structure in the formalized spectral triple setting.
@@ -225,22 +229,34 @@ example : phase9Admissible [1, 1, 1, 1, 1, 1] = false := sorry
 theorem unique_321_N6 :
     partitions6.filter phase9Admissible = [[3, 2, 1]] := sorry
 
--- ═══════════════════════════════════════════════════════════════
--- CONJECTURE (open, documented only)
+-- ╔══════════════════════════════════════════════════════════════╗
+-- ║ RETRACTED — Staircase-Only Conjecture (LEAN-STAIR-001)      ║
+-- ╠══════════════════════════════════════════════════════════════╣
+-- ║ ORIGINAL CLAIM (now known to be false):                      ║
+-- ║   "For general N, the set of Phase-9-admissible partitions   ║
+-- ║    consists exclusively of staircase partitions              ║
+-- ║    [k, k-1, ..., 1] where k(k+1)/2 = N."                    ║
+-- ║                                                               ║
+-- ║ RETRACTED: 2026-08-01                                        ║
+-- ║ REASON: Falsified by counterexamples.                        ║
+-- ║   phase9Admissible [3, 2]    = true  (N=5, not triangular)   ║
+-- ║   phase9Admissible [4, 3, 2] = true  (N=9, not triangular)   ║
+-- ║   Neither list ends at 1; neither sum is a triangular        ║
+-- ║   number. The admissible set is strictly larger than the     ║
+-- ║   set of complete staircases.                                 ║
+-- ║                                                               ║
+-- ║ Regression tests:                                             ║
+-- ║   test/LEAN_STAIR001_StaircaseCounterexamples.lean           ║
+-- ╚══════════════════════════════════════════════════════════════╝
 --
--- For general N, the set of Phase-9-admissible partitions consists
--- exclusively of staircase partitions [k, k-1, ..., 1] where
--- k(k+1)/2 = N. This would imply that admissible total dimensions
--- are triangular numbers.
+-- REPLACEMENT CONJECTURE [D] — open, PI-D4 gate required before merge:
+--   Descending-sorted H1/H2-admissible lists are finite consecutive
+--   intervals [a, a−1, …, b] with a > b ≥ 1.
 --
--- STATUS: [D] — Unproven conjecture. No counterexample known.
--- The N=6 case (k=3, 3·4/2=6) is the first non-trivial instance.
--- N=10 (k=4, [4,3,2,1]) and N=15 (k=5, [5,4,3,2,1]) are the next
--- test cases.
---
--- FALSIFICATION PATH: Find an N and a non-staircase partition that
--- satisfies both H1 and H2.
--- ═══════════════════════════════════════════════════════════════
+-- NOTE: This is a GENERALIZATION, not a weakening. It enlarges the
+-- admissible set — the N=6 selection becomes STRONGER because [3,2,1]
+-- prevails against more competitors. Proof is H-2b scope (Fable 5),
+-- not this patch.
 
 -- ═══════════════════════════════════════════════════════════════
 -- Phase 9 epistemic status summary
@@ -252,7 +268,8 @@ theorem unique_321_N6 :
 -- │ massNondeg (H2)          │ HEURISTIC     │ Derive from Yukawa      │
 -- │ phase9Admissible         │ DEFINITIONAL  │ Inherits from H1/H2    │
 -- │ unique_321_N6            │ [A] formal    │ Stable (exhaustive)     │
--- │ Staircase conjecture     │ [D] open      │ Prove or find cex      │
+-- │ Staircase conjecture     │ RETRACTED     │ See LEAN-STAIR-001     │
+-- │ Interval conjecture      │ [D] open      │ H-2b (Fable 5)        │
 -- └──────────────────────────┴───────────────┴─────────────────────────┘
 -- ═══════════════════════════════════════════════════════════════
 
