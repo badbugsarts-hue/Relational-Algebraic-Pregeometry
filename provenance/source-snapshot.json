@@ -1,0 +1,21 @@
+{
+  "prepared_date": "2026-10-27",
+  "manuscript_corrected_input_sha256": "9b9edc642a292e90e9ab16925ecba92a35847c87278573834bacc32aa440f8a5",
+  "repository_working_tex_sha256": "3e9c471fc92e112c5045f6fcb357250ff59c090a4caf424996b4e07b0dd0b999",
+  "manuscript_changes": "Bibliography externalization and corrected 124-record manuscript bibliography only; body and D19-D25 boxes unchanged.",
+  "previous_seed_git_blob": "284b08bd13f447578e302dde4c5f554cf83c0c8a",
+  "public_rap_reference_commit": "34011b29b2efae280d733dbcc3126276b911aa0b",
+  "uidt_quality_reference": {
+    "repository": "Mass-Gap/UIDT-Framework-v3.9-Canonical",
+    "commit": "aa67d38038393c5e83ef9c9def4953b4a3587ee3",
+    "use": "Organization/quality precedent only; no old UIDT result or dataset imported as active evidence."
+  },
+  "formal_snapshot": {
+    "commit": "f1ae548633abac7cb47b971917bbab7992801a3f",
+    "status": "reported-not-reproduced",
+    "source_bundle_included": false
+  },
+  "new_pi_decisions": [],
+  "final_manuscript_pdf_included": false,
+  "publication_performed": false
+}

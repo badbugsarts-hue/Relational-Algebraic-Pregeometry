@@ -1,29 +1,750 @@
-[
-  {
-    "id": "PR-B1",
-    "title": "YMCS matrix condensation vs. Wedderburn (2,3) selection",
-    "outcome": "O-C",
-    "outcome_label": "honest null — YMCS/Myers (M0) does not select (2,3) as a stable vacuum",
-    "evidence_class": "D",
-    "strata": "III",
-    "status": "RECORDED",
-    "method": "blinded HMC metastability pre-protocol (PREREG-PR-B1-PRE-001), PR-B0.2 grid detector, tau=0.14, delta measured (finite-K factor A)",
-    "result_summary": "planted (2,3) decays out of (2,3) class by MC step ~10 at all alpha_tilde in {0.40,0.55,0.625,0.75,0.90}, N in {16,24,32}",
-    "preregistered_null": "single fuzzy sphere is true vacuum (Azuma et al., JHEP 05 (2004) 005)",
-    "blindness": "PI-confirmed; alpha_tilde/N/tau/delta frozen pre-results",
-    "corroboration": [
-      "10.1088/1126-6708/2004/05/005",
-      "RESEARCH-YMCS-METASTAB-001"
-    ],
-    "reinforces": "Appendix B Rem. B-moduli-restated",
-    "does_not_upgrade": [
-      "C-B1 (stays E)",
-      "ONT-08 (stays D)"
-    ],
-    "full_run_PR-B1-002": "CANCELLED — not required (answered by PRE-O1 + literature)",
-    "successor": "PR-B2 (open [D]/[E] charter: deformation-stabilized (2,3)? UNSOLVED)",
-    "signed_source": "PREREG-PR-B1-PRE-001 (PI-signed 2026-06-17)",
-    "pi_signoff": "Philipp Rie 2026-06-18",
-    "date_recorded": "2026-06-17"
-  }
-]
+{
+  "metadata": {
+    "programme": "RAP",
+    "version": "4.0",
+    "state": "working-draft",
+    "last_updated": "2026-10-27",
+    "base_doi": "10.5281/zenodo.22731224",
+    "new_doi": null,
+    "new_pi_approval": null,
+    "coverage": "Curated release claims; not an exhaustive count of every manuscript evidence tag.",
+    "total_claims": 30
+  },
+  "claims": [
+    {
+      "id": "RAP-M001",
+      "statement": "H1/H2 classify admissible partitions as consecutive positive intervals.",
+      "evidence_class": "A",
+      "evidence_kind": "conditional-mathematics",
+      "status": "argument_and_finite_checks",
+      "observable": "H1/H2 classify admissible partitions as consecutive positive intervals.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Analytic integer argument; independently implemented enumeration through N=40.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "prop:interval-classification"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": "python3 RAP_Master_Verification.py --output results/master-verification.json",
+      "dependencies": [],
+      "scope": "General argument in note 01; finite Python test is not a general Lean certificate or physical derivation."
+    },
+    {
+      "id": "RAP-M002",
+      "statement": "At declared N=6, H1/H2 uniquely admit [3,2,1].",
+      "evidence_class": "A",
+      "evidence_kind": "conditional-mathematics",
+      "status": "exact_finite_check",
+      "observable": "At declared N=6, H1/H2 uniquely admit [3,2,1].",
+      "value": [
+        3,
+        2,
+        1
+      ],
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "All eleven partitions checked against declared predicates.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "prop:interval-classification"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": "python3 rap_proof_engine.py --n 6 --exhaustive",
+      "dependencies": [
+        "RAP-M001"
+      ],
+      "scope": "N and H1/H2 are inputs, not physically derived."
+    },
+    {
+      "id": "RAP-M003",
+      "statement": "N=7 admits [4,3], refuting a general smallest-part-one inference.",
+      "evidence_class": "A",
+      "evidence_kind": "exact-arithmetic",
+      "status": "exact_finite_check",
+      "observable": "N=7 admits [4,3], refuting a general smallest-part-one inference.",
+      "value": [
+        4,
+        3
+      ],
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Exact integer counterexample.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "prop:interval-classification"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": "python3 rap_proof_engine.py --n 7 --exhaustive",
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-M004",
+      "statement": "N=15 has three admissible interval partitions.",
+      "evidence_class": "A",
+      "evidence_kind": "exact-arithmetic",
+      "status": "exact_finite_check",
+      "observable": "N=15 has three admissible interval partitions.",
+      "value": 3,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Exact enumeration.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "prop:interval-classification"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": "python3 rap_proof_engine.py --n 15 --exhaustive",
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-M005",
+      "statement": "A complex direct-sum block signature is not a constructed physical spectral triple.",
+      "evidence_class": "A",
+      "evidence_kind": "definition",
+      "status": "definition",
+      "observable": "A complex direct-sum block signature is not a constructed physical spectral triple.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Dimension bookkeeping with explicit absent-structure flags.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "lim:L11"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": "python3 RAP_Master_Verification.py --output results/master-verification.json",
+      "dependencies": [],
+      "scope": "No inferred real form, representation, chirality, Dirac operator, or gauge derivation."
+    },
+    {
+      "id": "RAP-M006",
+      "statement": "The equal-block classical action ratio equals (N^2-k^2)/(k^2(N^2-1)) when k divides N>1.",
+      "evidence_class": "A",
+      "evidence_kind": "conditional-mathematics",
+      "status": "exact_finite_check",
+      "observable": "The equal-block classical action ratio equals (N^2-k^2)/(k^2(N^2-1)) when k divides N>1.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Exact Fraction comparison; external model assumptions retained.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "eq:ymcs-equal-block-ratio"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": "python3 RAP_Master_Verification.py --output results/master-verification.json",
+      "dependencies": [],
+      "scope": "No global extrema classification, all-orders claim, or partition selector."
+    },
+    {
+      "id": "RAP-M007",
+      "statement": "Four anomaly sums vanish for the supplied hypercharge assignments.",
+      "evidence_class": "A",
+      "evidence_kind": "exact-arithmetic",
+      "status": "exact_finite_check",
+      "observable": "Four anomaly sums vanish for the supplied hypercharge assignments.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Exact Fraction controls for imposed charges.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "sec:connes-attractor"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": "python3 RAP_Master_Verification.py --output results/master-verification.json",
+      "dependencies": [],
+      "scope": "The supplied charges are not derived or uniquely selected by RAP."
+    },
+    {
+      "id": "RAP-M008",
+      "statement": "The coupling-input identity fixes lambda_S=5/12 for kappa=1/2, not a dimensionful VEV.",
+      "evidence_class": "A",
+      "evidence_kind": "input",
+      "status": "historical_only",
+      "observable": "The coupling-input identity fixes lambda_S=5/12 for kappa=1/2, not a dimensionful VEV.",
+      "value": "5/12",
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Exact historical input identity and dimensional bookkeeping.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "eq:lagrangian"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": "Museum-only; not an RG-flow or active physical premise."
+    },
+    {
+      "id": "RAP-M009",
+      "statement": "Small rounded residuals alone certify neither exactness nor a true error bound.",
+      "evidence_class": "A",
+      "evidence_kind": "conditional-mathematics",
+      "status": "argument_and_finite_checks",
+      "observable": "Small rounded residuals alone certify neither exactness nor a true error bound.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "80/100-digit isolated-context diagnostics and exact integer rounding counterexample.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "subsec:closure-vs-agreement"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": "python3 RAP_Master_Verification.py --output results/master-verification.json",
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-M010",
+      "statement": "An accessible but unused target does not force functional dependence.",
+      "evidence_class": "A",
+      "evidence_kind": "conditional-mathematics",
+      "status": "argument",
+      "observable": "An accessible but unused target does not force functional dependence.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Counterexample P(x,t)=x^2; separate stricter audit policy.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "prop:target-leakage"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": "Functional invariance does not certify target-independent model-selection history."
+    },
+    {
+      "id": "RAP-R001",
+      "statement": "gamma=16.339 is calibrated, not first-principles derived.",
+      "evidence_class": "A-",
+      "evidence_kind": "calibration",
+      "status": "calibrated",
+      "observable": "gamma=16.339 is calibrated, not first-principles derived.",
+      "value": "16.339",
+      "unit": "dimensionless",
+      "uncertainty": {
+        "status": "not_supplied",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Ledger transcription; comparator deliberately separated.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "subsec:gamma-discipline"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": "python3 scripts/reference_diagnostics.py",
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-R002",
+      "statement": "The reported gamma_MC value and spread do not supply a certified sigma comparison.",
+      "evidence_class": "A-",
+      "evidence_kind": "reported-computation",
+      "status": "reported_not_reproduced",
+      "observable": "The reported gamma_MC value and spread do not supply a certified sigma comparison.",
+      "value": "16.374",
+      "unit": "dimensionless",
+      "uncertainty": {
+        "status": "reported",
+        "value": "1.005",
+        "meaning": "reported spread; convention/covariance unknown"
+      },
+      "method": "Recorded 16.374 +/- 1.005; normalized arithmetic only.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "sec:tension-ledger"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": "python3 scripts/reference_diagnostics.py",
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-R003",
+      "statement": "Delta=1.710 +/- 0.015 GeV is the recorded D18/D21 reference, not a derived mass-gap theorem.",
+      "evidence_class": "B",
+      "evidence_kind": "empirical-reference",
+      "status": "reference_not_derived",
+      "observable": "Delta=1.710 +/- 0.015 GeV is the recorded D18/D21 reference, not a derived mass-gap theorem.",
+      "value": "1.710",
+      "unit": "GeV",
+      "uncertainty": {
+        "status": "reported",
+        "value": "0.015",
+        "meaning": "reported uncertainty; covariance not audited"
+      },
+      "method": "Preserved determination; no new external validation.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "box:pi-override-delta"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-R004",
+      "statement": "E_T=2.44 MeV remains an E-class subatomic-only reference under D22.",
+      "evidence_class": "E",
+      "evidence_kind": "interpretation",
+      "status": "historical_only",
+      "observable": "E_T=2.44 MeV remains an E-class subatomic-only reference under D22.",
+      "value": "2.44",
+      "unit": "MeV",
+      "uncertainty": {
+        "status": "not_supplied",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Recorded boundary, not a new physical prediction.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "subsec:et-scale-bridge"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-R005",
+      "statement": "The 0.66 nm scale lacks a non-Abelian-consistent derivation and direct confirmation.",
+      "evidence_class": "D",
+      "evidence_kind": "open-physical-bridge",
+      "status": "open",
+      "observable": "The 0.66 nm scale lacks a non-Abelian-consistent derivation and direct confirmation.",
+      "value": "0.66",
+      "unit": "nm",
+      "uncertainty": {
+        "status": "not_supplied",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Explicit limitation.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "lim:L15"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-R006",
+      "statement": "The 47.7 MeV VEV value is a separately retained input, not fixed by the coupling identity.",
+      "evidence_class": "A",
+      "evidence_kind": "input",
+      "status": "historical_only",
+      "observable": "The 47.7 MeV VEV value is a separately retained input, not fixed by the coupling identity.",
+      "value": "47.7",
+      "unit": "MeV",
+      "uncertainty": {
+        "status": "not_supplied",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Input transcription, not physical exactness.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "eq:lagrangian"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-P001",
+      "statement": "The active finite-kernel ontology is a D-class research programme.",
+      "evidence_class": "D",
+      "evidence_kind": "open-physical-bridge",
+      "status": "open",
+      "observable": "The active finite-kernel ontology is a D-class research programme.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Programme hypothesis; no physical selection supplied.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "sec:thermo-passage"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-P002",
+      "statement": "The physical origin of H1 and H2 is open.",
+      "evidence_class": "D",
+      "evidence_kind": "open-physical-bridge",
+      "status": "open",
+      "observable": "The physical origin of H1 and H2 is open.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Declared filters distinguished from derived laws.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "lim:L9"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [
+        "RAP-M001"
+      ],
+      "scope": ""
+    },
+    {
+      "id": "RAP-P003",
+      "statement": "A Standard-Model gauge-origin derivation is not supplied.",
+      "evidence_class": "D",
+      "evidence_kind": "open-physical-bridge",
+      "status": "open",
+      "observable": "A Standard-Model gauge-origin derivation is not supplied.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Source-relative gap register, not universal impossibility theorem.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "thm:gap-localisation"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-P004",
+      "statement": "A finite N=6 enumeration does not establish large-N dynamics or continuum emergence.",
+      "evidence_class": "D",
+      "evidence_kind": "open-physical-bridge",
+      "status": "open",
+      "observable": "A finite N=6 enumeration does not establish large-N dynamics or continuum emergence.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Finite/infinite scope separation.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "lim:L10"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [
+        "RAP-M002"
+      ],
+      "scope": ""
+    },
+    {
+      "id": "RAP-P005",
+      "statement": "The formal combinatorial-to-NCG bridge remains structure-losing and incomplete.",
+      "evidence_class": "D",
+      "evidence_kind": "open-physical-bridge",
+      "status": "open",
+      "observable": "The formal combinatorial-to-NCG bridge remains structure-losing and incomplete.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Type scaffolding is not a completeness or physical construction theorem.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "lim:L11"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-P006",
+      "statement": "Operator matching between the reference gap and a scalar glueball is absent.",
+      "evidence_class": "D",
+      "evidence_kind": "open-physical-bridge",
+      "status": "open",
+      "observable": "Operator matching between the reference gap and a scalar glueball is absent.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "L12 separation retained.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "lim:L12"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [
+        "RAP-R003"
+      ],
+      "scope": ""
+    },
+    {
+      "id": "RAP-P007",
+      "statement": "Topological benchmarks require operator, flow, scale, continuum and uncertainty provenance.",
+      "evidence_class": "B",
+      "evidence_kind": "empirical-reference",
+      "status": "pending_source_audit",
+      "observable": "Topological benchmarks require operator, flow, scale, continuum and uncertainty provenance.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_supplied",
+        "value": null,
+        "meaning": null
+      },
+      "method": "No new lattice data or replication supplied.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "subsec:topology-chi"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-P008",
+      "statement": "Cosmological uses remain calibration/comparison capped at C.",
+      "evidence_class": "C",
+      "evidence_kind": "calibration",
+      "status": "calibrated",
+      "observable": "Cosmological uses remain calibration/comparison capped at C.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_supplied",
+        "value": null,
+        "meaning": null
+      },
+      "method": "No internally derived resolution of observational tensions.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "sec:cosmological-calibration"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-P009",
+      "statement": "Observer interpretations do not establish a Born-rule or consciousness derivation.",
+      "evidence_class": "E",
+      "evidence_kind": "interpretation",
+      "status": "open",
+      "observable": "Observer interpretations do not establish a Born-rule or consciousness derivation.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Interpretive scope; physical bridges not supplied.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "sec:observer-no-collapse"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-P010",
+      "statement": "FSS/P2 provides no active quantitative premise under D24 quarantine.",
+      "evidence_class": "D",
+      "evidence_kind": "open-physical-bridge",
+      "status": "quarantined",
+      "observable": "FSS/P2 provides no active quantitative premise under D24 quarantine.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_supplied",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Required raw data, seeds and immutable provenance absent.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "box:pi-decision-d24-p2"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-F001",
+      "statement": "The named f1ae5486 Lean result is reported, not independently rebuilt in this package.",
+      "evidence_class": "A",
+      "evidence_kind": "reported-software",
+      "status": "reported_not_reproduced",
+      "observable": "The named f1ae5486 Lean result is reported, not independently rebuilt in this package.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Historical declaration-specific report, not a new lake build.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "subsec:code-evidence"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": "18 reachable modules of 22 files reported; eight registered sorry elsewhere remain separate."
+    },
+    {
+      "id": "RAP-G001",
+      "statement": "The scalar/EFT appendix is non-imported historical material.",
+      "evidence_class": "A",
+      "evidence_kind": "document-state",
+      "status": "policy",
+      "observable": "The scalar/EFT appendix is non-imported historical material.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Preserved D20/D23 documentary boundary, not a physical refutation.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "app:scalar-museum"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-G002",
+      "statement": "A clean literal scan does not prove target-independent discovery history.",
+      "evidence_class": "A",
+      "evidence_kind": "policy",
+      "status": "policy",
+      "observable": "A clean literal scan does not prove target-independent discovery history.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Conservative import/literal checks plus open provenance obligations.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "subsec:target-leakage-theorem"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": ""
+    },
+    {
+      "id": "RAP-G003",
+      "statement": "D19-D25 are preserved records, not new approvals or evidence upgrades.",
+      "evidence_class": "A",
+      "evidence_kind": "document-state",
+      "status": "policy",
+      "observable": "D19-D25 are preserved records, not new approvals or evidence upgrades.",
+      "value": null,
+      "unit": null,
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "method": "Verbatim box preservation and hashes.",
+      "source": {
+        "path": "manuscript/RAP_v4_0.tex",
+        "anchor": "box:pi-decision-d23-museum"
+      },
+      "tension_status": "see LEDGER/TENSIONS.json",
+      "reproduction_command": null,
+      "dependencies": [],
+      "scope": ""
+    }
+  ]
+}

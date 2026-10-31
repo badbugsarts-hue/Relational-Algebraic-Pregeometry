@@ -1,0 +1,11 @@
+{
+  "json_syntax": "PASS",
+  "wrapped_equals_flat": true,
+  "legacy_core_schema": "PASS",
+  "documented_two_property_extension": "PASS: version and language only",
+  "schema_sha256": "e275ddb915367510c4809db54b672fdd1fd31d133b55d9509eb2460022073562",
+  "schema_source": "https://raw.githubusercontent.com/zenodo/zenodo/master/zenodo/modules/deposit/jsonschemas/deposits/records/legacyrecord.json",
+  "native_rdm_schema": "NOT_APPLICABLE",
+  "remote_service_validation": "NOT_RUN",
+  "publication": "NONE"
+}

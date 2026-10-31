@@ -1,0 +1,5 @@
+{
+  "tag": "python:3.12-slim-bookworm",
+  "digest": "sha256:fc169880a4d941f3142c0e2e623f05f246150add19dc36fc9224df20fb19e5fd",
+  "build_executed": false
+}

@@ -1,0 +1,48 @@
+{
+  "prepared_utc": "2026-10-27T02:57:55.915887+00:00",
+  "invocation_note": "Equivalent portable commands are shown; executed against the staged files at their workspace paths.",
+  "commands": [
+    {
+      "portable_equivalent_from_repository_root": "python RAP_Master_Verification.py --output results/master-without-reference.json",
+      "exit_code": 0
+    },
+    {
+      "portable_equivalent_from_repository_root": "python RAP_Master_Verification.py --include-reference-checks --output results/master-verification.json",
+      "exit_code": 0
+    },
+    {
+      "portable_equivalent_from_repository_root": "python rap_proof_engine.py --n 6 --exhaustive --dps 100 --output results/core-engine-100.json",
+      "exit_code": 0
+    },
+    {
+      "portable_equivalent_from_repository_root": "python scripts/run_tests.py",
+      "exit_code": 0
+    },
+    {
+      "portable_equivalent_from_repository_root": "python scripts/export_partitions.py --n 6 --output results/partitions-N6.csv",
+      "exit_code": 0
+    },
+    {
+      "portable_equivalent_from_repository_root": "python scripts/update_status.py",
+      "exit_code": 0
+    }
+  ],
+  "runtime_dependencies": {
+    "mpmath": "1.3.0",
+    "jsonschema": "4.26.0",
+    "attrs": "26.1.0",
+    "jsonschema-specifications": "2025.9.1",
+    "referencing": "0.37.0",
+    "rpds-py": "2026.9.1",
+    "typing-extensions": "4.16.0"
+  },
+  "source_sha256": {
+    "RAP_Master_Verification.py": "0c1c75937afee42bbeecf525608312f3fb1629f17136988936b46ab8c6978c87",
+    "rap_proof_engine.py": "69c7885befce322700f8c3c0a69287d6ab689505547ed05c896737d82bbf9018",
+    "rap/structural.py": "c50533a76a731368a5372393cf0856051a67a0bc12d8388eed9bd0b341019c96",
+    "rap/numerics.py": "ec675b0ab88d9318a14c6bc497d42a31538e2c67fc82e97fda3919e42c933fc3",
+    "rap/validation.py": "df93557d391835b78616858bac7f8026060fb63b371385ff4dd0c88c1ae8cf22"
+  },
+  "independent_external_verifier": false,
+  "publication_performed": false
+}

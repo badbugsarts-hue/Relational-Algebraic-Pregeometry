@@ -1,0 +1,12 @@
+declared_n,parts,at_least_two_parts,distinct_parts_H1,adjacent_gap_H2,admissible,complex_algebra_dimension
+6,[6],False,True,True,False,36
+6,"[5, 1]",True,True,False,False,26
+6,"[4, 2]",True,True,False,False,20
+6,"[4, 1, 1]",True,False,False,False,18
+6,"[3, 3]",True,False,True,False,18
+6,"[3, 2, 1]",True,True,True,True,14
+6,"[3, 1, 1, 1]",True,False,False,False,12
+6,"[2, 2, 2]",True,False,True,False,12
+6,"[2, 2, 1, 1]",True,False,True,False,10
+6,"[2, 1, 1, 1, 1]",True,False,True,False,8
+6,"[1, 1, 1, 1, 1, 1]",True,False,True,False,6

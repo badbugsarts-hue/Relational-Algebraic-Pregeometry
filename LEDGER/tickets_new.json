@@ -1,0 +1,41 @@
+{
+  "authority": "New task proposals only; no PI disposition or assigned reviewer",
+  "tickets": [
+    {
+      "id": "RAP-T001",
+      "task": "Compile manuscript and inspect final PDF",
+      "status": "open",
+      "assignee": null
+    },
+    {
+      "id": "RAP-T002",
+      "task": "Build and audit the named Lean snapshot independently",
+      "status": "open",
+      "assignee": null
+    },
+    {
+      "id": "RAP-T003",
+      "task": "Complete target-shape and construction-history audit",
+      "status": "open",
+      "assignee": null
+    },
+    {
+      "id": "RAP-T004",
+      "task": "Obtain source-clean lattice/topology operator and covariance provenance",
+      "status": "open",
+      "assignee": null
+    },
+    {
+      "id": "RAP-T005",
+      "task": "Build and execute pinned Docker image",
+      "status": "open",
+      "assignee": null
+    },
+    {
+      "id": "RAP-T006",
+      "task": "Approve release date, version label, final files and destination DOI",
+      "status": "open",
+      "assignee": null
+    }
+  ]
+}

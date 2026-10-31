@@ -1,0 +1,77 @@
+{
+  "engine": "RAP finite conditional certificate engine",
+  "declared_n": 6,
+  "n_is_declared_input": true,
+  "hypotheses": {
+    "H1": "at least two distinct descending positive integer parts",
+    "H2": "successive gaps at most one"
+  },
+  "interval_certificates": [
+    {
+      "n": 6,
+      "k": 3,
+      "m": 1,
+      "parts": [
+        3,
+        2,
+        1
+      ],
+      "sum_formula_rhs": 6,
+      "scope": "exact integer identity under declared H1/H2"
+    }
+  ],
+  "algebra_signatures": [
+    {
+      "base_field": "complex",
+      "block_sizes": [
+        3,
+        2,
+        1
+      ],
+      "matrix_size_sum": 6,
+      "complex_algebra_dimension": 14,
+      "centre_dimension": 3,
+      "off_diagonal_count": 8,
+      "physical_representation_supplied": false,
+      "real_structure_supplied": false,
+      "spectral_triple_constructed": false,
+      "warning": "a direct-sum signature is not a physical spectral triple or a gauge derivation"
+    }
+  ],
+  "exhaustive_comparison": {
+    "status": "PASS",
+    "domain_n": 6,
+    "all_partitions": 11
+  },
+  "general_analytic_argument": "docs/research/01_INTERVAL_THEOREM.md",
+  "lean_build": "NOT_RUN",
+  "physical_selection": "OPEN",
+  "calibrated_parameter_derivation": false,
+  "yang_mills_mass_gap_proof": false,
+  "precision_diagnostics": {
+    "working_decimal_digits": 100,
+    "context": "mp.clone; independent context per invocation",
+    "global_context_unchanged": true,
+    "mpmath_version": "1.3.0",
+    "log_identity": {
+      "residual": "0.0",
+      "criterion": "absolute observed residual < 10^(-threshold_digits)",
+      "threshold_digits": 60,
+      "observed_consistency": true
+    },
+    "rational_control": {
+      "exact_fraction_residual": "0",
+      "observed_mpmath_residual": "3.571835597757109319424323588454190498287218733821245816297268260086351987208556861485775068313037593e-102",
+      "observed_consistency": true
+    },
+    "rounding_counterexample": {
+      "expression": "(10^(dps+20)+1)-10^(dps+20)",
+      "rounded_result": "0.0",
+      "exact_integer_result": 1,
+      "shows_loss_of_exactness": true
+    },
+    "certified_error_bound": null,
+    "physical_validation": false,
+    "scope": "numerical self-consistency diagnostics, not a Yang-Mills or RAP existence proof"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "programme",
+    "version",
+    "state",
+    "authority",
+    "constants"
+  ],
+  "properties": {
+    "programme": {
+      "const": "RAP"
+    },
+    "version": {
+      "const": "4.0"
+    },
+    "state": {
+      "const": "working-draft"
+    },
+    "authority": {
+      "type": "string"
+    },
+    "constants": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "value",
+          "unit",
+          "evidence_class",
+          "evidence_kind",
+          "role",
+          "uncertainty",
+          "scope"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "evidence_class": {
+            "enum": [
+              "A",
+              "A-",
+              "B",
+              "C",
+              "D",
+              "E"
+            ]
+          },
+          "evidence_kind": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "uncertainty": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status",
+              "value",
+              "meaning"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "reported",
+                  "not_supplied",
+                  "not_applicable"
+                ]
+              },
+              "value": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "meaning": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          },
+          "scope": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

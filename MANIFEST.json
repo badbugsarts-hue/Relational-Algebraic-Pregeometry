@@ -1,0 +1,562 @@
+{
+  "programme": "RAP",
+  "version": "4.0",
+  "state": "working-draft",
+  "prepared_date": "2026-10-27",
+  "final_pdf_included": false,
+  "new_pi_approval": null,
+  "files": [
+    {
+      "path": ".dockerignore",
+      "bytes": 51,
+      "sha256": "8cc0a273abc64ad7d4489252c5d005eb39806f211d596ad2240c2573ee8e21f7",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": ".github/workflows/verification.yml",
+      "bytes": 792,
+      "sha256": "17a7458820a4be83e722d3ef39f5191abe7650591dfae13d2b560ec38a35ef53",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 93,
+      "sha256": "cec78fa2baa0a23331973b95d680ad6df62eac99f0e839fa0e0c88bcf036d56f",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": ".zenodo.json",
+      "bytes": 67653,
+      "sha256": "dc3a97c07b88fd13c2a06c55d7f7b9954dc47057b62b5ab838cbc2cb1b7f8417",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "CANONICAL/CONSTANTS.md",
+      "bytes": 2393,
+      "sha256": "6adcbb6de3b4918d78df5c1c424290a33e957df057a475e9c4f0bfc23bc53a41",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "CANONICAL/EVIDENCE.md",
+      "bytes": 1375,
+      "sha256": "9737a0a3104bdfd135df9fb6ea6f4aba97a55db763790cb072ce247fc0d6861c",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "CANONICAL/EVIDENCE_SYSTEM.md",
+      "bytes": 1773,
+      "sha256": "df0bd6b08efe811b3657af28ae042c27870e93d62fbda6fe9d32580282a3dc8b",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "CANONICAL/FALSIFICATION.md",
+      "bytes": 1980,
+      "sha256": "defa0b6f91af2dff134b2e9eb9a6e15d8213f474bbaf0eec505731696d8c4291",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "CANONICAL/LIMITATIONS.md",
+      "bytes": 1998,
+      "sha256": "248525b76ba69610bdc4726e17132b302e75ab4a475280e08b5c3f38a0811d48",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "CANONICAL/MANIFEST.json",
+      "bytes": 1319,
+      "sha256": "d5cd19d12dcf4a461a94b434919cc77d12188da3044e641eb954677ee3808dc6",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "CANONICAL/ONTOLOGY_LINK.md",
+      "bytes": 1281,
+      "sha256": "2b3014d4ebde94bd9b783cb885d32cf50f10ed2cbb75d24bfef7900bd0059f1b",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "CANONICAL/README.md",
+      "bytes": 545,
+      "sha256": "bed6c0ce95ee82d3beb9a3db957fce0bcfde282f4edea814db84ec3d04613e5f",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "CANONICAL/constants.json",
+      "bytes": 3852,
+      "sha256": "76c0041713e4f6b8a7a872e947bcd0146c46a38da3255fb372d1f1108836c17e",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "CANONICAL/constants.schema.json",
+      "bytes": 2154,
+      "sha256": "1d81de976ce967ca79e4dbaa2d792320be4a99f1774cd8869257fe4e043f3402",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 964,
+      "sha256": "11bf9d88f31be9af367047955e7449ed8534fbf947cecd3b2cbdd5f382034bd0",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "CITATION.bib",
+      "bytes": 1026,
+      "sha256": "1df5c6203954b407519efbaa3d2573c721e1fcf32fd4758483204a425eb58919",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 741,
+      "sha256": "e00cb03b381b5a2120614df15cb6cd75475b1290ef62b6a9390cf04e8af40469",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "DESCRIPTION.html",
+      "bytes": 40678,
+      "sha256": "cb4d8393633a19df6c81dd8e1f83db3d2c7ea9cfde40ac65bb63d481e05b36ca",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "DESCRIPTION.md",
+      "bytes": 36606,
+      "sha256": "159dafce9c87fa2407110f9e2dfa5dbc3abe7b08370cf782cfb17dfeb5399db9",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "DataAvailability.md",
+      "bytes": 2657,
+      "sha256": "7cfb6deb71a9b36f8504e1979170e4af532a6c1324912aff71c4bd055ccbdd14",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 576,
+      "sha256": "f317222428651fd9f3dfdc7172d3505e949f48999002223f342b0a938d179953",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "EVIDENCE_AND_FOUNDATIONS.md",
+      "bytes": 12490,
+      "sha256": "a24ff9e6062187fb023fd12105a8adebfd20ccbe709b78c434087570a3e1413a",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "LEDGER/CLAIMS.json",
+      "bytes": 25945,
+      "sha256": "e15589cd04dc707f298acfa03896cacaf8562c7787a628b5fbd03b19480ad152",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "LEDGER/CONSTANTS.md",
+      "bytes": 292,
+      "sha256": "8ca09e92333f02d4a1e9432babed6ec7a6152ac4661b5f1232cf407f5e103258",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "LEDGER/OPEN_QUESTIONS_GEOMETRY.md",
+      "bytes": 855,
+      "sha256": "50f010b3dca4b9ad5bf32bcd3fce32b4814552fc00e0eb9483d2c4c4d11d3316",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "LEDGER/README.md",
+      "bytes": 999,
+      "sha256": "c01e5c294e7eeadc1818633b003e06ad8639584dc92a41d88f6ed0e69b43f3a0",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "LEDGER/TENSIONS.json",
+      "bytes": 1248,
+      "sha256": "8a13bcd8aa489b425f9e945f7040a0a284f3c4b154ddbe94b32b52f717aac30e",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "LEDGER/claims.schema.json",
+      "bytes": 4895,
+      "sha256": "1e032299fad5dcf45585bdac73f6e3fab849302acf906c714d4676390f3183b7",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "LEDGER/external_contributions.md",
+      "bytes": 742,
+      "sha256": "9cd1556f071d26b0d18d707e98eafb70ddfa440ec40a77662cf1c81103b092f4",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "LEDGER/tickets_new.json",
+      "bytes": 1037,
+      "sha256": "fdeb30cca50df1f20eeb8df3dce80f06eb7c3cca26dde95374a06f29325204d4",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 18657,
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "RAP_Master_Verification.py",
+      "bytes": 6745,
+      "sha256": "0c1c75937afee42bbeecf525608312f3fb1629f17136988936b46ab8c6978c87",
+      "role": "new Python implementation or test"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5460,
+      "sha256": "f96766ecb1bf9a2543a35f0f43ae0ee2983f99e8f7b44c94ff663df151932b25",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 603,
+      "sha256": "987384f4eef747f06cd54d3d640793609098bc6afc03289efed76ee1e52d20b3",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "STATUS.md",
+      "bytes": 1680,
+      "sha256": "ee72b6bf288ed47a2d9beeb723ca8751dc005f1629a7a340abb768e40646bd7d",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "VERIFICATION_REPORT.md",
+      "bytes": 2689,
+      "sha256": "678ea47c3c1f5cf934945dd69ecf68fd15a566629a37b2929752590d8723017b",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "bibliography_provenance.csv",
+      "bytes": 77808,
+      "sha256": "5750edaf5d69cc1781b8ccc4207602bbef4179aa19bfffc190fd0ab5cabd0427",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "docs/research/01_INTERVAL_THEOREM.md",
+      "bytes": 1137,
+      "sha256": "f005d7e9792098919927be2af580cb0737aa6acad1609ecab079a10be500f97b",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "docs/research/02_FINITE_ALGEBRA.md",
+      "bytes": 905,
+      "sha256": "ad0b50224e98270a8b8f9c2067403c89256c0da288b32982665ef2ed3caff315",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "docs/research/03_DYNAMICS_AND_ANOMALIES.md",
+      "bytes": 796,
+      "sha256": "2709a1c0322c9f05b773c088ef6ed5ea2b4a712b901aa34d3046e066d9f177e1",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "docs/research/04_TARGET_INDEPENDENCE.md",
+      "bytes": 920,
+      "sha256": "b962a2f65b7cd1df33321954620d870fba59f575f5db9c466e0e97d73c0a3d09",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "docs/research/05_GAMMA_REFERENCE.md",
+      "bytes": 704,
+      "sha256": "d2c43d04a13fc2c632201ffe5cdd6c3f31ddf2349fdf14e3bae2806241b46b80",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "docs/research/06_GAP_AND_OPERATOR_MATCHING.md",
+      "bytes": 793,
+      "sha256": "2e3183f2ecf2248a7d5fdd1d2e37bd0412a8ba10d2574e44dc8a1249d265c431",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "docs/research/07_TOPOLOGY_DATA.md",
+      "bytes": 796,
+      "sha256": "6e49c71625faef6a95480c433fe3a4679487e52560c92511a0f612eea97a8ee3",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "docs/research/08_COSMOLOGY.md",
+      "bytes": 711,
+      "sha256": "e26df44f838beef7d5ab3519822ac9a158f8bddeb058ae08c9acd9ed2ff84232",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "docs/research/09_OBSERVER_BOUNDARY.md",
+      "bytes": 718,
+      "sha256": "4e7253b5921a4dc326870b2b890cb8efee284b9d0885cb9f01b2b76fbfd96019",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "docs/research/10_FORMAL_SCOPE.md",
+      "bytes": 902,
+      "sha256": "232145d27eaec3e77b4070ca077272d61ad229b886fef1856f75e29c2edb07e4",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "docs/research/11_HISTORICAL_QUARANTINE.md",
+      "bytes": 701,
+      "sha256": "89735a301d351d7329c97da7ec0afc49c0e396188c2eefbbe4a1f273e1c153d0",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "docs/research/12_REPRODUCIBILITY.md",
+      "bytes": 1040,
+      "sha256": "ec76c9ec963e59d3d611b06f878fb01c50055e60784628e464b99f1f6a8bff63",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "docs/research/INDEX.md",
+      "bytes": 1026,
+      "sha256": "85f2d6782f6eed7054cbb8209d2667cdd9f25b393133cf18a3212c727ab2c339",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "governance/README.md",
+      "bytes": 430,
+      "sha256": "f7318a0c4b03db376fec16f7e310ab3994460d2711b33328b4c994e99338b6ee",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "governance/RECORDED_PI_DECISIONS.json",
+      "bytes": 8313,
+      "sha256": "369667483636eee7cc5e4977f219ac0965d2e26c84c77d2c91f1eba597542bf4",
+      "role": "scoped ledger/reference/governance"
+    },
+    {
+      "path": "manuscript/BUILD.md",
+      "bytes": 1705,
+      "sha256": "5c07eaf92023fb4b32cf72c803b75fee18fe0dc888a08a6826b622360cc44f4f",
+      "role": "working manuscript and bibliography"
+    },
+    {
+      "path": "manuscript/RAP_v4_0.tex",
+      "bytes": 295561,
+      "sha256": "3e9c471fc92e112c5045f6fcb357250ff59c090a4caf424996b4e07b0dd0b999",
+      "role": "working manuscript and bibliography"
+    },
+    {
+      "path": "manuscript/bibliography-alignment.patch",
+      "bytes": 25718,
+      "sha256": "5504b4791d89fa856b79c31758e5ba2194341706fa5ba6aee3bdb14cefb1bf04",
+      "role": "working manuscript and bibliography"
+    },
+    {
+      "path": "manuscript/references.bib",
+      "bytes": 65153,
+      "sha256": "09e69b9b3c787ae29ac948ca224d8e308777e10d3223cad7e4da62c8a841b3a7",
+      "role": "working manuscript and bibliography"
+    },
+    {
+      "path": "metadata/README.md",
+      "bytes": 1003,
+      "sha256": "5766b43610b359ee941f13d0285f3f65b0bd3ef359c2727f3fc5de560f22f8d6",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "metadata/format-validation.json",
+      "bytes": 507,
+      "sha256": "92dadd50dfe842fe801196a57007c6f2fe12aa695b45775c7bb96647c7dc8389",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "metadata/zenodo-deposition.json",
+      "bytes": 68045,
+      "sha256": "96c62bd3eb1e6bbc7e919e54d17861cc98ccf669690c6418a13b6692bb212b72",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "provenance/README.md",
+      "bytes": 660,
+      "sha256": "796e87f85f900c9c8e60a5946d3d52938d593ae42413dd5c9840f56ff3d93fdf",
+      "role": "preserved provenance input"
+    },
+    {
+      "path": "provenance/container-pin.json",
+      "bytes": 155,
+      "sha256": "111697e6fc8577760a439d8fe4110a6839077ea7d709b668b4dd48cb7c9a3b83",
+      "role": "preserved provenance input"
+    },
+    {
+      "path": "provenance/dependency-lock.json",
+      "bytes": 10944,
+      "sha256": "af7a9942c38522370649593e0b5c5b6574d35432858763b20d7d453b1dddd700",
+      "role": "preserved provenance input"
+    },
+    {
+      "path": "provenance/input/RAP_v4_0_previous_working.tex",
+      "bytes": 326097,
+      "sha256": "9b9edc642a292e90e9ab16925ecba92a35847c87278573834bacc32aa440f8a5",
+      "role": "preserved provenance input"
+    },
+    {
+      "path": "provenance/previous-bibliography.tex",
+      "bytes": 25010,
+      "sha256": "fb0891601c43e70fcfa759f9f134cd21931b53c29498eea39bdb8efa53e292a2",
+      "role": "preserved provenance input"
+    },
+    {
+      "path": "provenance/source-snapshot.json",
+      "bytes": 1067,
+      "sha256": "5135341a141a3f307f0c3f1c5f851a2aa99232ecfc28afef1d65bd96aae34e9d",
+      "role": "preserved provenance input"
+    },
+    {
+      "path": "rap/__init__.py",
+      "bytes": 105,
+      "sha256": "d364d4b61b5aa9a214a825f9f00ca80a2df21c9b20b22b9142f192b846ed6c3c",
+      "role": "new Python implementation or test"
+    },
+    {
+      "path": "rap/numerics.py",
+      "bytes": 2492,
+      "sha256": "ec675b0ab88d9318a14c6bc497d42a31538e2c67fc82e97fda3919e42c933fc3",
+      "role": "new Python implementation or test"
+    },
+    {
+      "path": "rap/structural.py",
+      "bytes": 4270,
+      "sha256": "c50533a76a731368a5372393cf0856051a67a0bc12d8388eed9bd0b341019c96",
+      "role": "new Python implementation or test"
+    },
+    {
+      "path": "rap/validation.py",
+      "bytes": 7148,
+      "sha256": "df93557d391835b78616858bac7f8026060fb63b371385ff4dd0c88c1ae8cf22",
+      "role": "new Python implementation or test"
+    },
+    {
+      "path": "rap_proof_engine.py",
+      "bytes": 2822,
+      "sha256": "69c7885befce322700f8c3c0a69287d6ab689505547ed05c896737d82bbf9018",
+      "role": "new Python implementation or test"
+    },
+    {
+      "path": "references.bib",
+      "bytes": 67270,
+      "sha256": "f8c5cf79301381e31bedbc985d55a38ea84d037037d3fce5c2902d2d99377d98",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "references_selected.bib",
+      "bytes": 31187,
+      "sha256": "760375ebc7199ec67adb03b26e3512ff8ac853751e2bc905014ed0ee42e52aa4",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "requirements.lock",
+      "bytes": 12146,
+      "sha256": "d646d4650b800cfaf967fc29509bb0579c208ad115101c3deec9640f79c36e61",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 38,
+      "sha256": "4f9a1ea6da8c1654c41cabbaae8f20c9ae0c0e63b31c622a669f739e9626fc2f",
+      "role": "release metadata or documentation"
+    },
+    {
+      "path": "results/core-engine-100.json",
+      "bytes": 2286,
+      "sha256": "923b07f607a17b12e6e270ce096790004ed92fcdeabcf62d208be4ae1ae1ed58",
+      "role": "observed execution result"
+    },
+    {
+      "path": "results/core-engine-100.log",
+      "bytes": 2286,
+      "sha256": "923b07f607a17b12e6e270ce096790004ed92fcdeabcf62d208be4ae1ae1ed58",
+      "role": "observed execution result"
+    },
+    {
+      "path": "results/execution-receipt.json",
+      "bytes": 1955,
+      "sha256": "7a32cf36e8da5bbc3ca78bf9d82cc8231e1763f49c6edb40867692106732aa1e",
+      "role": "observed execution result"
+    },
+    {
+      "path": "results/master-verification.json",
+      "bytes": 55891,
+      "sha256": "dd719e95cbf84217da881cc1cf5ad3f0535d6165a3834b89c03c9d8a6441485b",
+      "role": "observed execution result"
+    },
+    {
+      "path": "results/master-verification.log",
+      "bytes": 358,
+      "sha256": "fa0ccd0fb8c6422f3715d4300f7ec390e56e59f0583fcc37fc6382f144db5cba",
+      "role": "observed execution result"
+    },
+    {
+      "path": "results/master-without-reference.json",
+      "bytes": 55116,
+      "sha256": "b757f071261bfbdd746caabcccbfd9b228528fd3c6cc080782786d29f8dafa8a",
+      "role": "observed execution result"
+    },
+    {
+      "path": "results/master-without-reference.log",
+      "bytes": 363,
+      "sha256": "a8dd8a92814ced6044e6d48858fbf0fc455268131a8f80642c5755045a766531",
+      "role": "observed execution result"
+    },
+    {
+      "path": "results/partitions-N6.csv",
+      "bytes": 550,
+      "sha256": "2a0c75828d6ebc6a06356f36b7642cf86a6560c61a2f8b8f7eedaf90cc1c7a79",
+      "role": "observed execution result"
+    },
+    {
+      "path": "results/unit-tests.json",
+      "bytes": 224,
+      "sha256": "8db86ff3f28c165c105e6e89a4664b6c4cbdcc434609921b409318fa8c558f94",
+      "role": "observed execution result"
+    },
+    {
+      "path": "results/unit-tests.log",
+      "bytes": 2498,
+      "sha256": "77a4e6e58e9b5307bb3e9acc8326a9620741cdc3f89a40fcd9affee24d6de76e",
+      "role": "observed execution result"
+    },
+    {
+      "path": "scripts/export_partitions.py",
+      "bytes": 1295,
+      "sha256": "d632a8b1e5057dedc1571f507e6f014d9262713d664cd3d2b859258e79d64671",
+      "role": "new Python implementation or test"
+    },
+    {
+      "path": "scripts/package_release.py",
+      "bytes": 2578,
+      "sha256": "fea79ea1212cbb04d5a879c48231cfa4633cb50912c716eb105b74889f592438",
+      "role": "new Python implementation or test"
+    },
+    {
+      "path": "scripts/reference_diagnostics.py",
+      "bytes": 1182,
+      "sha256": "19a569a9f2351b8cd1be5e3c1c254a1f88e6ff787aac6404ceacbe2e1df4bd3f",
+      "role": "new Python implementation or test"
+    },
+    {
+      "path": "scripts/run_tests.py",
+      "bytes": 1029,
+      "sha256": "56f492a6e2ee12f824736f3fd78cc74e3f4090d7c942dc9fbfa1959b690237aa",
+      "role": "new Python implementation or test"
+    },
+    {
+      "path": "scripts/update_status.py",
+      "bytes": 2997,
+      "sha256": "efbb9be35e5ee8f0dedcbab42c6b77f6967fa04dd45f28b539af125e955ae5aa",
+      "role": "new Python implementation or test"
+    },
+    {
+      "path": "scripts/verify_integrity.py",
+      "bytes": 1271,
+      "sha256": "8ba8dd1cc38a55daf5940651ccef6cbd13885ec9025cedb45f2055470f3452f7",
+      "role": "new Python implementation or test"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 49,
+      "sha256": "d295ffbb37c2e6a7cbb41557850bfc3ea23bb57783fdfa509dad6a025d47f461",
+      "role": "new Python implementation or test"
+    },
+    {
+      "path": "tests/test_release.py",
+      "bytes": 5599,
+      "sha256": "6299c76b05bc632964e3b26b48d7a65281b02a8e62eba31d4ed84631d8bea3fa",
+      "role": "new Python implementation or test"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "run_utc": "2026-10-27T02:57:55.759052+00:00",
+  "status": "PASS",
+  "tests_run": 25,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "scope": "new RAP regression tests; not independent physics or Lean verification"
+}

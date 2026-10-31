@@ -1,0 +1,134 @@
+{
+  "programme": "RAP",
+  "version": "4.0",
+  "state": "working-draft",
+  "authority": "transcribed from corrected manuscript macros, not newly approved",
+  "constants": [
+    {
+      "id": "lambda_scalar",
+      "value": "5/12",
+      "unit": "dimensionless",
+      "evidence_class": "A",
+      "evidence_kind": "input",
+      "role": "historical-museum",
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "scope": "Exact internal coupling-input relation; not an RG or VEV derivation."
+    },
+    {
+      "id": "delta_reference",
+      "value": "1.710",
+      "unit": "GeV",
+      "evidence_class": "B",
+      "evidence_kind": "empirical-reference",
+      "role": "reference-only",
+      "uncertainty": {
+        "status": "reported",
+        "value": "0.015",
+        "meaning": "reported uncertainty; distribution/covariance not established here"
+      },
+      "scope": "Recorded D18/D21 reference, not derived; no glueball identification without L12 matching."
+    },
+    {
+      "id": "kappa_reference",
+      "value": "0.500",
+      "unit": "dimensionless",
+      "evidence_class": "A",
+      "evidence_kind": "input",
+      "role": "historical-museum",
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "scope": "EFT-normalized adopted coefficient; not independently derived."
+    },
+    {
+      "id": "gamma_calibrated",
+      "value": "16.339",
+      "unit": "dimensionless",
+      "evidence_class": "A-",
+      "evidence_kind": "calibration",
+      "role": "reference-only",
+      "uncertainty": {
+        "status": "not_supplied",
+        "value": null,
+        "meaning": null
+      },
+      "scope": "Calibrated ledger value, never a first-principles derivation."
+    },
+    {
+      "id": "gamma_mc",
+      "value": "16.374",
+      "unit": "dimensionless",
+      "evidence_class": "A-",
+      "evidence_kind": "reported-computation",
+      "role": "reference-only",
+      "uncertainty": {
+        "status": "reported",
+        "value": "1.005",
+        "meaning": "reported spread; sigma convention and covariance not certified"
+      },
+      "scope": "Historical MC summary; no raw run was reproduced for this package."
+    },
+    {
+      "id": "scalar_vev_reference",
+      "value": "47.7",
+      "unit": "MeV",
+      "evidence_class": "A",
+      "evidence_kind": "input",
+      "role": "historical-museum",
+      "uncertainty": {
+        "status": "not_supplied",
+        "value": null,
+        "meaning": null
+      },
+      "scope": "A-label is adopted input/transcription only; not a physically exact VEV."
+    },
+    {
+      "id": "torsion_reference",
+      "value": "2.44",
+      "unit": "MeV",
+      "evidence_class": "E",
+      "evidence_kind": "interpretation",
+      "role": "historical-subatomic-only",
+      "uncertainty": {
+        "status": "not_supplied",
+        "value": null,
+        "meaning": null
+      },
+      "scope": "D22: no observer/neural/biological/macroscopic threshold role."
+    },
+    {
+      "id": "grid_reference",
+      "value": "0.66",
+      "unit": "nm",
+      "evidence_class": "D",
+      "evidence_kind": "open-physical-bridge",
+      "role": "reference-only",
+      "uncertainty": {
+        "status": "not_supplied",
+        "value": null,
+        "meaning": null
+      },
+      "scope": "Unconfirmed scalar-sector scale, no non-Abelian derivation supplied."
+    },
+    {
+      "id": "kappa_exact_input",
+      "value": "1/2",
+      "unit": "dimensionless",
+      "evidence_class": "A",
+      "evidence_kind": "input",
+      "role": "historical-museum",
+      "uncertainty": {
+        "status": "not_applicable",
+        "value": null,
+        "meaning": null
+      },
+      "scope": "Exact framework input; no physical fixed-point proof."
+    }
+  ]
+}

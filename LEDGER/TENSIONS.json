@@ -1,0 +1,42 @@
+{
+  "source": "corrected manuscript tension ledger",
+  "new_measurements": false,
+  "items": [
+    {
+      "id": "T1",
+      "topic": "gamma calibrated versus reported MC summary",
+      "status": "recorded",
+      "note": "0.035 dimensionless; normalized by reported spread gives 7/201, not a certified significance."
+    },
+    {
+      "id": "T2",
+      "topic": "Delta evidence-class determination",
+      "status": "recorded-D18-D21",
+      "note": "B reference retained, A upgrade not made; no new independent signature."
+    },
+    {
+      "id": "T3",
+      "topic": "Delta versus scalar glueball identity",
+      "status": "open",
+      "note": "No explicit operator/correlator matching."
+    },
+    {
+      "id": "T4",
+      "topic": "Topology source and comparison",
+      "status": "pending-source-audit",
+      "note": "SVZ museum route is not an active external lattice result."
+    },
+    {
+      "id": "T5",
+      "topic": "Subatomic torsion versus observer scales",
+      "status": "open",
+      "note": "No validated bridge; D22 firewall retained."
+    },
+    {
+      "id": "T6",
+      "topic": "Born-rule derivation",
+      "status": "open",
+      "note": "Not derived from the kernel or uncompleted observer functor."
+    }
+  ]
+}

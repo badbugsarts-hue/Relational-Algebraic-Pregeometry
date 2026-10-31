@@ -1,0 +1,2293 @@
+{
+  "programme": "RAP",
+  "programme_version": "4.0",
+  "release_state": "working-draft",
+  "run_utc": "2026-10-27T02:57:54.723997+00:00",
+  "runtime": {
+    "python": "3.12.3",
+    "platform": "Linux-6.12.114-fly-x86_64-with-glibc2.39"
+  },
+  "suite_status": "PASS",
+  "scientific_status": "OPEN; no physical selection, continuum or Yang-Mills proof certified",
+  "verification_scope": {
+    "exhaustive_integer_partition_n": [
+      2,
+      40
+    ],
+    "partitions_visited": 215306,
+    "general_theorem_formal_Lean_verification": "NOT_RUN"
+  },
+  "checks": [
+    {
+      "name": "all_N6_partitions",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "N6_conditional_unique",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "N7_counterexample",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "N15_nonuniqueness",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_3_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_5_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_6",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_6_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_7",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_7_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_8",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_9",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_9_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_9_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_10",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_10_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_11",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_11_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_12",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_12_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_13",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_13_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_14",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_14_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_15",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_15_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_15_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_15_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_16",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_17",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_17_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_18",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_18_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_18_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_19",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_19_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_20",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_20_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_21",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_21_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_21_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_21_6",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_22",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_22_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_23",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_23_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_24",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_24_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_25",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_25_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_25_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_26",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_26_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_27",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_27_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_27_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_27_6",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_28",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_28_7",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_29",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_29_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_30",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_30_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_30_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_30_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_31",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_31_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_32",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_33",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_33_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_33_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_33_6",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_34",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_34_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_35",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_35_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_35_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_35_7",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_36",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_36_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_36_8",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_37",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_37_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_38",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_38_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_39",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_39_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_39_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_39_6",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "interval_enumeration_N_40",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "certificate_40_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "reject_tampered_certificate",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "signature_dimensions",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "signature_does_not_construct_spectral_triple",
+      "passed": true,
+      "scope": "explicit formal/physical boundary"
+    },
+    {
+      "name": "equal_block_ratio_2_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_2_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_3_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_3_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_4_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_4_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_4_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_5_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_5_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_6_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_6_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_6_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_6_6",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_7_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_7_7",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_8_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_8_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_8_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_8_8",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_9_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_9_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_9_9",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_10_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_10_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_10_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_10_10",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_11_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_11_11",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_12_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_12_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_12_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_12_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_12_6",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_12_12",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_13_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_13_13",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_14_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_14_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_14_7",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_14_14",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_15_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_15_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_15_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_15_15",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_16_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_16_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_16_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_16_8",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_16_16",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_17_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_17_17",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_18_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_18_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_18_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_18_6",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_18_9",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_18_18",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_19_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_19_19",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_20_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_20_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_20_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_20_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_20_10",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_20_20",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_21_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_21_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_21_7",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_21_21",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_22_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_22_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_22_11",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_22_22",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_23_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_23_23",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_24_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_24_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_24_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_24_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_24_6",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_24_8",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_24_12",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_24_24",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_25_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_25_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_25_25",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_26_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_26_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_26_13",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_26_26",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_27_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_27_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_27_9",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_27_27",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_28_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_28_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_28_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_28_7",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_28_14",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_28_28",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_29_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_29_29",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_30_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_30_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_30_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_30_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_30_6",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_30_10",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_30_15",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_30_30",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_31_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_31_31",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_32_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_32_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_32_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_32_8",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_32_16",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_32_32",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_33_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_33_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_33_11",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_33_33",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_34_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_34_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_34_17",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_34_34",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_35_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_35_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_35_7",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_35_35",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_36_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_36_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_36_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_36_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_36_6",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_36_9",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_36_12",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_36_18",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_36_36",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_37_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_37_37",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_38_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_38_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_38_19",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_38_38",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_39_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_39_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_39_13",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_39_39",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_40_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_40_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_40_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_40_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_40_8",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_40_10",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_40_20",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_40_40",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_41_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_41_41",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_42_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_42_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_42_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_42_6",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_42_7",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_42_14",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_42_21",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_42_42",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_43_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_43_43",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_44_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_44_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_44_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_44_11",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_44_22",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_44_44",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_45_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_45_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_45_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_45_9",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_45_15",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_45_45",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_46_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_46_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_46_23",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_46_46",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_47_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_47_47",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_48_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_48_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_48_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_48_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_48_6",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_48_8",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_48_12",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_48_16",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_48_24",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_48_48",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_49_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_49_7",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_49_49",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_50_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_50_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_50_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_50_10",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_50_25",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_50_50",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_51_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_51_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_51_17",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_51_51",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_52_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_52_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_52_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_52_13",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_52_26",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_52_52",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_53_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_53_53",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_54_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_54_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_54_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_54_6",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_54_9",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_54_18",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_54_27",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_54_54",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_55_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_55_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_55_11",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_55_55",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_56_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_56_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_56_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_56_7",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_56_8",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_56_14",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_56_28",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_56_56",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_57_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_57_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_57_19",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_57_57",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_58_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_58_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_58_29",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_58_58",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_59_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_59_59",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_60_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_60_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_60_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_60_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_60_5",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_60_6",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_60_10",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_60_12",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_60_15",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_60_20",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_60_30",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_60_60",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_61_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_61_61",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_62_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_62_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_62_31",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_62_62",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_63_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_63_3",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_63_7",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_63_9",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_63_21",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_63_63",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_64_1",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_64_2",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_64_4",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_64_8",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_64_16",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_64_32",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "equal_block_ratio_64_64",
+      "passed": true,
+      "scope": "exact finite mathematics"
+    },
+    {
+      "name": "imposed_charge_control_SU3_squared_Y",
+      "passed": true,
+      "scope": "exact cancellation for supplied charges; no endogenous charge selection"
+    },
+    {
+      "name": "imposed_charge_control_SU2_squared_Y",
+      "passed": true,
+      "scope": "exact cancellation for supplied charges; no endogenous charge selection"
+    },
+    {
+      "name": "imposed_charge_control_gravity_Y",
+      "passed": true,
+      "scope": "exact cancellation for supplied charges; no endogenous charge selection"
+    },
+    {
+      "name": "imposed_charge_control_Y_cubed",
+      "passed": true,
+      "scope": "exact cancellation for supplied charges; no endogenous charge selection"
+    },
+    {
+      "name": "precision_context_80",
+      "passed": true,
+      "scope": "software context check"
+    },
+    {
+      "name": "log_consistency_80",
+      "passed": true,
+      "scope": "observed numerical residual, not certified error"
+    },
+    {
+      "name": "rational_control_80",
+      "passed": true,
+      "scope": "observed consistency; exact Fraction control separate"
+    },
+    {
+      "name": "rounding_warning_80",
+      "passed": true,
+      "scope": "counterexample to residual-only exactness claims"
+    },
+    {
+      "name": "precision_context_100",
+      "passed": true,
+      "scope": "software context check"
+    },
+    {
+      "name": "log_consistency_100",
+      "passed": true,
+      "scope": "observed numerical residual, not certified error"
+    },
+    {
+      "name": "rational_control_100",
+      "passed": true,
+      "scope": "observed consistency; exact Fraction control separate"
+    },
+    {
+      "name": "rounding_warning_100",
+      "passed": true,
+      "scope": "counterexample to residual-only exactness claims"
+    },
+    {
+      "name": "claims_schema",
+      "passed": true,
+      "scope": "JSON structure, not physical truth"
+    },
+    {
+      "name": "constants_schema",
+      "passed": true,
+      "scope": "JSON structure"
+    },
+    {
+      "name": "unique_claim_ids",
+      "passed": true,
+      "scope": "curated ledger only"
+    },
+    {
+      "name": "claim_dependency_closure",
+      "passed": true,
+      "scope": "declared claim graph"
+    },
+    {
+      "name": "claim_graph_acyclic",
+      "passed": true,
+      "scope": "declared dependency graph; not scientific independence"
+    },
+    {
+      "name": "claim_count_matches",
+      "passed": true,
+      "scope": "document state"
+    },
+    {
+      "name": "no_invented_pi_approval",
+      "passed": true,
+      "scope": "document state"
+    },
+    {
+      "name": "corrected_input_hash",
+      "passed": true,
+      "scope": "provided predecessor identity"
+    },
+    {
+      "name": "manuscript_body_unchanged",
+      "passed": true,
+      "scope": "only bibliography externalization; no changed physics or PI boxes"
+    },
+    {
+      "name": "claim_source_anchors",
+      "passed": true,
+      "scope": "source links exist"
+    },
+    {
+      "name": "structural_import_allowlist",
+      "passed": true,
+      "scope": "source-level import boundary only"
+    },
+    {
+      "name": "no_calibrated_target_literals_in_solver",
+      "passed": true,
+      "scope": "literal scan; not a full target-shape audit"
+    },
+    {
+      "name": "no_named_partition_branch",
+      "passed": true,
+      "scope": "source scan only"
+    },
+    {
+      "name": "no_shared_precision_assignment",
+      "passed": true,
+      "scope": "AST assignment guard and independent-context runtime checks"
+    },
+    {
+      "name": "no_new_doi_fabricated",
+      "passed": true,
+      "scope": "base DOI retained only as prior record"
+    },
+    {
+      "name": "no_publication_date_fabricated",
+      "passed": true,
+      "scope": "actual date must be confirmed"
+    },
+    {
+      "name": "base_doi_relationship",
+      "passed": true,
+      "scope": "textual provenance, not physics"
+    },
+    {
+      "name": "manuscript_citation_keys_covered",
+      "passed": true,
+      "scope": "citation membership, not claim support"
+    },
+    {
+      "name": "manuscript_bib_unique",
+      "passed": true,
+      "scope": "bibliography integrity"
+    },
+    {
+      "name": "supplementary_bib_not_silently_imported",
+      "passed": true,
+      "scope": "124 manuscript records; seven supplements remain separate"
+    },
+    {
+      "name": "historical_pi_boxes_verbatim",
+      "passed": true,
+      "scope": "record preservation; not a new approval"
+    },
+    {
+      "name": "research_index_complete",
+      "passed": true,
+      "scope": "actual bundled notes, not inherited count 47"
+    },
+    {
+      "name": "constant_uncertainty_lambda_scalar",
+      "passed": true,
+      "scope": "unknown uncertainty is never zero by default"
+    },
+    {
+      "name": "constant_uncertainty_delta_reference",
+      "passed": true,
+      "scope": "unknown uncertainty is never zero by default"
+    },
+    {
+      "name": "constant_uncertainty_kappa_reference",
+      "passed": true,
+      "scope": "unknown uncertainty is never zero by default"
+    },
+    {
+      "name": "constant_uncertainty_gamma_calibrated",
+      "passed": true,
+      "scope": "unknown uncertainty is never zero by default"
+    },
+    {
+      "name": "constant_uncertainty_gamma_mc",
+      "passed": true,
+      "scope": "unknown uncertainty is never zero by default"
+    },
+    {
+      "name": "constant_uncertainty_scalar_vev_reference",
+      "passed": true,
+      "scope": "unknown uncertainty is never zero by default"
+    },
+    {
+      "name": "constant_uncertainty_torsion_reference",
+      "passed": true,
+      "scope": "unknown uncertainty is never zero by default"
+    },
+    {
+      "name": "constant_uncertainty_grid_reference",
+      "passed": true,
+      "scope": "unknown uncertainty is never zero by default"
+    },
+    {
+      "name": "constant_uncertainty_kappa_exact_input",
+      "passed": true,
+      "scope": "unknown uncertainty is never zero by default"
+    },
+    {
+      "name": "tex_environment_nesting",
+      "passed": true,
+      "scope": "static source only; PDF build NOT_RUN"
+    },
+    {
+      "name": "python_syntax_rap_proof_engine.py",
+      "passed": true,
+      "scope": "parse, not execution"
+    },
+    {
+      "name": "python_syntax_RAP_Master_Verification.py",
+      "passed": true,
+      "scope": "parse, not execution"
+    },
+    {
+      "name": "python_syntax_rap/validation.py",
+      "passed": true,
+      "scope": "parse, not execution"
+    },
+    {
+      "name": "python_syntax_rap/__init__.py",
+      "passed": true,
+      "scope": "parse, not execution"
+    },
+    {
+      "name": "python_syntax_rap/numerics.py",
+      "passed": true,
+      "scope": "parse, not execution"
+    },
+    {
+      "name": "python_syntax_rap/structural.py",
+      "passed": true,
+      "scope": "parse, not execution"
+    },
+    {
+      "name": "python_syntax_scripts/reference_diagnostics.py",
+      "passed": true,
+      "scope": "parse, not execution"
+    },
+    {
+      "name": "python_syntax_scripts/run_tests.py",
+      "passed": true,
+      "scope": "parse, not execution"
+    },
+    {
+      "name": "python_syntax_scripts/export_partitions.py",
+      "passed": true,
+      "scope": "parse, not execution"
+    },
+    {
+      "name": "python_syntax_scripts/update_status.py",
+      "passed": true,
+      "scope": "parse, not execution"
+    },
+    {
+      "name": "python_syntax_scripts/verify_integrity.py",
+      "passed": true,
+      "scope": "parse, not execution"
+    },
+    {
+      "name": "python_syntax_scripts/package_release.py",
+      "passed": true,
+      "scope": "parse, not execution"
+    },
+    {
+      "name": "python_syntax_tests/test_release.py",
+      "passed": true,
+      "scope": "parse, not execution"
+    },
+    {
+      "name": "python_syntax_tests/__init__.py",
+      "passed": true,
+      "scope": "parse, not execution"
+    },
+    {
+      "name": "posthoc_comparator_execution",
+      "passed": true,
+      "scope": "reference arithmetic only"
+    }
+  ],
+  "check_count": 436,
+  "passed_count": 436,
+  "precision_diagnostics": [
+    {
+      "working_decimal_digits": 80,
+      "context": "mp.clone; independent context per invocation",
+      "global_context_unchanged": true,
+      "mpmath_version": "1.3.0",
+      "log_identity": {
+        "residual": "1.6867516709168837158957718482032030412335938211789612080124420840173030865551615e-80",
+        "criterion": "absolute observed residual < 10^(-threshold_digits)",
+        "threshold_digits": 40,
+        "observed_consistency": true
+      },
+      "rational_control": {
+        "exact_fraction_residual": "0",
+        "observed_mpmath_residual": "0.0",
+        "observed_consistency": true
+      },
+      "rounding_counterexample": {
+        "expression": "(10^(dps+20)+1)-10^(dps+20)",
+        "rounded_result": "0.0",
+        "exact_integer_result": 1,
+        "shows_loss_of_exactness": true
+      },
+      "certified_error_bound": null,
+      "physical_validation": false,
+      "scope": "numerical self-consistency diagnostics, not a Yang-Mills or RAP existence proof"
+    },
+    {
+      "working_decimal_digits": 100,
+      "context": "mp.clone; independent context per invocation",
+      "global_context_unchanged": true,
+      "mpmath_version": "1.3.0",
+      "log_identity": {
+        "residual": "0.0",
+        "criterion": "absolute observed residual < 10^(-threshold_digits)",
+        "threshold_digits": 60,
+        "observed_consistency": true
+      },
+      "rational_control": {
+        "exact_fraction_residual": "0",
+        "observed_mpmath_residual": "3.571835597757109319424323588454190498287218733821245816297268260086351987208556861485775068313037593e-102",
+        "observed_consistency": true
+      },
+      "rounding_counterexample": {
+        "expression": "(10^(dps+20)+1)-10^(dps+20)",
+        "rounded_result": "0.0",
+        "exact_integer_result": 1,
+        "shows_loss_of_exactness": true
+      },
+      "certified_error_bound": null,
+      "physical_validation": false,
+      "scope": "numerical self-consistency diagnostics, not a Yang-Mills or RAP existence proof"
+    }
+  ],
+  "posthoc_reference_diagnostics": {
+    "status": "ARITHMETIC_COMPLETED",
+    "physical_validation": false,
+    "source": "CANONICAL/constants.json; adopted references, not solver inputs",
+    "gamma_mc_difference": {
+      "value_exact": "7/200",
+      "unit": "dimensionless"
+    },
+    "spread_normalized_difference": {
+      "value_exact": "7/201",
+      "approximate": "0.03482587064676617",
+      "certified_sigma": false,
+      "reason": "uncertainty convention and covariance are not established"
+    },
+    "gamma_origin": "calibrated reference; no first-principles or colour-algebra derivation asserted",
+    "delta": "reference only; no particle identification or Yang-Mills proof",
+    "scope": "comparison arithmetic, not prediction or evidence-class upgrade"
+  },
+  "anomaly_control": {
+    "inputs": "externally imposed hypercharges",
+    "exact_residuals": {
+      "SU3_squared_Y": "0",
+      "SU2_squared_Y": "0",
+      "gravity_Y": "0",
+      "Y_cubed": "0"
+    }
+  },
+  "not_run": [
+    "Docker build/run",
+    "LaTeX compilation and PDF visual inspection",
+    "Lean build/axiom inventory",
+    "Monte Carlo/lattice replication",
+    "independent external scientific validation"
+  ],
+  "elapsed_seconds": 0.884
+}

@@ -1,0 +1,41 @@
+{
+  "authority": "package snapshot, not PI approval",
+  "files": [
+    {
+      "path": "CANONICAL/CONSTANTS.md",
+      "sha256": "6adcbb6de3b4918d78df5c1c424290a33e957df057a475e9c4f0bfc23bc53a41"
+    },
+    {
+      "path": "CANONICAL/EVIDENCE.md",
+      "sha256": "9737a0a3104bdfd135df9fb6ea6f4aba97a55db763790cb072ce247fc0d6861c"
+    },
+    {
+      "path": "CANONICAL/EVIDENCE_SYSTEM.md",
+      "sha256": "df0bd6b08efe811b3657af28ae042c27870e93d62fbda6fe9d32580282a3dc8b"
+    },
+    {
+      "path": "CANONICAL/FALSIFICATION.md",
+      "sha256": "defa0b6f91af2dff134b2e9eb9a6e15d8213f474bbaf0eec505731696d8c4291"
+    },
+    {
+      "path": "CANONICAL/LIMITATIONS.md",
+      "sha256": "248525b76ba69610bdc4726e17132b302e75ab4a475280e08b5c3f38a0811d48"
+    },
+    {
+      "path": "CANONICAL/ONTOLOGY_LINK.md",
+      "sha256": "2b3014d4ebde94bd9b783cb885d32cf50f10ed2cbb75d24bfef7900bd0059f1b"
+    },
+    {
+      "path": "CANONICAL/README.md",
+      "sha256": "bed6c0ce95ee82d3beb9a3db957fce0bcfde282f4edea814db84ec3d04613e5f"
+    },
+    {
+      "path": "CANONICAL/constants.json",
+      "sha256": "76c0041713e4f6b8a7a872e947bcd0146c46a38da3255fb372d1f1108836c17e"
+    },
+    {
+      "path": "CANONICAL/constants.schema.json",
+      "sha256": "1d81de976ce967ca79e4dbaa2d792320be4a99f1774cd8869257fe4e043f3402"
+    }
+  ]
+}
