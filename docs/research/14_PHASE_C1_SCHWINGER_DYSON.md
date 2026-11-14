@@ -24,11 +24,65 @@ This is the Gibbs integration-by-parts / Schwinger–Dyson identity. Makeenko–
 
 Under suitable smoothness and operator-domain conditions, Helffer–Sjöstrand represents covariance using the inverse of a weighted operator on gradients. On a Riemannian manifold the corresponding one-form operator includes the connection Laplacian, the Ricci endomorphism, and the potential Hessian. In the usual nonnegative convention the connection-Laplacian term is `∇*∇`; signs must be fixed consistently with the chosen Laplacian convention. Such a representation alone gives no off-diagonal decay or volume-uniform row-sum estimate. The Euclidean formulation and its required strict Hessian lower bound are stated explicitly in Bauerschmidt–Bodineau, Appendix A ([source](https://d-nb.info/1202686133/34)).
 
-## Metric normalization is unresolved
+## Ricci normalization and the pointwise Hessian estimate
 
-The proposed value `κ_Haar = N_c/4` needs a derivation in the exact metric convention before it can be encoded as an SU(3) theorem. For a compact simple group, `Ric = -B/4` as a tensor for a bi-invariant metric; the numerical lower-Ricci eigenvalue depends on the metric scale. A recent lattice-gauge curvature paper uses `⟨X,Y⟩=-Tr(XY)` and reports `κ_SU(N)=N/2` in that convention ([Theorem 5 and Table I](https://hexagonmath.org/pdf/2610.00341v4), lines 101–111, 130–146). Rescaling the metric changes the numerical curvature bound. Therefore this value cannot simply be transferred to `⟨X,Y⟩=-(1/N_c) Re Tr(XY)` or identified with a separately normalized gauge Casimir without checking the basis and normalization in the cited assessment document. That document is not present in this repository.
+For `𝔤=su(N)` the Killing form is `B(X,Y)=2N Re Tr(XY)`. With a bi-invariant metric, `Ric=-B/4` as a `(0,2)` tensor. For the scaled metric
 
-The proposed `C_grad`, neighbor count, and `C_CT/γ_Witten` row-sum bound also need proofs with constants uniform in `p`, boundary conditions, and `σ`. A spectral gap controls the operator norm of an inverse; it does not alone prove exponential off-diagonal decay. A Combes–Thomas estimate would need its own hypotheses and proof, followed by a lattice shell-sum estimate.
+\[
+g_c(X,Y)=-c\,\operatorname{ReTr}(XY),\qquad c>0,
+\]
+
+this gives
+
+\[
+\operatorname{Ric}(X,Y)=-\frac N2\operatorname{ReTr}(XY)
+  =\frac{N}{2c}g_c(X,Y),\qquad
+\kappa_c(\mathrm{SU}(N))=\frac{N}{2c}.
+\]
+
+Thus `−Re Tr(XY)` gives `κ=N/2`, while `−(1/N)Re Tr(XY)` gives `κ=N²/2`; for SU(3) these are `3/2` and `9/2`, respectively. The value `3/4` does not follow from either convention. This agrees with the cited curvature paper's `κ_SU(N)=N/2` for `−Tr(XY)` ([Theorem 5 and Table I](https://hexagonmath.org/pdf/2610.00341v4), lines 101–111, 130–146). This calculation assumes that the inner product supplied for the assessment is exactly `−(1/N)Re Tr(XY)`; the assessment PDF itself is not present here.
+
+For the normalized plaquette `Φ□=N⁻¹ Re Tr(U□)` and the product metric made from `g₁=−Re Tr(XY)`, differentiating along product geodesics and applying Hilbert–Schmidt Cauchy–Schwarz gives the pointwise estimate
+
+\[
+|\nabla^2\Phi_\square(X,X)|
+\le \frac4N\sum_{\ell\in\partial\square}\|X_\ell\|_{g_1}^2.
+\]
+
+For
+
+\[
+V_\sigma=-\sum_\square\left(\widetilde\beta_\square(\sigma)\Phi_\square-
+  \frac\alpha2\Phi_\square^2\right),\qquad
+\widetilde\beta_\square=\beta_{\rm ref}+\sqrt\alpha\,\sigma_\square,
+\]
+
+the Hessian is
+
+\[
+\nabla^2V_\sigma(X,X)=\sum_\square\left[-(\widetilde\beta_\square-\alpha\Phi_\square)
+  \nabla^2\Phi_\square(X,X)+\alpha\bigl(X\Phi_\square\bigr)^2\right].
+\]
+
+Since `|Φ□|≤1`, each link belongs to six plaquettes in a standard 4D lattice, and the last term is nonnegative, this yields the lower bound
+
+\[
+\nabla^2V_\sigma(X,X)\ge -\frac{24}{N}
+  \left(\sup_\square|\widetilde\beta_\square(\sigma)|+\alpha\right)
+  \sum_\ell\|X_\ell\|_{g_1}^2.
+\]
+
+Consequently the pointwise Bakry–Émery tensor has the sufficient lower bound
+
+\[
+\operatorname{Ric}+\nabla^2V_\sigma\succeq
+\left[\frac N2-\frac{24}{N}
+  \left(\sup_\square|\widetilde\beta_\square(\sigma)|+\alpha\right)\right]I
+\]
+
+in the `g₁` convention. At `σ=0`, positivity by this estimate requires `β_ref+α<N²/48` (for SU(3), `β_ref+α<3/16`), not merely `β_ref<N²/48`.
+
+This estimate still does not give a uniform-in-`σ` Bakry–Émery bound: the Gaussian HS field is unbounded and `sup_σ|β_ref+√α σ□|=∞`. It also does not prove the Witten spectral gap in expectation. The proposed `C_grad`, neighbor count, and `C_CT/γ_Witten` row-sum estimate need separate derivations with constants uniform in `p`, boundary conditions, and `σ`. A spectral gap controls the operator norm of an inverse; it does not alone prove exponential off-diagonal decay. A Combes–Thomas estimate would need its own hypotheses and proof, followed by a lattice shell-sum estimate.
 
 ## Lean interface added
 
@@ -42,8 +96,8 @@ The structure fields are explicit assumptions, not proofs that the Witten operat
 
 ## Next analytic obligations
 
-1. Fix and derive the SU(3) metric normalization and its Ricci lower bound from the chosen invariant inner product.
-2. Compute or bound the Hessian of the damped plaquette potential uniformly over configurations and HS backgrounds; a negative Hessian contribution cannot be hidden inside a named `Σ_SD` without derivation.
+1. Verify that the metric used in the source assessment matches the stated convention; the Ricci scaling is derived above conditionally on that convention.
+2. Control the unbounded HS background or use an argument that does not require uniform pointwise convexity in `σ`; a negative Hessian contribution cannot be hidden inside a named `Σ_SD` without derivation.
 3. Prove a Witten-operator gap in the intended coupling range.
 4. Establish a Combes–Thomas or equivalent off-diagonal resolvent estimate with constants uniform in volume, then sum over plaquette shells.
 5. Prove the link from the resulting concrete covariance certificate to the Phase B Hessian bound and separately justify any transfer-operator conclusions.
