@@ -82,9 +82,9 @@ theorem relativeMatterCharacters_eq_one_iff (z : CentralPhases Phase) :
   · rintro ⟨h₃₂, h₂₁⟩
     simp [relativeMatterCharacters, h₃₂, h₂₁]
 
-/-- A sector connecting a summand to itself is neutral under its common central phase. -/
-theorem same_summand_phase_is_neutral (p q : Phase) :
-    relativeMatterCharacters Phase (p, (p, q)).1 = 1 := by
+/-- A diagonal central phase acts trivially on both relative characters. -/
+theorem diagonal_phase_is_neutral (p : Phase) :
+    relativeMatterCharacters Phase (p, (p, p)) = (1, 1) := by
   simp [relativeMatterCharacters]
 
 /-!
