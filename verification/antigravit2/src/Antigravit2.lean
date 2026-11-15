@@ -14,6 +14,8 @@ import Antigravit2.NCG.Krajewski321
 import Antigravit2.NCG.Dirac321
 import Antigravit2.NCG.DeltaScale
 import Antigravit2.NCG.Bridge
+import Antigravit2.NCG.GaugeEmergence
+import Antigravit2.NCG.GaugeKrajewski321
 import Antigravit2.Filters.Admissibility
 import Antigravit2.Filters.Enumeration
 import Antigravit2.Filters.EliminationN6
